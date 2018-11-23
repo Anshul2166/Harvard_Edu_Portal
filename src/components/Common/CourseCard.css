@@ -1,0 +1,11 @@
+.course-image-container {
+  height: 0 !important;
+  padding-top: "56.25%" !important;
+}
+
+.in-div {
+  position: relative !important;
+  top: -25px !important;
+  background-color: white;
+  width: fit-content;
+}
