@@ -14,41 +14,15 @@ class Dashboard extends Component {
         <Typography variant="h5" component="h2" className="heading">
           Explore fields of courses
         </Typography>
-        <Slider/>
+        <Slider cardType="specialization" duration="600"/>
         <Typography variant="h5" component="h2" className="heading">
           Earn your degrees and more
         </Typography>
-        <Grid container spacing={24}>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <DegreeCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <DegreeCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <DegreeCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <DegreeCard />
-          </Grid>
-        </Grid>
+        <Slider cardType="degree"  duration="400"/>
         <Typography variant="h5" component="h2" className="heading">
           Explore variety of courses
         </Typography>
-        <Grid container spacing={24}>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <CourseCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <CourseCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <CourseCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <CourseCard />
-          </Grid>
-        </Grid>
+        <Slider cardType="career"  duration="600"/>
       </div>
     );
   }
