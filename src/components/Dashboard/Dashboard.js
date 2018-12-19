@@ -3,8 +3,9 @@ import SpecializationCard from "../Common/SpecializationCard";
 import DegreeCard from "../Common/DegreeCard";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import "./Dashboard.css";
 import CourseCard from "../Common/CourseCard";
+import Slider from "../../shared/Slider/Slider";
+import "./Dashboard.css";
 
 class Dashboard extends Component {
   render() {
@@ -13,20 +14,7 @@ class Dashboard extends Component {
         <Typography variant="h5" component="h2" className="heading">
           Explore fields of courses
         </Typography>
-        <Grid container spacing={24}>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <SpecializationCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <SpecializationCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <SpecializationCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <SpecializationCard />
-          </Grid>
-        </Grid>
+        <Slider/>
         <Typography variant="h5" component="h2" className="heading">
           Earn your degrees and more
         </Typography>
