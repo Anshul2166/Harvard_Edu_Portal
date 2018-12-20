@@ -12,7 +12,8 @@ const styles = theme => ({
   card: {
     maxWidth: 400,
     width:300,
-    height:300
+    minHeight: 400,
+    border:"1px solid wheat"
   },
   media: {
     height: 0,

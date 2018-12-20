@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Dashboard from "../Dashboard/Dashboard";
 import Header from "../Header/Header";
+import Profile from '../Profile/profile';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <Header />
          <Switch>
 					<Route path="/dashboard" component={Dashboard} />
+          <Route path="/profile" component={Profile} />
 				</Switch>
       </div>
     );

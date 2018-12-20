@@ -11,15 +11,15 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
-        <Typography variant="h5" component="h2" className="heading">
+        <Typography variant="h4" component="h1" className="heading center">
           Explore fields of courses
         </Typography>
         <Slider cardType="specialization" duration="600"/>
-        <Typography variant="h5" component="h2" className="heading">
+        <Typography variant="h4" component="h1" className="heading center">
           Earn your degrees and more
         </Typography>
         <Slider cardType="degree"  duration="400"/>
-        <Typography variant="h5" component="h2" className="heading">
+        <Typography variant="h4" component="h1" className="heading center">
           Explore variety of courses
         </Typography>
         <Slider cardType="career"  duration="600"/>

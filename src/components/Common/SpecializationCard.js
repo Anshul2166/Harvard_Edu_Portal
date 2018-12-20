@@ -14,7 +14,8 @@ const styles = {
     backgroundImage:`url(${logo})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover"
+    backgroundSize: "cover",
+    border:"1px solid wheat"
   },
   bullet: {
     display: 'inline-block',
