@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { withStyles } from '@material-ui/core/styles';
+import Edit from "@material-ui/icons/Edit";
 
 const styles = theme => ({
     header:{
@@ -27,7 +27,7 @@ class ListBox extends Component {
             title={this.props.title}
             action={
               <IconButton>
-                <MoreVertIcon />
+                <Edit />
               </IconButton>
             }
             className={classes.header}

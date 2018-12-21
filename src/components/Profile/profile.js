@@ -34,13 +34,13 @@ class Profile extends Component {
         </Grid>
         <div className="all-lists">
           <Grid container spacing={24}>
-            <Grid item xs={12} sm={12} md={10} lg={10}>
+            <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox title="Skills" data="React, NodeJs, Python"/>
             </Grid>
-            <Grid item xs={12} sm={12} md={10} lg={10}>
+            <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox title="Accomplishments" data="React, NodeJs, Python"/>
             </Grid>
-            <Grid item xs={12} sm={12} md={10} lg={10}>
+            <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox title="Projects" data="React, NodeJs, Python"/>
             </Grid>
           </Grid>
