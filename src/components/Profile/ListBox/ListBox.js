@@ -10,7 +10,10 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
     header:{
-        boxShadow: "0px 1px 3px 0px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 2px 1px -1px rgba(0,0,0,0.12)"
+        boxShadow: "0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1),0px 2px 0px -1px rgba(0,0,0,0.12)"
+    },
+    card:{
+        marginTop:"2.5%"
     }
   });
 
@@ -19,9 +22,9 @@ class ListBox extends Component {
     const { classes } = this.props;
     return (
       <div className="list-box">
-        <Card>
+        <Card className={classes.card}>
           <CardHeader
-            title="Skills"
+            title={this.props.title}
             action={
               <IconButton>
                 <MoreVertIcon />
@@ -30,8 +33,8 @@ class ListBox extends Component {
             className={classes.header}
           />
           <CardContent>
-            <Typography paragraph>
-              React, NodeJs, Python, CSS
+          <Typography variant="p" component="p">
+              {this.props.data}
             </Typography>
           </CardContent>
         </Card>

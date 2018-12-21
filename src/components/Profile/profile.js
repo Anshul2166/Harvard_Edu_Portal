@@ -23,7 +23,7 @@ class Profile extends Component {
           </Grid>
           <Grid item xs={12} sm={6} md={8} lg={10}>
             <div className="profile-info">
-              <Typography variant="h5" component="h2">
+            <Typography variant="h5" component="h2">
                 Anshul
               </Typography>
               <Typography variant="p" component="p">
@@ -35,7 +35,13 @@ class Profile extends Component {
         <div className="all-lists">
           <Grid container spacing={24}>
             <Grid item xs={12} sm={12} md={10} lg={10}>
-              <ListBox />
+              <ListBox title="Skills" data="React, NodeJs, Python"/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={10} lg={10}>
+              <ListBox title="Accomplishments" data="React, NodeJs, Python"/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={10} lg={10}>
+              <ListBox title="Projects" data="React, NodeJs, Python"/>
             </Grid>
           </Grid>
         </div>
