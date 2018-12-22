@@ -4,24 +4,24 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { withStyles } from '@material-ui/core/styles';
 import Edit from "@material-ui/icons/Edit";
 
 const styles = theme => ({
     header:{
         boxShadow: "0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1),0px 2px 0px -1px rgba(0,0,0,0.12)",
-        backgroundColor:"#99a99a",
+        // backgroundColor:"#99a99a",
+        backgroundColor:"#0099a99a",
         color:"white"
     },
     title:{
-      color:"white"
+      color:"purple"
     },
     card:{
         marginTop:"2.5%"
     },
     icon:{
-      color:"white"
+      color:"purple"
     }
   });
 
