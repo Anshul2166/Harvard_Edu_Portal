@@ -38,10 +38,13 @@ class Profile extends Component {
               <ListBox title="Skills" data="React, NodeJs, Python"/>
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
-              <ListBox title="Accomplishments" data="React, NodeJs, Python"/>
+              <ListBox title="Accomplishments" data="First in district coding championship, Third rank in college"/>
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
-              <ListBox title="Projects" data="React, NodeJs, Python"/>
+              <ListBox title="Projects" data="Built a question paper generator using Java, Built an image modifier using Javascript"/>
+            </Grid>
+            <Grid item xs={12} sm={12} md={10} lg={11}>
+              <ListBox title="Completed Courses" data="An introduction to computer science, Data structures and alogorithms"/>
             </Grid>
           </Grid>
         </div>

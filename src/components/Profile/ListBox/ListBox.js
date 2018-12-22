@@ -10,10 +10,18 @@ import Edit from "@material-ui/icons/Edit";
 
 const styles = theme => ({
     header:{
-        boxShadow: "0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1),0px 2px 0px -1px rgba(0,0,0,0.12)"
+        boxShadow: "0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1),0px 2px 0px -1px rgba(0,0,0,0.12)",
+        backgroundColor:"#99a99a",
+        color:"white"
+    },
+    title:{
+      color:"white"
     },
     card:{
         marginTop:"2.5%"
+    },
+    icon:{
+      color:"white"
     }
   });
 
@@ -25,8 +33,11 @@ class ListBox extends Component {
         <Card className={classes.card}>
           <CardHeader
             title={this.props.title}
+            classes={{
+              title: classes.title,
+            }}
             action={
-              <IconButton>
+              <IconButton className={classes.icon}>
                 <Edit />
               </IconButton>
             }
