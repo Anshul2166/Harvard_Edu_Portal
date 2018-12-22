@@ -9,10 +9,7 @@ import Edit from "@material-ui/icons/Edit";
 
 const styles = theme => ({
     header:{
-        boxShadow: "0px 0px 0px 0px rgba(0,0,0,0.1),0px 0px 0px 0px rgba(0,0,0,0.1),0px 2px 0px -1px rgba(0,0,0,0.12)",
-        // backgroundColor:"#99a99a",
-        backgroundColor:"#0099a99a",
-        color:"white"
+        boxShadow: "0px 0px 1px 0px rgba(0,0,0,0.5),0px 0px 0px 0px rgba(0,0,0,0.1),0px 2.5px 0px -1px rgba(0,0,0,0.12)"
     },
     title:{
       color:"purple"

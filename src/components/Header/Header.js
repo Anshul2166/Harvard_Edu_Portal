@@ -19,7 +19,10 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: '100%'
+  },
+  bar:{
+    backgroundColor:"black"
   },
   grow: {
     flexGrow: 1,
@@ -164,7 +167,7 @@ class Header extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" className={classes.bar}>
           <Toolbar>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <MenuIcon />
