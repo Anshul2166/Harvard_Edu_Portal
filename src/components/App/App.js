@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Dashboard from "../Dashboard/Dashboard";
 import Header from "../Header/Header";
 import Profile from '../Profile/profile';
+import Forum from '../Forum/Forum';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
          <Switch>
 					<Route path="/dashboard" component={Dashboard} />
           <Route path="/profile" component={Profile} />
+          <Route path="/forum" component={Forum} />
 				</Switch>
       </div>
     );
