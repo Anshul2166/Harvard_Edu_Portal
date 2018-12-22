@@ -1,0 +1,69 @@
+var Graph = require('react-graph-vis');
+ 
+var graph = {
+  nodes: [
+      {id: 1, label: 'home-page'},
+      //home page contents
+      {id: 2, label: 'how-to-use-this-website'},   
+      {id: 3, label: 'computer-science'},
+      {id: 4, label: 'electrical-science'},
+      {id: 5, label: 'mechanical'},
+      {id: 6, label: 'chemical'},
+      {id: 7, label: 'finance'},
+      {id: 8, label: 'general-information-on-what-do-after-engineering'},  //home page content ends
+      // 1 cs subjects start 
+      {id: 9, label: 'intro-to-programming'},                              
+      {id: 10, label: 'intro-to-algorithms'},
+      {id: 11, label: 'dsa'},  
+      {id: 12, label: 'oop'},
+      {id: 5, label: 'dbms'},
+      {id: 5, label: 'os'},                                       // cs sujects end
+      // cs problem practice start
+      {id: 5, label: 'intro-to-programming-practice'},            
+      {id: 5, label: 'oop-problem-practice'},
+      {id: 5, label: 'dsa-problem-practice'},
+      {id: 5, label: 'dbms-problem-practice'},
+      {id: 5, label: 'os-problem-practice'},                     //cs problem bank ends
+      //not including discussion forms and starting placement and internship section
+      {id: 5, label: 'cs-intern-and-placement-preparation-topics'},  
+      {id: 5, label: 'internship-and-job-opportunities'},  //entire computer science section completed
+        // 2 ee subjects start
+      {id: 9, label: 'intro-to-programming'},                              
+      {id: 10, label: 'intro-to-algorithms'},
+      {id: 11, label: 'dsa'},  
+      {id: 12, label: 'oop'},
+      {id: 5, label: 'dbms'},
+      {id: 5, label: 'os'},                                       // cs sujects end
+      {id: 5, label: 'intro-to-programming-practice'},            // cs problem practice start
+      {id: 5, label: 'oop-problem-practice'},
+      {id: 5, label: 'dsa-problem-practice'},
+      {id: 5, label: 'dbms-problem-practice'},
+      {id: 5, label: 'os-problem-practice'},                     //cs problem bank ends
+      {id: 5, label: 'cs-intern-and-placement-preparation-topics'},  //not including discussion forms and starting placement and internship section
+      {id: 5, label: 'internship-and-job-opportunities'},
+
+    ],
+  edges: [
+      {from: 1, to: 2},
+      {from: 1, to: 3},
+      {from: 2, to: 4},
+      {from: 2, to: 5}
+    ]
+};
+ 
+var options = {
+    layout: {
+        hierarchical: true
+    },
+    edges: {
+        color: "#000000"
+    }
+};
+ 
+var events = {
+    select: function(event) {
+        var { nodes, edges } = event;
+    }
+}
+ 
+React.render(<Graph graph={graph} options={options} events={events} />, document.body);
