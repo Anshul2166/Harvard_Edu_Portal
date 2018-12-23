@@ -16,38 +16,68 @@ var graph = {
       {id: 10, label: 'intro-to-algorithms'},
       {id: 11, label: 'dsa'},  
       {id: 12, label: 'oop'},
-      {id: 5, label: 'dbms'},
-      {id: 5, label: 'os'},                                       // cs sujects end
+      {id: 13, label: 'dbms'},
+      {id: 14, label: 'os'},                                       // cs sujects end
       // cs problem practice start
-      {id: 5, label: 'intro-to-programming-practice'},            
-      {id: 5, label: 'oop-problem-practice'},
-      {id: 5, label: 'dsa-problem-practice'},
-      {id: 5, label: 'dbms-problem-practice'},
-      {id: 5, label: 'os-problem-practice'},                     //cs problem bank ends
+      {id: 15, label: 'intro-to-programming-practice'},            
+      {id: 16, label: 'oop-problem-practice'},
+      {id: 17, label: 'dsa-problem-practice'},
+      {id: 18, label: 'dbms-problem-practice'},
+      {id: 19, label: 'os-problem-practice'},                     //cs problem bank ends
       //not including discussion forms and starting placement and internship section
-      {id: 5, label: 'cs-intern-and-placement-preparation-topics'},  
-      {id: 5, label: 'internship-and-job-opportunities'},  //entire computer science section completed
-        // 2 ee subjects start
-      {id: 9, label: 'intro-to-programming'},                              
-      {id: 10, label: 'intro-to-algorithms'},
-      {id: 11, label: 'dsa'},  
-      {id: 12, label: 'oop'},
-      {id: 5, label: 'dbms'},
-      {id: 5, label: 'os'},                                       // cs sujects end
-      {id: 5, label: 'intro-to-programming-practice'},            // cs problem practice start
-      {id: 5, label: 'oop-problem-practice'},
-      {id: 5, label: 'dsa-problem-practice'},
-      {id: 5, label: 'dbms-problem-practice'},
-      {id: 5, label: 'os-problem-practice'},                     //cs problem bank ends
-      {id: 5, label: 'cs-intern-and-placement-preparation-topics'},  //not including discussion forms and starting placement and internship section
-      {id: 5, label: 'internship-and-job-opportunities'},
+      {id: 20, label: 'cs-intern-and-placement-preparation-topics'},  
+      {id: 21, label: 'internship-and-job-opportunities'},  //entire computer science section completed
+        // 2 eee subjects start
+      {id: 22, label: 'intro-to-electrical-sciences'},                              
+      {id: 23, label: 'solid-state-devices'},
+      {id: 24, label: 'vlsi-design'},  
+      {id: 25, label: 'digital-design'},
+      {id: 26, label: 'microprocessors'},
+      {id: 27, label: 'computer-architechture'},
+      {id: 28, label: 'analog-electronics'},                       // eee sujects end
+      // eee problem practice start
+      {id: 29, label: 'intro-to-programming-practice'},            
+      {id: 30, label: 'electronic-devices-practice'},
+      {id: 31, label: 'microp-comparch-practice'},              //eee problem bank ends
+      //not including discussion forms and starting placement and internship section
+      {id: 32, label: 'eee-intern-and-placement-preparation-topics'},  
+      {id: 33, label: 'internship-and-job-opportunities'},
 
     ],
   edges: [
       {from: 1, to: 2},
       {from: 1, to: 3},
-      {from: 2, to: 4},
-      {from: 2, to: 5}
+      {from: 1, to: 4},
+      {from: 1, to: 5},
+      {from: 1, to: 6},
+      {from: 1, to: 7},
+      {from: 1, to: 8},
+      {from: 2, to: 9},
+      {from: 2, to: 10},
+      {from: 2, to: 11},
+      {from: 2, to: 12},
+      {from: 2, to: 13},
+      {from: 2, to: 14},
+      {from: 2, to: 15},
+      {from: 2, to: 16},
+      {from: 2, to: 17},
+      {from: 2, to: 18},
+      {from: 2, to: 19},
+      {from: 2, to: 20},
+      {from: 2, to: 21},
+      {from: 3, to: 22},
+      {from: 3, to: 23},
+      {from: 3, to: 24},
+      {from: 3, to: 25},
+      {from: 3, to: 26},
+      {from: 3, to: 27},
+      {from: 3, to: 28},
+      {from: 3, to: 29},
+      {from: 3, to: 30},
+      {from: 3, to: 31},
+      {from: 3, to: 32},
+      {from: 3, to: 33},
+      {from: 3, to: 34}
     ]
 };
  
