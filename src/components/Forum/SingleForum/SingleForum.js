@@ -9,6 +9,7 @@ import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Avatar from "@material-ui/core/Avatar";
 import red from "@material-ui/core/colors/red";
+import CommentForum from "../CommentForum/CommentForum";
 
 const styles = theme => ({
   header: {
@@ -84,6 +85,7 @@ class SingleForum extends Component {
             </Typography>
             <p className={classes.forumFooter}>26 votes, 12 replies</p>
           </CardContent>
+          <CommentForum />
         </Card>
       </div>
     );
