@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import './forum.css';
+import SingleForum from "./SingleForum/SingleForum";
 
 class Forum extends Component{
     render(){
@@ -11,7 +12,7 @@ class Forum extends Component{
                         <p className="sub-title-forum">Get the best of opinions from the best of minds</p>
                     </div>
                     <div className="main-content">
-
+                        <SingleForum />
                     </div>
                 </div>
             </div>
