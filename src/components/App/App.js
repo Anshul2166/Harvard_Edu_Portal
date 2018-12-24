@@ -4,6 +4,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import Header from "../Header/Header";
 import Profile from '../Profile/profile';
 import Forum from '../Forum/Forum';
+import User from '../User/User';
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
 					<Route path="/dashboard" component={Dashboard} />
           <Route path="/profile" component={Profile} />
           <Route path="/forum" component={Forum} />
+          <Route path="/user" component={User} />
 				</Switch>
       </div>
     );
