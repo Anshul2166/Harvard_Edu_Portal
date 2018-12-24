@@ -1,3 +1,11 @@
 .forum {
   margin: 2.5%;
 }
+.comment-forum form textarea {
+  width: 90%;
+  margin-left: 50px;
+}
+.comment-forum form button {
+  display: block;
+  margin-left: 50px;
+}

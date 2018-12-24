@@ -10,6 +10,8 @@ import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Avatar from "@material-ui/core/Avatar";
 import red from "@material-ui/core/colors/red";
 import CommentForum from "../CommentForum/CommentForum";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Collapse from "@material-ui/core/Collapse";
 
 const styles = theme => ({
   header: {
@@ -38,12 +40,16 @@ const styles = theme => ({
     margin: 0
   },
   forumFooter: {
-      marginBottom:"0px",
-      fontSize:"0.85rem"
+    marginBottom: "0px",
+    fontSize: "0.85rem"
   }
 });
 
 class SingleForum extends Component {
+  state = { expanded: false };
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
   render() {
     const { classes } = this.props;
     return (
@@ -83,9 +89,22 @@ class SingleForum extends Component {
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Typography>
-            <p className={classes.forumFooter}>26 votes, 12 replies</p>
+            <p className={classes.forumFooter}>
+              26 votes, 12 replies
+              <IconButton
+                aria-label="Show more"
+                onClick={this.handleExpandClick}
+                aria-expanded={this.state.expanded}
+              >
+                <ExpandMoreIcon />
+              </IconButton>
+            </p>
           </CardContent>
-          <CommentForum />
+          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+            <div className="comment-forum" style={{ marginLeft: "2.5%", marginBottom: "0.5%" }}>
+              <CommentForum />
+            </div>
+          </Collapse>
         </Card>
       </div>
     );
