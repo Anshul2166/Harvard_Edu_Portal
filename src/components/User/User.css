@@ -6,7 +6,7 @@
 .border-box {
   width: 400px;
   border: 1px solid black;
-  padding: 30px 60px;
+  padding: 50px 40px;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
@@ -63,11 +63,17 @@ button svg {
   margin-top: auto !important;
   margin-bottom: auto !important;
 }
-ol {
-  list-style-position: inside !important;
-  text-align: justify;
-  list-style: disc;
+ul {
+  list-style: none;
 }
 li {
   line-height: 50px;
+}
+li svg {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-left: -10px;
+}
+.heading-form {
+  color: darkslategray;
 }

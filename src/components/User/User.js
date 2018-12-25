@@ -7,6 +7,7 @@ import FacebookIcon from "mdi-react/FacebookIcon";
 import GoogleIcon from "mdi-react/GoogleIcon";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import CheckIcon from "@material-ui/icons/Check";
 import "./User.css";
 
 const styles = theme => ({
@@ -55,19 +56,32 @@ class User extends Component {
             component="p"
             className="form-center"
           >
-            <ol>
+            <ul>
               <li>
+                <CheckIcon />
                 Learn from our carefully prepared course path crafted by our
                 expert
               </li>
-              <li>Explore oppurtunities in your field in India and abroad</li>
-              <li>Get to know opinions of others on your area of interest</li>
-            </ol>
+              <li>
+                <CheckIcon />
+                Explore oppurtunities in your field in India and abroad
+              </li>
+              <li>
+                <CheckIcon />
+                Get to know opinions of others on your area of interest
+              </li>
+            </ul>
           </Typography>
         </Grid>
         <Grid item md={6}>
           <div className="border-box">
-            <h1 className="center-text full-width">Get started with learnIt</h1>
+            <Typography
+              variant="display1"
+              component="h1"
+              className="form-center center-text"
+            >
+              <b className="heading-form">Get started with learnIt</b>
+            </Typography>
             <div className="center-div-user">
               <form className={classes.container} noValidate autoComplete="off">
                 <FormGroup className="form-center">
