@@ -3,8 +3,10 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { FormGroup, FormControl } from "@material-ui/core";
-import FacebookIcon from 'mdi-react/FacebookIcon';
+import FacebookIcon from "mdi-react/FacebookIcon";
 import GoogleIcon from "mdi-react/GoogleIcon";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import "./User.css";
 
 const styles = theme => ({
@@ -25,7 +27,7 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    width:250
+    width: 250
   }
 });
 
@@ -38,38 +40,73 @@ class User extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="center-div-user">
-        <form className={classes.container} noValidate autoComplete="off">
-          <FormGroup className="form-center">
-            <FormControl>
-              <TextField
-                required
-                id="standard-required"
-                label="Username"
-                placeholder="Hello World"
-                margin="normal"
-                className={classes.textField+" textfield"}
-              />
-            </FormControl>
-            <FormControl>
-              <TextField
-                required
-                id="standard-password-input"
-                label="Password"
-                className={classes.textField+" textfield"}
-                type="password"
-                autoComplete="current-password"
-                margin="small"
-              />
-            </FormControl>
-          </FormGroup>
-        </form>
-        <Button variant="contained" color="primary" className={classes.button}>
-          Login with username
-        </Button>
-        <Divider />
-        <SocialNetworkLogIn classes={classes} />
-      </div>
+      <Grid container spacing={24}>
+        <Grid item md={1} />
+        <Grid item md={5} className="vertical-center">
+          <Typography
+            variant="headline"
+            component="h1"
+            className="form-center center-text"
+          >
+            Welcome to learnIt
+          </Typography>
+          <Typography
+            variant="subheading"
+            component="p"
+            className="form-center"
+          >
+            <ol>
+              <li>
+                Learn from our carefully prepared course path crafted by our
+                expert
+              </li>
+              <li>Explore oppurtunities in your field in India and abroad</li>
+              <li>Get to know opinions of others on your area of interest</li>
+            </ol>
+          </Typography>
+        </Grid>
+        <Grid item md={6}>
+          <div className="border-box">
+            <h1 className="center-text full-width">Get started with learnIt</h1>
+            <div className="center-div-user">
+              <form className={classes.container} noValidate autoComplete="off">
+                <FormGroup className="form-center">
+                  <FormControl>
+                    <TextField
+                      required
+                      id="standard-required"
+                      label="Username"
+                      placeholder="Hello World"
+                      margin="normal"
+                      className={classes.textField + " textfield"}
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <TextField
+                      required
+                      id="standard-password-input"
+                      label="Password"
+                      className={classes.textField + " textfield"}
+                      type="password"
+                      autoComplete="current-password"
+                      margin="small"
+                    />
+                  </FormControl>
+                </FormGroup>
+              </form>
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
+                Login with username
+              </Button>
+              <Divider />
+              <SocialNetworkLogIn classes={classes} />
+            </div>
+          </div>
+        </Grid>
+      </Grid>
     );
   }
 }
@@ -81,14 +118,16 @@ const SocialNetworkLogIn = props => (
       color="primary"
       className={props.classes.button}
     >
-      <FacebookIcon/>Login with facebook
+      <FacebookIcon />
+      Login with facebook
     </Button>
     <Button
       variant="contained"
       color="primary"
       className={props.classes.button}
     >
-      <GoogleIcon/>Login with google
+      <GoogleIcon />
+      Login with google
     </Button>
   </div>
 );
