@@ -3,7 +3,10 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { FormGroup, FormControl } from "@material-ui/core";
-import './User.css';
+import FacebookIcon from 'mdi-react/FacebookIcon';
+import GoogleIcon from "mdi-react/GoogleIcon";
+import "./User.css";
+
 const styles = theme => ({
   container: {
     display: "flex",
@@ -12,17 +15,17 @@ const styles = theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    width: 200,
     display: "block"
   },
   dense: {
     marginTop: 19
   },
   menu: {
-    width: 200
+    width: 250
   },
   button: {
-    margin: theme.spacing.unit
+    margin: theme.spacing.unit,
+    width:250
   }
 });
 
@@ -45,7 +48,7 @@ class User extends Component {
                 label="Username"
                 placeholder="Hello World"
                 margin="normal"
-                className={classes.textField}
+                className={classes.textField+" textfield"}
               />
             </FormControl>
             <FormControl>
@@ -53,7 +56,7 @@ class User extends Component {
                 required
                 id="standard-password-input"
                 label="Password"
-                className={classes.textField}
+                className={classes.textField+" textfield"}
                 type="password"
                 autoComplete="current-password"
                 margin="small"
@@ -65,10 +68,30 @@ class User extends Component {
           Login with username
         </Button>
         <Divider />
+        <SocialNetworkLogIn classes={classes} />
       </div>
     );
   }
 }
+
+const SocialNetworkLogIn = props => (
+  <div className="social-network-login">
+    <Button
+      variant="contained"
+      color="primary"
+      className={props.classes.button}
+    >
+      <FacebookIcon/>Login with facebook
+    </Button>
+    <Button
+      variant="contained"
+      color="primary"
+      className={props.classes.button}
+    >
+      <GoogleIcon/>Login with google
+    </Button>
+  </div>
+);
 
 /*This returns the divider ----OR---- */
 const Divider = props => (
