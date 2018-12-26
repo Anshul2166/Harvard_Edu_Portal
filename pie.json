@@ -1,0 +1,95 @@
+{
+    name: "home-page"
+    children:[
+    {
+        name: "how-to-use-this-website",
+        value: home001
+    },
+    {
+        name: "computer-science",
+        children:
+        [
+        {
+            name: "cs subjects",
+            children:[
+            
+                {name: "intro-to-programming",
+                value: csa01},
+                
+                {name: "intro-to-algorithms",
+                value: csa02},
+                
+                {name: "dsa",
+                value: csa03},
+                
+                {name: "oop",
+                value: csa04},
+
+                {name: "dbms",
+                value: csa05},
+
+                {name: "os",
+                value: csa06}]
+        },
+        {
+            name: "cs subjects problems",
+            children:[
+            
+                {name: "intro-to-programming-practice",
+                value: csb01},
+                
+                {name: "intro-to-algorithms-practice",
+                value: csb02},
+                
+                {name: "dsa-practice",
+                value: csb03},
+                
+                {name: "oop-practice",
+                value: csb04},
+
+                {name: "dbms-practice",
+                value: csb05},
+
+                {name: "os-practice",
+                value: csb06}]
+        },
+        ]
+    },
+
+
+
+
+
+    {
+        name: "electrical-science",
+        value: home001
+    },
+    {
+        name: "mechanical",
+        value: home001
+    },
+    {
+        name: "chemical",
+        value: home001
+    },
+    {
+        name: "finance",
+        value: home001
+    },
+    {
+        name: "general-information-on-what-do-after-engineering",
+        value: 
+    },
+    {
+        name: "nodeB",
+        children:[
+        {
+            name: "leafBA",
+            value: 5
+        },
+        {
+            name: "leafBB",
+            value: 1
+        }]
+    }]
+}
