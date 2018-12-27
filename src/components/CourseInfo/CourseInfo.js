@@ -5,8 +5,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import StarRatings from "react-star-ratings";
 import ListBox from "../Profile/ListBox/ListBox";
 import "./CourseInfo.css";
+import {data} from "./data";
 
-class CourseInfo extends Component {
+class CourseInfo extends Component {  
   render() {
     return (
       <div className="course-info">
@@ -14,8 +15,8 @@ class CourseInfo extends Component {
           <Grid item md={2}>
             <CardMedia
               component="img"
-              alt="Profile Pic"
-              image="/assets/cs50.jpg"
+              alt="Course Pic"
+              image={data.course_image}
               title="Profile Pic"
               className="rectangle-image right-align"
               width="200"
@@ -25,15 +26,14 @@ class CourseInfo extends Component {
           <Grid item md={8} className="vertical-align">
             <h2>
               <b className="heading-form">
-                An introduction to Computer Science
+                {data.course_title}
               </b>
             </h2>
             <p>
-              <i>Offered by coursera</i>
+              <i>Offered by {data.offeredBy}</i>
             </p>
             <StarRatings
-              rating={4.5}
-              // starRatedColor="blue"
+              rating={data.rating}
               changeRating={this.changeRating}
               numberOfStars={5}
               name="rating"
@@ -68,7 +68,7 @@ class CourseInfo extends Component {
           <Grid item xs={12} sm={12} md={10} lg={11}>
             <ListBox
               title="Topics covered in the course"
-              data="React, NodeJs, Python"
+              data={data.topics_covered}
               edit_option={false}
             />
           </Grid>
