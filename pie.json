@@ -53,43 +53,76 @@
                 {name: "os-practice",
                 value: csb06}]
         },
+        {
+            name: "cs-intern-and-placement",
+            children:[
+            
+                {name: "cs-intern-and-placement-topics",
+                value: csc01},
+                
+                {name: "internship-and-job-opportunities",
+                value: csc02},
+                
+            ]
+        }
         ]
     },
-
-
-
-
-
     {
-        name: "electrical-science",
-        value: home001
-    },
-    {
-        name: "mechanical",
-        value: home001
-    },
-    {
-        name: "chemical",
-        value: home001
-    },
-    {
-        name: "finance",
-        value: home001
-    },
-    {
-        name: "general-information-on-what-do-after-engineering",
-        value: 
-    },
-    {
-        name: "nodeB",
-        children:[
+        name: "eee",
+        children:
+        [
         {
-            name: "leafBA",
-            value: 5
+            name: "eee subjects",
+            children:[
+            
+                {name: "intro-to-electrical-sciences",
+                value: eeea01},
+                
+                {name: "solid-state-devices",
+                value: eeea02},
+                
+                {name: "vlsi-design",
+                value: eeea03},
+                
+                {name: "digital-design",
+                value: eeea04},
+
+                {name: "microprocessors",
+                value: eeea05},
+
+                {name: "computer-architechture",
+                value: eeea06},
+
+                {name: "analog-electronics",
+                value: eeea06}]
         },
         {
-            name: "leafBB",
-            value: 1
-        }]
-    }]
+            name: "cs subjects problems",
+            children:[
+            
+                {name: "intro-to-electrical-sciences-practice",
+                value: eeeb01},
+                
+                {name: "electronic-devices-practice",
+                value: eeeb02},
+                
+                {name: "microp-comparch-practice",
+                value: eeeb03}]
+        },
+        {
+            name: "eee-intern-and-placement",
+            children:[
+            
+                {name: "eee-intern-and-placement-topics",
+                value: csc01},
+                
+                {name: "internship-and-job-opportunities",
+                value: csc02},
+                
+            ]
+        }
+        ]
+    }
+
+    ]
 }
