@@ -1,0 +1,128 @@
+{
+    name: "home-page"
+    children:[
+    {
+        name: "how-to-use-this-website",
+        value: home001
+    },
+    {
+        name: "computer-science",
+        children:
+        [
+        {
+            name: "cs subjects",
+            children:[
+            
+                {name: "intro-to-programming",
+                value: csa01},
+                
+                {name: "intro-to-algorithms",
+                value: csa02},
+                
+                {name: "dsa",
+                value: csa03},
+                
+                {name: "oop",
+                value: csa04},
+
+                {name: "dbms",
+                value: csa05},
+
+                {name: "os",
+                value: csa06}]
+        },
+        {
+            name: "cs subjects problems",
+            children:[
+            
+                {name: "intro-to-programming-practice",
+                value: csb01},
+                
+                {name: "intro-to-algorithms-practice",
+                value: csb02},
+                
+                {name: "dsa-practice",
+                value: csb03},
+                
+                {name: "oop-practice",
+                value: csb04},
+
+                {name: "dbms-practice",
+                value: csb05},
+
+                {name: "os-practice",
+                value: csb06}]
+        },
+        {
+            name: "cs-intern-and-placement",
+            children:[
+            
+                {name: "cs-intern-and-placement-topics",
+                value: csc01},
+                
+                {name: "internship-and-job-opportunities",
+                value: csc02},
+                
+            ]
+        }
+        ]
+    },
+    {
+        name: "eee",
+        children:
+        [
+        {
+            name: "eee subjects",
+            children:[
+            
+                {name: "intro-to-electrical-sciences",
+                value: eeea01},
+                
+                {name: "solid-state-devices",
+                value: eeea02},
+                
+                {name: "vlsi-design",
+                value: eeea03},
+                
+                {name: "digital-design",
+                value: eeea04},
+
+                {name: "microprocessors",
+                value: eeea05},
+
+                {name: "computer-architechture",
+                value: eeea06},
+
+                {name: "analog-electronics",
+                value: eeea06}]
+        },
+        {
+            name: "cs subjects problems",
+            children:[
+            
+                {name: "intro-to-electrical-sciences-practice",
+                value: eeeb01},
+                
+                {name: "electronic-devices-practice",
+                value: eeeb02},
+                
+                {name: "microp-comparch-practice",
+                value: eeeb03}]
+        },
+        {
+            name: "eee-intern-and-placement",
+            children:[
+            
+                {name: "eee-intern-and-placement-topics",
+                value: csc01},
+                
+                {name: "internship-and-job-opportunities",
+                value: csc02},
+                
+            ]
+        }
+        ]
+    }
+
+    ]
+}
