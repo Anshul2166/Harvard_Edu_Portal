@@ -9,6 +9,9 @@ import {data} from "./data";
 
 class CourseInfo extends Component {  
   render() {
+    const Overview=data.overview.map((paragraph)=>
+        <p>{paragraph}</p>
+    );
     return (
       <div className="course-info">
         <Grid container spacing={24} className="top-row-course-info">
@@ -43,7 +46,7 @@ class CourseInfo extends Component {
           </Grid>
         </Grid>
         <h1>Overview</h1>
-        <p>
+        {/* <p>
           CS50 is a true, comprehensive introduction to computer science. The
           course is taught by the vivacious David Malan and hosted on edX. There
           are 13 weeks of instruction with 8 mandatory problem sets (psets) and
@@ -60,7 +63,8 @@ class CourseInfo extends Component {
           The 10–20 hours for each problem set is accurate. Your code won’t work
           and you will get frustrated (especially because half of the course is
           in C), but frustration is good. Frustration conquered is learning.
-        </p>
+        </p> */}
+        {Overview}
         <h1>Screenshots</h1>
         <img src="/assets/cs501.png" className="screenshots" />
         <img src="/assets/cs502.png" className="screenshots" />
