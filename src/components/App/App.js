@@ -6,6 +6,7 @@ import Profile from '../Profile/profile';
 import Forum from '../Forum/Forum';
 import User from '../User/User';
 import CourseGraph from '../Graph/Graph';
+import CourseInfo from "../CourseInfo/CourseInfo";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/forum" component={Forum} />
           <Route path="/user" component={User} />
           <Route path="/graph" component={CourseGraph} />
+          <Route path="/course_info" component={CourseInfo} />
 				</Switch>
       </div>
     );

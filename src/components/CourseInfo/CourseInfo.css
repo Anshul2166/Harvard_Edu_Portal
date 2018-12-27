@@ -1,0 +1,17 @@
+.right-align {
+  margin-left: auto;
+}
+.left-align {
+  text-align: left;
+}
+.vertical-align {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+.rectangle-image {
+  width: 250px;
+  height: 250px;
+}
+.course-info {
+  margin: 2.5%;
+}

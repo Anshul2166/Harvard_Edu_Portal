@@ -35,3 +35,8 @@ code {
 .graph {
   margin-top: 5%;
 }
+
+.vertical-align {
+  margin-top: auto;
+  margin-bottom: auto;
+}
