@@ -10,7 +10,8 @@ class Graph extends Component {
   }
   render() {
     return (
-      <div style={{ height: "1200px",margin:"2.5%" }}>
+      <div style={{ height: "1200px",margin:"2%",padding:"3%" }}>
+      <h1 className="center-text">Furture course path tree</h1>
         <Tree
           data={data}
           height={1700}
