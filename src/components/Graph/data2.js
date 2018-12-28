@@ -1,98 +1,131 @@
-export const data= {
-    "name": "home-page",
-    "color":1,
-    "children": [
-      {
-        "name": "how-to-use-this-website"
-      },
-      {
-        "name": "computer-science",
-        "children": [
-          {
-            "name": "cs subjects",
-            "children": [
-              { "name": "intro-to-programming", size: "1000" },
+export const data = {
+  name: "home-page",
+  color: "hsl(14, 70%, 50%)",
+  children: [
+    {
+      name: "computer-science",
+      color: "hsl(235, 70%, 50%)",
+      children: [
+        {
+          name: "cs subjects",
+          color: "hsl(52, 1 0%, 50%)",
+          children: [
+            { name: "intro-to-programming", color: "hsl(8, 70%, 50%)",loc: 144884 },
 
-              { "name": "intro-to-algorithms", size: "1000" },
+            { name: "intro-to-algorithms", color: "hsl(24, 70%, 50%)",loc: 199568 },
 
-              { "name": "dsa", size: "1000" },
+            { name: "dsa", color: "hsl(73, 70%, 50%)",loc: 96394 },
 
-              { "name": "oop", size: "1000" },
+            { name: "oop", color: "hsl(38, 70%, 50%)",loc: 59102},
 
-              { "name": "dbms", size: "1000" },
+            { name: "dbms", color: "hsl(11, 70%, 50%)",loc: 21263 },
 
-              { "name": "os", size: "1000" }
-            ]
-          },
-          {
-            "name": "cs subjects problems",
-            "children": [
-              { "name": "intro-to-programming-practice", size: "1000" },
+            { name: "os", color: "hsl(65, 70%, 50%)",loc: 184884 }
+          ]
+        },
+        {
+          name: "cs subjects problems",
+          color: "hsl(116, 70%, 50%)",
+          children: [
+            {
+              name: "intro-to-programming-practice",
+              color: "hsl(149, 70%, 50%)",
+              loc: 170670
+            },
 
-              { "name": "intro-to-algorithms-practice", size: "1000" },
+            {
+              name: "intro-to-algorithms-practice",
+              color: "hsl(298, 70%, 50%)",
+              loc: 48271
+            },
 
-              { "name": "dsa-practice", size: "1000" },
+            { name: "dsa-practice", color: "hsl(195, 70%, 50%)",loc: 155685 },
 
-              { "name": "oop-practice", size: "1000" },
+            { name: "oop-practice", color: "hsl(68, 70%, 50%)",loc: 62590 },
 
-              { "name": "dbms-practice", size: "1000" },
+            { name: "dbms-practice", color: "hsl(154, 70%, 50%)",loc: 12784 },
 
-              { "name": "os-practice", size: "1000" }
-            ]
-          },
-          {
-            "name": "cs-intern-and-placement",
-            "children": [
-              { "name": "cs-intern-and-placement-topics", size: "1000" },
+            { name: "os-practice", color: "hsl(100, 70%, 50%)",loc: 151142 }
+          ]
+        },
+        {
+          name: "cs-intern-and-placement",
+          children: [
+            {
+              name: "cs-intern-and-placement-topics",
+              color: "hsl(131, 70%, 50%)"
+            },
 
-              { "name": "internship-and-job-opportunities", size: "1000" }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "eee",
-        "children": [
-          {
-            "name": "eee subjects",
-            "children": [
-              { "name": "intro-to-electrical-sciences", size: "1000" },
+            {
+              name: "internship-and-job-opportunities",
+              color: "hsl(233, 70%, 50%)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "eee",
+      children: [
+        {
+          name: "eee subjects",
+          children: [
+            {
+              name: "intro-to-electrical-sciences",
+              color: "hsl(21, 70%, 50%)",
+              loc: 181460
+            },
 
-              { "name": "solid-state-devices", size: "1000" },
+            { name: "solid-state-devices", color: "hsl(102, 70%, 50%)",loc: 179171 },
 
-              { "name": "vlsi-design", size: "1000" },
+            { name: "vlsi-design", color: "hsl(62, 70%, 50%)",loc: 126894 },
 
-              { "name": "digital-design", size: "1000" },
+            { name: "digital-design", color: "hsl(140, 70%, 50%)",loc: 24561 },
 
-              { "name": "microprocessors", size: "1000" },
+            { name: "microprocessors", color: "hsl(252, 70%, 50%)",loc: 32034 },
 
-              { "name": "computer-architechture", size: "1000" },
+            { name: "computer-architechture", color: "hsl(80, 70%, 50%)",loc: 166672 },
 
-              { "name": "analog-electronics", size: "1000" }
-            ]
-          },
-          {
-            "name": "cs subjects problems",
-            "children": [
-              {
-                "name": "intro-to-electrical-sciences-practice",
-                size: "1000"
-              },
+            { name: "analog-electronics", color: "hsl(200, 70%, 50%)",loc: 186653 }
+          ]
+        },
+        {
+          name: "eee subjects problems",
+          children: [
+            {
+              name: "intro-to-electrical-sciences-practice",
+              loc: 87776,
+              color: "hsl(32, 70%, 50%)"
+            },
 
-              { "name": "electronic-devices-practice", size: "1000" },
+            {
+              name: "electronic-devices-practice",
+              color: "hsl(162, 70%, 50%)",
+              loc: 139741
+            },
 
-              { "name": "microp-comparch-practice", size: "1000" }
-            ]
-          },
-          {
-            "name": "eee-intern-and-placement",
-            "children": [
-              { "name": "eee-intern-and-placement-topics", size: "1000" },
+            { name: "microp-comparch-practice", color: "hsl(110, 70%, 50%)",loc: 100609 }
+          ]
+        },
+        {
+          name: "eee-intern-and-placement",
+          children: [
+            {
+              name: "eee-intern-and-placement-topics",
+              color: "hsl(202, 70%, 50%)",
+              loc: 94330,
+              label:"eee placement"
+            },
 
-              { "name": "internship-and-job-opportunities", size: "1000" }
-            ]
-          }
-        ]
-      }
-    ]
-  };
+            {
+              name: "internship-and-job-opportunities",
+              color: "hsl(45, 70%, 50%)",
+              loc: 137170,
+
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};

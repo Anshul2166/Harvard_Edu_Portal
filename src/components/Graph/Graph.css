@@ -1,0 +1,30 @@
+div.custom-container {
+  background-color: #242424;
+}
+
+svg.custom .node circle {
+  fill: #f3f3ff;
+  stroke: #2593b8;
+  stroke-width: 1.5px;
+}
+
+svg.custom .node text {
+  font-size: 20px;
+  background-color: black;
+  fill: black;
+  width: 50px;
+}
+
+svg.custom .node {
+  cursor: pointer;
+  width: 50px;
+}
+
+svg.custom path.link {
+  fill: none;
+  stroke: #2593b8;
+  stroke-width: 1.5px;
+}
+svg {
+  width: 2500px;
+}
