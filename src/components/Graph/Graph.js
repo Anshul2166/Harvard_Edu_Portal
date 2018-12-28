@@ -13,12 +13,14 @@ class Graph extends Component {
       <div style={{ height: "1200px",margin:"2.5%" }}>
         <Tree
           data={data}
-          height={1200}
-          width={1450}
+          height={1700}
+          width={1550}
           animated={true}
           svgProps={{
             className: "custom"
           }}
+          nodeOffset={15}
+          nodeRadius={20}
           textProps={{
             x:"5"
           }}
