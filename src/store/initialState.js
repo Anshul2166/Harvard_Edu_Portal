@@ -19,7 +19,8 @@ const initialState = {
               fullName: "Himanshu",
               text: "Another random comment done here"
             }
-          ]
+          ],
+          votes:26
         }
       ]
    }

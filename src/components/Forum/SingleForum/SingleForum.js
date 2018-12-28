@@ -86,7 +86,7 @@ class SingleForum extends Component {
               {this.props.thread.mainMessage}
             </Typography>
             <p className={classes.forumFooter}>
-              26 votes, 12 replies
+              {this.props.thread.votes} votes, {this.props.thread.comments.length} replies
               <IconButton
                 aria-label="Show more"
                 onClick={this.handleExpandClick}
