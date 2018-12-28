@@ -5,8 +5,12 @@ import "react-tree-graph/dist/style.css";
 import "./Graph.css";
 
 class Graph extends Component {
-  onSelect(event) {
-    console.log(event);
+  constructor(props){
+    super(props);
+    this.clickEvent=this.clickEvent.bind(this);
+  }
+  clickEvent(node){
+    console.log(node);
   }
   render() {
     return (
@@ -19,14 +23,14 @@ class Graph extends Component {
           duration={1000}
           steps={40}
           animated={true}
-          gProps={{ className: 'node',onClick: node =>console.log(node) }}
+          gProps={{ className: 'node',onClick: node =>this.clickEvent(node) }}
           svgProps={{
             className: "custom",
           }}
           nodeOffset={15}
           nodeRadius={20}
           textProps={{
-            x: "5",
+            x: "5"
           }}
         />
       </div>
