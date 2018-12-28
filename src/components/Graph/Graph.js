@@ -1,146 +1,138 @@
-import { Graph } from "react-d3-graph";
 import React, { Component } from "react";
-
-const decorateGraphNodesWithInitialPositioning = nodes =>
-  nodes.map(n =>
-    Object.assign({}, n, {
-      x: n.x || Math.floor(Math.random() * 1100),
-      y: n.y || Math.floor(Math.random() * 1100)
-    })
-  );
-let nodes = [
-  { id: "home-page" },
-  //home page contents
-  { id: "how-to-use-this-website" },
-  { id: "computer-science" },
-  { id: "electrical-science" },
-  { id: "mechanical" },
-  { id: "chemical" },
-  { id: "finance" },
-  { id: "general-information-on-what-do-after-engineering" }, //home page content ends
-  // 1 cs subjects start
-  { id: "intro-to-algorithms" },
-  { id: "intro-to-algorithms" },
-  { id: "dsa" },
-  { id: "oop" },
-  { id: "dbms" },
-  { id: "os" }, // cs sujects end
-  // cs problem practice start
-  { id: "intro-to-programming-practice" },
-  { id: "oop-problem-practice" },
-  { id: "dsa-problem-practice" },
-  { id: "dbms-problem-practice" },
-  { id: "os-problem-practice" }, //cs problem bank ends
-  //not including discussion forms and starting placement and internship section
-  { id: "cs-intern-and-placement-preparation-topics" },
-  { id: "internship-and-job-opportunities" }, //entire computer science section completed
-  // 2 eee subjects start
-  { id: "intro-to-electrical-sciences" },
-  { id: "solid-state-devices" },
-  { id: "vlsi-design" },
-  { id: "digital-design" },
-  { id: "microprocessors" },
-  { id: "computer-architechture" },
-  { id: "analog-electronics" }, // eee sujects end
-  // eee problem practice start
-  { id: "intro-to-programming-practice" },
-  { id: "electronic-devices-practice" },
-  { id: "microp-comparch-practice" }, //eee problem bank ends
-  //not including discussion forms and starting placement and internship section
-  { id: "eee-intern-and-placement-preparation-topics" },
-  { id: "internship-and-job-opportunities" }
-];
-let data = {
-  nodes: decorateGraphNodesWithInitialPositioning(nodes),
-  links: [
-    { source: "home-page", target: "how-to-use-this-website" },
-    { source: "home-page", target: "computer-science" },
-    { source: "home-page", target: "electrical-science" },
-    { source: "home-page", target: "mechanical" },
-    { source: "home-page", target: "chemical" },
-    { source: "home-page", target: "finance" },
-    {
-      source: "home-page",
-      target: "general-information-on-what-do-after-engineering"
-    },
-    { source: "computer-science", target: "intro-to-algorithms" },
-    { source: "computer-science", target: "intro-to-algorithms" },
-    { source: "computer-science", target: "dsa" },
-    { source: "computer-science", target: "oop" },
-    { source: "computer-science", target: "dbms" },
-    { source: "computer-science", target: "os" },
-    {
-      source: "computer-science",
-      target: "intro-to-programming-practice"
-    },
-    { source: "computer-science", target: "oop-problem-practice" },
-    { source: "computer-science", target: "dsa-problem-practice" },
-    { source: "computer-science", target: "dbms-problem-practice" },
-    { source: "computer-science", target: "os-problem-practice" },
-    {
-      source: "computer-science",
-      target: "cs-intern-and-placement-preparation-topics"
-    },
-    {
-      source: "computer-science",
-      target: "internship-and-job-opportunities"
-    },
-    { source: "electrical-science", target: "intro-to-electrical-sciences" },
-    { source: "electrical-science", target: "solid-state-devices" },
-    { source: "electrical-science", target: "vlsi-design" },
-    { source: "electrical-science", target: "digital-design" },
-    { source: "electrical-science", target: "microprocessors" },
-    { source: "electrical-science", target: "computer-architechture" },
-    { source: "electrical-science", target: "analog-electronics" },
-    { source: "electrical-science", target: "intro-to-programming-practice" },
-    { source: "electrical-science", target: "electronic-devices-practice" },
-    { source: "electrical-science", target: "microp-comparch-practice" },
-    {
-      source: "electrical-science",
-      target: "eee-intern-and-placement-preparation-topics"
-    },
-    { source: "electrical-science", target: "internship-and-job-opportunities" }
-  ]
-};
-
-class CourseGraph extends Component {
+import { ResponsiveSunburst } from "@nivo/sunburst";
+import { data } from "./data.js";
+class Graph extends Component {
+  onSelect(event) {
+    console.log(event);
+  }
   render() {
-    const myConfig = {
-      nodeHighlightBehavior: true,
-      node: {
-        color: "lightgreen",
-        size: "1000",
-        highlightStrokeColor: "blue",
-        fontSize: "50px",
-        fontWeight: "1000"
-      },
-      d3: {
-        alphaTarget: 0.1,
-        linkLength: 600,
-        gravity: -2000
-      },
-      link: {
-        highlightColor: "lightblue",
-        strokeWidth: 5
-      },
-      directed: true,
-      automaticRearrangeAfterDropNode: false,
-      collapsible: true,
-      height: window.innerHeight,
-      width: window.innerWidth,
-      staticGraph: true
-    };
+    let pie = {
+      title: "home-page",
+      color: 1,
+      children: [
+        {
+          title: "how-to-use-this-website",
+          color: 2
+        },
+        {
+          title: "computer-science",
+          children: [
+            {
+              title: "cs subjects",
+              children: [
+                {
+                  title: "intro-to-programming",
+                  size: "1000",
+                  color: "#5287AC"
+                },
 
+                { title: "dsa", size: "1000", color: "#5287AC" },
+
+                { title: "oop", size: "1000", color: "#5287AC" },
+
+                { title: "dbms", size: "1000", color: "#5287AC" },
+
+                { title: "os", size: "1000", color: "#5287AC" }
+              ]
+            },
+            {
+              title: "cs subjects problems",
+              children: [
+                { title: "intro-to-programming-practice", size: "1000" },
+
+                { title: "intro-to-algorithms-practice", size: "1000" },
+
+                { title: "dsa-practice", size: "1000" },
+
+                { title: "oop-practice", size: "1000" },
+
+                { title: "dbms-practice", size: "1000" },
+
+                { title: "os-practice", size: "1000" }
+              ]
+            },
+            {
+              title: "cs-intern-and-placement",
+              children: [
+                { title: "cs-intern-and-placement-topics", size: "1000" },
+
+                { title: "internship-and-job-opportunities", size: "1000" }
+              ]
+            }
+          ]
+        },
+        {
+          title: "eee",
+          children: [
+            {
+              title: "eee subjects",
+              children: [
+                { title: "intro-to-electrical-sciences", size: "1000" },
+
+                { title: "solid-state-devices", size: "1000" },
+
+                { title: "vlsi-design", size: "1000" },
+
+                { title: "digital-design", size: "1000" },
+
+                { title: "microprocessors", size: "1000" },
+
+                { title: "computer-architechture", size: "1000" },
+
+                { title: "analog-electronics", size: "1000" }
+              ]
+            },
+            {
+              title: "cs subjects problems",
+              children: [
+                {
+                  title: "intro-to-electrical-sciences-practice",
+                  size: "1000"
+                },
+
+                { title: "electronic-devices-practice", size: "1000" },
+
+                { title: "microp-comparch-practice", size: "1000" }
+              ]
+            },
+            {
+              title: "eee-intern-and-placement",
+              children: [
+                { title: "eee-intern-and-placement-topics", size: "1000" },
+
+                { title: "internship-and-job-opportunities", size: "1000" }
+              ]
+            }
+          ]
+        }
+      ]
+    };
     return (
-      <div className="graph">
-        <Graph
-          id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
+      <div style={{height:"700px"}}>
+        <ResponsiveSunburst
           data={data}
-          config={myConfig}
+          margin={{
+            top: 40,
+            right: 20,
+            bottom: 20,
+            left: 20
+          }}
+          identity="name"
+          value="loc"
+          cornerRadius={2}
+          borderWidth={1}
+          borderColor="white"
+          colors="nivo"
+          colorBy="id"
+          childColor="inherit"
+          animate={true}
+          motionStiffness={90}
+          motionDamping={15}
+          isInteractive={true}
         />
       </div>
     );
   }
 }
 
-export default CourseGraph;
+export default Graph;

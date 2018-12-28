@@ -3,7 +3,7 @@
     children:[
     {
         name: "how-to-use-this-website",
-        value: home001
+        value: "home001"
     },
     {
         name: "computer-science",
@@ -14,54 +14,54 @@
             children:[
             
                 {name: "intro-to-programming",
-                value: csa01},
+                value: "csa01"},
                 
                 {name: "intro-to-algorithms",
-                value: csa02},
+                value: "csa02"},
                 
                 {name: "dsa",
-                value: csa03},
+                value: "csa03"},
                 
                 {name: "oop",
-                value: csa04},
+                value: "csa04"},
 
                 {name: "dbms",
-                value: csa05},
+                value: "csa05"},
 
                 {name: "os",
-                value: csa06}]
+                value: "csa06"}]
         },
         {
             name: "cs subjects problems",
             children:[
             
                 {name: "intro-to-programming-practice",
-                value: csb01},
+                value: "csb01"},
                 
                 {name: "intro-to-algorithms-practice",
-                value: csb02},
+                value: "csb02"},
                 
                 {name: "dsa-practice",
-                value: csb03},
+                value: "csb03"},
                 
                 {name: "oop-practice",
-                value: csb04},
+                value: "csb04"},
 
                 {name: "dbms-practice",
-                value: csb05},
+                value: "csb05"},
 
                 {name: "os-practice",
-                value: csb06}]
+                value: "csb06"}]
         },
         {
             name: "cs-intern-and-placement",
             children:[
             
                 {name: "cs-intern-and-placement-topics",
-                value: csc01},
+                value: "csc01"},
                 
                 {name: "internship-and-job-opportunities",
-                value: csc02},
+                value: "csc02"},
                 
             ]
         }
@@ -76,48 +76,48 @@
             children:[
             
                 {name: "intro-to-electrical-sciences",
-                value: eeea01},
+                value: "eeea01"},
                 
                 {name: "solid-state-devices",
-                value: eeea02},
+                value: "eeea02"},
                 
                 {name: "vlsi-design",
-                value: eeea03},
+                value: "eeea03"},
                 
                 {name: "digital-design",
-                value: eeea04},
+                value: "eeea04"},
 
                 {name: "microprocessors",
-                value: eeea05},
+                value: "eeea05"},
 
                 {name: "computer-architechture",
-                value: eeea06},
+                value: "eeea06"},
 
                 {name: "analog-electronics",
-                value: eeea06}]
+                value: "eeea06"}]
         },
         {
             name: "cs subjects problems",
             children:[
             
                 {name: "intro-to-electrical-sciences-practice",
-                value: eeeb01},
+                value: "eeeb01"},
                 
                 {name: "electronic-devices-practice",
-                value: eeeb02},
+                value: "eeeb02"},
                 
                 {name: "microp-comparch-practice",
-                value: eeeb03}]
+                value: "eeeb03"}]
         },
         {
             name: "eee-intern-and-placement",
             children:[
             
                 {name: "eee-intern-and-placement-topics",
-                value: csc01},
+                value: "csc01"},
                 
                 {name: "internship-and-job-opportunities",
-                value: csc02},
+                value: "csc02"}
                 
             ]
         }
