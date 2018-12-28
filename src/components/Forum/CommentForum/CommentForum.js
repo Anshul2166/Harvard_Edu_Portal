@@ -1,26 +1,11 @@
 import React, { Component } from "react";
 import CommentsBlock from "simple-react-comments";
 
-const commentsData = [{
-    authorUrl: "#",
-    avatarUrl: "#avatarUrl",
-    createdAt: new Date(),
-    fullName: "Anshul",
-    text: "Some random comment here done by me"
-},
-{
-    authorUrl: "#",
-    avatarUrl: "#avatarUrl",
-    createdAt: new Date(),
-    fullName: "Himanshu",
-    text: "Another random comment done here"
-}];
-
 class CommentForum extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      comments: commentsData
+      comments: this.props.commentsData
     };
   }
   render() {

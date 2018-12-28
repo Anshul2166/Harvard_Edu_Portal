@@ -12,6 +12,8 @@ import red from "@material-ui/core/colors/red";
 import CommentForum from "../CommentForum/CommentForum";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 const styles = theme => ({
   header: {
@@ -51,6 +53,7 @@ class SingleForum extends Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   render() {
+    console.log(this.props);
     const { classes } = this.props;
     return (
       <div className="single-forum">
@@ -68,7 +71,6 @@ class SingleForum extends Component {
             }}
             action={
               <div>
-                {/* <span className={classes.votes}>+28</span> */}
                 <IconButton aria-label="Delete" className={classes.margin}>
                   <ArrowUpward fontSize="large" />
                 </IconButton>
@@ -81,13 +83,7 @@ class SingleForum extends Component {
           />
           <CardContent>
             <Typography variant="p" component="p">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {this.props.forum[0].mainMessage}
             </Typography>
             <p className={classes.forumFooter}>
               26 votes, 12 replies
@@ -102,7 +98,7 @@ class SingleForum extends Component {
           </CardContent>
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <div className="comment-forum" style={{ marginLeft: "2.5%", marginBottom: "0.5%" }}>
-              <CommentForum />
+              <CommentForum commentsData={this.props.forum[0].comments}/>
             </div>
           </Collapse>
         </Card>
@@ -111,4 +107,15 @@ class SingleForum extends Component {
   }
 }
 
-export default withStyles(styles)(SingleForum);
+const mapStateToProps = state => {
+	return {
+		forum: state.forums.threads
+	};
+};
+// const mapActionsToProps = dispatch => {
+//   return {
+//     myActivity: bindActionCreators(myActivityActions, dispatch)
+//   };
+// };
+
+export default connect(mapStateToProps)(withStyles(styles)(SingleForum));
