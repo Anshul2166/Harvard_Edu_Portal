@@ -10,23 +10,25 @@ class Graph extends Component {
   }
   render() {
     return (
-      <div style={{ height: "1200px",margin:"2%",padding:"3%" }}>
-      <h1 className="center-text">Furture course path tree</h1>
+      <div style={{ height: "1200px", margin: "2%", padding: "3%" }}>
+        <h1 className="center-text">Furture course path tree</h1>
         <Tree
           data={data}
           height={1700}
           width={1550}
+          duration={1000}
+          steps={40}
           animated={true}
+          gProps={{ className: 'node',onClick: node =>console.log(node) }}
           svgProps={{
-            className: "custom"
+            className: "custom",
           }}
           nodeOffset={15}
           nodeRadius={20}
           textProps={{
-            x:"5"
+            x: "5",
           }}
-        >
-        </Tree>
+        />
       </div>
     );
   }
