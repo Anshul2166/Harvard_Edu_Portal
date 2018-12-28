@@ -32,6 +32,7 @@ class Graph extends Component {
           textProps={{
             x: "5"
           }}
+          keyProp="id"
         />
       </div>
     );
