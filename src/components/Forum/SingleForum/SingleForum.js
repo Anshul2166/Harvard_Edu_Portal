@@ -83,7 +83,7 @@ class SingleForum extends Component {
           />
           <CardContent>
             <Typography variant="p" component="p">
-              {this.props.forum[0].mainMessage}
+              {this.props.thread.mainMessage}
             </Typography>
             <p className={classes.forumFooter}>
               26 votes, 12 replies
@@ -98,7 +98,7 @@ class SingleForum extends Component {
           </CardContent>
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <div className="comment-forum" style={{ marginLeft: "2.5%", marginBottom: "0.5%" }}>
-              <CommentForum commentsData={this.props.forum[0].comments}/>
+              <CommentForum commentsData={this.props.thread.comments}/>
             </div>
           </Collapse>
         </Card>

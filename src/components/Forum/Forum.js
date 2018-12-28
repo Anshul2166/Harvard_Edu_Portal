@@ -1,9 +1,13 @@
 import React,{Component} from "react";
 import './forum.css';
 import SingleForum from "./SingleForum/SingleForum";
+import { connect } from "react-redux";
 
 class Forum extends Component{
     render(){
+        const forums=this.props.forum.map((thread,index)=>
+            <SingleForum thread={thread} key={index}/>
+        );
         return(
             <div className="forum">
                 <div className="forum-title">
@@ -12,7 +16,7 @@ class Forum extends Component{
                         <p className="sub-title-forum">Get the best of opinions from the best of minds</p>
                     </div>
                     <div className="main-content">
-                        <SingleForum />
+                        {forums}
                     </div>
                 </div>
             </div>
@@ -20,4 +24,10 @@ class Forum extends Component{
     }
 }
 
-export default Forum;
+const mapStateToProps = state => {
+	return {
+		forum: state.forums.threads
+	};
+};
+
+export default connect(mapStateToProps)(Forum);
