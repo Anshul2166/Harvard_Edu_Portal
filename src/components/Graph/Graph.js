@@ -20,7 +20,7 @@ class Graph extends Component {
     }
     else{
       console.log("course");
-      this.props.history.push(`/course_info/${index}`);
+      this.props.history.push({pathname:'/course_info',state: { index: index }});
     }
   }
   render() {

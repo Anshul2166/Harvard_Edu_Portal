@@ -24,7 +24,7 @@ const initialState = {
       }
     ]
   },
-  info: [
+  courses:{info: [
     {
       id: "cs101",
       course_image: "/assets/cs50.jpg",
@@ -148,7 +148,7 @@ const initialState = {
       screenshots: ["/assets/cs505.png", "/assets/cs505.png"],
       topics_covered: ["Java"]
     }
-  ]
+  ]}
 };
 
 export default initialState;

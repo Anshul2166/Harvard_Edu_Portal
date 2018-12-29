@@ -1,18 +1,21 @@
 import React, { Component } from "react";
-import {connect} from "redux";
+import {connect} from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import StarRatings from "react-star-ratings";
 import ListBox from "../Profile/ListBox/ListBox";
 import "./CourseInfo.css";
-import { data } from "./data";
 
 class CourseInfo extends Component {
   render() {
+    let index=this.props.location.state.index;
+    console.log(this.props);
+    let data=this.props.info[index-1];
     const Overview = data.overview.map(paragraph => <p>{paragraph}</p>);
     const Screenshots = data.screenshots.map(screenshot => (
       <img src={screenshot} className="screenshots" alt="screenshot"/>
     ));
+
     return (
       <div className="course-info">
         <Grid container spacing={24} className="top-row-course-info">
@@ -64,7 +67,7 @@ class CourseInfo extends Component {
 
 const mapStateToProps = state => {
   return {
-    forum: state.courses.info
+    info: state.courses.info
   };
 };
 
