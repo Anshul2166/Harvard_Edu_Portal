@@ -15,14 +15,12 @@ const forumReducer = (state = {}, action) => {
       };
     case ACTIONS.ADD_COMMENT:
       let index = 0;
-      return [
-        ...state.slice(0, index), // everything before current post
-        {
-          ...state[index],
-          comments: state[index].concat(action.payload)
-        },
-        ...state.slice(index + 1) // everything after current post
-      ];
+      return {
+		...state,
+		threads:[{
+			...state.threads,comments:state.threads[index].comments.concat(action.payload)
+		}]
+	}
     default:
       return state;
   }
