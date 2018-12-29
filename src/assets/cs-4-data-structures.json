@@ -5,7 +5,42 @@ export const data={
     rating:4.5,
     overview:[" An algorithm is an outline of the steps that a program or any computational procedure has to take. A program on the other hand is an implementation of an algorithm and it could be in any programming language. Data structure is the way we need to organize the data, so that it can be used effectively by the program"],
     screenshots:['/assets/cs504.png','/assets/cs504.png'],
-    topics_covered:[""]
+    topics_covered:["Data Structures And Algorithms,
+                    Introduction to Data Structures and Algorithms
+                    Stacks
+                    Queues and Linked Lists
+                    Dictionaries
+                    Hashing
+                    Trees
+                    Tree Walks / Traversals
+                    Ordered Dictionaries
+                    Deletion
+                    Quick Sort
+                    AVL Trees
+                    Trees
+                    Red Black Trees
+                    Insertion in Red Black Trees
+                    Disk Based Data Structures
+                    Case Study: Searching for Patterns
+                    Tries
+                    Data Compression
+                    Priority Queues
+                    Binary Heaps
+                    Why Sorting
+                    More Sorting
+                    Graphs
+                    Data Structures for Graphs
+                    Two Applications of Breadth First Search
+                    Depth First Search
+                    Applications of DFS
+                    DFS in Directed Graphs
+                    Applications of DFS in Directed Graphs
+                    Minimum Spanning Trees
+                    The Union
+                    Prims Algorithm for Minimum Spanning Trees
+                    Single Source Shortest Paths
+                    Correctness of Dijkstras Algorithm
+                    Single Source Shortest Paths"]
 };
 
 // overview contains paragrpahs in arrays like ["para1","para2","para3"]
