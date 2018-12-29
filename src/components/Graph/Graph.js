@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Tree from "react-tree-graph";
 import { data } from "./data.js";
 import "react-tree-graph/dist/style.css";
+import {courses} from "./courses";
 import "./Graph.css";
 
 class Graph extends Component {
@@ -11,11 +12,17 @@ class Graph extends Component {
   }
   clickEvent(node){
     console.log(node);
+    if(courses[node]==undefined){
+       console.log("Not a course");
+    }
+    else{
+      console.log("course");
+    }
   }
   render() {
     return (
       <div style={{ height: "1200px", margin: "2%", padding: "3%" }}>
-        <h1 className="center-text">Furture course path tree</h1>
+        <h1 className="center-text">Future course path tree</h1>
         <Tree
           data={data}
           height={1700}
