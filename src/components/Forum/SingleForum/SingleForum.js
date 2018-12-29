@@ -53,7 +53,6 @@ class SingleForum extends Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   render() {
-    console.log(this.props);
     const { classes } = this.props;
     return (
       <div className="single-forum">
