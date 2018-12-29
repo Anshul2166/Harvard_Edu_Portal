@@ -11,8 +11,8 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
 
   return {
     top: `${top}%`,
@@ -42,9 +42,16 @@ const styles = theme => ({
 
 class SimpleModal extends React.Component {
   state = {
-    open: false
+    open: false,
+    email: "",
+    threadMessage: ""
   };
-
+  handleEmailChange=(e)=> {
+    this.setState({ email: e.target.value });
+  }
+  handleThreadMessageChange=(e)=> {
+    this.setState({ threadMessage: e.target.value });
+  }
   handleOpen = () => {
     this.setState({ open: true });
   };
@@ -52,7 +59,11 @@ class SimpleModal extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
-
+  onSubmitFormThread=(event)=>{
+    event.preventDefault();
+    this.props.addNewThread(this.state);
+    return false;
+  }
   render() {
     const { classes } = this.props;
 
@@ -72,7 +83,7 @@ class SimpleModal extends React.Component {
               Add new thread
             </Typography>
             <Typography variant="subtitle1" id="simple-modal-description">
-              <Form>
+              <Form onSubmit={this.onSubmitFormThread}>
                 <FormGroup>
                   <Label for="exampleEmail">Email</Label>
                   <Input
@@ -80,13 +91,23 @@ class SimpleModal extends React.Component {
                     name="email"
                     id="exampleEmail"
                     placeholder="youremail@mail.com"
+                    value={this.state.email}
+                    onChange={this.handleEmailChange}
                   />
                 </FormGroup>
                 <FormGroup>
                   <Label for="exampleText">Text Area</Label>
-                  <Input type="textarea" name="text" id="exampleText" />
+                  <Input
+                    type="textarea"
+                    name="text"
+                    id="exampleText"
+                    value={this.state.threadMessage}
+                    onChange={this.handleThreadMessageChange}
+                  />
                 </FormGroup>
-                <Button>Submit</Button>
+                <Button>
+                  Submit
+                </Button>
               </Form>
             </Typography>
           </div>
