@@ -3,7 +3,9 @@ import Tree from "react-tree-graph";
 import { data } from "./data.js";
 import "react-tree-graph/dist/style.css";
 import {courses} from "./courses";
+import {Redirect} from "react-router-dom";
 import "./Graph.css";
+import {withRouter} from 'react-router-dom';
 
 class Graph extends Component {
   constructor(props){
@@ -12,11 +14,13 @@ class Graph extends Component {
   }
   clickEvent(node){
     console.log(node);
-    if(courses[node]==undefined){
+    let index=courses[node];
+    if(index===undefined){
        console.log("Not a course");
     }
     else{
       console.log("course");
+      this.props.history.push(`/course_info/${index}`);
     }
   }
   render() {
@@ -46,4 +50,4 @@ class Graph extends Component {
   }
 }
 
-export default Graph;
+export default withRouter(Graph);
