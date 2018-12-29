@@ -78,3 +78,9 @@ li svg {
 .heading-form {
   color: darkslategray;
 }
+.user svg {
+  width: auto;
+}
+.hr-line {
+  margin: 5%;
+}

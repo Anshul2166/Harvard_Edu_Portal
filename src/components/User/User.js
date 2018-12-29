@@ -41,16 +41,9 @@ class User extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container spacing={24}>
+      <Grid container spacing={24} className="user">
         <Grid item md={1} />
         <Grid item md={5} className="vertical-center">
-          <Typography
-            variant="headline"
-            component="h1"
-            className="form-center center-text"
-          >
-            Welcome to learnIt
-          </Typography>
           <Typography
             variant="subheading"
             component="p"
@@ -69,6 +62,14 @@ class User extends Component {
               <li>
                 <CheckIcon />
                 Get to know opinions of others on your area of interest
+              </li>
+              <li>
+                <CheckIcon />
+                Get information on best resources available out there to optimize your learning
+              </li>
+              <li>
+                <CheckIcon />
+                Learn smart by devoting time on learning skills which are important
               </li>
             </ul>
           </Typography>
