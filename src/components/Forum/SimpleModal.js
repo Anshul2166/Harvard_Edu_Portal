@@ -79,7 +79,7 @@ class SimpleModal extends React.Component {
                     type="email"
                     name="email"
                     id="exampleEmail"
-                    placeholder="with a placeholder"
+                    placeholder="youremail@mail.com"
                   />
                 </FormGroup>
                 <FormGroup>
