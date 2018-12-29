@@ -2,7 +2,7 @@ export const data={
     course_image:"/assets/cs54.jpg",
     course_title:"data-structures",
     offeredBy:"youtube- nptel - courseware",
-    rating:4.5,
+    url : https://www.youtube.com/playlist?list=PLBF3763AF2E1C572F,
     overview:[" An algorithm is an outline of the steps that a program or any computational procedure has to take. A program on the other hand is an implementation of an algorithm and it could be in any programming language. Data structure is the way we need to organize the data, so that it can be used effectively by the program"],
     screenshots:['/assets/cs504.png','/assets/cs504.png'],
     topics_covered:["Data Structures And Algorithms,
