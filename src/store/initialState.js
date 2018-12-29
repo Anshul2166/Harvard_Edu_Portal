@@ -30,7 +30,8 @@ const initialState = {
       course_image: "/assets/cs50.jpg",
       course_title: "An introduction to Computer Science",
       offeredBy: "Coursera",
-      rating: 4.8,
+      rating: 4.6,
+      url:"https://www.edx.org/course/cs50s-introduction-computer-science-harvardx-cs50x",
       overview: [
         " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
         "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",

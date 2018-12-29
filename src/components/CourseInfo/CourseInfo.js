@@ -45,6 +45,9 @@ class CourseInfo extends Component {
               starDimension="20px"
               starSpacing="10px"
             />
+            <p className="course-info-url">
+              <i>Available on <a href={data.url}>{data.url}</a></i>
+            </p>
           </Grid>
         </Grid>
         <h1>Overview</h1>
