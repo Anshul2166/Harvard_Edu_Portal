@@ -12,6 +12,7 @@ class Forum extends Component {
   }
   addComment=(text)=>{
     console.log(text);
+    this.props.forums.add_comment(text);
   }
   render() {
     console.log(this.props);

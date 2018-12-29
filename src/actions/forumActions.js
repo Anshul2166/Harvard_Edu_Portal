@@ -18,3 +18,17 @@ export function add_thread(data) {
     payload: threadData
   };
 }
+
+export function add_comment(commentText) {
+  let commentData = {
+    authorUrl: "#",
+    avatarUrl: "#avatarUrl",
+    createdAt: new Date(),
+    fullName: "Anshul",
+    text: commentText
+  };
+  return {
+    type: ACTIONS.ADD_COMMENT,
+    payload:commentData
+  };
+}
