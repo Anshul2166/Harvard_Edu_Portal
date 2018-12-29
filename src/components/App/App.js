@@ -7,6 +7,7 @@ import Forum from '../Forum/Forum';
 import User from '../User/User';
 import Graph from '../Graph/Graph';
 import CourseInfo from "../CourseInfo/CourseInfo";
+import Landing from "../Landing/Landing";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
       <Header />
          <Switch>
+         <Route exact path="/" component={Landing} /> 
 					<Route path="/dashboard" component={Dashboard} />
           <Route path="/profile" component={Profile} />
           <Route path="/forum" component={Forum} />

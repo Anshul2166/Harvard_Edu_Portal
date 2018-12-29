@@ -40,3 +40,7 @@ code {
   margin-top: auto;
   margin-bottom: auto;
 }
+.image-center {
+  display: block;
+  margin: auto;
+}
