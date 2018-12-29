@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Typography from "@material-ui/core/Typography";
+import {connect} from "redux";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import StarRatings from "react-star-ratings";
@@ -11,7 +11,7 @@ class CourseInfo extends Component {
   render() {
     const Overview = data.overview.map(paragraph => <p>{paragraph}</p>);
     const Screenshots = data.screenshots.map(screenshot => (
-      <img src={screenshot} className="screenshots" />
+      <img src={screenshot} className="screenshots" alt="screenshot"/>
     ));
     return (
       <div className="course-info">
@@ -62,4 +62,10 @@ class CourseInfo extends Component {
   }
 }
 
-export default CourseInfo;
+const mapStateToProps = state => {
+  return {
+    forum: state.courses.info
+  };
+};
+
+export default connect(mapStateToProps)(CourseInfo);
