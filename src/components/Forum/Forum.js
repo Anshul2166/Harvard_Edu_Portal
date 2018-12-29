@@ -10,10 +10,13 @@ class Forum extends Component {
   addNewThread=(threadState)=>{
     this.props.forums.add_thread(threadState);
   }
+  addComment=(text)=>{
+    console.log(text);
+  }
   render() {
     console.log(this.props);
     const forums = this.props.forum.map((thread, index) => (
-      <SingleForum thread={thread} key={index} />
+      <SingleForum thread={thread} key={index} addComment={this.addComment}/>
     ));
     return (
       <div className="forum">
@@ -26,7 +29,7 @@ class Forum extends Component {
           </div>
           <div className="main-content">{forums}</div>
           <div className="add-new-forum">
-            <SimpleModalWrapped addNewThread={this.addNewThread}/>
+            <SimpleModalWrapped addNewThread={this.addNewThread} addComment={this.addComment}/>
           </div>
         </div>
       </div>

@@ -52,6 +52,10 @@ class SingleForum extends Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
+  addComment=(text)=>{
+    console.log("Here with "+text);
+    this.props.addComment(text);
+  };
   render() {
     const { classes } = this.props;
     console.log(this.props);
@@ -98,7 +102,7 @@ class SingleForum extends Component {
           </CardContent>
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <div className="comment-forum" style={{ marginLeft: "2.5%", marginBottom: "0.5%" }}>
-              <CommentForum commentsData={this.props.thread.comments}/>
+              <CommentForum commentsData={this.props.thread.comments} addComment={this.addComment}/>
             </div>
           </Collapse>
         </Card>

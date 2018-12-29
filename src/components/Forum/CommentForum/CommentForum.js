@@ -8,6 +8,10 @@ class CommentForum extends Component {
       comments: this.props.commentsData
     };
   }
+  addComment=(text)=>{
+    console.log("Here with "+text);
+    this.props.addComment(text);
+  }
   render() {
     return (
       <div>
@@ -16,6 +20,7 @@ class CommentForum extends Component {
           isLoggedIn={true}
           onSubmit={text => {
             if (text.length > 0) {
+              this.addComment(text);
               this.setState({
                 comments: [
                   ...this.state.comments,
@@ -23,7 +28,7 @@ class CommentForum extends Component {
                     authorUrl: "#",
                     avatarUrl: "#avatarUrl",
                     createdAt: new Date(),
-                    fullName: "Name",
+                    fullName: "Anshul",
                     text
                   }
                 ]
