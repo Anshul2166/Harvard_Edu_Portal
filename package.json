@@ -17,6 +17,7 @@
     "d3-time-format": "2",
     "d3-transition": "1",
     "d3-zoom": "1",
+    "dotenv": "^6.2.0",
     "file-loader": "^3.0.1",
     "mdi-react": "^5.1.0",
     "prop-types": "^15.6.2",
