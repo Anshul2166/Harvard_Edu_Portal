@@ -8,6 +8,11 @@ const forumReducer = (state = {}, action) => {
 				...state,
 				threads: action.payload
 			};
+		case ACTIONS.ADD_THREAD:
+			return{
+				...state,
+				threads: state.threads.concat(action.payload)
+			}
 		default:
 			return state;
 	}

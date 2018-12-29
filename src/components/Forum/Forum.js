@@ -3,12 +3,15 @@ import "./forum.css";
 import SingleForum from "./SingleForum/SingleForum";
 import { connect } from "react-redux";
 import SimpleModalWrapped from "./SimpleModal";
+import { bindActionCreators } from "redux";
+import * as forumActions from "../../actions/forumActions";
 
-class Forum extends Component {
-  addNewThread(threadState){
-    console.log(threadState);
+class Forum extends Component {  
+  addNewThread=(threadState)=>{
+    this.props.forums.add_thread(threadState);
   }
   render() {
+    console.log(this.props);
     const forums = this.props.forum.map((thread, index) => (
       <SingleForum thread={thread} key={index} />
     ));
@@ -37,4 +40,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Forum);
+const mapActionsToProps = dispatch => {
+  return {
+    forums: bindActionCreators(forumActions, dispatch)
+  };
+};
+
+export default connect(mapStateToProps,mapActionsToProps)(Forum);
