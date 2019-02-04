@@ -1,0 +1,25 @@
+.CreatePost {
+  background-color: $primary-grey;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.CreatePost__col {
+  margin: 0 auto;
+}
+
+.CreatePost__header {
+  color: #1c1c1c;
+  font-size: 1.125rem;
+  line-height: 22px;
+  font-weight: 500;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(237, 239, 241);
+  padding: 4px;
+  margin: 16px 0px;
+}
+
+.CreatePost__select {
+  max-width: 300px;
+  max-height: 60px;
+}
