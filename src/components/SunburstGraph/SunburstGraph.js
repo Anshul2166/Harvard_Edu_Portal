@@ -7,7 +7,6 @@ import CeremonialSunburst from "sunburst-chart";
 
 import Sunburst from "./Sunburst";
 import * as d3 from "d3";
-import "./SunburstGraph.css";
 
 class SunburstGraph extends React.Component {
   onSelect(event) {
