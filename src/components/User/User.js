@@ -136,6 +136,7 @@ const SocialNetworkLogIn = props => (
       <FacebookIcon />
       Login with facebook
     </Button>
+    <a href="http://localhost:8080/api/users/auth/google">
     <Button
       variant="contained"
       color="primary"
@@ -144,6 +145,7 @@ const SocialNetworkLogIn = props => (
       <GoogleIcon />
       Login with google
     </Button>
+    </a>
   </div>
 );
 

@@ -2,8 +2,6 @@ const app = require("./server");
 const http = require("http");
 const server = http.createServer(app);
 
-//For loading the sockets
-require("./sockets/groupchat")(io);
 
 // Set Variable called port according to "development" / "production"
 if (process.env.NODE_ENV === "production") {
