@@ -1,5 +1,7 @@
 .PostCard {
   position: relative;
+  border-radius: 4px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 .PostCard__main-area {
@@ -8,6 +10,120 @@
 
   @include for-tablet-portrait-up {
     padding-left: 40px;
-    border-radius: 4px;
   }
+}
+
+.PostCard__side-action {
+  width: 40px;
+  border-left: 4px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 4px 8px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8f9fa;
+}
+
+.PostCard__upvote-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PostCard__side-action-btn {
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    color: #cc3700;
+  }
+}
+
+.PostCard__vote-amount {
+  color: #1a1a1b;
+  font-size: 0.75rem;
+  line-height: 16px;
+  font-weight: 700;
+  word-break: normal;
+}
+
+.PostCard__main-area__post-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+}
+
+.PostCard__main-area__post-info {
+  flex: 1 1 100%;
+}
+
+.PostCard__community-wrapper {
+  display: flex;
+  margin: 0px 8px 8px;
+  align-items: center;
+}
+
+.PostCard__community-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 20px;
+  color: #1c1c1c;
+}
+
+.PostCard__author-name {
+  color: #787c7e;
+  font-size: 0.75rem;
+  line-height: 16px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.PostCard__post-title {
+  margin: 0 8px;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 22px;
+  color: #222222;
+}
+
+.PostCard__post-description {
+  font-family: "Noto Sans";
+  font-size: 0.875rem;
+  line-height: 21px;
+  font-weight: 400;
+  color: #1a1a1b;
+  margin-top: 8px;
+  overflow: hidden;
+  padding: 5px 8px 10px;
+  max-height: 250px;
+  mask-image: linear-gradient(180deg, #000 60%, transparent);
+}
+
+.PostCard__post-additional-info {
+  margin: 4px 0px;
+  padding: 8px;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.PostCard__post-additional-info__single-item {
+  word-break: normal;
+  white-space: nowrap;
+  min-width: 25px;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 12px;
+  color: #878a8c;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    background-color: rgba(26, 26, 27, 0.1);
+  }
+}
+
+.PostCard__comments {
 }
