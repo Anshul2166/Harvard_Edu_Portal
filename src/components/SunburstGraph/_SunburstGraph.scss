@@ -1,0 +1,19 @@
+@import "./Sunburst.scss";
+.SunburstGraph {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.SunburstGraph .path-label {
+  color: #fff !important;
+  fill: #fff !important;
+  font-size: 1rem !important;
+}
+.SunburstGraph .text-stroke {
+  color: #fff !important;
+  fill: #fff !important;
+}
+
+.SunburstGraph .text-contour {
+  stroke: none !important;
+}

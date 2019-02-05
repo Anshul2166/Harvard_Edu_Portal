@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
-import Dashboard from "../Dashboard/Dashboard";
-import Header from "../Header/Header";
-import Profile from "../Profile/profile";
-import Forum from "../Forum/Forum";
-import User from "../User/User";
-import Graph from "../Graph/Graph";
-import CourseInfo from "../CourseInfo/CourseInfo";
-import Landing from "../Landing/Landing";
-import SunburstGraph from "../SunburstGraph/SunburstGraph";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Header from "./components/Header/Header";
+import Profile from "./components/Profile/profile";
+import Forum from "./components/Forum/Forum";
+import User from "./components/User/User";
+import Graph from "./components/Graph/Graph";
+import CourseInfo from "./components/CourseInfo/CourseInfo";
+import Landing from "./components/Landing/Landing";
+import SunburstGraph from "./components/SunburstGraph/SunburstGraph";
+import CreatePost from "./components/CreatePost/CreatePost";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />
@@ -24,7 +23,7 @@ class App extends Component {
           <Route path="/user" component={User} />
           <Route path="/graph" component={Graph} />
           <Route path="/sunburst" component={SunburstGraph} />
-
+          <Route path="/create-post" component={CreatePost} />
           <Route path="/course_info" component={CourseInfo} />
         </Switch>
       </div>
