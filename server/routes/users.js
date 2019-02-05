@@ -168,4 +168,24 @@ router.get("/logout", async (req, res) => {
   }
 });
 
+router.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    prompt: "select_account",
+    scope: [
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/plus.profile.emails.read",
+    ],
+  }),
+);
+
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google"),
+  (req, res) => {
+    console.log("Google callback route is called");
+    res.redirect("locahost:3000/dashboard");
+  },
+);
+
 module.exports = router;
