@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import Logo from "../../../assets/images/logo.png";
+import ForumContext from "../_forumContext";
+import { withRouter } from "react-router-dom";
 
 class ForumActionArea extends Component {
+  static contextType = ForumContext;
+
+  redirectToCreatePost = () => {
+    this.props.history.push("/create-post");
+  };
+
   render() {
     return (
       <div className="ForumActionArea">
@@ -16,12 +24,15 @@ class ForumActionArea extends Component {
             favourite communities
           </p>
           <div className="ForumActionArea__control-section">
-            <button className="ForumActionArea__control-section__btn">
+            <button
+              onClick={this.redirectToCreatePost}
+              className="ForumActionArea__control-section__btn"
+            >
               CREATE POST
             </button>
             <button
-              className="ForumActionArea__control-section__btn 
-            ForumActionArea__control-section__btn--white-bg"
+              className="ForumActionArea__control-section__btn ForumActionArea__control-section__btn--white-bg"
+              onClick={this.context.openCommunityModal}
             >
               CREATE COMMUNITY
             </button>
@@ -31,4 +42,4 @@ class ForumActionArea extends Component {
     );
   }
 }
-export default ForumActionArea;
+export default withRouter(ForumActionArea);
