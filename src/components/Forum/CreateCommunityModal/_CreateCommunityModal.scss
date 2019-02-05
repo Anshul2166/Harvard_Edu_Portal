@@ -1,0 +1,77 @@
+.CreateCommunityModal {
+  font-family: "IBM Plex Sans", sans-serif;
+  width: 448px;
+}
+
+.CreateCommunityModal__form {
+  padding: 22px;
+  padding-bottom: 0;
+}
+.CreateCommunityModal__header {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 20px;
+  color: rgb(28, 28, 28);
+  padding: 0px 0px 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(237, 239, 241);
+  margin-bottom: 16px;
+}
+
+.CreateCommunityModal__header__close-btn {
+  cursor: pointer;
+}
+.CreateCommunityModal__input-div-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.CreateCommunityModal__main-input {
+  font-family: "Noto Sans", "Helvetica Neue", "Segoe UI", Helvetica, Verdana,
+    Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 48px;
+  width: 100%;
+  line-height: 21px;
+  background-color: rgb(246, 247, 248);
+  color: rgb(28, 28, 28);
+  border: 1px solid rgb(237, 239, 241);
+  padding: 22px 0px 8px 12px;
+}
+.CreateCommunityModal__main-input--textarea {
+  height: auto;
+}
+.CreateCommunityModal__main-input-wrapper__span {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgb(124, 124, 124);
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+  top: 2px;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+.CreateCommunityModal__input-div-wrapper__info {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 16px;
+  color: #7c7c7c;
+}
+
+.CreateCommunityModal__action-area {
+  background-color: rgb(237, 239, 241);
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.CreateCommunityModal__start-btn {
+  margin-left: 10px;
+}
