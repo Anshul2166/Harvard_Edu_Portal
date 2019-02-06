@@ -1,0 +1,54 @@
+.PostCommentForm__title {
+  margin-bottom: 4px;
+  font-family: "Noto Sans";
+  font-size: 0.75rem;
+  color: #1c1c1c;
+  line-height: 18px;
+}
+
+.PostCommentForm__title__name {
+  color: $primary-orange;
+  font-family: "IBM Plex Sans", sans-serif;
+  cursor: pointer;
+  margin-left: 5px;
+  font-weight: 500;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.PostCommentForm__form-wrapper {
+  border: 1px solid rgb(135, 138, 140);
+  border-radius: 5px;
+  transition: 0.2s all ease-in-out;
+  box-sizing: border-box;
+}
+
+.PostCommentForm__form-wrapper:focus-within {
+  border: 1px solid black;
+}
+.PostCommentForm__main-form {
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 0.8125rem;
+  border-radius: 5px;
+  font-weight: 400;
+  line-height: 20px;
+  resize: none;
+  min-height: 122px;
+  width: 100%;
+  border: none;
+  color: rgb(28, 28, 28);
+  caret-color: rgb(204, 54, 0);
+}
+
+.PostCommentForm__action-area {
+  background-color: rgb(246, 247, 248);
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 5px;
+}
+
+.PostCommentForm__btn {
+  margin: 4px 8px;
+}
