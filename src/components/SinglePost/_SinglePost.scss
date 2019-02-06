@@ -1,10 +1,21 @@
-.PostCard {
+@import "PostComments/PostComments";
+@import "PostCommentForm/PostCommentForm";
+
+.SinglePost {
+  min-height: 100vh;
+  background-color: #dae0e6;
+}
+
+.SinglePost__col {
+  margin: 0 auto;
+}
+.SinglePost__wrapper {
+  background-color: #fff;
   position: relative;
   border-radius: 4px;
   font-family: "IBM Plex Sans", sans-serif;
 }
-
-.PostCard__main-area {
+.SinglePost__main-area {
   padding-top: 8px;
   background-color: rgb(255, 255, 255);
 
@@ -13,7 +24,7 @@
   }
 }
 
-.PostCard__side-action {
+.SinglePost__side-action {
   width: 40px;
   border-left: 4px solid transparent;
   position: absolute;
@@ -23,56 +34,57 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #f8f9fa;
 }
 
-.PostCard__upvote-wrapper {
+.SinglePost__upvote-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.PostCard__side-action-btn {
+.SinglePost__side-action-btn {
   cursor: pointer;
   transition: 0.3s all ease-in-out;
   color: rgb(135, 138, 140);
   &:hover {
-    color: $primary-orange;
+    color: #cc3700;
   }
 }
 
-.PostCard__vote-amount {
+.SinglePost__vote-amount {
   color: #1a1a1b;
   font-size: 0.75rem;
   line-height: 16px;
   font-weight: 700;
   word-break: normal;
 }
-
-.PostCard__main-area__post-info-wrapper {
+.SinglePost__main-area {
+  padding-right: 15px;
+}
+.SinglePost__main-area__post-info-wrapper {
   display: flex;
   flex-direction: column;
   padding-bottom: 8px;
 }
 
-.PostCard__main-area__post-info {
+.SinglePost__main-area__post-info {
   flex: 1 1 100%;
 }
 
-.PostCard__community-wrapper {
+.SinglePost__community-wrapper {
   display: flex;
   margin: 0px 8px 8px;
   align-items: center;
 }
 
-.PostCard__community-name {
+.SinglePost__community-name {
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 20px;
   color: #1c1c1c;
 }
 
-.PostCard__author-name {
+.SinglePost__author-name {
   color: #787c7e;
   font-size: 0.75rem;
   line-height: 16px;
@@ -80,7 +92,7 @@
   margin-left: 5px;
 }
 
-.PostCard__post-title {
+.SinglePost__post-title {
   margin: 0 8px;
   font-size: 1.125rem;
   font-weight: 500;
@@ -88,27 +100,24 @@
   color: #222222;
 }
 
-.PostCard__post-description {
+.SinglePost__post-description {
   font-family: "Noto Sans";
   font-size: 0.875rem;
   line-height: 21px;
   font-weight: 400;
   color: #49494b;
   margin-top: 8px;
-  overflow: hidden;
   padding: 5px 8px 10px;
-  max-height: 250px;
-  mask-image: linear-gradient(180deg, #000 60%, transparent);
 }
 
-.PostCard__post-additional-info {
+.SinglePost__post-additional-info {
   margin: 4px 0px;
   padding: 8px;
   padding-bottom: 0;
   display: flex;
 }
 
-.PostCard__post-additional-info__single-item {
+.SinglePost__post-additional-info__single-item {
   word-break: normal;
   white-space: nowrap;
   min-width: 25px;

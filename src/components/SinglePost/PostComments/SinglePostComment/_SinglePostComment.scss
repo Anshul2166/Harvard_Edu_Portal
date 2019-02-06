@@ -1,0 +1,29 @@
+.SinglePostComment__header {
+  display: flex;
+}
+
+.SinglePostComment__author-name {
+  font-size: 0.75rem;
+  line-height: 16px;
+  color: $primary-orange;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.SinglePostComment__posted-time {
+  font-size: 0.75rem;
+  line-height: 16px;
+  color: #7c7c7c;
+  margin-left: 9px;
+}
+
+.SinglePostComment__text {
+  font-family: "Noto Sans";
+  font-size: 0.875rem;
+  color: #49494b;
+  line-height: 21px;
+  padding: 2px 0;
+}

@@ -23,6 +23,15 @@
     border: 1px solid lighten($primary-dark-blue, 20%);
   }
 }
+.btn-orange {
+  background-color: $primary-orange;
+  color: #fff;
+  border: 1px solid $primary-orange;
+  &:hover {
+    background-color: lighten($primary-orange, 20%);
+    border: 1px solid lighten($primary-orange, 20%);
+  }
+}
 
 .btn-blue-outline {
   background-color: #fff;
