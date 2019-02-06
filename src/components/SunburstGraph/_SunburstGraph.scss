@@ -17,3 +17,32 @@
 .SunburstGraph .text-contour {
   stroke: none !important;
 }
+
+.SunburstGraph {
+  .sunburst-viz {
+    position: relative;
+    &:after {
+      position: absolute;
+      z-index: 99;
+      content: "\f062";
+      color: #fff;
+      font-size: 1.3rem;
+      top: 50%;
+      left: 51.8%;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+
+      @include for-tablet-portrait-up {
+        font-size: 2.6rem;
+        left: 51%;
+      }
+
+      @include for-tablet-landscape-up {
+        left: 50.5%;
+        font-size: 3rem;
+      }
+    }
+  }
+}
