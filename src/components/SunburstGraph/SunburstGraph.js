@@ -7,6 +7,7 @@ import CeremonialSunburst from "sunburst-chart";
 
 import Sunburst from "./Sunburst";
 import * as d3 from "d3";
+import { withRouter } from "react-router-dom";
 
 class SunburstGraph extends React.Component {
   onSelect(event) {
@@ -18,8 +19,14 @@ class SunburstGraph extends React.Component {
     const color = d3.scaleOrdinal(d3.schemePaired);
     myChart
       .data(data)
-      .tooltipContent(text => text.name)
-      .color((d, parent) => d.color)(document.querySelector(".SunburstGraph"));
+      .tooltipContent(text => text.hover || text.name)
+      .color((d, parent) => d.color)(document.querySelector(".SunburstGraph"))
+      .onNodeClick((d, parent) => {
+        if (!d.children) {
+          return this.props.history.push("/course_link");
+        }
+        myChart.focusOnNode(d);
+      });
   };
 
   render() {
@@ -27,4 +34,4 @@ class SunburstGraph extends React.Component {
   }
 }
 
-export default SunburstGraph;
+export default withRouter(SunburstGraph);
