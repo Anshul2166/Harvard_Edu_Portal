@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
 const Posts = require("../models/posts");
+const Comments = require("../models/comments");
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -106,7 +106,7 @@ router.delete("/:postId", isLoggedIn, async (req, res) => {
 });
 
 router.get("/:postId", async (req, res, next) => {
-  let postId=req.params.postId;
+  let postId = req.params.postId;
   try {
     const results = await Posts.findById(postId);
     console.log(results);
@@ -120,6 +120,100 @@ router.get("/:postId", async (req, res, next) => {
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
+  }
+});
+
+router.post("/:postId/addComment", isLoggedIn, async (req, res) => {
+  let postId = req.params.postId;
+  const { content } = req.body;
+  let user = req.user;
+  try {
+    const newComment = await new Comments({
+      content: content,
+      author: user._id
+    });
+    const response = await newComment.save();
+    const post = await Posts.findByIdAndUpdate(postId);
+    post.comments.push(response._id);
+    const update = await post.save();
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      success: true,
+      status: "You are in / page",
+      message: update
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+router.put('/:postId/upvotes-add',isLoggedIn,async (req,res,next)=>{
+  let postId = req.params.postId;
+  try {
+    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { upVotes: 1 } },{new:true});
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      success: true,
+      status: "You are in / page",
+      message: post
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+router.put('/:postId/downVotes-add',isLoggedIn,async (req,res,next)=>{
+  let postId = req.params.postId;
+  try {
+    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { downVotes: 1 } },{new:true});
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      success: true,
+      status: "You are in / page",
+      message: post
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+router.put('/:postId/upVotes-remove',isLoggedIn,async (req,res,next)=>{
+  let postId = req.params.postId;
+  try {
+    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { upVotes: -1 } },{new:true});
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      success: true,
+      status: "You are in / page",
+      message: post
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+});
+
+router.put('/:postId/downVotes-remove',isLoggedIn,async (req,res,next)=>{
+  let postId = req.params.postId;
+  try {
+    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { downVotes: -1 } },{new:true});
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      success: true,
+      status: "You are in / page",
+      message: post
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
   }
 });
 
