@@ -1,5 +1,5 @@
 // load the things we need
-var mongoose = require("mongoose");
+var mongoose = require("mongoose"),Schema=mongoose.Schema;
 var bcrypt = require("bcrypt-nodejs");
 
 // define the schema for our user model
@@ -13,13 +13,9 @@ var userSchema = mongoose.Schema({
     },
     email: String,
   },
-  userImage: { type: String, default: "default.png" },
-  facebook: { type: String, sparse: true },
-  fbTokens: Array,
-  google: { type: String, sparse: true },
-  totalRequest: {
-    type: Number,
-  },
+  liked:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
+  disliked:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
+  posts:[{ type: Schema.Types.ObjectId, ref: 'posts' }]
 });
 
 // generating a hash
