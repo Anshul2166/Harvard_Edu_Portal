@@ -3,6 +3,7 @@ const router = express.Router();
 const Posts = require("../models/posts");
 const Comments = require("../models/comments");
 const Users = require("../models/users");
+const { check, validationResult } = require('express-validator/check');
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -45,6 +46,7 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/create-post", isLoggedIn, async (req, res) => {
+  
   const { title, description } = req.body;
   let user = req.user;
   try {
@@ -288,13 +290,6 @@ router.put("/:postId/downVotes-remove", isLoggedIn, async (req, res, next) => {
       );
       userDownvotesPost.disliked.pull(postId);
       await userDownvotesPost.save();
-      // const users = await Users.findByIdAndUpdate(
-      //   req.user._id,
-      //   {
-      //     $pullAll: { disliked: [postId] }
-      //   },
-      //   { new: true }
-      // );
       res.statusCode = 200;
       res.setHeader("Content-Type", "application/json");
       res.json({
