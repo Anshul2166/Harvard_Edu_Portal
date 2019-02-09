@@ -12,17 +12,47 @@ export default {
           value: 15,
           color: "#756BB1",
           children: [
-            { name: "intro-to-programming", color: "#9E9AC8", value: 5 },
+            {
+              name: "itp",
+              hover: "intro-to-programming",
+              color: "#9E9AC8",
+              value: 5
+            },
 
-            { name: "intro-to-algorithms", color: "#9E9AC8", value: 5 },
+            {
+              name: "ita",
+              hover: "intro-to-algorithms",
+              color: "#9E9AC8",
+              value: 5
+            },
 
-            { name: "dsa", color: "#9E9AC8", value: 5 },
+            {
+              name: "dsa",
+              hover: "Data structure and algorithm",
+              color: "#9E9AC8",
+              value: 5
+            },
 
-            { name: "oop", color: "#9E9AC8", value: 5 },
+            {
+              name: "oop",
+              hover: "Object Oriented Programming",
+              color: "#9E9AC8",
+              value: 5
+            },
 
-            { name: "dbms", color: "#9E9AC8", value: 5 },
+            {
+              name: "dbms",
+              hover: "Database Management System",
+              color: "#9E9AC8",
+              value: 5
+            },
 
-            { name: "os", color: "#9E9AC8", value: 5 }
+            {
+              name: "os",
+              hover: "Operating System",
+              color: "#9E9AC8",
+              value: 5
+            }
           ]
         },
         {
@@ -31,24 +61,46 @@ export default {
           color: "#74C476",
           children: [
             {
-              name: "intro-to-programming-practice",
+              name: "itpp",
+              hover: "intro-to-programming-practice",
               color: "#74C476",
               value: 5
             },
 
             {
-              name: "intro-to-algorithms-practice",
+              name: "itap",
+              hover: "intro-to-algorithms-practice",
               color: "#74C476",
               value: 5
             },
 
-            { name: "dsa-practice", color: "#74C476", value: 5 },
+            {
+              name: "dsa-p",
+              hover: "Data structure and algorithm practice",
+              color: "#74C476",
+              value: 5
+            },
 
-            { name: "oop-practice", color: "#74C476", value: 5 },
+            {
+              name: "oop-p",
+              hover: "Object oriented programming practise",
+              color: "#74C476",
+              value: 5
+            },
 
-            { name: "dbms-practice", color: "#74C476", value: 5 },
+            {
+              name: "dbms-p",
+              hover: "Database management system practise",
+              color: "#74C476",
+              value: 5
+            },
 
-            { name: "os-practice", color: "#74C476", value: 5 }
+            {
+              name: "os-p",
+              hover: "Object oriented system practise",
+              color: "#74C476",
+              value: 5
+            }
           ]
         },
         {
@@ -57,12 +109,14 @@ export default {
           color: "#3182BD",
           children: [
             {
-              name: "CS Intern and Placement topics",
+              name: "Intern",
+              hover: "CS Intern and Placement topics",
               color: "#6BAED6",
               value: 5
             },
             {
-              name: "Internship and Job Opportunities",
+              name: "Job",
+              hover: "Internship and Job Opportunities",
               color: "#6BAED6",
               value: 5
             }
@@ -81,12 +135,18 @@ export default {
           color: "#756BB1",
           children: [
             {
-              name: "intro-to-electrical-sciences",
+              name: "ites",
+              hover: "intro-to-electrical-sciences",
               color: "#9E9AC8",
               value: 5
             },
 
-            { name: "solid-state-devices", color: "#9E9AC8", value: 5 },
+            {
+              name: "ssd",
+              hover: "solid-state-devices",
+              color: "#9E9AC8",
+              value: 5
+            },
 
             { name: "vlsi-design", color: "#9E9AC8", value: 5 },
 
