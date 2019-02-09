@@ -6,6 +6,8 @@ var commentSchema = mongoose.Schema({
   author:{ type: Schema.Types.ObjectId, ref: 'users' },
   createdAt:{type:Date,default:Date.now()},
   content:String,
+  liked:[{type:Schema.Types.ObjectId}],
+  disliked:[{type:Schema.Types.ObjectId}]
 });
 
 // create the model for users and expose it to our app
