@@ -22,12 +22,16 @@ function isLoggedIn(req, res, next) {
 }
 
 //Default get page:- Only for demo purpose
-router.get("/", function(req, res, next) {
+router.get("/", async function(req, res, next) {
+  const result = await User.find({})
+    .populate("liked")
+    .populate("disliked");
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.json({
     success: true,
-    status: "You are in / page!"
+    status: "You are in / page!",
+    result: result
   });
 });
 
@@ -174,9 +178,9 @@ router.get(
     prompt: "select_account",
     scope: [
       "https://www.googleapis.com/auth/plus.login",
-      "https://www.googleapis.com/auth/plus.profile.emails.read",
-    ],
-  }),
+      "https://www.googleapis.com/auth/plus.profile.emails.read"
+    ]
+  })
 );
 
 router.get(
@@ -185,7 +189,7 @@ router.get(
   (req, res) => {
     console.log("Google callback route is called");
     res.redirect("http://localhost:3000/dashboard");
-  },
+  }
 );
 
 module.exports = router;
