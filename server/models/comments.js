@@ -3,7 +3,7 @@ var mongoose = require("mongoose"),Schema = mongoose.Schema;
 
 // define the schema for our user model
 var commentSchema = mongoose.Schema({
-  author:[{ type: Schema.Types.ObjectId, ref: 'users' }],
+  author:{ type: Schema.Types.ObjectId, ref: 'users' },
   createdAt:{type:Date,default:Date.now()},
   content:String,
 });
