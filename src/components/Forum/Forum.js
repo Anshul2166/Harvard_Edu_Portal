@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ForumActionArea from "./ForumActionArea/ForumActionArea";
-import Header from "../Header/Header";
+import Header from "../Common/Header/Header";
 import ForumContext from "./_forumContext";
 import CreateCommunityModal from "./CreateCommunityModal/CreateCommunityModal";
 import PostCard from "../Common/PostCard/PostCard";

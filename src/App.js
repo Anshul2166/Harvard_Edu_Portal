@@ -11,6 +11,7 @@ import Landing from "./components/Landing/Landing";
 import SunburstGraph from "./components/SunburstGraph/SunburstGraph";
 import CreatePost from "./components/CreatePost/CreatePost";
 import SinglePost from "./components/SinglePost/SinglePost";
+import WebDev from "./components/LearningPath/WebDev/WebDev";
 
 class App extends Component {
   render() {
@@ -27,6 +28,9 @@ class App extends Component {
           <Route path="/create-post" component={CreatePost} />
           <Route path="/course_info" component={CourseInfo} />
           <Route path="/single-post" component={SinglePost} />
+
+          {/* Learning path routes */}
+          <Route path="/learning-path/webdev" component={WebDev} />
         </Switch>
       </div>
     );
