@@ -3,7 +3,7 @@ const router = express.Router();
 const Posts = require("../models/posts");
 const Comments = require("../models/comments");
 const Users = require("../models/users");
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require("express-validator/check");
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -46,7 +46,6 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/create-post", isLoggedIn, async (req, res) => {
-  
   const { title, description } = req.body;
   let user = req.user;
   try {
@@ -163,6 +162,9 @@ router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
     let isPresent = userUpvotesPost.liked
       .map(ids => ids.toString())
       .includes(postId);
+    let isDisliked = userUpvotesPost.disliked
+      .map(ids => ids.toString())
+      .includes(postId);
     if (isPresent) {
       console.log("Already there");
       res.statusCode = 200;
@@ -178,6 +180,11 @@ router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
         { new: true }
       );
       await userUpvotesPost.liked.push(postId);
+      if (isDisliked) {
+        await userUpvotesPost.disliked.pull(postId);
+        post.downVotes=post.downVotes-1;
+        await post.save();
+      }
       await userUpvotesPost.save();
       res.statusCode = 200;
       res.setHeader("Content-Type", "application/json");
@@ -200,6 +207,9 @@ router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
     let isPresent = userDownvotesPost.disliked
       .map(ids => ids.toString())
       .includes(postId);
+    let isLiked = userDownvotesPost.liked
+      .map(ids => ids.toString())
+      .includes(postId);
     if (isPresent) {
       console.log("Already there");
       res.statusCode = 200;
@@ -214,6 +224,11 @@ router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
         { $inc: { downVotes: 1 } },
         { new: true }
       );
+      if (isLiked) {
+        await userDownvotesPost.liked.pull(post._id);
+        post.upVotes=post.upVotes-1;
+        await post.save();
+      }
       await userDownvotesPost.disliked.push(post._id);
       userDownvotesPost.save();
       res.statusCode = 200;
