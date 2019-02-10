@@ -87,6 +87,9 @@ router.put("/:commentId/like", isLoggedIn, async (req, res) => {
     let isPresent = likeComment.liked
       .map(ids => ids.toString())
       .includes(req.user._id.toString());
+    let isDisliked = likeComment.disliked
+      .map(ids => ids.toString())
+      .includes(req.user._id.toString());
     if (isPresent) {
       await likeComment.liked.pull(req.user._id);
       await likeComment.save();
@@ -97,6 +100,9 @@ router.put("/:commentId/like", isLoggedIn, async (req, res) => {
         status: "Already liked, now disliking"
       });
     } else {
+      if (isDisliked) {
+        await likeComment.disliked.pull(req.user._id);
+      }
       await likeComment.liked.push(req.user._id);
       await likeComment.save();
       res.statusCode = 200;
@@ -120,6 +126,9 @@ router.put("/:commentId/dislike", isLoggedIn, async (req, res) => {
     let isPresent = dislikeComment.disliked
       .map(ids => ids.toString())
       .includes(req.user._id.toString());
+    let isLiked = dislikeComment.disliked
+      .map(ids => ids.toString())
+      .includes(req.user._id);
     if (isPresent) {
       await dislikeComment.disliked.pull(req.user._id);
       await dislikeComment.save();
@@ -130,6 +139,9 @@ router.put("/:commentId/dislike", isLoggedIn, async (req, res) => {
         status: "Already disliked, now removing"
       });
     } else {
+      if (isLiked) {
+        await dislikeComment.liked.pull(req.user._id);
+      }
       await dislikeComment.disliked.push(req.user._id);
       await dislikeComment.save();
       res.statusCode = 200;
