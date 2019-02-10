@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../Header/Header";
+import Header from "../Common/Header/Header";
 import Select from "react-select-v1";
 import "react-select-v1/dist/react-select.css";
 import CKEditor from "react-ckeditor-component";
