@@ -1,45 +1,49 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
 import logo from "../../shared/assets/stanford.jpg";
 
-const styles = {
+let styles = {
   card: {
     minWidth: 275,
-    width:300,
-    height:300,
-    backgroundImage:`url(${logo})`,
+    width: 300,
+    height: 300,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    border:"1px solid wheat"
+    backgroundSize: "300px 300px",
+    border: "2px solid white"
   },
   bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)"
   },
   title: {
-    fontSize: 14,
+    fontSize: 14
   },
   pos: {
     marginTop: 20,
+    color: "azure"
   },
+  info: {
+    width: 300
+  }
 };
 
 function SpecializationCard(props) {
   const { classes } = props;
-
   return (
-    <Card className={classes.card}>
-      <CardContent>
-        <Typography variant="h5" component="h2" className={classes.pos}>
-          Stanford Course
-        </Typography>
-      </CardContent>
-    </Card>
+    <div>
+      <Card
+        className={classes.card}
+        style={{ backgroundImage: `url(${props.courseImage})` }}
+      />
+      <Typography variant="h6" component="p" className={classes.info}>
+        {props.courseName}
+      </Typography>
+    </div>
   );
 }
 

@@ -3,11 +3,28 @@ const router = express.Router();
 
 const passport = require("passport");
 const User = require("../models/users");
-const bcrypt = require("bcrypt-nodejs");
 const _ = require("lodash");
+const { check, validationResult } = require("express-validator/check");
+
 //==========================
 //======== /api/user/....
 //==========================
+
+let loginValidations = [
+  check("email").isEmail(),
+  check("password").isLength({ min: 5 })
+];
+
+let signUpValidation = [
+  check("email").isEmail(),
+  check("password").isLength({ min: 5 }),
+  check("username").isLength({ min: 5, max: 15 })
+];
+
+let changePasswordValidation=[
+  check("password").isLength({ min: 5 }),
+  check("oldPassword").isLength({ min: 5 })
+]
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -22,23 +39,31 @@ function isLoggedIn(req, res, next) {
 }
 
 //Default get page:- Only for demo purpose
-router.get("/", function(req, res, next) {
+router.get("/", async function(req, res, next) {
+  const result = await User.find({})
+    .populate("liked")
+    .populate("disliked");
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json");
   res.json({
     success: true,
-    status: "You are in / page!"
+    status: "You are in / page!",
+    result: result
   });
 });
 
 //Route for login:- uses passport local login strategy
-router.post("/login", async (req, res, next) => {
+router.post("/login", loginValidations, async (req, res, next) => {
   //   const { errors, isValid } = validateLoginInput(req.body);
 
   //   //Form related error
   //   if (!isValid) {
   //     return res.status(400).json(errors);
   //   }
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
   const { email, password } = req.body;
 
   //User with provided email check
@@ -73,12 +98,11 @@ router.post("/login", async (req, res, next) => {
 });
 
 //Route for signup:- uses passport local-signup strategy
-router.post("/signup", async (req, res) => {
-  //   const { errors, isValid } = validateRegisterInput(req.body);
-
-  //   if (!isValid) {
-  //     return res.status(400).json(errors);
-  //   }
+router.post("/signup", signUpValidation, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.array() });
+  }
   console.log("Here");
 
   const { name, email, password } = req.body;
@@ -128,7 +152,7 @@ router.get("/logout", (req, res) => {
   }
 });
 
-router.post("/change_password", isLoggedIn, function(req, res, next) {
+router.post("/change_password", isLoggedIn, changePasswordValidation,function(req, res, next) {
   var user = req.user;
   console.log(user);
   // checking if don't have current local password or provided password is valid
@@ -174,9 +198,9 @@ router.get(
     prompt: "select_account",
     scope: [
       "https://www.googleapis.com/auth/plus.login",
-      "https://www.googleapis.com/auth/plus.profile.emails.read",
-    ],
-  }),
+      "https://www.googleapis.com/auth/plus.profile.emails.read"
+    ]
+  })
 );
 
 router.get(
@@ -185,7 +209,7 @@ router.get(
   (req, res) => {
     console.log("Google callback route is called");
     res.redirect("http://localhost:3000/dashboard");
-  },
+  }
 );
 
 module.exports = router;

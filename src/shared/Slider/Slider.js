@@ -4,6 +4,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import SpecializationCard from "../../components/Common/SpecializationCard";
 import DegreeCard from "../../components/Common/DegreeCard";
 import CourseCard from "../../components/Common/CourseCard";
+import {connect} from "react-redux";
 
 class Slider extends React.Component {
   responsive = {
@@ -25,16 +26,20 @@ class Slider extends React.Component {
 
   galleryItems() {
     if (this.props.cardType === "specialization") {
-      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item, i) => (
-        <SpecializationCard />
+      const specialization=this.props.specialization;
+      return specialization.map((item, i) => (
+        <SpecializationCard courseName={item.name} courseImage={item.imageUrl}/>
       ));
-    } else if (this.props.cardType === "degree") {
-      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item, i) => (
-        <DegreeCard />
+    } else if (this.props.cardType === "degree") {   
+      const courses=this.props.courses;   
+      console.log(courses);
+      return courses.map((item, i) => (
+        <DegreeCard  courseName={item.course_title} courseImage={item.course_image} courseDomain="CS"/>
       ));
     } else {
-      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item, i) => (
-        <CourseCard />
+      const courses=this.props.degrees;
+      return courses.map((item, i) => (
+        <CourseCard degreeName={item.degree_title} degreeImage={item.degree_image} degreeProvider={item.degree_provider}/>
       ));
     }
   }
@@ -60,4 +65,12 @@ class Slider extends React.Component {
   }
 }
 
-export default Slider;
+const mapStateToProps=state=>{
+  return{
+    specialization:state.specialization.info,
+    courses:state.courses.info,
+    degrees:state.degrees.info
+  }
+}
+
+export default connect(mapStateToProps)(Slider);

@@ -13,7 +13,8 @@ const styles = theme => ({
     maxWidth: 400,
     width:300,
     minHeight: 400,
-    border:"1px solid wheat"
+    border:"1px solid wheat",
+    height:300
   },
   media: {
     height: 0,
@@ -48,21 +49,21 @@ class DegreeCard extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes,courseName,courseImage,courseDomain } = this.props;
 
     return (
       <Card className={classes.card}>
         <CardMedia
           className={classes.media}
-          image={logo}
+          image={courseImage}
           title="Contemplative Reptile"
         />
         <CardContent>
         <Typography variant="h5" component="h5" className="heading">
-          Course from stanford
+          {courseName}
         </Typography>
         <Typography variant="p" component="p" className="heading">
-          Artificial intelligence
+          {courseDomain}
         </Typography>
         </CardContent>
       </Card>

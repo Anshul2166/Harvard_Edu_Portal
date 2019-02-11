@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Posts = require("../models/posts");
 const Comments = require("../models/comments");
+const Users = require("../models/users");
+const { check, validationResult } = require("express-validator/check");
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -26,7 +28,10 @@ router.get("/demo", async (req, res, next) => {
 
 router.get("/", async (req, res, next) => {
   try {
-    const results = await Posts.find({});
+    const results = await Posts.find({}).populate({
+      path: "comments",
+      populate: { path: "author" }
+    });
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({
@@ -149,68 +154,166 @@ router.post("/:postId/addComment", isLoggedIn, async (req, res) => {
   }
 });
 
-router.put('/:postId/upvotes-add',isLoggedIn,async (req,res,next)=>{
+router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
+  console.log(postId);
   try {
-    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { upVotes: 1 } },{new:true});
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "You are in / page",
-      message: post
-    });
+    const userUpvotesPost = await Users.findByIdAndUpdate(req.user._id);
+    let isPresent = userUpvotesPost.liked
+      .map(ids => ids.toString())
+      .includes(postId);
+    let isDisliked = userUpvotesPost.disliked
+      .map(ids => ids.toString())
+      .includes(postId);
+    if (isPresent) {
+      console.log("Already there");
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: false,
+        status: "Already existing"
+      });
+    } else {
+      const post = await Posts.findByIdAndUpdate(
+        postId,
+        { $inc: { upVotes: 1 } },
+        { new: true }
+      );
+      await userUpvotesPost.liked.push(postId);
+      if (isDisliked) {
+        await userUpvotesPost.disliked.pull(postId);
+        post.downVotes=post.downVotes-1;
+        await post.save();
+      }
+      await userUpvotesPost.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "You are in / page",
+        message: post
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
 });
 
-router.put('/:postId/downVotes-add',isLoggedIn,async (req,res,next)=>{
+router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
   try {
-    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { downVotes: 1 } },{new:true});
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "You are in / page",
-      message: post
-    });
+    const userDownvotesPost = await Users.findByIdAndUpdate(req.user._id);
+    let isPresent = userDownvotesPost.disliked
+      .map(ids => ids.toString())
+      .includes(postId);
+    let isLiked = userDownvotesPost.liked
+      .map(ids => ids.toString())
+      .includes(postId);
+    if (isPresent) {
+      console.log("Already there");
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: false,
+        status: "Already existing"
+      });
+    } else {
+      const post = await Posts.findByIdAndUpdate(
+        postId,
+        { $inc: { downVotes: 1 } },
+        { new: true }
+      );
+      if (isLiked) {
+        await userDownvotesPost.liked.pull(post._id);
+        post.upVotes=post.upVotes-1;
+        await post.save();
+      }
+      await userDownvotesPost.disliked.push(post._id);
+      userDownvotesPost.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "You are in / page",
+        message: post
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
 });
 
-router.put('/:postId/upVotes-remove',isLoggedIn,async (req,res,next)=>{
+router.put("/:postId/upVotes-remove", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
+  const userUpvotesPost = await Users.findByIdAndUpdate(req.user._id);
+  let isPresent = userUpvotesPost.liked
+    .map(ids => ids.toString())
+    .includes(postId);
   try {
-    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { upVotes: -1 } },{new:true});
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "You are in / page",
-      message: post
-    });
+    if (!isPresent) {
+      console.log("Not there");
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: false,
+        status: "Not existing"
+      });
+    } else {
+      const post = await Posts.findByIdAndUpdate(
+        postId,
+        { $inc: { upVotes: -1 } },
+        { new: true }
+      );
+      await userUpvotesPost.liked.pull(postId);
+      await userUpvotesPost.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "You are in / page",
+        message: post,
+        info: userUpvotesPost
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
 });
 
-router.put('/:postId/downVotes-remove',isLoggedIn,async (req,res,next)=>{
+router.put("/:postId/downVotes-remove", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
+  const userDownvotesPost = await Users.findByIdAndUpdate(req.user._id);
+  let isPresent = userDownvotesPost.disliked
+    .map(ids => ids.toString())
+    .includes(postId);
   try {
-    const post = await Posts.findByIdAndUpdate(postId,{ $inc: { downVotes: -1 } },{new:true});
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "You are in / page",
-      message: post
-    });
+    if (!isPresent) {
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: false,
+        status: "Not downvoted"
+      });
+    } else {
+      const post = await Posts.findByIdAndUpdate(
+        postId,
+        { $inc: { downVotes: -1 } },
+        { new: true }
+      );
+      userDownvotesPost.disliked.pull(postId);
+      await userDownvotesPost.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "You are in / page",
+        message: post,
+        info: userDownvotesPost
+      });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).send(err);

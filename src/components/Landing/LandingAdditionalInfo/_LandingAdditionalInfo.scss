@@ -1,0 +1,35 @@
+.LandingAdditionalInfo {
+  margin-top: 150px;
+}
+
+.LandingAdditionalInfo__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.LandingAdditionalInfo__title {
+  font-family: "Noto Sans";
+  font-size: 36px;
+  color: #292a2e;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.LandingAdditionalInfo__emphasis-text {
+  font-family: "Roboto";
+  margin-top: 25px;
+  margin-bottom: 25px;
+  line-height: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #535353;
+}
+
+.LandingAdditionalInfo__description {
+  font-family: "Roboto";
+  font-size: 15px;
+  margin-top: 5px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #444343;
+}
