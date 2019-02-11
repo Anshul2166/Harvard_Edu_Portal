@@ -1,0 +1,64 @@
+.LandingWhyUs {
+  margin-top: 90px;
+}
+
+.LandingWhyUs__title {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 36px;
+  line-height: 45px;
+  color: #292a2e;
+  font-weight: 700;
+}
+
+.LandingWhyUs__description {
+  font-family: "Roboto";
+  font-size: 16px;
+  margin-top: 15px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #444343;
+}
+
+.LandingWhyUs__info-content {
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 3.05rem 0.9375rem 2.375rem;
+  position: relative;
+  border-radius: 15px;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+    z-index: -1;
+    background: rgba(26, 49, 165, 0.5);
+  }
+}
+
+.LandingWhyUs__info-content__icon {
+  font-size: 2.5rem;
+  color: #345cf1;
+}
+
+.LandingWhyUs__info-content__header {
+  font-family: Roboto;
+  font-size: 18px;
+  color: #292a2e;
+  margin-top: 10px;
+}
+
+.LandingWhyUs__info-content__description {
+  font-family: "Roboto";
+  font-size: 15px;
+  margin-top: 5px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #444343;
+}
