@@ -1,0 +1,63 @@
+.WebDev__header {
+  font-family: "Poppins", sans-serif;
+  line-height: 42px;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.WebDev__section-inner {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.WebDev__normal-paragraph {
+  font-family: "Noto Sans";
+  font-size: 1.2125rem;
+  line-height: 26px;
+  margin-top: 15px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.WebDev__image {
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+.WebDev__section-header {
+  font-family: "Noto Sans";
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 2.125rem;
+  line-height: 39px;
+  font-weight: 600;
+  position: relative;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.WebDev__course-wrapper {
+  transform: translateY(0);
+  background-color: #ffffff;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  padding: 15px 15px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  transition: 0.2s all ease-in-out;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.WebDev__course-title {
+  font-family: "Noto Sans";
+  font-size: 1.325rem;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.84);
+  text-decoration: underline;
+  cursor: pointer;
+}

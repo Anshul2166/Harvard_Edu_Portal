@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../Header/Header";
+import Header from "../Common/Header/Header";
 import PostCommentForm from "./PostCommentForm/PostCommentForm";
 import PostComments from "./PostComments/PostComments";
 

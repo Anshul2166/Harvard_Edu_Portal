@@ -24,6 +24,39 @@ const initialState = {
       }
     ]
   },
+  specialization:{
+    info:[{
+      name:"Deep learning specialization by Andrew NG",
+      url:"https://www.coursera.org/learn/ai/home/welcome",
+      imageUrl:"https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+      taughtBy:"Andrew NG",
+      rating:"4.7"
+    },{
+      name:"Deep learning specialization by Andrew NG",
+      url:"https://www.coursera.org/learn/ai/home/welcome",
+      imageUrl:"https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+      taughtBy:"Andrew NG",
+      rating:"4.7"
+    },{
+      name:"Deep learning specialization by Andrew NG",
+      url:"https://www.coursera.org/learn/ai/home/welcome",
+      imageUrl:"https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+      taughtBy:"Andrew NG",
+      rating:"4.7"
+    },{
+      name:"Deep learning specialization by Andrew NG",
+      url:"https://www.coursera.org/learn/ai/home/welcome",
+      imageUrl:"https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+      taughtBy:"Andrew NG",
+      rating:"4.7"
+    },{
+      name:"Deep learning specialization by Andrew NG",
+      url:"https://www.coursera.org/learn/ai/home/welcome",
+      imageUrl:"https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+      taughtBy:"Andrew NG",
+      rating:"4.7"
+    }]
+  },
   courses:{info: [
     {
       id: "cs101",
