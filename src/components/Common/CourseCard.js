@@ -50,7 +50,7 @@ class CourseCard extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes,degreeName,degreeImage,degreeProvider } = this.props;
 
     return (
       <Card className={classes.card}>
@@ -60,14 +60,14 @@ class CourseCard extends React.Component {
           title="Contemplative Reptile"
         />
         <div className="center-div in-div">
-          <img src={creatorLogo} alt="Random" width="50" height="50" />
+          <img src={degreeImage} alt="Random" width="50" height="50" />
         </div>
         <CardContent>
           <Typography variant="h5" component="h5" className="heading">
-            Course from stanford
+            {degreeName}
           </Typography>
           <Typography variant="p" component="p" className="heading">
-            Artificial intelligence
+            Provided by {degreeProvider}
           </Typography>
         </CardContent>
       </Card>

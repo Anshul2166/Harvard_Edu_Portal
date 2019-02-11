@@ -34,7 +34,6 @@ let styles = {
 
 function SpecializationCard(props) {
   const { classes } = props;
-  // classes.card.backgroundImage=props.courseImage;
   return (
     <div>
       <Card
