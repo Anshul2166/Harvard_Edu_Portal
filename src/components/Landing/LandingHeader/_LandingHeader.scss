@@ -1,0 +1,73 @@
+.LandingHeader {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+}
+
+.LandingHeader__main-area {
+  padding-top: 4.375rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LandingHeader__brand-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.LandingHeader__brand-wrapper__name {
+  font-size: 25px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: #ef56bb;
+  span {
+    color: #ffb31c;
+  }
+}
+
+.LandingHeader__nav-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.LandingHeader__nav-item {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  text-transform: capitalize;
+  position: relative;
+  margin-right: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    color: #f057bc;
+  }
+}
+
+.LandingHeader__action-btn {
+  cursor: pointer;
+  text-transform: uppercase;
+  background-image: -webkit-linear-gradient(
+    -4deg,
+    #3b48ef 7%,
+    #2188f6 52%,
+    #07c7fd 96%
+  );
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0.8125rem 1.875rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6.25rem;
+  color: #fff;
+  &:hover {
+    background-image: none;
+    background-color: #f057bc;
+    color: #fff;
+  }
+}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Header from "./components/Header/Header";
 import Profile from "./components/Profile/profile";
 import Forum from "./components/Forum/Forum";
 import User from "./components/User/User";
