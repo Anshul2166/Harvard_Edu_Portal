@@ -10,7 +10,7 @@ const LandingHero = props => {
       <div className="container">
         <div className="LandingHero__main-area">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 LandingHero__info-col">
               <div className="LandingHero__header">
                 Job market around the world is changing
               </div>
