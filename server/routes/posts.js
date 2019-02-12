@@ -45,53 +45,79 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.post("/create-post", isLoggedIn, async (req, res) => {
-  const { title, description } = req.body;
-  let user = req.user;
-  try {
-    const newPost = await new Posts({
-      title,
-      description,
-      createdBy: user._id
-    });
-    await newPost.save();
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "Post successfully created",
-      message: {
+let postCreationValidations = [
+  check("title").isLength({ min: 1 }),
+  check("description").isLength({ min: 1 }),
+  check("group").not().isEmpty()
+];
+
+router.post(
+  "/create-post",
+  isLoggedIn,
+  postCreationValidations,
+  async (req, res) => {
+    const { title, description,group } = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+    let user = req.user;
+    try {
+      const newPost = await new Posts({
         title,
         description,
-        createdBy: user._id
-      }
-    });
-  } catch (error) {
-    console.log(error);
-    res.status(401).send(error);
+        createdBy: user._id,
+        group:group
+      });
+      await newPost.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "Post successfully created",
+        message: {
+          title,
+          description,
+          createdBy: user._id,
+          group
+        }
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(401).send(error);
+    }
   }
-});
+);
 
-router.put("/:postId", isLoggedIn, async (req, res) => {
-  const postId = req.params.postId;
-  const data = req.body;
-  try {
-    const updateResponse = await Posts.findByIdAndUpdate(
-      { _id: postId },
-      data,
-      { upsert: true }
-    );
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "Put successfully created"
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).send(err);
+router.put(
+  "/:postId",
+  isLoggedIn,
+  postCreationValidations,
+  async (req, res) => {
+    const postId = req.params.postId;
+    const data = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+    try {
+      const updateResponse = await Posts.findByIdAndUpdate(
+        { _id: postId },
+        data,
+        { upsert: true }
+      );
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "Put successfully created"
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
   }
-});
+);
 
 router.delete("/:postId", isLoggedIn, async (req, res) => {
   const postId = req.params.postId;
@@ -128,31 +154,42 @@ router.get("/:postId", async (req, res, next) => {
   }
 });
 
-router.post("/:postId/addComment", isLoggedIn, async (req, res) => {
-  let postId = req.params.postId;
-  const { content } = req.body;
-  let user = req.user;
-  try {
-    const newComment = await new Comments({
-      content: content,
-      author: user._id
-    });
-    const response = await newComment.save();
-    const post = await Posts.findByIdAndUpdate(postId);
-    post.comments.push(response._id);
-    const update = await post.save();
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "You are in / page",
-      message: update
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).send(err);
+let addCommentValidation = [check("content").isLength({ min: 1 })];
+
+router.post(
+  "/:postId/addComment",
+  isLoggedIn,
+  addCommentValidation,
+  async (req, res) => {
+    let postId = req.params.postId;
+    const { content } = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+    let user = req.user;
+    try {
+      const newComment = await new Comments({
+        content: content,
+        author: user._id
+      });
+      const response = await newComment.save();
+      const post = await Posts.findByIdAndUpdate(postId);
+      post.comments.push(response._id);
+      const update = await post.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "You are in / page",
+        message: update
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
   }
-});
+);
 
 router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
@@ -182,7 +219,7 @@ router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
       await userUpvotesPost.liked.push(postId);
       if (isDisliked) {
         await userUpvotesPost.disliked.pull(postId);
-        post.downVotes=post.downVotes-1;
+        post.downVotes = post.downVotes - 1;
         await post.save();
       }
       await userUpvotesPost.save();
@@ -226,7 +263,7 @@ router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
       );
       if (isLiked) {
         await userDownvotesPost.liked.pull(post._id);
-        post.upVotes=post.upVotes-1;
+        post.upVotes = post.upVotes - 1;
         await post.save();
       }
       await userDownvotesPost.disliked.push(post._id);

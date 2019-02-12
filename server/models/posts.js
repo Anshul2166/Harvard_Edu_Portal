@@ -10,7 +10,8 @@ var postSchema = mongoose.Schema({
   downVotes: { type: Number, default: 0 },
   comments: [{ type: Schema.Types.ObjectId, ref: 'comments' }],
   createdBy: { type: Schema.Types.ObjectId, ref: "users" },
-  createdAt: { type: Date, default: Date.now() }
+  createdAt: { type: Date, default: Date.now() },
+  group:String
 });
 
 // create the model for users and expose it to our app

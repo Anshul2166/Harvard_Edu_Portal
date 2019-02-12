@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
 const Comments = require("../models/comments");
+const { check, validationResult } = require("express-validator/check");
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -42,9 +42,17 @@ router.get("/:commentId", async (req, res, next) => {
   }
 });
 
-router.put("/:commentId", isLoggedIn, async (req, res) => {
+let updateCommentValidations=[
+  check("content").isLength({min:1})
+]
+
+router.put("/:commentId", isLoggedIn,updateCommentValidations, async (req, res) => {
   const commentId = req.params.commentId;
   const { content } = req.body;
+  const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
   try {
     const updateResponse = await Comments.findByIdAndUpdate(commentId);
     console.log(updateResponse);
