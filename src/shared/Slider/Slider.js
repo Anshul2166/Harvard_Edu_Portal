@@ -31,15 +31,15 @@ class Slider extends React.Component {
         <SpecializationCard courseName={item.name} courseImage={item.imageUrl}/>
       ));
     } else if (this.props.cardType === "degree") {   
-      const courses=this.props.courses;   
-      console.log(courses);
-      return courses.map((item, i) => (
-        <DegreeCard  courseName={item.course_title} courseImage={item.course_image} courseDomain="CS"/>
+      const degrees=this.props.degrees;   
+      console.log(degrees);
+      return degrees.map((item, i) => (
+        <DegreeCard degreeName={item.degree_title} degreeImage={item.degree_image} degreeProvider={item.degree_provider}/>
       ));
     } else {
-      const courses=this.props.degrees;
+      const courses=this.props.courses;
       return courses.map((item, i) => (
-        <CourseCard degreeName={item.degree_title} degreeImage={item.degree_image} degreeProvider={item.degree_provider}/>
+        < CourseCard  courseName={item.course_title} courseImage={item.course_image} courseDomain="CS"/>
       ));
     }
   }
