@@ -12,6 +12,7 @@ import CreatePost from "./components/CreatePost/CreatePost";
 import SinglePost from "./components/SinglePost/SinglePost";
 import SelectDomain from "./components/SelectDomain/SelectDomain";
 import WebDev from "./components/LearningPath/WebDev/WebDev";
+import GameDev from "./components/LearningPath/GameDev/GameDev";
 
 class App extends Component {
   render() {
@@ -32,6 +33,7 @@ class App extends Component {
 
           {/* Learning path routes */}
           <Route path="/learning-path/webdev" component={WebDev} />
+          <Route path="/learning-path/gamedev" component={GameDev} />
         </Switch>
       </div>
     );
