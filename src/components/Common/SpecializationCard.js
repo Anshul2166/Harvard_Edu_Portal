@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import logo from "../../shared/assets/stanford.jpg";
+import  { Redirect,withRouter } from 'react-router-dom';
 
 let styles = {
   card: {
@@ -32,14 +33,24 @@ let styles = {
   }
 };
 
+function onClick(props){
+  console.log("Here");
+  props.history.push('/profile');
+};
+
 function SpecializationCard(props) {
+<<<<<<< HEAD
   const { classes } = props;
   // classes.card.backgroundImage=props.courseImage;
+=======
+  const { classes,data } = props;
+>>>>>>> onClick working
   return (
     <div>
       <Card
         className={classes.card}
         style={{ backgroundImage: `url(${props.courseImage})` }}
+        onClick={()=>onClick(props)}
       />
       <Typography variant="h6" component="p" className={classes.info}>
         {props.courseName}
@@ -48,4 +59,4 @@ function SpecializationCard(props) {
   );
 }
 
-export default withStyles(styles)(SpecializationCard);
+export default withRouter(withStyles(styles)(SpecializationCard));
