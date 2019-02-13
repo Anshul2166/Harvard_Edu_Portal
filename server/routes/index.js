@@ -1,13 +1,15 @@
 //Main route file for each routes
 
-var express = require("express");
-var router = express.Router();
-var users=require("./users");
-var posts=require("./posts");
-var comments=require('./comments');
+const express = require("express");
+const router = express.Router();
+const users = require("./users");
+const posts = require("./posts");
+const comments = require("./comments");
+const communities = require("./communities");
 
-router.use("/users",users);
-router.use("/posts",posts);
-router.use('/comments',comments);
+router.use("/users", users);
+router.use("/posts", posts);
+router.use("/comments", comments);
+router.use("/communities", communities);
 
 module.exports = router;

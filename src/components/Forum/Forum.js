@@ -4,6 +4,8 @@ import Header from "../Common/Header/Header";
 import ForumContext from "./_forumContext";
 import CreateCommunityModal from "./CreateCommunityModal/CreateCommunityModal";
 import PostCard from "../Common/PostCard/PostCard";
+import { connect } from "react-redux";
+import { fetchCommunities } from "../../store/actions/communities";
 
 class Forum extends Component {
   state = {
@@ -13,6 +15,12 @@ class Forum extends Component {
   closeCommunityModal = () => this.setState({ communityModalOpen: false });
 
   openCommunityModal = () => this.setState({ communityModalOpen: true });
+
+  componentDidMount = () => {
+    if (!this.props.communities.fetched) {
+      this.props.fetchCommunities();
+    }
+  };
 
   render() {
     const contextValue = {
@@ -40,4 +48,12 @@ class Forum extends Component {
     );
   }
 }
-export default Forum;
+
+const mapStateToProps = state => ({
+  communities: state.communities
+});
+
+export default connect(
+  mapStateToProps,
+  { fetchCommunities }
+)(Forum);

@@ -5,6 +5,10 @@ const Comments = require("../models/comments");
 const Users = require("../models/users");
 const { check, validationResult } = require("express-validator/check");
 
+//==============================
+//=Full Route /api/posts/...
+//==============================
+
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
@@ -48,7 +52,9 @@ router.get("/", async (req, res, next) => {
 let postCreationValidations = [
   check("title").isLength({ min: 1 }),
   check("description").isLength({ min: 1 }),
-  check("group").not().isEmpty()
+  check("community")
+    .not()
+    .isEmpty()
 ];
 
 router.post(
@@ -56,7 +62,7 @@ router.post(
   isLoggedIn,
   postCreationValidations,
   async (req, res) => {
-    const { title, description,group } = req.body;
+    const { title, description, community } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
@@ -65,23 +71,16 @@ router.post(
     try {
       const newPost = await new Posts({
         title,
-        description,
+        description: description,
         createdBy: user._id,
-        group:group
+        community
       });
       await newPost.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "Post successfully created",
-        message: {
-          title,
-          description,
-          createdBy: user._id,
-          group
-        }
+      const populatedPost = await Posts.populate(newPost, {
+        path: "comments createdBy community"
       });
+
+      res.status(200).send(populatedPost);
     } catch (error) {
       console.log(error);
       res.status(401).send(error);
