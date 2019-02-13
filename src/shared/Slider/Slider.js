@@ -5,6 +5,7 @@ import SpecializationCard from "../../components/Common/SpecializationCard";
 import DegreeCard from "../../components/Common/DegreeCard";
 import CourseCard from "../../components/Common/CourseCard";
 import {connect} from "react-redux";
+import {withRouter} from 'react-router-dom';
 
 class Slider extends React.Component {
   responsive = {
@@ -28,18 +29,18 @@ class Slider extends React.Component {
     if (this.props.cardType === "specialization") {
       const specialization=this.props.specialization;
       return specialization.map((item, i) => (
-        <SpecializationCard courseName={item.name} courseImage={item.imageUrl}/>
+        <SpecializationCard courseName={item.name} courseImage={item.imageUrl} data={this.props.specialization}/>
       ));
     } else if (this.props.cardType === "degree") {   
-      const courses=this.props.courses;   
-      console.log(courses);
-      return courses.map((item, i) => (
-        <DegreeCard  courseName={item.course_title} courseImage={item.course_image} courseDomain="CS"/>
+      const degrees=this.props.degrees;   
+      console.log(degrees);
+      return degrees.map((item, i) => (
+        <DegreeCard degreeName={item.degree_title} degreeImage={item.degree_image} degreeProvider={item.degree_provider}/>
       ));
     } else {
-      const courses=this.props.degrees;
+      const courses=this.props.courses;
       return courses.map((item, i) => (
-        <CourseCard degreeName={item.degree_title} degreeImage={item.degree_image} degreeProvider={item.degree_provider}/>
+        < CourseCard  courseName={item.course_title} courseImage={item.course_image} courseDomain="CS"/>
       ));
     }
   }
@@ -73,4 +74,4 @@ const mapStateToProps=state=>{
   }
 }
 
-export default connect(mapStateToProps)(Slider);
+export default connect(mapStateToProps)(withRouter(Slider));
