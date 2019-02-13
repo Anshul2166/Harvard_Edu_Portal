@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 class PostCard extends Component {
+  redirectToSinglePost = () => {
+    this.props.history.push(`/single-post/${this.props.id}`);
+  };
+
   render() {
+    const { props } = this;
     return (
       <div className="PostCard">
         <div className="PostCard__side-action">
@@ -9,7 +15,9 @@ class PostCard extends Component {
             <div className="PostCard__upvote PostCard__side-action-btn">
               <i className="fas fa-arrow-up" />
             </div>
-            <div className="PostCard__vote-amount">2</div>
+            <div className="PostCard__vote-amount">
+              {props.upVotes - props.downVotes}
+            </div>
             <div className="PostCard__downvote PostCard__side-action-btn">
               <i className="fas fa-arrow-down" />
             </div>
@@ -20,46 +28,29 @@ class PostCard extends Component {
             <div className="PostCard__main-area__post-info">
               <div className="PostCard__community-wrapper">
                 <div className="PostCard__community-name">
-                  r/Computer Enginering
+                  r/{props.community.name}
                 </div>
                 <div className="PostCard__author-name">
-                  Posted by Samrat Luintel
+                  Posted by {props.creator.local.username}
                 </div>
               </div>
-              <div className="PostCard__post-title">
-                Captain America was a spy of Hydra
+              <div
+                onClick={this.redirectToSinglePost}
+                className="PostCard__post-title"
+              >
+                {props.title}
               </div>
-              <div className="PostCard__post-description">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
-                voluptate, qui molestias assumenda praesentium ratione error
-                tempore id tenetur illum, laudantium explicabo ipsa a minima
-                blanditiis quasi odio officiis nostrum odit, fugit officia
-                consequuntur. Sunt similique qui, facilis eos sequi fuga debitis
-                tenetur modi nisi quasi ut dolorum ullam tempora unde
-                repudiandae culpa sint ea temporibus ipsa velit voluptatum atque
-                aperiam aliquid totam? Id quis, magnam corrupti aperiam
-                voluptatem ipsa suscipit sed nobis a reprehenderit dolore
-                quaerat placeat velit veritatis. Mollitia quod sapiente incidunt
-                eligendi nulla placeat. Eum quas, voluptates, rerum rem
-                doloribus harum vero cum, inventore accusamus amet explicabo!
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Assumenda nesciunt vel, reprehenderit cumque officiis voluptatem
-                minus nostrum. Placeat totam voluptatum aperiam, adipisci amet
-                qui deleniti in iure, praesentium voluptates rerum, sint non
-                distinctio odit ullam labore voluptatibus excepturi a eligendi
-                fugiat natus! Illo officia, neque itaque veniam soluta fugiat
-                dolore quibusdam quaerat incidunt eligendi beatae amet ea autem
-                molestiae id nihil consequuntur cum exercitationem molestias
-                unde a ipsam excepturi. Facere maiores voluptatibus ratione unde
-                saepe? Blanditiis adipisci ut magnam tenetur. Aut fugit
-                architecto, assumenda ad dignissimos eos voluptate alias
-                reiciendis, cupiditate aliquid aperiam temporibus laboriosam
-                tempora eius. Cumque, eligendi culpa?
-              </div>
+              <div
+                className="PostCard__post-description"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.parse(props.description)
+                }}
+              />
             </div>
             <div className="PostCard__post-additional-info">
               <div className="PostCard__comments PostCard__post-additional-info__single-item">
-                <i className="fas fa-comments" /> 5 Comments
+                <i className="fas fa-comments" /> {props.comments.length}{" "}
+                Comments
               </div>
             </div>
           </div>
@@ -68,4 +59,4 @@ class PostCard extends Component {
     );
   }
 }
-export default PostCard;
+export default withRouter(PostCard);

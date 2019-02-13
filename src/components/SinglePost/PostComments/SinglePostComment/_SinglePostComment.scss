@@ -1,4 +1,13 @@
+.SinglePostComment {
+  margin-bottom: 15px;
+  display: flex;
+}
+
 .SinglePostComment__header {
+  display: flex;
+}
+
+.SinglePostComment__upper-row {
   display: flex;
 }
 
@@ -11,6 +20,24 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+.SinglePostComment__action-btn {
+  color: rgb(135, 138, 140);
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    color: $primary-orange;
+  }
+}
+
+.SinglePostComment__action-bar {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 24px;
+  max-height: 40px;
+  text-align: center;
 }
 
 .SinglePostComment__posted-time {

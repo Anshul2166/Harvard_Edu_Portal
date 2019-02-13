@@ -2,9 +2,32 @@ import React, { Component } from "react";
 import Header from "../Common/Header/Header";
 import PostCommentForm from "./PostCommentForm/PostCommentForm";
 import PostComments from "./PostComments/PostComments";
+import { ClipLoader } from "react-spinners";
+import { connect } from "react-redux";
+import { fetchSinglePost } from "../../store/actions/posts";
 
 class SinglePost extends Component {
+  componentDidMount = () => {
+    this.props.fetchSinglePost(this.props.match.params.id);
+  };
+
   render() {
+    const { props } = this;
+    if (!props.post.fetched) {
+      return (
+        <div className="SinglePost">
+          <Header />
+          <div className="SinglePost__loading" key={0}>
+            <ClipLoader
+              sizeUnit={"px"}
+              size={43}
+              color={"#00bcd1"}
+              loading={true}
+            />
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="SinglePost">
         <Header />
@@ -17,7 +40,9 @@ class SinglePost extends Component {
                     <div className="SinglePost__upvote SinglePost__side-action-btn">
                       <i className="fas fa-arrow-up" />
                     </div>
-                    <div className="SinglePost__vote-amount">2</div>
+                    <div className="SinglePost__vote-amount">
+                      {props.post.upVotes - props.post.downVotes}
+                    </div>
                     <div className="SinglePost__downvote SinglePost__side-action-btn">
                       <i className="fas fa-arrow-down" />
                     </div>
@@ -28,53 +53,29 @@ class SinglePost extends Component {
                     <div className="SinglePost__main-area__post-info">
                       <div className="SinglePost__community-wrapper">
                         <div className="SinglePost__community-name">
-                          r/Computer Enginering
+                          r/{props.post.community.name}
                         </div>
                         <div className="SinglePost__author-name">
-                          Posted by Samrat Luintel
+                          Posted by {props.post.createdBy.local.username}
                         </div>
                       </div>
                       <div className="SinglePost__post-title">
-                        Captain America was a spy of Hydra
+                        {props.post.title}
                       </div>
-                      <div className="SinglePost__post-description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Magnam voluptate, qui molestias assumenda
-                        praesentium ratione error tempore id tenetur illum,
-                        laudantium explicabo ipsa a minima blanditiis quasi odio
-                        officiis nostrum odit, fugit officia consequuntur. Sunt
-                        similique qui, facilis eos sequi fuga debitis tenetur
-                        modi nisi quasi ut dolorum ullam tempora unde
-                        repudiandae culpa sint ea temporibus ipsa velit
-                        voluptatum atque aperiam aliquid totam? Id quis, magnam
-                        corrupti aperiam voluptatem ipsa suscipit sed nobis a
-                        reprehenderit dolore quaerat placeat velit veritatis.
-                        Mollitia quod sapiente incidunt eligendi nulla placeat.
-                        Eum quas, voluptates, rerum rem doloribus harum vero
-                        cum, inventore accusamus amet explicabo! Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit. Assumenda
-                        nesciunt vel, reprehenderit cumque officiis voluptatem
-                        minus nostrum. Placeat totam voluptatum aperiam,
-                        adipisci amet qui deleniti in iure, praesentium
-                        voluptates rerum, sint non distinctio odit ullam labore
-                        voluptatibus excepturi a eligendi fugiat natus! Illo
-                        officia, neque itaque veniam soluta fugiat dolore
-                        quibusdam quaerat incidunt eligendi beatae amet ea autem
-                        molestiae id nihil consequuntur cum exercitationem
-                        molestias unde a ipsam excepturi. Facere maiores
-                        voluptatibus ratione unde saepe? Blanditiis adipisci ut
-                        magnam tenetur. Aut fugit architecto, assumenda ad
-                        dignissimos eos voluptate alias reiciendis, cupiditate
-                        aliquid aperiam temporibus laboriosam tempora eius.
-                        Cumque, eligendi culpa?
-                      </div>
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: JSON.parse(props.post.description)
+                        }}
+                        className="SinglePost__post-description"
+                      />
                     </div>
                     <div className="SinglePost__post-additional-info">
                       <div className="SinglePost__comments SinglePost__post-additional-info__single-item">
-                        <i className="fas fa-comments" /> 5 Comments
+                        <i className="fas fa-comments" />{" "}
+                        {props.post.comments.length} Comments
                       </div>
                     </div>
-                    <PostCommentForm />
+                    <PostCommentForm id={this.props.match.params.id} />
                     <PostComments />
                   </div>
                 </div>
@@ -86,4 +87,11 @@ class SinglePost extends Component {
     );
   }
 }
-export default SinglePost;
+
+const mapStateToProps = state => ({
+  post: state.posts.singlePost
+});
+export default connect(
+  mapStateToProps,
+  { fetchSinglePost }
+)(SinglePost);
