@@ -13,7 +13,6 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import SelectDomain from "./components/SelectDomain/SelectDomain";
 import WebDev from "./components/LearningPath/WebDev/WebDev";
 import GameDev from "./components/LearningPath/GameDev/GameDev";
-
 class App extends Component {
   render() {
     return (

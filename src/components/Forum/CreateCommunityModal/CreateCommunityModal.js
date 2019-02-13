@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import ForumContext from "../_forumContext";
+import classnames from "classnames";
+import { connect } from "react-redux";
+import { createCommunity } from "../../../store/actions/communities";
+import {
+  NotificationContainer,
+  NotificationManager
+} from "react-notifications";
 
 const customStyles = {
   content: {
@@ -21,9 +28,56 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 class CreateCommunityModal extends Component {
-  state = {};
+  state = {
+    name: "",
+    description: "",
+    nameErr: "",
+    descriptionErr: ""
+  };
   static contextType = ForumContext;
 
+  changeName = e => {
+    if (this.state.nameErr !== "") {
+      this.setState({ nameErr: "" });
+    }
+    this.setState({ name: e.target.value });
+  };
+
+  changeDescription = e => {
+    if (this.state.descriptionErr !== "") {
+      this.setState({ descriptionErr: "" });
+    }
+    this.setState({ description: e.target.value });
+  };
+
+  submitForm = async () => {
+    if (this.state.name === "") {
+      return this.setState({ nameErr: "You need to provide a name" });
+    }
+    if (this.state.description === "") {
+      return this.setState({
+        descriptionErr: "You need to provide the description for the community"
+      });
+    }
+
+    if (this.state.nameErr === "" && this.state.descriptionErr === "") {
+      try {
+        await this.props.createCommunity(
+          this.state.name,
+          this.state.description
+        );
+
+        this.setState({ name: "", description: "" });
+        NotificationManager.info("Community have been successfully created");
+      } catch (error) {
+        //Error check from server
+        console.log("From submit form", error);
+        if (error.data.nameErr) {
+          this.setState({ nameErr: error.data.nameErr });
+        }
+      }
+    }
+  };
   render() {
     return (
       <Modal
@@ -47,7 +101,13 @@ class CreateCommunityModal extends Component {
                 <label className="CreateCommunityModal__main-input-wrapper__label">
                   <input
                     type="text"
-                    className="CreateCommunityModal__main-input"
+                    className={classnames({
+                      "CreateCommunityModal__main-input": true,
+                      "CreateCommunityModal__main-input--error":
+                        this.state.nameErr !== ""
+                    })}
+                    value={this.state.name}
+                    onChange={this.changeName}
                   />
                   <span className="CreateCommunityModal__main-input-wrapper__span">
                     community name
@@ -58,13 +118,25 @@ class CreateCommunityModal extends Component {
                 Community names including capitalization cannot be changed{" "}
                 <i class="fas fa-info-circle" />
               </div>
+              {this.state.nameErr && (
+                <div className="CreateCommunityModal__input-div-wrapper__error">
+                  {this.state.nameErr}
+                </div>
+              )}
             </div>
             <div className="CreateCommunityModal__input-div-wrapper">
               <div className="CreateCommunityModal__main-input-wrapper">
                 <label className="CreateCommunityModal__main-input-wrapper__label">
                   <textarea
                     type="text"
-                    className="CreateCommunityModal__main-input CreateCommunityModal__main-input--textarea "
+                    value={this.state.description}
+                    onChange={this.changeDescription}
+                    className={classnames({
+                      "CreateCommunityModal__main-input": true,
+                      "CreateCommunityModal__main-input--textarea": true,
+                      "CreateCommunityModal__main-input--error":
+                        this.state.descriptionErr !== ""
+                    })}
                   />
                   <span className="CreateCommunityModal__main-input-wrapper__span">
                     community description
@@ -75,20 +147,32 @@ class CreateCommunityModal extends Component {
                 This is how new members come to understand your community.{" "}
                 <i class="fas fa-info-circle" />
               </div>
+              {this.state.descriptionErr && (
+                <div className="CreateCommunityModal__input-div-wrapper__error">
+                  {this.state.descriptionErr}
+                </div>
+              )}
             </div>
           </div>
           <div className="CreateCommunityModal__action-area">
             <button className="CreateCommunityModal__cancel-btn btn btn-md btn-blue-outline">
               Cancel
             </button>
-            <button className="CreateCommunityModal__start-btn btn btn-md btn-blue">
-              Start
+            <button
+              onClick={this.submitForm}
+              className="CreateCommunityModal__start-btn btn btn-md btn-blue"
+            >
+              Create
             </button>
           </div>
+          <NotificationContainer />
         </div>
       </Modal>
     );
   }
 }
 
-export default CreateCommunityModal;
+export default connect(
+  null,
+  { createCommunity }
+)(CreateCommunityModal);

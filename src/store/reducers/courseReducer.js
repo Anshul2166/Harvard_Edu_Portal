@@ -1,5 +1,5 @@
 //reducer for all activity-related
-import * as ACTIONS from "../actions/actionTypes";
+import * as ACTIONS from "../types/actionTypes";
 
 const courseReducer = (state = {}, action) => {
   switch (action.type) {

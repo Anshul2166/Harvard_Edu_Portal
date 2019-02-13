@@ -79,10 +79,18 @@
     border: 1px solid rgb(26, 26, 27);
   }
 }
+
+.CreatePost__main-form__title--error {
+  border: 1px solid red;
+}
 .CreatePost__main-form__content {
   position: relative;
+  transition: 0.3s all ease-in-out;
 }
 
+.CreatePost__main-form__content--error {
+  border: 1px solid red;
+}
 .CreatePost__main-form__content--info {
   position: absolute;
   top: 85px;
@@ -104,6 +112,7 @@
   padding: 3px 16px;
   border-radius: 4px;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 .CreatePost__action-btn--disabled {
@@ -114,6 +123,13 @@
 .CreatePost__btn-wrapper {
   display: flex;
   justify-content: flex-end;
+}
+
+.CreatePost__error {
+  font-size: 0.8rem;
+  color: red;
+  margin-top: 8px;
+  margin-bottom: 5px;
 }
 
 .CreatePost {

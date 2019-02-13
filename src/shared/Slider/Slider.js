@@ -4,12 +4,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import SpecializationCard from "../../components/Common/SpecializationCard";
 import DegreeCard from "../../components/Common/DegreeCard";
 import CourseCard from "../../components/Common/CourseCard";
-<<<<<<< HEAD
 import { connect } from "react-redux";
-=======
-import {connect} from "react-redux";
-import {withRouter} from 'react-router-dom';
->>>>>>> onClick working
+import { withRouter } from "react-router-dom";
 
 class Slider extends React.Component {
   responsive = {
@@ -33,7 +29,11 @@ class Slider extends React.Component {
     if (this.props.cardType === "specialization") {
       const specialization = this.props.specialization;
       return specialization.map((item, i) => (
-        <SpecializationCard courseName={item.name} courseImage={item.imageUrl} data={this.props.specialization}/>
+        <SpecializationCard
+          courseName={item.name}
+          courseImage={item.imageUrl}
+          data={this.props.specialization}
+        />
       ));
     } else if (this.props.cardType === "degree") {
       const degrees = this.props.degrees;
