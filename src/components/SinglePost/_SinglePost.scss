@@ -24,6 +24,12 @@
   }
 }
 
+.SinglePost__loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .SinglePost__side-action {
   width: 40px;
   border-left: 4px solid transparent;

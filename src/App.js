@@ -27,7 +27,7 @@ class App extends Component {
           <Route path="/sunburst" component={SunburstGraph} />
           <Route path="/create-post" component={CreatePost} />
           <Route path="/course_info" component={CourseInfo} />
-          <Route path="/single-post" component={SinglePost} />
+          <Route path="/single-post/:id" component={SinglePost} />
           <Route path="/select-domain" component={SelectDomain} />
 
           {/* Learning path routes */}

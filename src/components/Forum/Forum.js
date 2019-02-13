@@ -6,6 +6,7 @@ import CreateCommunityModal from "./CreateCommunityModal/CreateCommunityModal";
 import PostCard from "../Common/PostCard/PostCard";
 import { connect } from "react-redux";
 import { fetchCommunities } from "../../store/actions/communities";
+import InfinitePost from "./InfinitePost/InfinitePost";
 
 class Forum extends Component {
   state = {
@@ -22,6 +23,10 @@ class Forum extends Component {
     }
   };
 
+  renderPosts = () => {
+    if (this.state.posts.list.length === 0)
+      return <p>There are no posts to show</p>;
+  };
   render() {
     const contextValue = {
       communityModalOpen: this.state.communityModalOpen,
@@ -36,7 +41,7 @@ class Forum extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-8">
-                <PostCard />
+                <InfinitePost />
               </div>
               <div className="col-md-4">
                 <ForumActionArea />
@@ -50,7 +55,8 @@ class Forum extends Component {
 }
 
 const mapStateToProps = state => ({
-  communities: state.communities
+  communities: state.communities,
+  posts: state.posts
 });
 
 export default connect(

@@ -57,6 +57,23 @@ let postCreationValidations = [
     .isEmpty()
 ];
 
+router.get("/find-all/:skip/:limit", async (req, res) => {
+  try {
+    const skipNumber = parseInt(req.params.skip);
+    const limitNumber = parseInt(req.params.limit);
+    console.log("Find all have been called", limitNumber);
+    const posts = await Posts.find({})
+      .sort({ createdAt: -1 })
+      .skip(skipNumber)
+      .limit(limitNumber)
+      .populate("comments comments.author createdBy community");
+
+    res.status(200).send(posts);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ eroor: "Oops some error has occured" });
+  }
+});
 router.post(
   "/create-post",
   isLoggedIn,
@@ -138,15 +155,11 @@ router.delete("/:postId", isLoggedIn, async (req, res) => {
 router.get("/:postId", async (req, res, next) => {
   let postId = req.params.postId;
   try {
-    const results = await Posts.findById(postId);
-    console.log(results);
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "You are in / page",
-      message: results
+    const post = await Posts.findById(postId);
+    const populatedPost = await Posts.populate(post, {
+      path: "comments comments.author createdBy community"
     });
+    res.status(200).send(populatedPost);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -176,13 +189,10 @@ router.post(
       const post = await Posts.findByIdAndUpdate(postId);
       post.comments.push(response._id);
       const update = await post.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "You are in / page",
-        message: update
+      const populatedPost = await Posts.populate(update, {
+        path: "comments comments.author createdBy community"
       });
+      res.status(200).send(populatedPost);
     } catch (err) {
       console.log(err);
       res.status(500).send(err);

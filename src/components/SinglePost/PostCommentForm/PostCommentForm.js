@@ -1,6 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { commentOnSinglePost } from "../../../store/actions/posts";
 
 class PostCommentForm extends Component {
+  state = {
+    comment: ""
+  };
+
+  onCommentChange = e => {
+    this.setState({ comment: e.target.value });
+  };
+
+  submitComment = () => {
+    if (this.state.comment === "") return;
+    this.props.commentOnSinglePost(this.props.id, this.state.comment);
+  };
   render() {
     return (
       <div className="PostCommentForm">
@@ -12,11 +26,16 @@ class PostCommentForm extends Component {
         </div>
         <div className="PostCommentForm__form-wrapper">
           <textarea
+            value={this.state.comment}
+            onChange={this.onCommentChange}
             className="PostCommentForm__main-form"
             placeholder="What are your thoughts?"
           />
           <div className="PostCommentForm__action-area">
-            <div className="PostCommentForm__btn btn btn-md btn-orange">
+            <div
+              onClick={this.submitComment}
+              className="PostCommentForm__btn btn btn-md btn-orange"
+            >
               Comment
             </div>
           </div>
@@ -25,4 +44,7 @@ class PostCommentForm extends Component {
     );
   }
 }
-export default PostCommentForm;
+export default connect(
+  null,
+  { commentOnSinglePost }
+)(PostCommentForm);
