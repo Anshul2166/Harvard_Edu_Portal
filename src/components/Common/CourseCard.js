@@ -48,7 +48,7 @@ class CourseCard extends React.Component {
   };
 
   render() {
-    const { classes,courseName,courseImage,courseDomain } = this.props;
+    const { classes,courseName,courseImage,courseProvider } = this.props;
 
     return (
       <Card className={classes.card}>
@@ -62,7 +62,7 @@ class CourseCard extends React.Component {
           {courseName}
         </Typography>
         <Typography variant="p" component="p" className="heading">
-          {courseDomain}
+          {courseProvider}
         </Typography>
         </CardContent>
       </Card>
