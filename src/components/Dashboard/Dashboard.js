@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import SpecializationCard from "../Common/SpecializationCard";
-import DegreeCard from "../Common/DegreeCard";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import CourseCard from "../Common/CourseCard";
 import Slider from "../../shared/Slider/Slider";
 import "./Dashboard.css";
 

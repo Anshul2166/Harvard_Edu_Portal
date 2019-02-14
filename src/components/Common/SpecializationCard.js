@@ -1,10 +1,8 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import logo from "../../shared/assets/stanford.jpg";
-import  { Redirect,withRouter } from 'react-router-dom';
+import  { withRouter } from 'react-router-dom';
 
 let styles = {
   card: {
@@ -35,11 +33,12 @@ let styles = {
 
 function onClick(props){
   console.log("Here");
-  props.history.push('/profile');
+  console.log(props);
+  props.history.push({pathname:'/course_info',state: { info:props.data }});
 };
 
 function SpecializationCard(props) {
-  const { classes,data } = props;
+  const { classes } = props;
   return (
     <div>
       <Card

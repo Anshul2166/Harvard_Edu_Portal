@@ -29,18 +29,18 @@ class Slider extends React.Component {
     if (this.props.cardType === "specialization") {
       const specialization=this.props.specialization;
       return specialization.map((item, i) => (
-        <SpecializationCard courseName={item.name} courseImage={item.imageUrl} data={this.props.specialization}/>
+        <SpecializationCard courseName={item.name} courseImage={item.imageUrl} data={this.props.specialization[i]}/>
       ));
     } else if (this.props.cardType === "degree") {   
       const degrees=this.props.degrees;   
       console.log(degrees);
       return degrees.map((item, i) => (
-        <DegreeCard degreeName={item.degree_title} degreeImage={item.degree_image} degreeProvider={item.degree_provider}/>
+        <DegreeCard degreeName={item.title} degreeImage={item.imageUrl} degreeProvider={item.degree_provider} data={this.props.degrees[i]}/>
       ));
     } else {
       const courses=this.props.courses;
       return courses.map((item, i) => (
-        < CourseCard  courseName={item.course_title} courseImage={item.course_image} courseDomain="CS"/>
+        <CourseCard courseName={item.title} courseImage={item.imageUrl} courseDomain="CS" data={this.props.courses[i]}/>
       ));
     }
   }

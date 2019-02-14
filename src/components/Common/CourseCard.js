@@ -6,7 +6,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
-import logo from "../../shared/assets/stanford.jpg";
 
 const styles = theme => ({
   card: {
@@ -41,7 +40,7 @@ const styles = theme => ({
   },
 });
 
-class DegreeCard extends React.Component {
+class CourseCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -71,8 +70,8 @@ class DegreeCard extends React.Component {
   }
 }
 
-DegreeCard.propTypes = {
+CourseCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DegreeCard);
+export default withStyles(styles)(CourseCard);

@@ -7,7 +7,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import logo from "../../shared/assets/stanford.jpg";
-import creatorLogo from "../../shared/assets/ibm-logo.jpg";
 import './DegreeCard.css';
 
 const styles = theme => ({
@@ -42,11 +41,16 @@ const styles = theme => ({
   }
 });
 
-class CourseCard extends React.Component {
+class DegreeCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
+  };
+
+  onClick=()=>{
+    console.log("Here");
+    this.props.history.push({pathname:'/course_info',state: { info:this.props.data }});
   };
 
   render() {
@@ -75,8 +79,8 @@ class CourseCard extends React.Component {
   }
 }
 
-CourseCard.propTypes = {
+DegreeCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CourseCard);
+export default withStyles(styles)(DegreeCard);
