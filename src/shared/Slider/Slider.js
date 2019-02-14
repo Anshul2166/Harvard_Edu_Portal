@@ -30,7 +30,7 @@ class Slider extends React.Component {
       const specialization = this.props.specialization;
       return specialization.map((item, i) => (
         <SpecializationCard
-          courseName={item.name}
+          courseName={item.title}
           courseImage={item.imageUrl}
           data={this.props.specialization[i]}
         />
@@ -42,7 +42,7 @@ class Slider extends React.Component {
         <DegreeCard
           degreeName={item.title}
           degreeImage={item.imageUrl}
-          degreeProvider={item.degree_provider}
+          degreeProvider={item.taughtBy}
           data={this.props.degrees[i]}
         />
       ));
@@ -52,7 +52,7 @@ class Slider extends React.Component {
         <CourseCard
           courseName={item.title}
           courseImage={item.imageUrl}
-          courseDomain="CS"
+          courseProvider={item.offeredBy}
           data={this.props.courses[i]}
         />
       ));
