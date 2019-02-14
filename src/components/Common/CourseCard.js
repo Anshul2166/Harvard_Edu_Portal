@@ -14,7 +14,8 @@ const styles = theme => ({
     width: 300,
     minHeight: 400,
     border: "1px solid wheat",
-    height: 300
+    height: 300,
+    cursor: "pointer"
   },
   media: {
     height: 0,
@@ -69,7 +70,7 @@ class CourseCard extends React.Component {
         <CardMedia
           className={classes.media}
           image={courseImage}
-          title="Contemplative Reptile"
+          title={courseName}
         />
         <CardContent>
           <Typography variant="h5" component="h5" className="heading">

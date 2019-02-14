@@ -31,7 +31,7 @@ const initialState = {
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
-        taughtBy: "Andrew NG",
+        offeredBy: "Andrew NG",
         rating: 4.7,
         overview: [
           " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
@@ -50,7 +50,7 @@ const initialState = {
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
-        taughtBy: "Andrew NG",
+        offeredBy: "Andrew NG",
         rating: 4.7,
         overview: [
           " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
@@ -69,7 +69,7 @@ const initialState = {
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
-        taughtBy: "Andrew NG",
+        offeredBy: "Andrew NG",
         rating: 4.7,
         overview: [
           " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
@@ -88,7 +88,7 @@ const initialState = {
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
-        taughtBy: "Andrew NG",
+        offeredBy: "Andrew NG",
         rating: 4.7,
         overview: [
           " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
@@ -107,7 +107,7 @@ const initialState = {
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
-        taughtBy: "Andrew NG",
+        offeredBy: "Andrew NG",
         rating: 4.7,
         overview: [
           " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
@@ -126,7 +126,7 @@ const initialState = {
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
-        taughtBy: "Andrew NG",
+        offeredBy: "Andrew NG",
         rating: 4.7,
         overview: [
           " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
@@ -148,85 +148,115 @@ const initialState = {
         title: "Deep learning specialization by Andrew NG",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
-          "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+          "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
         taughtBy: "Andrew NG",
         rating: 4.7,
-        overview:[" CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-        "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-        "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."],
+        overview: [
+          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+        ],
         screenshots: ["/assets/cs501.jpg", "/assets/cs502.jpg"],
         topics_covered: ["React, NodeJs, Python"],
-        list_of_courses:["Convolutional neural network","Recurrent neural network"]
+        list_of_courses: [
+          "Convolutional neural network",
+          "Recurrent neural network"
+        ]
       },
       {
         title: "Deep learning specialization by Andrew NG",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
-          "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+          "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
         taughtBy: "Andrew NG",
         rating: 4.7,
-        overview:[" CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-        "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-        "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."],
+        overview: [
+          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+        ],
         screenshots: ["/assets/cs501.jpg", "/assets/cs502.jpg"],
         topics_covered: ["React, NodeJs, Python"],
-        list_of_courses:["Convolutional neural network","Recurrent neural network"]
+        list_of_courses: [
+          "Convolutional neural network",
+          "Recurrent neural network"
+        ]
       },
       {
         title: "Deep learning specialization by Andrew NG",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
-          "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+          "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
         taughtBy: "Andrew NG",
         rating: 4.7,
-        overview:[" CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-        "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-        "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."],
+        overview: [
+          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+        ],
         screenshots: ["/assets/cs501.jpg", "/assets/cs502.jpg"],
         topics_covered: ["React, NodeJs, Python"],
-        list_of_courses:["Convolutional neural network","Recurrent neural network"]
+        list_of_courses: [
+          "Convolutional neural network",
+          "Recurrent neural network"
+        ]
       },
       {
         title: "Deep learning specialization by Andrew NG",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
-          "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+          "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
         taughtBy: "Andrew NG",
         rating: 4.7,
-        overview:[" CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-        "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-        "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."],
+        overview: [
+          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+        ],
         screenshots: ["/assets/cs501.jpg", "/assets/cs502.jpg"],
         topics_covered: ["React, NodeJs, Python"],
-        list_of_courses:["Convolutional neural network","Recurrent neural network"]
+        list_of_courses: [
+          "Convolutional neural network",
+          "Recurrent neural network"
+        ]
       },
       {
         title: "Deep learning specialization by Andrew NG",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
-          "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+          "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
         taughtBy: "Andrew NG",
         rating: 4.7,
-        overview:[" CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-        "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-        "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."],
+        overview: [
+          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+        ],
         screenshots: ["/assets/cs501.jpg", "/assets/cs502.jpg"],
         topics_covered: ["React, NodeJs, Python"],
-        list_of_courses:["Convolutional neural network","Recurrent neural network"]
+        list_of_courses: [
+          "Convolutional neural network",
+          "Recurrent neural network"
+        ]
       },
       {
         title: "Deep learning specialization by Andrew NG",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
-          "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
+          "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
         taughtBy: "Andrew NG",
         rating: 4.7,
-        overview:[" CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-        "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-        "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."],
+        overview: [
+          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+        ],
         screenshots: ["/assets/cs501.jpg", "/assets/cs502.jpg"],
         topics_covered: ["React, NodeJs, Python"],
-        list_of_courses:["Convolutional neural network","Recurrent neural network"]
+        list_of_courses: [
+          "Convolutional neural network",
+          "Recurrent neural network"
+        ]
       }
     ]
   },
