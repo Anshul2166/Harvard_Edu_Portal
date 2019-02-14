@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {connect} from "react-redux";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import StarRatings from "react-star-ratings";
@@ -8,9 +7,9 @@ import "./CourseInfo.css";
 
 class CourseInfo extends Component {
   render() {
-    let index=this.props.location.state.index;
     console.log(this.props);
-    let data=this.props.info[index-1];
+    let data=this.props.location.state.info;
+    console.log(data);
     const Overview = data.overview.map(paragraph => <p>{paragraph}</p>);
     const Screenshots = data.screenshots.map(screenshot => (
       <img src={screenshot} className="screenshots" alt="screenshot"/>
@@ -23,7 +22,7 @@ class CourseInfo extends Component {
             <CardMedia
               component="img"
               alt="Course Pic"
-              image={data.course_image}
+              image={data.imageUrl}
               title="Profile Pic"
               className="rectangle-image right-align"
               width="200"
@@ -32,7 +31,7 @@ class CourseInfo extends Component {
           </Grid>
           <Grid item md={8} className="vertical-align">
             <h2>
-              <b className="heading-form">{data.course_title}</b>
+              <b className="heading-form">{data.title}</b>
             </h2>
             <p>
               <i>Offered by {data.offeredBy}</i>
@@ -68,10 +67,10 @@ class CourseInfo extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    info: state.courses.info
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     info: state.courses.info
+//   };
+// };
 
-export default connect(mapStateToProps)(CourseInfo);
+export default CourseInfo;

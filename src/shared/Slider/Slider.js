@@ -32,7 +32,7 @@ class Slider extends React.Component {
         <SpecializationCard
           courseName={item.name}
           courseImage={item.imageUrl}
-          data={this.props.specialization}
+          data={this.props.specialization[i]}
         />
       ));
     } else if (this.props.cardType === "degree") {
@@ -40,18 +40,20 @@ class Slider extends React.Component {
       console.log(degrees);
       return degrees.map((item, i) => (
         <DegreeCard
-          degreeName={item.degree_title}
-          degreeImage={item.degree_image}
+          degreeName={item.title}
+          degreeImage={item.imageUrl}
           degreeProvider={item.degree_provider}
+          data={this.props.degrees[i]}
         />
       ));
     } else {
       const courses = this.props.courses;
       return courses.map((item, i) => (
         <CourseCard
-          courseName={item.course_title}
-          courseImage={item.course_image}
+          courseName={item.title}
+          courseImage={item.imageUrl}
           courseDomain="CS"
+          data={this.props.courses[i]}
         />
       ));
     }
