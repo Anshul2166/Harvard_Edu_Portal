@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import logo from "../../shared/assets/stanford.jpg";
 import "./DegreeCard.css";
+import { withRouter } from "react-router-dom";
 
 const styles = theme => ({
   card: {
@@ -60,7 +61,7 @@ class DegreeCard extends React.Component {
     const { classes, degreeName, degreeImage, degreeProvider } = this.props;
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} onClick={() => this.onClick()}>
         <CardMedia
           className={classes.media}
           image={logo}
@@ -86,4 +87,4 @@ DegreeCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(DegreeCard);
+export default withRouter(withStyles(styles)(DegreeCard));
