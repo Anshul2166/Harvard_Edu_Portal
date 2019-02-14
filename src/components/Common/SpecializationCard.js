@@ -12,7 +12,8 @@ let styles = {
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "300px 300px",
-    border: "2px solid white"
+    border: "2px solid white",
+    cursor:"pointer"
   },
   bullet: {
     display: "inline-block",
@@ -43,7 +44,7 @@ function SpecializationCard(props) {
     <div>
       <Card
         className={classes.card}
-        style={{ backgroundImage: `url(${props.courseImage})` }}
+        style={{ backgroundImage: `url(${props.courseImage})`}}
         onClick={()=>onClick(props)}
       />
       <Typography variant="h6" component="p" className={classes.info}>

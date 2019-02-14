@@ -15,7 +15,8 @@ const styles = theme => ({
     maxWidth: 400,
     width: 300,
     minHeight: 400,
-    border:"1px solid wheat"
+    border:"1px solid wheat",
+    cursor:"pointer"
   },
   media: {
     height: 0,
@@ -62,7 +63,7 @@ class DegreeCard extends React.Component {
         <CardMedia
           className={classes.media}
           image={logo}
-          title="Contemplative Reptile"
+          title={degreeName}
         />
         <div className="center-div in-div">
           <img src={degreeImage} alt="Random" width="50" height="50" />

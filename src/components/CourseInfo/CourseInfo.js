@@ -12,7 +12,9 @@ class CourseInfo extends Component {
     console.log(data);
     const Overview = data.overview.map(paragraph => <p>{paragraph}</p>);
     const Screenshots = data.screenshots.map(screenshot => (
+      <Grid item md={12} lg={6}> 
       <img src={screenshot} className="screenshots" alt="screenshot"/>
+      </Grid>
     ));
 
     return (
@@ -31,7 +33,7 @@ class CourseInfo extends Component {
           </Grid>
           <Grid item md={8} className="vertical-align">
             <h2>
-              <b className="heading-form">{data.title}</b>
+              <b>{data.title}</b>
             </h2>
             <p>
               <i>Offered by {data.offeredBy}</i>
@@ -45,14 +47,16 @@ class CourseInfo extends Component {
               starSpacing="10px"
             />
             <p className="course-info-url">
-              <i>Available on <a href={data.url}>{data.url}</a></i>
+              Available on <a href={data.url}>{data.url}</a>
             </p>
           </Grid>
         </Grid>
         <h1>Overview</h1>
         {Overview}
         <h1>Screenshots</h1>
+        <Grid container spacing={24}>
         {Screenshots}
+        </Grid>
         <Grid container spacing={24}>
           <Grid item xs={12} sm={12} md={10} lg={11}>
             <ListBox
