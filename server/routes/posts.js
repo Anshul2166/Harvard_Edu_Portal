@@ -156,10 +156,19 @@ router.get("/:postId", async (req, res, next) => {
   let postId = req.params.postId;
   try {
     const post = await Posts.findById(postId);
+
     const populatedPost = await Posts.populate(post, {
-      path: "comments comments.author createdBy community"
+      path: "comments createdBy community"
     });
-    res.status(200).send(populatedPost);
+
+    //populating the author of populated comment
+    //I know mongodb was not made for this
+    //But God will forgive me
+    //This is a hackanthon right
+    const populatedAuthorField = await Posts.populate(populatedPost, {
+      path: "comments.author"
+    });
+    res.status(200).send(populatedAuthorField);
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
@@ -187,12 +196,18 @@ router.post(
       });
       const response = await newComment.save();
       const post = await Posts.findByIdAndUpdate(postId);
-      post.comments.push(response._id);
+      //New comments should be in the beginning
+      post.comments.unshift(response._id);
       const update = await post.save();
       const populatedPost = await Posts.populate(update, {
-        path: "comments comments.author createdBy community"
+        path: "comments createdBy community"
       });
-      res.status(200).send(populatedPost);
+
+      //populating the author of populated comment
+      const populatedAuthorField = await Posts.populate(populatedPost, {
+        path: "comments.author"
+      });
+      res.status(200).send(populatedAuthorField);
     } catch (err) {
       console.log(err);
       res.status(500).send(err);
