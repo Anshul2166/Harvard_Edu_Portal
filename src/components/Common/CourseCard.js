@@ -6,6 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
+import {withRouter} from "react-router-dom";
 
 const styles = theme => ({
   card: {
@@ -47,11 +48,15 @@ class CourseCard extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
+  onClick=()=>{
+    this.props.history.push({pathname:'/course_info',state: { info:this.props.data }});
+  }
+
   render() {
     const { classes,courseName,courseImage,courseProvider } = this.props;
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} onClick={()=>this.onClick()}>
         <CardMedia
           className={classes.media}
           image={courseImage}
@@ -74,4 +79,4 @@ CourseCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(CourseCard);
+export default withRouter(withStyles(styles)(CourseCard));
