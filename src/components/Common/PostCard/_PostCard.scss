@@ -24,7 +24,16 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #f8f9fa;
+  color: #f8f9fa;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    color: $primary-orange;
+  }
+}
+
+.PostCard__side-action--selected {
+  color: $primary-orange !important;
 }
 
 .PostCard__upvote-wrapper {
