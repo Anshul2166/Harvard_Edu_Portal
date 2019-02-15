@@ -9,13 +9,16 @@ import { connect } from "react-redux";
 class PostComments extends Component {
   renderComments = () => {
     console.log("Render post comments", this.props.comments);
-    return this.props.comments.map(comment => {
+    return this.props.comments.map((comment, index) => {
       return (
         <SinglePostComment
           liked={comment.liked}
           disliked={comment.disliked}
           content={comment.content}
           author={comment.author}
+          createdAt={comment.createdAt}
+          index={index}
+          id={comment._id}
         />
       );
     });

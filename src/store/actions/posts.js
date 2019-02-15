@@ -4,7 +4,8 @@ import {
   UPDATE_POSTS_SCROLLABLE,
   UPDATE_POSTS_LISTS,
   RESET_POSTS,
-  FETCH_SINGLE_POST
+  FETCH_SINGLE_POST,
+  UPDATE_SINGLE_POST_COMMENT
 } from "../types/postsTypes";
 import { UPDATE_PROFILE_LOGGED_IN } from "../types/profileTypes";
 
@@ -169,4 +170,38 @@ export const resetPost = () => dispatch => {
   dispatch({
     type: RESET_POSTS
   });
+};
+
+export const likePostComment = (id, index) => async dispatch => {
+  try {
+    const res = await axios.put(`/api/comments/${id}/like`);
+    console.log("Like post comment", res.data);
+    dispatch({
+      type: UPDATE_SINGLE_POST_COMMENT,
+      payload: {
+        index,
+        comment: res.data
+      }
+    });
+    console.log("Comment have been liked", res.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const dislikePostComment = (id, index) => async dispatch => {
+  try {
+    const res = await axios.put(`/api/comments/${id}/dislike`);
+    console.log("Like post comment", res.data);
+    dispatch({
+      type: UPDATE_SINGLE_POST_COMMENT,
+      payload: {
+        index,
+        comment: res.data
+      }
+    });
+    console.log("Comment have been liked", res.data);
+  } catch (error) {
+    console.log(error);
+  }
 };

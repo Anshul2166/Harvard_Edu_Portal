@@ -5,7 +5,8 @@ import {
   PUT_SINGLE_POST_TO_TOP,
   HIDE_POST,
   RESET_POSTS,
-  FETCH_SINGLE_POST
+  FETCH_SINGLE_POST,
+  UPDATE_SINGLE_POST_COMMENT
 } from "../types/postsTypes";
 import update from "immutability-helper";
 
@@ -41,6 +42,16 @@ export default (state = initialState, { type, payload }) => {
         }
       };
 
+    case UPDATE_SINGLE_POST_COMMENT:
+      return update(state, {
+        singlePost: {
+          comments: {
+            [payload.index]: {
+              $set: payload.comment
+            }
+          }
+        }
+      });
     case FETCH_SINGLE_POST:
       return {
         ...state,
