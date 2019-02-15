@@ -27,6 +27,10 @@ class InfinitePost extends Component {
     }
   };
 
+  componentDidMount = () => {
+    console.log("Infinite Post have been called");
+  };
+
   renderPost = () => {
     // if (!this.props.profile || !this.props.profile.keys) return;
     if (this.props.posts.list.length === 0) return;

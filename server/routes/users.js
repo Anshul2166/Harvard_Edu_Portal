@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const passport = require("passport");
 const User = require("../models/users");
 const _ = require("lodash");
@@ -21,10 +20,10 @@ let signUpValidation = [
   check("username").isLength({ min: 5, max: 15 })
 ];
 
-let changePasswordValidation=[
+let changePasswordValidation = [
   check("password").isLength({ min: 5 }),
   check("oldPassword").isLength({ min: 5 })
-]
+];
 
 //function to check if the user is already logged in or not
 function isLoggedIn(req, res, next) {
@@ -52,6 +51,19 @@ router.get("/", async function(req, res, next) {
   });
 });
 
+//Sends the info of currently logged in user
+router.get("/get-user", isLoggedIn, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+    if (user) {
+      res.status(200).send(user);
+    } else {
+      res.status(400).send({ message: "The user does not exist" });
+    }
+  } catch (error) {
+    res.status(400).send({ message: "Some error occured" });
+  }
+});
 //Route for login:- uses passport local login strategy
 router.post("/login", loginValidations, async (req, res, next) => {
   //   const { errors, isValid } = validateLoginInput(req.body);
@@ -152,7 +164,11 @@ router.get("/logout", (req, res) => {
   }
 });
 
-router.post("/change_password", isLoggedIn, changePasswordValidation,function(req, res, next) {
+router.post("/change_password", isLoggedIn, changePasswordValidation, function(
+  req,
+  res,
+  next
+) {
   var user = req.user;
   console.log(user);
   // checking if don't have current local password or provided password is valid

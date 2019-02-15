@@ -33,13 +33,13 @@ export default (state = initialState, { type, payload }) => {
     //Mainly updates the post in forum page
     //mostlye for upvote and downvote
     case UPDATE_SINGLE_POST:
-      return update(state, {
-        list: {
-          [payload.index]: {
-            $set: payload.post
-          }
+      return {
+        ...state,
+        singlePost: {
+          fetched: true,
+          ...payload
         }
-      });
+      };
 
     case FETCH_SINGLE_POST:
       return {

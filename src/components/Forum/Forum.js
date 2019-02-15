@@ -23,10 +23,6 @@ class Forum extends Component {
     }
   };
 
-  renderPosts = () => {
-    if (this.state.posts.list.length === 0)
-      return <p>There are no posts to show</p>;
-  };
   render() {
     const contextValue = {
       communityModalOpen: this.state.communityModalOpen,

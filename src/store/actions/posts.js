@@ -6,6 +6,7 @@ import {
   RESET_POSTS,
   FETCH_SINGLE_POST
 } from "../types/postsTypes";
+import { UPDATE_PROFILE_LOGGED_IN } from "../types/profileTypes";
 
 export const createPost = (community, title, description) => async dispatch => {
   try {
@@ -26,6 +27,93 @@ export const createPost = (community, title, description) => async dispatch => {
   }
 };
 
+export const upvoteSinglePost = id => async dispatch => {
+  try {
+    const res = await axios.put(`/api/posts/${id}/upvotes-add`);
+
+    //UPDATES THE USER PROFILE LOGGED IN
+    console.log("Post have been upvoted", res.data);
+
+    dispatch({
+      type: UPDATE_PROFILE_LOGGED_IN,
+      payload: res.data.newUser
+    });
+
+    console.log("Update single post have been called");
+    dispatch({
+      type: FETCH_SINGLE_POST,
+      payload: res.data.newPost
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const removeSinglePostUpvote = id => async dispatch => {
+  try {
+    const res = await axios.put(`/api/posts/${id}/upvotes-remove`);
+
+    //UPDATES THE USER PROFILE LOGGED IN
+    console.log("Post have been upvoted", res.data);
+
+    dispatch({
+      type: UPDATE_PROFILE_LOGGED_IN,
+      payload: res.data.newUser
+    });
+
+    console.log("Update single post have been called");
+    dispatch({
+      type: FETCH_SINGLE_POST,
+      payload: res.data.newPost
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const downvoteSinglePost = id => async dispatch => {
+  try {
+    const res = await axios.put(`/api/posts/${id}/downvotes-add`);
+
+    //UPDATES THE USER PROFILE LOGGED IN
+    console.log("Post have been upvoted", res.data);
+
+    dispatch({
+      type: UPDATE_PROFILE_LOGGED_IN,
+      payload: res.data.newUser
+    });
+
+    console.log("Update single post have been called");
+    dispatch({
+      type: FETCH_SINGLE_POST,
+      payload: res.data.newPost
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const removeSinglePostDownvote = id => async dispatch => {
+  try {
+    const res = await axios.put(`/api/posts/${id}/downvotes-remove`);
+
+    //UPDATES THE USER PROFILE LOGGED IN
+    console.log("Post have been upvoted", res.data);
+
+    dispatch({
+      type: UPDATE_PROFILE_LOGGED_IN,
+      payload: res.data.newUser
+    });
+
+    console.log("Update single post have been called");
+    dispatch({
+      type: FETCH_SINGLE_POST,
+      payload: res.data.newPost
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const fetchPost = (skip, limit) => async dispatch => {
   try {
     console.log("fetch post have been called");
