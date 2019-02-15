@@ -42,33 +42,36 @@ router.get("/:commentId", async (req, res, next) => {
   }
 });
 
-let updateCommentValidations=[
-  check("content").isLength({min:1})
-]
+let updateCommentValidations = [check("content").isLength({ min: 1 })];
 
-router.put("/:commentId", isLoggedIn,updateCommentValidations, async (req, res) => {
-  const commentId = req.params.commentId;
-  const { content } = req.body;
-  const errors = validationResult(req);
+router.put(
+  "/:commentId",
+  isLoggedIn,
+  updateCommentValidations,
+  async (req, res) => {
+    const commentId = req.params.commentId;
+    const { content } = req.body;
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
     }
-  try {
-    const updateResponse = await Comments.findByIdAndUpdate(commentId);
-    console.log(updateResponse);
-    updateResponse.content = content;
-    await updateResponse.save();
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json");
-    res.json({
-      success: true,
-      status: "Put successfully created"
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).send(err);
+    try {
+      const updateResponse = await Comments.findByIdAndUpdate(commentId);
+      console.log(updateResponse);
+      updateResponse.content = content;
+      await updateResponse.save();
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "Put successfully created"
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
   }
-});
+);
 
 router.delete("/:commentId", isLoggedIn, async (req, res) => {
   const commentId = req.params.commentId;
@@ -101,24 +104,23 @@ router.put("/:commentId/like", isLoggedIn, async (req, res) => {
     if (isPresent) {
       await likeComment.liked.pull(req.user._id);
       await likeComment.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "Already liked, now disliking"
+      const populatedComment = await Comments.populate(likeComment, {
+        path: "author"
       });
+      //Already liked disliking
+      res.status(200).send(populatedComment);
     } else {
       if (isDisliked) {
         await likeComment.disliked.pull(req.user._id);
       }
       await likeComment.liked.push(req.user._id);
       await likeComment.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "Like successfully done"
+      const populatedComment = await Comments.populate(likeComment, {
+        path: "author"
       });
+      //Already liked disliking
+      res.status(200).send(populatedComment);
+      //Like successfully done
     }
   } catch (err) {
     console.log(err);
@@ -140,24 +142,22 @@ router.put("/:commentId/dislike", isLoggedIn, async (req, res) => {
     if (isPresent) {
       await dislikeComment.disliked.pull(req.user._id);
       await dislikeComment.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "Already disliked, now removing"
+      const populatedComment = await Comments.populate(dislikeComment, {
+        path: "author"
       });
+      //Already liked disliking
+      res.status(200).send(populatedComment);
     } else {
       if (isLiked) {
         await dislikeComment.liked.pull(req.user._id);
       }
       await dislikeComment.disliked.push(req.user._id);
       await dislikeComment.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "Disliked successfully done"
+      const populatedComment = await Comments.populate(dislikeComment, {
+        path: "author"
       });
+      //Already liked disliking
+      res.status(200).send(populatedComment);
     }
   } catch (err) {
     console.log(err);
