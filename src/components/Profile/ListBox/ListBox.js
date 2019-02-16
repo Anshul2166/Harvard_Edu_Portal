@@ -28,10 +28,7 @@ class ListBox extends Component {
     const { classes } = this.props;
     function EditButton(props) {
       console.log(props);
-      if (
-        props.edit_option !== undefined &&
-        props.edit_option === false
-      ) {
+      if (props.edit_option !== undefined && props.edit_option === false) {
         return <div />;
       } else {
         return (
@@ -41,6 +38,25 @@ class ListBox extends Component {
         );
       }
     }
+    const List = () => {
+      if (
+        this.props.type !== undefined &&
+        this.props.type !== null &&
+        this.props.type === "commaSeprated"
+      ) {
+        const values = this.props.data.join(",");
+        return (
+          <Typography variant="p" component="p">
+            {values}
+          </Typography>
+        );
+      } else {
+        const values=this.props.data.map((item,index)=>(
+          <li>{item}</li>
+        ));
+        return <ul>{values}</ul>
+      }
+    };
     return (
       <div className="list-box">
         <Card className={classes.card}>
@@ -49,12 +65,12 @@ class ListBox extends Component {
             classes={{
               title: classes.title
             }}
-            action={<EditButton edit_option={this.props.onClickEdit}/>}
+            action={<EditButton edit_option={this.props.onClickEdit} />}
             className={classes.header}
           />
           <CardContent>
             <Typography variant="p" component="p">
-              {this.props.data}
+              <List />
             </Typography>
           </CardContent>
         </Card>

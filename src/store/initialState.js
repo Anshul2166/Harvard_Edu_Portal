@@ -391,13 +391,19 @@ const initialState = {
   },
   profileInfo: {
     info: {
-      skills: "React, NodeJs, Python",
-      accomplishments:
-        "First in district coding championship, Third rank in college",
-      projects:
-        "Built a question paper generator using Java, Built an image modifier using Javascript",
-      courses:
-        "An introduction to computer science, Data structures and alogorithms"
+      skills: ["React", "NodeJs", "Python"],
+      accomplishments: [
+        "First in district coding championship",
+        "Third rank in college"
+      ],
+      projects: [
+        "Built a question paper generator using Java",
+        "Built an image modifier using Javascript"
+      ],
+      courses: [
+        "An introduction to computer science",
+        "Data structures and alogorithms"
+      ]
     }
   }
 };
