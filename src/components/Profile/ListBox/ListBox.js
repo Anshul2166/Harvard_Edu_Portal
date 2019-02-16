@@ -20,6 +20,14 @@ const styles = theme => ({
   },
   icon: {
     color: "purple"
+  },
+  listItem:{
+    listStyle:"disc",
+    listStylePosition:"inside"
+  },
+  listBox:{
+    margin:0,
+    paddingBottom:"5px!important"
   }
 });
 
@@ -51,7 +59,7 @@ class ListBox extends Component {
         );
       } else {
         const values=this.props.data.map((item,index)=>(
-          <li>{item}</li>
+          <li className={classes.listItem}>{item}</li>
         ));
         return <ul>{values}</ul>
       }
@@ -67,8 +75,8 @@ class ListBox extends Component {
             action={<EditButton edit_option={this.props.onClickEdit} />}
             className={classes.header}
           />
-          <CardContent>
-            <Typography variant="p" component="p">
+          <CardContent className={classes.listBox}>
+            <Typography gutterBottom paragraph >
               <List />
             </Typography>
           </CardContent>

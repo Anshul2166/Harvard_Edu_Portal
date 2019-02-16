@@ -5,18 +5,18 @@ import Typography from "@material-ui/core/Typography";
 import ListBox from "./ListBox/ListBox";
 import { connect } from "react-redux";
 import ProfileInfoModal from "../Common/Modal/ProfileInfoModal";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./profile.css";
 
 class Profile extends Component {
-  state = { modalOpen: false,data:[] };
-  onEditOption = (data)=>{
+  state = { modalOpen: false, data: [] };
+  onEditOption = data => {
     console.log("On edit clicked");
     console.log(data);
-    this.setState({ data:data,modalOpen: true });
+    this.setState({ data: data, modalOpen: true });
   };
   onClose = () => {
-    console.log('Closing');
+    console.log("Closing");
     this.setState({ modalOpen: false });
   };
   render() {
@@ -26,7 +26,7 @@ class Profile extends Component {
       <div className="profile">
         <ProfileInfoModal
           isOpen={this.state.modalOpen}
-          onClose={()=>this.onClose()}
+          onClose={() => this.onClose()}
           data={this.state.data}
         />
         <Grid container spacing={24}>
@@ -43,13 +43,24 @@ class Profile extends Component {
           </Grid>
           <Grid item xs={12} sm={6} md={8} lg={10}>
             <div className="profile-info">
-              <Typography variant="h5" component="h2">
+              <Typography variant="h4" component="h3">
                 Anshul
               </Typography>
-              <Typography variant="p" component="p">
-                Add a small bio here
+              <Typography gutterBottom>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
               </Typography>
-              <Link to="#" className="bottom-div">Edit profile</Link>
+              <Link to="#" className="bottom-div">
+                Edit profile
+              </Link>
             </div>
           </Grid>
         </Grid>
@@ -59,7 +70,7 @@ class Profile extends Component {
               <ListBox
                 title="Skills"
                 data={skills}
-                onClickEdit={()=>this.onEditOption(skills)}
+                onClickEdit={() => this.onEditOption(skills)}
                 type="commaSeprated"
               />
             </Grid>
@@ -67,21 +78,21 @@ class Profile extends Component {
               <ListBox
                 title="Accomplishments"
                 data={accomplishments}
-                onClickEdit={()=>this.onEditOption(accomplishments)}
+                onClickEdit={() => this.onEditOption(accomplishments)}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox
                 title="Projects"
                 data={projects}
-                onClickEdit={()=>this.onEditOption(projects)}
+                onClickEdit={() => this.onEditOption(projects)}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox
                 title="Completed Courses"
                 data={courses}
-                onClickEdit={()=>this.onEditOption(courses)}
+                onClickEdit={() => this.onEditOption(courses)}
               />
             </Grid>
           </Grid>
