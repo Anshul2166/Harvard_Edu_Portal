@@ -7,12 +7,13 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import { withRouter } from "react-router-dom";
+import StarRatings from "react-star-ratings";
 
 const styles = theme => ({
   card: {
     maxWidth: 400,
     width: 300,
-    minHeight: 400,
+    minHeight: 450,
     border: "1px solid wheat",
     height: 300,
     cursor: "pointer"
@@ -23,6 +24,10 @@ const styles = theme => ({
   },
   actions: {
     display: "flex"
+  },
+  content: {
+    position: "absolute",
+    bottom: "15%"
   },
   expand: {
     transform: "rotate(0deg)",
@@ -39,7 +44,8 @@ const styles = theme => ({
   },
   avatar: {
     backgroundColor: red[500]
-  }
+  },
+  stars: { marginLeft: "2.5%", position: "absolute", bottom: "5%" }
 });
 
 class CourseCard extends React.Component {
@@ -62,7 +68,7 @@ class CourseCard extends React.Component {
       courseName,
       courseImage,
       courseProvider,
-      courseDomain
+      courseRating
     } = this.props;
 
     return (
@@ -76,15 +82,20 @@ class CourseCard extends React.Component {
           <Typography variant="h5" component="h5" className="heading">
             {courseName}
           </Typography>
-          <Typography variant="p" component="p" className="heading">
-            {courseDomain}
-          </Typography>
-          <Typography variant="h5" component="h5" className="heading">
-            {courseName}
-          </Typography>
-          <Typography variant="p" component="p" className="heading">
-            {courseProvider}
-          </Typography>
+          <div className={classes.content}>
+            <Typography variant="p" component="p" className="heading">
+              {courseProvider}
+            </Typography>
+          </div>
+          <div className={classes.stars}>
+            <StarRatings
+              rating={courseRating}
+              numberOfStars={5}
+              name="rating"
+              starDimension="15px"
+              starSpacing="10px"
+            />
+          </div>
         </CardContent>
       </Card>
     );

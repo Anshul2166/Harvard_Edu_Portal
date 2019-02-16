@@ -33,6 +33,12 @@ class Slider extends React.Component {
           courseName={item.title}
           courseImage={item.imageUrl}
           data={this.props.specialization[i]}
+<<<<<<< HEAD
+=======
+          courseList={item.list_of_courses}
+          courseProvider={item.offeredBy}
+          courseRating={item.rating}
+>>>>>>> Card positioning
         />
       ));
     } else if (this.props.cardType === "degree") {
@@ -44,6 +50,10 @@ class Slider extends React.Component {
           degreeImage={item.imageUrl}
           degreeProvider={item.taughtBy}
           data={this.props.degrees[i]}
+<<<<<<< HEAD
+=======
+          courseRating={item.rating}
+>>>>>>> Card positioning
         />
       ));
     } else {
@@ -54,6 +64,10 @@ class Slider extends React.Component {
           courseImage={item.imageUrl}
           courseProvider={item.offeredBy}
           data={this.props.courses[i]}
+<<<<<<< HEAD
+=======
+          courseRating={item.rating}
+>>>>>>> Card positioning
         />
       ));
     }
@@ -82,7 +96,13 @@ class Slider extends React.Component {
 
 const mapStateToProps = state => {
   return {
+<<<<<<< HEAD
     specialization: state.specialization.info
+=======
+    specialization: state.specialization.info,
+    courses: state.courses.info,
+    degrees: state.degrees.info
+>>>>>>> Card positioning
   };
 };
 

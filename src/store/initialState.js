@@ -27,7 +27,7 @@ const initialState = {
   specialization: {
     info: [
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
@@ -46,7 +46,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
@@ -65,7 +65,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
@@ -84,7 +84,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
@@ -103,7 +103,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
@@ -122,7 +122,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://miro.medium.com/max/1388/1*EhnMqATxubL4R-FdZpE1Gg.png",
@@ -145,7 +145,7 @@ const initialState = {
   degrees: {
     info: [
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
@@ -164,7 +164,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
@@ -183,7 +183,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
@@ -202,7 +202,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
@@ -221,7 +221,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
@@ -240,7 +240,7 @@ const initialState = {
         ]
       },
       {
-        title: "Deep learning specialization by Andrew NG",
+        title: "Deep learning specialization ",
         url: "https://www.coursera.org/learn/ai/home/welcome",
         imageUrl:
           "https://geospatialmedia.s3.amazonaws.com/wp-content/uploads/2018/07/IBM.png",
