@@ -7,15 +7,17 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import logo from "../../shared/assets/stanford.jpg";
-import creatorLogo from "../../shared/assets/ibm-logo.jpg";
 import './DegreeCard.css';
+import  { withRouter } from 'react-router-dom';
+import StarRatings from "react-star-ratings";
 
 const styles = theme => ({
   card: {
     maxWidth: 400,
     width: 300,
-    minHeight: 400,
-    border:"1px solid wheat"
+    minHeight: 450,
+    border:"1px solid wheat",
+    cursor:"pointer"
   },
   media: {
     height: 0,
@@ -39,25 +41,33 @@ const styles = theme => ({
   },
   avatar: {
     backgroundColor: red[500]
+  },
+  stars:{
+    marginLeft:"2.5%"
   }
 });
 
-class CourseCard extends React.Component {
+class DegreeCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
+  onClick=()=>{
+    console.log("Here");
+    this.props.history.push({pathname:'/course_info',state: { info:this.props.data }});
+  };
+
   render() {
-    const { classes,degreeName,degreeImage,degreeProvider } = this.props;
+    const { classes,degreeName,degreeImage,degreeProvider,courseRating } = this.props;
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} onClick={()=>this.onClick()}>
         <CardMedia
           className={classes.media}
           image={logo}
-          title="Contemplative Reptile"
+          title={degreeName}
         />
         <div className="center-div in-div">
           <img src={degreeImage} alt="Random" width="50" height="50" />
@@ -69,14 +79,23 @@ class CourseCard extends React.Component {
           <Typography variant="p" component="p" className="heading">
             Provided by {degreeProvider}
           </Typography>
+          <div className={classes.stars}>
+            <StarRatings
+              rating={courseRating}
+              numberOfStars={5}
+              name="rating"
+              starDimension="15px"
+              starSpacing="10px"
+            />
+          </div>
         </CardContent>
       </Card>
     );
   }
 }
 
-CourseCard.propTypes = {
+DegreeCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CourseCard);
+export default withRouter(withStyles(styles)(DegreeCard));
