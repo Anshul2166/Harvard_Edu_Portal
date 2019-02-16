@@ -22,6 +22,11 @@ function getModalStyle() {
 }
 
 const styles = theme => ({
+  modal:{
+    minHeight:300,
+    maxHeight:500,
+    overflow:"scroll"
+  },
   paper: {
     position: "absolute",
     width: theme.spacing.unit * 50,
@@ -36,6 +41,10 @@ const styles = theme => ({
   },
   listItem: {
     padding: 0
+  },
+  button:{
+    textAlign:"center",
+    marginTop:30
   }
 });
 
@@ -78,7 +87,7 @@ class ProfileModal extends React.Component {
     let bufferChecked=this.state.bufferChecked;
     for(let i=0;i<this.state.bufferChecked.length;i++){
       if(bufferChecked[i]){
-        saved.add(this.bufferRecords[i]);
+        saved.push(this.bufferRecords[i]);
       }
     }
   }
@@ -107,6 +116,7 @@ class ProfileModal extends React.Component {
         aria-describedby="simple-modal-description"
         open={this.props.isOpen}
         onClose={this.props.onClose}
+        className={classes.modal}
       >
         <div style={getModalStyle()} className={classes.paper}>
           <Typography variant="h6" className={classes.title}>
@@ -118,7 +128,7 @@ class ProfileModal extends React.Component {
               <span className={classes.textField}>
                 <TextField
                   id="standard-with-placeholder"
-                  label="Add here"
+                  label="Type here and press enter"
                   placeholder="Placeholder"
                   margin="normal"
                   onKeyPress={this.onClickAdd}
@@ -129,9 +139,9 @@ class ProfileModal extends React.Component {
             </List>
           </div>
 
-          <div className={classes.textCenter}>
-            <Button variant="contained" color="primary">
-              Save
+          <div className={classes.button}>
+            <Button variant="contained" color="primary" onClick={this.onClickSave}>
+              Update List
             </Button>
           </div>
         </div>
