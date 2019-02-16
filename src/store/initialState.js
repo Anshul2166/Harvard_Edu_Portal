@@ -106,37 +106,45 @@ const initialState = {
     info: [
       {
         id: "cs101",
-        course_image: "/assets/cs50.jpg",
-        course_title: "An introduction to Computer Science",
-        offeredBy: "Coursera",
+        course_image: "https://prod-discovery.edx-cdn.org/media/course/image/da1b2400-322b-459b-97b0-0c557f05d017-869c24929ee1.small.jpg",
+        course_title: "An Introduction to Computer Science",
+        offeredBy: "Edx",
         rating: 4.6,
         url:
           "https://www.edx.org/course/cs50s-introduction-computer-science-harvardx-cs50x",
         overview: [
-          " CS50 is a true, comprehensive introduction to computer science. The course is taught by the vivacious David Malan and hosted on edX. There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
-          "The CS50 staff say that the pointers section of the course is the hardest and they are right. You intimately deal with pointers and allocating memory in pset5 and pset6. Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
-          "The 10–20 hours for each problem set is accurate. Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
+          " CS50 is a true, comprehensive introduction to computer science.", 
+          "The course is taught by the vivacious David Malan and hosted on edX.", 
+          "There are 13 weeks of instruction with 8 mandatory problem sets (psets) and a final project:",
+          "The CS50 staff say that the pointers section of the course is the hardest and they are right.", 
+          "You intimately deal with pointers and allocating memory in pset5 and pset6.", 
+          "Mental gymnastics are required. Finally figuring out pointers is probably the thing I am most proud of coming out of the course.",
+          "The 10–20 hours for each problem set is accurate.", 
+          "Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
         ],
-        screenshots: ["/assets/cs501.png", "/assets/cs502.png"],
-        topics_covered: ["React, NodeJs, Python"]
+        screenshots: [
+          "https://imgur.com/a/k8u7OgV", 
+          "https://imgur.com/a/cPvesQI"
+        ],
+        topics_covered: ["abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, web development"]
       },
       {
         id: "cs102",
-        course_image: "/assets/cs501.jpg",
-        course_title: "An introduction to algorithms",
-        offeredBy: "youtube- mit open course ware",
+        course_image: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/6-006f11.jpg",
+        course_title: "An Introduction to Algorithms",
+        offeredBy: "MIT Open Course Ware",
         rating: 4.6,
-        url: "https://www.youtube.com/playlist?list=PLB2BE3D6CA77BB8F7",
+        url: "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/",
         overview: [
-          " This course provides an introduction to mathematical modeling of computational problems. It covers the common algorithms, algorithmic paradigms, and data structures used to solve these problems. The course emphasizes the relationship between algorithms and programming, and introduces basic performance measures and analysis techniques for these problems."
+          " This course provides an introduction to mathematical modeling of computational problems.", 
+          " It covers the common algorithms, algorithmic paradigms, and data structures used to solve these problems.",
+          " The course emphasizes the relationship between algorithms and programming, and introduces basic performance measures and analysis techniques for these problems."
         ],
         screenshots: ["/assets/cs502.png", "/assets/cs502.png"],
-        topics_covered: [
-          "The course emphasizes the relationship between algorithms and programming, and introduces basic performance measures and analysis techniques for these problems."
-        ]
+        topics_covered: ["Introduction, Sorting and Trees, Hashing, Numerics, Graphs, Shortest Paths, Dynamic Programming"]
       },
       {
-        id: "cs104",
+        id: "cs103",
         course_image: "/assets/cs502.jpg",
         course_title: "An introduction to object oriented programming",
         offeredBy: "youtube- nptel - course-ware",
