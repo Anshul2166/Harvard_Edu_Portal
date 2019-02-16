@@ -16,6 +16,8 @@ import GameDev from "./components/LearningPath/GameDev/GameDev";
 import { connect } from "react-redux";
 import { fetchProfile } from "./store/actions/profile";
 import { withRouter } from "react-router-dom";
+import NavHeader from "./components/Common/NavHeader/NavHeader";
+
 class App extends Component {
   componentDidMount = () => {
     this.props.fetchProfile();
@@ -45,6 +47,7 @@ class App extends Component {
           {/* Learning path routes */}
           <Route path="/learning-path/webdev" component={WebDev} />
           <Route path="/learning-path/gamedev" component={GameDev} />
+          <Route path="/nav_header" component={NavHeader} />
         </Switch>
       </div>
     );
