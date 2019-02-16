@@ -27,7 +27,6 @@ class ListBox extends Component {
   render() {
     const { classes } = this.props;
     function EditButton(props) {
-      console.log(props);
       if (props.edit_option !== undefined && props.edit_option === false) {
         return <div />;
       } else {

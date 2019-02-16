@@ -12,18 +12,20 @@ class Profile extends Component {
   onEditOption = (data)=>{
     console.log("On edit clicked");
     console.log(data);
-    this.setState({ modalOpen: true,data:data });
+    this.setState({ data:data,modalOpen: true });
   };
   onClose = () => {
+    console.log('Closing');
     this.setState({ modalOpen: false });
   };
   render() {
     const { skills, accomplishments, projects, courses } = this.props.data;
+    console.log("rendering");
     return (
       <div className="profile">
         <ProfileInfoModal
           isOpen={this.state.modalOpen}
-          onClose={this.onClose}
+          onClose={()=>this.onClose()}
           data={this.state.data}
         />
         <Grid container spacing={24}>
