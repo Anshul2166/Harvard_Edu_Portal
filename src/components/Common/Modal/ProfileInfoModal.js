@@ -44,6 +44,7 @@ class ProfileModal extends React.Component {
     bufferText: "",
     bufferChecked: Array(this.props.data.length).fill(true)
   };
+  bufferRecords=this.props.data;
   componentWillReceiveProps(newProps) {
     this.setState({ bufferChecked: Array(newProps.data.length).fill(true) });
     this.bufferRecords = newProps.data;
@@ -58,19 +59,32 @@ class ProfileModal extends React.Component {
     this.setState({ bufferChecked: bufferChecked });
   };
   onClickAdd = event => {
-    if (event.key === "Enter") {
+    console.log(event);
+    console.log(event.key);
+    if (event.key === 'Enter') {
       this.bufferRecords.push(this.state.bufferText);
       let bufferChecked=this.state.bufferChecked.slice();
       bufferChecked.push(true);
-      this.setState({ bufferChecked: bufferChecked });
+      this.setState({ bufferChecked: bufferChecked,bufferText:"" });
     }
   };
   changeBufferText = event => {
-    this.setState({ bufferText: event.target.text });
+    console.log(event.target.value);
+    this.setState({ bufferText: event.target.value });
+    console.log(event.target.value);
   };
+  onClickSave=()=>{
+    let saved=[];
+    let bufferChecked=this.state.bufferChecked;
+    for(let i=0;i<this.state.bufferChecked.length;i++){
+      if(bufferChecked[i]){
+        saved.add(this.bufferRecords[i]);
+      }
+    }
+  }
   render() {
-    const { classes, data } = this.props;
-    const list = data.map((item, index) => (
+    const { classes } = this.props;
+    const list = this.bufferRecords.map((item, index) => (
       <ListItem divider className={classes.listItem} key={index}>
         <Checkbox
           value="checkedC"
@@ -107,6 +121,9 @@ class ProfileModal extends React.Component {
                   label="Add here"
                   placeholder="Placeholder"
                   margin="normal"
+                  onKeyPress={this.onClickAdd}
+                  onChange={this.changeBufferText}
+                  value={this.state.bufferText}
                 />
               </span>
             </List>
