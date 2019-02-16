@@ -145,97 +145,82 @@ const initialState = {
       },
       {
         id: "cs103",
-        course_image: "/assets/cs502.jpg",
-        course_title: "An introduction to object oriented programming",
-        offeredBy: "youtube- nptel - course-ware",
+        course_image: "https://nptel.ac.in/newstyles/images/courseimages/106_video.jpg",
+        course_title: "Object Oriented Analysis and Design",
+        offeredBy: "NPTEL E-learning IIT Khragpur",
         rating: 4.5,
-        url:
-          "https://www.youtube.com/playlist?list=PL-AyYXNLDtPZ37yxlhz1CCfBmHlHOfaVb",
+        url: "https://www.youtube.com/playlist?list=PL-AyYXNLDtPZ37yxlhz1CCfBmHlHOfaVb",
         overview: [
-          " primary goal is for you to learn to appreciate and use the fundamental design principles of modularity and abstraction in a variety of contexts from electrical engineering and computer science. To achieve this goal, we will study electrical engineering (EE) and computer science (CS) largely from the perspective of how to build systems that interact with, and attempt to control, an external environment."
+          " The complexity of software systems is ever on the rise – more complex problem domains being attempted (complex embedded systems)", 
+          " The ever growing man-power engaged in increasingly intricate development processes to turnaround in shorter and shorter time, possible flexibility of software being stretched to the limit with XaaS, platforms getting challenging with widely expanding distribution, cloud computation etc.",
+          " Hence the analysis and design of software require well-organized and structured approaches to manage the challenges of complexity. "
         ],
-        screenshots: ["/assets/cs503.png", "/assets/cs503.png"],
+        screenshots: ["https://imgur.com/a/luMoSHw", "https://imgur.com/a/jjpcLxm"],
         topics_covered: [
-          "Procedural Programming Paradigm - PPP • Object-Oriented Programming Paradigm - OPP • Objects •State and Behavior • Software Objects - Fields and Methods • Data Encapsulation • Public Interface • Object-based application • Benefits of object-based application development • Classes • Definition • Blueprint of similar object • Instantiating objects from class - example • Object-Oriented Principles •Encapsulation •Inheritance and Interfaces •Polymorphism"
+          "Object-Oriented Programming Paradigm, State and Behavior, Fields and Methods, Data Encapsulation,  ,Inheritance and Interfaces, Polymorphism"
         ]
       },
       {
-        id: "cs103",
-        course_image: "/assets/cs501.jpg",
-        course_title: "data-structures",
-        offeredBy: "youtube- nptel - courseware",
-        rating: 4.2,
+        id: "cs104",
+        course_image: "https://nptel.ac.in/newstyles/images/courseimages/106_video.jpg",
+        course_title: "Data Structures",
+        offeredBy: "NPTEL E-learning IIT Delhi",
+        rating: 4.7,
         url: "https://www.youtube.com/playlist?list=PLBF3763AF2E1C572F",
         overview: [
-          " An algorithm is an outline of the steps that a program or any computational procedure has to take. A program on the other hand is an implementation of an algorithm and it could be in any programming language. Data structure is the way we need to organize the data, so that it can be used effectively by the program"
+          " Introduction to object oriented programming through stacks, queues and linked lists. ",
+		  " Dictionaries: skip-lists, hashing, analysis of collision resolution techniques. Trees, traversals, binary search trees, optimal and average BST’s. ",
+		  " 2-4 trees and red-black trees. Tries and pattern matching. Priority queues and binary heaps.", 
+		  " Sorting: merge, quick, radix, selection, heap. Graphs, Breadth first search and connected components.", 
+		  " Depth first search in directed and undirected graphs and strongly connected components.",
+		  " Spanning trees: Prim's and Kruskal’s algorithm, union-find data structure. ",
+		  " Dijkstra’s algorithm for shortest paths, shortest path tree. Directed acyclic graphs: topological sort and longest path."
         ],
-        screenshots: ["/assets/cs504.png", "/assets/cs504.png"],
+        screenshots: ["https://imgur.com/c3pQ6BZ", "https://imgur.com/a/nhOODQo"],
         topics_covered: [
-          "Data Structures And Algorithms",
-          "Introduction to Data Structures and Algorithms",
-          "Stacks",
-          "Queues and Linked Lists",
-          "Dictionaries",
-          "Hashing",
-          "Trees",
-          "Tree Walks / Traversals",
-          "Ordered Dictionaries",
-          "Deletion",
-          "Quick Sort",
-          "AVL Trees",
-          "Trees",
-          "Red Black Trees",
-          "Insertion in Red Black Trees",
-          "Disk Based Data Structures",
-          "Case Study: Searching for Patterns",
-          "Tries",
-          "Data Compression",
-          "Priority Queues",
-          "Binary Heaps",
-          "Why Sorting",
-          "More Sorting",
-          "Graphs",
-          "Data Structures for Graphs",
-          "Two Applications of Breadth First Search",
-          "Depth First Search",
-          "Applications of DFS",
-          "DFS in Directed Graphs",
-          "Applications of DFS in Directed Graphs",
-          "Minimum Spanning Trees",
-          "The Union",
-          "Prims Algorithm for Minimum Spanning Trees",
-          "Single Source Shortest Paths",
-          "Correctness of Dijkstras Algorithm",
-          "Single Source Shortest Paths"
+          "Stacks","Queues and Linked Lists","Dictionaries","Hashing","Trees","AVL Trees","Red Black Trees","Tries","Graphs",
+          "Applications of DFS and BFS in Directed Graphs","Minimum Spanning Trees","Correctness of Dijkstras Algorithm","Single Source Shortest Paths"
         ]
       },
       {
         id: "cs105",
-        course_image: "/assets/cs502.jpg",
-        course_title: "data-bases",
-        offeredBy: "youtube-dbms-nptel",
-        rating: 4.5,
+        course_image: "https://nptel.ac.in/newstyles/images/courseimages/106_video.jpg",
+        course_title: "Database Design",
+        offeredBy: "NPTEL E-learning IIT Madras",
+		rating: 4.5,
+		url: "https://www.youtube.com/channel/UCpgnQKuPmFsZyksHc1IMceg/videos",
         overview: [
-          " Databases form the backbone of all major applications today – tightly or loosely coupled, intranet or internet based, financial, social, administrative, and so on. Structured Database Management Systems (DBMS) based on relational and other models have long formed the basis for such databases. Consequently, Oracle, Microsoft SQL Server, Sybase etc. have emerged as leading commercial systems while MySQL, PostgreSQL etc. lead in open source and free domain. While DBMS’s differ in details, they share a common set of models, design paradigms and a Structured Query Language (SQL). In this background the course would examine data structures, file organizations, concepts and principles of DBMS’s, data analysis, database design, data modeling, database management, data & query optimization, and database implementation. More specifically, the course introduces relational data models; entity-relationship modeling, SQL, data normalization, and database design. It would also introduce query coding practices using MySQL (or any other open system) through various assignments. Design of simple multi-tier client/server architectures based and Web-based database applications will also be introduced."
+		  " Databases form the backbone of all major applications today – tightly or loosely coupled, intranet or internet based, financial, social, administrative, and so on.", 
+		  " Structured Database Management Systems (DBMS) based on relational and other models have long formed the basis for such databases. ",
+		  " Consequently, Oracle, Microsoft SQL Server, Sybase etc. have emerged as leading commercial systems while MySQL, PostgreSQL etc. lead in open source and free domain. ",
+		  " While DBMS’s differ in details, they share a common set of models, design paradigms and a Structured Query Language (SQL). ",
+		  " In this background the course would examine data structures, file organizations, concepts and principles of DBMS’s, data analysis, database design, data modeling, database management, data & query optimization, and database implementation. ",
+		  " More specifically, the course introduces relational data models; entity-relationship modeling, SQL, data normalization, and database design. ",
+		  " It would also introduce query coding practices using MySQL (or any other open system) through various assignments. ",
+		  " Design of simple multi-tier client/server architectures based and Web-based database applications will also be introduced."
         ],
-        screenshots: ["/assets/cs506.png", "/assets/cs506.png"],
+        screenshots: ["https://imgur.com/a/sF6vqGn", "https://imgur.com/a/JKuAp2k"],
         topics_covered: [
-          "Week 1 Course Overview. Introduction to RDBMS Week 2: Structured Query Language (SQL) Week 3: Relational Algebra. Entity-Relationship Model  Week 4: Relational Database Design Week 5: Application Development. Case Studies. Storage and File Structure Week 6: Indexing and Hashing. Query Processing Week 7: Query Optimization. Transactions (Serializability and Recoverability) Week 8: Concurrency Control. Recovery Systems. Course Summarization"
+		  "Introduction to RDBMS, Structured Query Language (SQL), Relational Algebra, Entity-Relationship Model ",
+		  " Relational Database Design,Application Development, Storage and File Structure, Indexing and Hashing, Query Processing , Query Optimization "
         ]
       },
       {
         id: "cs106",
-        course_image: "/assets/cs501.jpg",
-        course_title: "data-structures",
-        offeredBy: "youtube-gaurav-sen",
-        rating: 4.0,
-        url:
-          "https://www.youtube.com/playlist?list=PLMCXHnjXnTnsWU7jYp9XCKPW8ayl6D8fb",
+        course_image: "https://i.ytimg.com/vi/fWRzpBDxXtk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAaR6dT55D9F7v1Lc5aXDyKnc3gHQ",
+        course_title: "Competitive Programming In Java",
+        offeredBy: "Rachit Jain - Youtube Personality",
+        rating: 4.8,
+        url: "https://www.youtube.com/playlist?list=PLfBJlB6T2eOuDDm9xscqMZR3nnLP5FiyN",
         overview: [
-          " A set of videos to help you grasp Java for competitive programming.Compettive programming is one of the key aspects in cracking coding interviews. since java is most widely used programming lanquages the, videos are made using these "
+		  " In this playlist, you will find various coding interview problems asked by companies like Google, Microsoft, Amazon and Facebook. Join me in solving these problems and learning from one other.",
+		  "	Are you from NON-CS background? Do you need some professional programmer to go through a list of various coding interview problems to get you started with your programming journey?  ",
+		  " Hit the subscribe button to get regular updates as I upload videos every Tuesday Thursday Saturday and Sunday."
         ],
-        screenshots: ["/assets/cs505.png", "/assets/cs505.png"],
-        topics_covered: ["Java"]
+		screenshots: [
+			"https://i.ytimg.com/vi/IIKTGg5AKkY/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLAjyjwIkQtprstX0IO-asI2A_KoDg", 
+			"https://i.ytimg.com/vi/jUmmr1YyAk0/hqdefault.jpg?sqp=-oaymwEYCKgBEF5IVfKriqkDCwgBFQAAiEIYAXAB&rs=AOn4CLCUycZXiXyLEOzH3iMnJeXsPKl8hw"],
+        topics_covered: ["Programming, Interview, Coding, Google "]
       }
     ]
   }
