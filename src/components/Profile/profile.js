@@ -8,10 +8,11 @@ import ProfileInfoModal from "../Common/Modal/ProfileInfoModal";
 import "./profile.css";
 
 class Profile extends Component {
-  state = { modalOpen: false };
-  onEditOption = () => {
+  state = { modalOpen: false,data:[] };
+  onEditOption = (data)=>{
     console.log("On edit clicked");
-    this.setState({ modalOpen: true });
+    console.log(data);
+    this.setState({ modalOpen: true,data:data });
   };
   onClose = () => {
     this.setState({ modalOpen: false });
@@ -23,6 +24,7 @@ class Profile extends Component {
         <ProfileInfoModal
           isOpen={this.state.modalOpen}
           onClose={this.onClose}
+          data={this.state.data}
         />
         <Grid container spacing={24}>
           <Grid item xs={12} sm={6} md={4} lg={2}>
@@ -53,28 +55,29 @@ class Profile extends Component {
               <ListBox
                 title="Skills"
                 data={skills}
-                onClickEdit={this.onEditOption}
+                onClickEdit={()=>this.onEditOption(skills)}
+                type="commaSeprated"
               />
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox
                 title="Accomplishments"
                 data={accomplishments}
-                onClickEdit={this.onEditOption}
+                onClickEdit={()=>this.onEditOption(accomplishments)}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox
                 title="Projects"
                 data={projects}
-                onClickEdit={this.onEditOption}
+                onClickEdit={()=>this.onEditOption(projects)}
               />
             </Grid>
             <Grid item xs={12} sm={12} md={10} lg={11}>
               <ListBox
                 title="Completed Courses"
                 data={courses}
-                onClickEdit={this.onEditOption}
+                onClickEdit={()=>this.onEditOption(courses)}
               />
             </Grid>
           </Grid>
