@@ -1,55 +1,73 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import  { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
+import StarRatings from "react-star-ratings";
 
 let styles = {
   card: {
-    minWidth: 275,
+    maxWidth: 400,
     width: 300,
-    height: 300,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "300px 300px",
-    border: "2px solid white",
-    cursor:"pointer"
+    minHeight: 450,
+    border: "1px solid antiquewhite",
+    cursor: "pointer"
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
+  media: {
+    height: 0,
+    paddingTop: "56.25%" // 16:9
   },
-  title: {
-    fontSize: 14
+  courseLength: {
+    color: "goldenrod"
   },
-  pos: {
-    marginTop: 20,
-    color: "azure"
-  },
-  info: {
-    width: 300
-  }
+  stars: { marginLeft: "2.5%",position:"absolute",bottom:"5%" }
 };
 
-function onClick(props){
+function onClick(props) {
   console.log("Here");
   console.log(props);
-  props.history.push({pathname:'/course_info',state: { info:props.data }});
-};
+  props.history.push({ pathname: "/course_info", state: { info: props.data } });
+}
 
 function SpecializationCard(props) {
-  const { classes } = props;
+  const {
+    classes,
+    courseName,
+    courseList,
+    courseProvider,
+    courseRating
+  } = props;
   return (
     <div>
-      <Card
-        className={classes.card}
-        style={{ backgroundImage: `url(${props.courseImage})`}}
-        onClick={()=>onClick(props)}
-      />
-      <Typography variant="h6" component="p" className={classes.info}>
-        {props.courseName}
-      </Typography>
+      <Card className={classes.card} onClick={() => onClick(props)}>
+        <CardMedia
+          className={classes.media}
+          image={`${props.courseImage}`}
+          title={courseName}
+        />
+        <CardContent className={classes.content}>
+          <Typography variant="h5" className="heading" gutterBottom>
+            {courseName}
+          </Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            Provided by {courseProvider}
+          </Typography>
+          <Typography paragraph className={classes.courseLength}>
+            {courseList.length} courses included
+          </Typography>
+          <div className={classes.stars}>
+            <StarRatings
+              rating={courseRating}
+              numberOfStars={5}
+              name="rating"
+              starDimension="15px"
+              starSpacing="10px"
+            />
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

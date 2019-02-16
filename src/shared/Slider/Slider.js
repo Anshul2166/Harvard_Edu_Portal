@@ -4,8 +4,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import SpecializationCard from "../../components/Common/SpecializationCard";
 import DegreeCard from "../../components/Common/DegreeCard";
 import CourseCard from "../../components/Common/CourseCard";
-import {connect} from "react-redux";
-import {withRouter} from 'react-router-dom';
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 class Slider extends React.Component {
   responsive = {
@@ -27,20 +27,39 @@ class Slider extends React.Component {
 
   galleryItems() {
     if (this.props.cardType === "specialization") {
-      const specialization=this.props.specialization;
+      const specialization = this.props.specialization;
       return specialization.map((item, i) => (
-        <SpecializationCard courseName={item.title} courseImage={item.imageUrl} data={this.props.specialization[i]}/>
+        <SpecializationCard
+          courseName={item.title}
+          courseImage={item.imageUrl}
+          data={this.props.specialization[i]}
+          courseList={item.list_of_courses}
+          courseProvider={item.offeredBy}
+          courseRating={item.rating}
+        />
       ));
-    } else if (this.props.cardType === "degree") {   
-      const degrees=this.props.degrees;   
+    } else if (this.props.cardType === "degree") {
+      const degrees = this.props.degrees;
       console.log(degrees);
       return degrees.map((item, i) => (
-        <DegreeCard degreeName={item.title} degreeImage={item.imageUrl} degreeProvider={item.taughtBy} data={this.props.degrees[i]}/>
+        <DegreeCard
+          degreeName={item.title}
+          degreeImage={item.imageUrl}
+          degreeProvider={item.taughtBy}
+          data={this.props.degrees[i]}
+          courseRating={item.rating}
+        />
       ));
     } else {
-      const courses=this.props.courses;
+      const courses = this.props.courses;
       return courses.map((item, i) => (
-        <CourseCard courseName={item.title} courseImage={item.imageUrl} courseProvider={item.offeredBy} data={this.props.courses[i]}/>
+        <CourseCard
+          courseName={item.title}
+          courseImage={item.imageUrl}
+          courseProvider={item.offeredBy}
+          data={this.props.courses[i]}
+          courseRating={item.rating}
+        />
       ));
     }
   }
@@ -66,12 +85,12 @@ class Slider extends React.Component {
   }
 }
 
-const mapStateToProps=state=>{
-  return{
-    specialization:state.specialization.info,
-    courses:state.courses.info,
-    degrees:state.degrees.info
-  }
-}
+const mapStateToProps = state => {
+  return {
+    specialization: state.specialization.info,
+    courses: state.courses.info,
+    degrees: state.degrees.info
+  };
+};
 
 export default connect(mapStateToProps)(withRouter(Slider));

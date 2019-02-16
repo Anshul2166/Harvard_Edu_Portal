@@ -9,12 +9,13 @@ import red from "@material-ui/core/colors/red";
 import logo from "../../shared/assets/stanford.jpg";
 import './DegreeCard.css';
 import  { withRouter } from 'react-router-dom';
+import StarRatings from "react-star-ratings";
 
 const styles = theme => ({
   card: {
     maxWidth: 400,
     width: 300,
-    minHeight: 400,
+    minHeight: 450,
     border:"1px solid wheat",
     cursor:"pointer"
   },
@@ -40,6 +41,9 @@ const styles = theme => ({
   },
   avatar: {
     backgroundColor: red[500]
+  },
+  stars:{
+    marginLeft:"2.5%"
   }
 });
 
@@ -56,7 +60,7 @@ class DegreeCard extends React.Component {
   };
 
   render() {
-    const { classes,degreeName,degreeImage,degreeProvider } = this.props;
+    const { classes,degreeName,degreeImage,degreeProvider,courseRating } = this.props;
 
     return (
       <Card className={classes.card} onClick={()=>this.onClick()}>
@@ -75,6 +79,15 @@ class DegreeCard extends React.Component {
           <Typography variant="p" component="p" className="heading">
             Provided by {degreeProvider}
           </Typography>
+          <div className={classes.stars}>
+            <StarRatings
+              rating={courseRating}
+              numberOfStars={5}
+              name="rating"
+              starDimension="15px"
+              starSpacing="10px"
+            />
+          </div>
         </CardContent>
       </Card>
     );
