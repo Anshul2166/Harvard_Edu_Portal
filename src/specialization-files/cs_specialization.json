@@ -60,3 +60,61 @@
         "Artificial Neural Network",
         "Deep Learning"]
   },
+
+
+  {
+    id: "cs104",
+    course_image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/6d/1681a0bdb211e8be6b8d09ae9606ed/LogoA.png?auto=format%2Ccompress&dpr=1&w=150&h=150&fit=fill&bg=FFF",
+    course_title: "Database systems Specialization",
+    offeredBy: "Coursera",
+    rating: 4.5,
+    url:"https://www.coursera.org/specializations/database-systems",
+    courses_taught:[
+    "Relational database systems","https://www.coursera.org/learn/relational-database",
+    "Business intelligence and data warehousing","https://www.coursera.org/learn/business-intelligence-data-warehousing",
+    "NoSQL systems","https://www.coursera.org/learn/nosql-databases",
+    "Designing data-intensive applications","https://www.coursera.org/learn/data-intensive-applications"
+    ],
+    overview: [
+      " This specialized program is aimed at computer people who want to enter the field of information systems and learn their different types of requirements, architectures, performance, techniques and tools so you can know when to use business intelligence, data mining, data science, databases , databases in memory or big data in order to have reliable, maintainable and scalable data intensive systems.",
+      " Through 4 courses, you will cover [transactional relational databases, business intelligence and Data warehousing, NoSQL technologies, and reliable, scalable and maintainable data intensive applications that will prepare you for a specialized information system consultant or data scientist."
+    ],
+    screenshots: [
+        "https://imgur.com/a/aB2zXO1", 
+        "https://imgur.com/a/QbyAWbF"
+        ],
+    topics_covered: ["Relation Databases",
+        "Database Warehousing",
+        "NOSQL",
+        "Data Intensive Applications"]
+  },
+
+  {
+    id: "cs105",
+    course_image: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/a8/f21120fb5011e58f3fed869dcf948d/cloud_computing_specialization_logo_002.jpg?auto=format%2Ccompress&dpr=1&w=150&h=150&fit=fill&bg=FFF",
+    course_title: "Cloud Computing Specialization",
+    offeredBy: "Coursera",
+    rating: 4.5,
+    url:"https://www.coursera.org/specializations/cloud-computing",
+    courses_taught:[
+    "Cloud Computing Concepts, Part 1","https://www.coursera.org/learn/cloud-computing?specialization=cloud-computing",
+    "Cloud Computing Concepts, Part 2","https://www.coursera.org/learn/cloud-computing-2?specialization=cloud-computing",
+    "Cloud Computing Applications, Part 1: Cloud Systems and Infrastructure","https://www.coursera.org/learn/cloud-applications-part1?specialization=cloud-computing",
+    "Cloud Computing Applications, Part 2: Big Data and Applications in the Cloud","https://www.coursera.org/learn/cloud-applications-part2?specialization=cloud-computing",
+    "Cloud Networking","https://www.coursera.org/learn/cloud-networking",
+    "Cloud Computing Project","https://www.coursera.org/learn/cloud-computing-project",
+    ],
+    overview: [
+      " The Cloud Computing Specialization takes you on a tour through cloud computing systems.", 
+      " We start in in the middle layer with Cloud Computing Concepts covering core distributed systems concepts used inside clouds, move to the upper layer of Cloud Applications and finally to the lower layer of Cloud Networking.", 
+      " We conclude with a project that allows you to apply the skills you've learned throughout the courses."
+    ],
+    screenshots: [
+        "https://imgur.com/a/s0dOkhZ", 
+        "https://imgur.com/a/x9QTrId"
+        ],
+    topics_covered: ["Software-Defined Networking",
+      "Distributed Computing",
+      "Big Data",
+      "Cloud Computing"]
+  },
