@@ -35,7 +35,7 @@ class ListBox extends Component {
         return <div />;
       } else {
         return (
-          <IconButton className={classes.icon}>
+          <IconButton className={classes.icon} onClick={props.edit_option}>
             <Edit />
           </IconButton>
         );
@@ -49,7 +49,7 @@ class ListBox extends Component {
             classes={{
               title: classes.title
             }}
-            action={<EditButton edit_option={this.props.edit_option}/>}
+            action={<EditButton edit_option={this.props.onClickEdit}/>}
             className={classes.header}
           />
           <CardContent>

@@ -5,6 +5,7 @@ import postsReducer from "./postsReducer";
 import specializationReducer from "./specializationReducer";
 import degreeReducer from "./degreeReducer";
 import profileReducer from "./profileReducer";
+import profileInfoReducer from "./profileInfoReducer";
 
 export default combineReducers({
   courses: courseReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   posts: postsReducer,
   specialization: specializationReducer,
   degrees: degreeReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  profileInfo: profileInfoReducer
 });
