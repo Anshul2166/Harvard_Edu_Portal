@@ -228,7 +228,7 @@ router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
       .includes(postId);
     if (isPresent) {
       console.log("Already there");
-      res.statusCode = 200;
+      res.statusCode = 400;
       res.setHeader("Content-Type", "application/json");
       res.json({
         success: false,
@@ -246,14 +246,24 @@ router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
         post.downVotes = post.downVotes - 1;
         await post.save();
       }
+
       await userUpvotesPost.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "You are in / page",
-        message: post
+
+      //Populates the upvoted post
+      const populatedPost = await Posts.populate(post, {
+        path: "comments createdBy community"
       });
+
+      //populating the author of populated comment
+      const populatedAuthorField = await Posts.populate(populatedPost, {
+        path: "comments.author"
+      });
+
+      const responseObj = {
+        newUser: userUpvotesPost,
+        newPost: populatedAuthorField
+      };
+      res.status(200).send(responseObj);
     }
   } catch (err) {
     console.log(err);
@@ -261,7 +271,7 @@ router.put("/:postId/upvotes-add", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
+router.put("/:postId/downvotes-add", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
   try {
     const userDownvotesPost = await Users.findByIdAndUpdate(req.user._id);
@@ -292,13 +302,21 @@ router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
       }
       await userDownvotesPost.disliked.push(post._id);
       userDownvotesPost.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "You are in / page",
-        message: post
+      //Populates the upvoted post
+      const populatedPost = await Posts.populate(post, {
+        path: "comments createdBy community"
       });
+
+      //populating the author of populated comment
+      const populatedAuthorField = await Posts.populate(populatedPost, {
+        path: "comments.author"
+      });
+
+      const responseObj = {
+        newUser: userDownvotesPost,
+        newPost: populatedAuthorField
+      };
+      res.status(200).send(responseObj);
     }
   } catch (err) {
     console.log(err);
@@ -306,7 +324,7 @@ router.put("/:postId/downVotes-add", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.put("/:postId/upVotes-remove", isLoggedIn, async (req, res, next) => {
+router.put("/:postId/upvotes-remove", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
   const userUpvotesPost = await Users.findByIdAndUpdate(req.user._id);
   let isPresent = userUpvotesPost.liked
@@ -329,14 +347,21 @@ router.put("/:postId/upVotes-remove", isLoggedIn, async (req, res, next) => {
       );
       await userUpvotesPost.liked.pull(postId);
       await userUpvotesPost.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "You are in / page",
-        message: post,
-        info: userUpvotesPost
+      //Populates the upvoted post
+      const populatedPost = await Posts.populate(post, {
+        path: "comments createdBy community"
       });
+
+      //populating the author of populated comment
+      const populatedAuthorField = await Posts.populate(populatedPost, {
+        path: "comments.author"
+      });
+
+      const responseObj = {
+        newUser: userUpvotesPost,
+        newPost: populatedAuthorField
+      };
+      res.status(200).send(responseObj);
     }
   } catch (err) {
     console.log(err);
@@ -344,7 +369,7 @@ router.put("/:postId/upVotes-remove", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.put("/:postId/downVotes-remove", isLoggedIn, async (req, res, next) => {
+router.put("/:postId/downvotes-remove", isLoggedIn, async (req, res, next) => {
   let postId = req.params.postId;
   const userDownvotesPost = await Users.findByIdAndUpdate(req.user._id);
   let isPresent = userDownvotesPost.disliked
@@ -366,14 +391,22 @@ router.put("/:postId/downVotes-remove", isLoggedIn, async (req, res, next) => {
       );
       userDownvotesPost.disliked.pull(postId);
       await userDownvotesPost.save();
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "You are in / page",
-        message: post,
-        info: userDownvotesPost
+      userDownvotesPost.save();
+      //Populates the downvoted post
+      const populatedPost = await Posts.populate(post, {
+        path: "comments createdBy community"
       });
+
+      //populating the author of populated comment
+      const populatedAuthorField = await Posts.populate(populatedPost, {
+        path: "comments.author"
+      });
+
+      const responseObj = {
+        newUser: userDownvotesPost,
+        newPost: populatedAuthorField
+      };
+      res.status(200).send(responseObj);
     }
   } catch (err) {
     console.log(err);

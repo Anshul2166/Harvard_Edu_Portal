@@ -6,3 +6,4 @@ export const HIDE_POST = "hide_post";
 export const RESET_POSTS = "reset_posts";
 
 export const FETCH_SINGLE_POST = "fetch_single_post";
+export const UPDATE_SINGLE_POST_COMMENT = "update_single_post_comment";

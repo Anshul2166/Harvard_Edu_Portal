@@ -5,7 +5,8 @@ import {
   PUT_SINGLE_POST_TO_TOP,
   HIDE_POST,
   RESET_POSTS,
-  FETCH_SINGLE_POST
+  FETCH_SINGLE_POST,
+  UPDATE_SINGLE_POST_COMMENT
 } from "../types/postsTypes";
 import update from "immutability-helper";
 
@@ -33,14 +34,24 @@ export default (state = initialState, { type, payload }) => {
     //Mainly updates the post in forum page
     //mostlye for upvote and downvote
     case UPDATE_SINGLE_POST:
+      return {
+        ...state,
+        singlePost: {
+          fetched: true,
+          ...payload
+        }
+      };
+
+    case UPDATE_SINGLE_POST_COMMENT:
       return update(state, {
-        list: {
-          [payload.index]: {
-            $set: payload.post
+        singlePost: {
+          comments: {
+            [payload.index]: {
+              $set: payload.comment
+            }
           }
         }
       });
-
     case FETCH_SINGLE_POST:
       return {
         ...state,

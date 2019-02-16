@@ -1,5 +1,5 @@
 .SinglePostComment {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   display: flex;
 }
 
@@ -9,6 +9,10 @@
 
 .SinglePostComment__upper-row {
   display: flex;
+}
+
+.SinglePostComment__amount {
+  font-size: 0.75rem;
 }
 
 .SinglePostComment__author-name {
@@ -32,6 +36,9 @@
   }
 }
 
+.SinglePostComment__action-btn--selected {
+  color: $primary-orange;
+}
 .SinglePostComment__action-bar {
   display: inline-flex;
   flex-direction: column;

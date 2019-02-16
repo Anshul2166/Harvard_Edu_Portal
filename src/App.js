@@ -13,7 +13,19 @@ import SinglePost from "./components/SinglePost/SinglePost";
 import SelectDomain from "./components/SelectDomain/SelectDomain";
 import WebDev from "./components/LearningPath/WebDev/WebDev";
 import GameDev from "./components/LearningPath/GameDev/GameDev";
+import { connect } from "react-redux";
+import { fetchProfile } from "./store/actions/profile";
+import { withRouter } from "react-router-dom";
 class App extends Component {
+  componentDidMount = () => {
+    this.props.fetchProfile();
+  };
+
+  static getDerivedStateFromProps = (nextProps, prevState) => {
+    if (!nextProps.profile.fetched) {
+      nextProps.fetchProfile();
+    }
+  };
   render() {
     return (
       <div className="App">
@@ -39,4 +51,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  profile: state.profile
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { fetchProfile }
+  )(App)
+);
