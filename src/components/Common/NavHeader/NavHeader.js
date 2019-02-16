@@ -84,7 +84,8 @@ const styles = theme => ({
   },
   navButton: {
     marginLeft: 25,
-    marginRight: 25
+    marginRight: 25,
+    color:"white!important"
   },
   accountCircle:{
       color:"white"
@@ -180,16 +181,16 @@ class PrimarySearchAppBar extends React.Component {
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Button color="inherit" className={classes.navButton}>
+              <Button color="inherit" className={classes.navButton} href="#">
                 Sunburst
               </Button>
-              <Button color="inherit" className={classes.navButton}>
+              <Button color="inherit" className={classes.navButton} href="/dashboard" >
                 Dashboard
               </Button>
-              <Button color="inherit" className={classes.navButton}>
+              <Button color="inherit" className={classes.navButton} href="#">
                 Roadmaps
               </Button>
-              <Button color="inherit" className={classes.navButton}>
+              <Button color="inherit" className={classes.navButton} href="#">
                 Forums
               </Button>
               <Link to="/profile">
