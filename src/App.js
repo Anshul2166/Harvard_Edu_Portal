@@ -16,6 +16,9 @@ import GameDev from "./components/LearningPath/GameDev/GameDev";
 import { connect } from "react-redux";
 import { fetchProfile } from "./store/actions/profile";
 import { withRouter } from "react-router-dom";
+import PractiseQuestions from "./components/PractiseQuestions/PractiseQuestions";
+import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
+
 class App extends Component {
   componentDidMount = () => {
     this.props.fetchProfile();
@@ -41,7 +44,13 @@ class App extends Component {
           <Route path="/course_info" component={CourseInfo} />
           <Route path="/single-post/:id" component={SinglePost} />
           <Route path="/select-domain" component={SelectDomain} />
+          <Route exact path="/select-questions" component={PractiseQuestions} />
 
+          <Route
+            exact
+            path="/questions/data-structure"
+            component={QuestionsAnswer}
+          />
           {/* Learning path routes */}
           <Route path="/learning-path/webdev" component={WebDev} />
           <Route path="/learning-path/gamedev" component={GameDev} />
