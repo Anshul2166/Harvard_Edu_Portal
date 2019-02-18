@@ -14,9 +14,11 @@ const styles = theme => ({
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border: "1px solid wheat",
+    border: "2px solid azure",
     height: 300,
-    cursor: "pointer"
+    cursor: "pointer",
+    borderRadius: "20px",
+    borderBottom: "gainsboro"
   },
   media: {
     height: 0,

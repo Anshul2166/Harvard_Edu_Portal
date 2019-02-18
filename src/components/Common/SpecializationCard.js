@@ -12,17 +12,26 @@ let styles = {
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border: "1px solid antiquewhite",
-    cursor: "pointer"
+    border: "2px solid azure",
+    cursor: "pointer",
+    borderRadius: "20px",
+    borderBottomColor: "gainsboro"
   },
   media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
+    height: 250,
+    width: "100%"
   },
   courseLength: {
-    color: "goldenrod"
+    color: "goldenrod",
+    marginTop: 10,
+    marginBottom: 30
   },
-  stars: { marginLeft: "2.5%", position: "absolute", bottom: "5%" }
+  stars: {
+    marginTop: 10,
+    marginLeft: "2.5%",
+    position: "absolute",
+    bottom: "5%"
+  }
 };
 
 function onClick(props) {
@@ -42,17 +51,19 @@ function SpecializationCard(props) {
   return (
     <div>
       <Card className={classes.card} onClick={() => onClick(props)}>
-        <CardMedia
-          className={classes.media}
-          image={`${props.courseImage}`}
-          title={courseName}
-        />
+        <CardMedia title={courseName}>
+          <img
+            src={`${props.courseImage}`}
+            alt={courseName}
+            className={classes.media}
+          />
+        </CardMedia>
         <CardContent className={classes.content}>
           <Typography variant="h5" className="heading" gutterBottom>
             {courseName}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Provided by {courseProvider}
+          <Typography variant="subtitle1" color="textPrimary">
+            {courseProvider}
           </Typography>
           <Typography paragraph className={classes.courseLength}>
             {courseList.length} courses included

@@ -22,6 +22,11 @@ function getModalStyle() {
 }
 
 const styles = theme => ({
+  modal: {
+    minHeight: 300,
+    maxHeight: 500,
+    overflow: "scroll"
+  },
   paper: {
     position: "absolute",
     width: theme.spacing.unit * 50,
@@ -36,6 +41,10 @@ const styles = theme => ({
   },
   listItem: {
     padding: 0
+  },
+  button: {
+    textAlign: "center",
+    marginTop: 30
   }
 });
 
@@ -44,13 +53,13 @@ class ProfileModal extends React.Component {
     bufferText: "",
     bufferChecked: Array(this.props.data.length).fill(true)
   };
-  bufferRecords=this.props.data;
+  bufferRecords = this.props.data;
   componentWillReceiveProps(newProps) {
     this.setState({ bufferChecked: Array(newProps.data.length).fill(true) });
     this.bufferRecords = newProps.data;
   }
   onAlterCheckbox = (event, index) => {
-    let bufferChecked=this.state.bufferChecked.slice();
+    let bufferChecked = this.state.bufferChecked.slice();
     if (event.target.checked) {
       bufferChecked[index] = true;
     } else {
@@ -61,11 +70,11 @@ class ProfileModal extends React.Component {
   onClickAdd = event => {
     console.log(event);
     console.log(event.key);
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       this.bufferRecords.push(this.state.bufferText);
-      let bufferChecked=this.state.bufferChecked.slice();
+      let bufferChecked = this.state.bufferChecked.slice();
       bufferChecked.push(true);
-      this.setState({ bufferChecked: bufferChecked,bufferText:"" });
+      this.setState({ bufferChecked: bufferChecked, bufferText: "" });
     }
   };
   changeBufferText = event => {
@@ -73,15 +82,15 @@ class ProfileModal extends React.Component {
     this.setState({ bufferText: event.target.value });
     console.log(event.target.value);
   };
-  onClickSave=()=>{
-    let saved=[];
-    let bufferChecked=this.state.bufferChecked;
-    for(let i=0;i<this.state.bufferChecked.length;i++){
-      if(bufferChecked[i]){
-        saved.add(this.bufferRecords[i]);
+  onClickSave = () => {
+    let saved = [];
+    let bufferChecked = this.state.bufferChecked;
+    for (let i = 0; i < this.state.bufferChecked.length; i++) {
+      if (bufferChecked[i]) {
+        saved.push(this.bufferRecords[i]);
       }
     }
-  }
+  };
   render() {
     const { classes } = this.props;
     const list = this.bufferRecords.map((item, index) => (
@@ -107,6 +116,7 @@ class ProfileModal extends React.Component {
         aria-describedby="simple-modal-description"
         open={this.props.isOpen}
         onClose={this.props.onClose}
+        className={classes.modal}
       >
         <div style={getModalStyle()} className={classes.paper}>
           <Typography variant="h6" className={classes.title}>
@@ -118,7 +128,7 @@ class ProfileModal extends React.Component {
               <span className={classes.textField}>
                 <TextField
                   id="standard-with-placeholder"
-                  label="Add here"
+                  label="Type here and press enter"
                   placeholder="Placeholder"
                   margin="normal"
                   onKeyPress={this.onClickAdd}
@@ -129,9 +139,13 @@ class ProfileModal extends React.Component {
             </List>
           </div>
 
-          <div className={classes.textCenter}>
-            <Button variant="contained" color="primary">
-              Save
+          <div className={classes.button}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.onClickSave}
+            >
+              Update List
             </Button>
           </div>
         </div>

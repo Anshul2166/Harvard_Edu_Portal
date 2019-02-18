@@ -86,7 +86,6 @@ class CreatePost extends Component {
 
     return (
       <div className="CreatePost">
-        <Header />
         <div className="container">
           <div className="row">
             <div className="col-md-8 CreatePost__col">
