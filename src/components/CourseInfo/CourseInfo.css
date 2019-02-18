@@ -18,12 +18,20 @@
 .screenshots {
   margin-top: 1%;
   margin-bottom: 1%;
-  width: 51%;
-  height: 51%;
+  margin-left: 5%;
+  width: 80%;
+  height: 450px;
+  border: 1px solid deeppink;
 }
 .top-row-course-info {
   margin-bottom: 2.5% !important;
 }
 .course-info-url {
-  margin-top: 2%;
+  margin-top: 1.5%;
+}
+.star-ratings {
+  margin-top: 20px;
+}
+.course-info h2 {
+  margin-bottom: 1%;
 }
