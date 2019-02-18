@@ -6,6 +6,7 @@ import ListBox from "./ListBox/ListBox";
 import { connect } from "react-redux";
 import ProfileInfoModal from "../Common/Modal/ProfileInfoModal";
 import { Link } from "react-router-dom";
+import EditProfileModal from "./EditProfile/EditProfile";
 import "./profile.css";
 
 class Profile extends Component {
@@ -19,8 +20,16 @@ class Profile extends Component {
     console.log("Closing");
     this.setState({ modalOpen: false });
   };
+  editProfileOpen=()=>{
+    console.log("Opening edit profile");
+    this.setState({editProfileOpen:true});
+  }
+  onCloseEditProfile=()=>{
+    this.setState({editProfileOpen:false});
+  }
   render() {
     const { skills, accomplishments, projects, courses } = this.props.data;
+    let profileInfo={name:"Anshul",description:"",imageUrl:""};
     console.log("rendering");
     return (
       <div className="profile">
@@ -28,6 +37,11 @@ class Profile extends Component {
           isOpen={this.state.modalOpen}
           onClose={() => this.onClose()}
           data={this.state.data}
+        />
+        <EditProfileModal
+          isOpen={this.state.editProfileOpen}
+          onClose={() => this.onCloseEditProfile()}
+          data={profileInfo}
         />
         <Grid container spacing={24}>
           <Grid item xs={12} sm={6} md={4} lg={2}>
@@ -58,7 +72,7 @@ class Profile extends Component {
                 publishing software like Aldus PageMaker including versions of
                 Lorem Ipsum.
               </Typography>
-              <Link to="#" className="bottom-div">
+              <Link to="#" className="bottom-div" onClick={this.editProfileOpen}>
                 Edit profile
               </Link>
             </div>

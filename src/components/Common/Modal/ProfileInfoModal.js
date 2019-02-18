@@ -17,24 +17,30 @@ function getModalStyle() {
   return {
     top: `${top}%`,
     left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
+    transform: `translate(-${top}%, -${left}%)`,
+    width:"500px!important"
   };
 }
 
 const styles = theme => ({
   modal:{
-    minHeight:300,
-    maxHeight:500,
-    overflow:"scroll"
+    minHeight:500,
+    maxHeight:700,
+    overflow:"scroll",
+    minWidth:500,
+    maxWidth:700,
+    width:700
   },
   paper: {
     position: "absolute",
-    width: theme.spacing.unit * 50,
+    // width: theme.spacing.unit * 70,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
     outline: "none",
-    paddingTop: 0
+    paddingTop: 0,
+    minWidth:500,
+    maxWidth:700
   },
   title: {
     margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`
