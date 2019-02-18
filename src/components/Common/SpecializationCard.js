@@ -12,17 +12,21 @@ let styles = {
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border: "2px solid antiquewhite",
-    cursor: "pointer"
+    border: "2px solid azure",
+    cursor: "pointer",
+    borderRadius:"20px",
+    borderBottomColor:"gainsboro"
   },
   media: {
     height: 250,
     width:"100%"
   },
   courseLength: {
-    color: "goldenrod"
+    color: "goldenrod",
+    marginTop:10,
+    marginBottom:30
   },
-  stars: { marginLeft: "2.5%", position: "absolute", bottom: "5%" }
+  stars: { marginTop:10,marginLeft: "2.5%", position: "absolute", bottom: "5%" }
 };
 
 function onClick(props) {
@@ -53,8 +57,8 @@ function SpecializationCard(props) {
           <Typography variant="h5" className="heading" gutterBottom>
             {courseName}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
-            Provided by {courseProvider}
+          <Typography variant="subtitle1" color="textPrimary">
+            {courseProvider}
           </Typography>
           <Typography paragraph className={classes.courseLength}>
             {courseList.length} courses included

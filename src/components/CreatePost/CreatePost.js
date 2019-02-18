@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../Common/Header/Header";
 import Select from "react-select-v1";
 import "react-select-v1/dist/react-select.css";
 import CKEditor from "react-ckeditor-component";
@@ -86,7 +85,6 @@ class CreatePost extends Component {
 
     return (
       <div className="CreatePost">
-        <Header />
         <div className="container">
           <div className="row">
             <div className="col-md-8 CreatePost__col">
