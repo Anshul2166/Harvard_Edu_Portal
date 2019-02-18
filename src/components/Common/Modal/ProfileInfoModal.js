@@ -28,19 +28,15 @@ const styles = theme => ({
     maxHeight:700,
     overflow:"scroll",
     minWidth:500,
-    maxWidth:700,
-    width:700
+    maxWidth:700
   },
   paper: {
     position: "absolute",
-    // width: theme.spacing.unit * 70,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
     outline: "none",
-    paddingTop: 0,
-    minWidth:500,
-    maxWidth:700
+    paddingTop: 0
   },
   title: {
     margin: `${theme.spacing.unit * 4}px 0 ${theme.spacing.unit * 2}px`

@@ -22,14 +22,13 @@ function getModalStyle() {
 }
 
 const styles = theme => ({
-  modal:{
-    minHeight:300,
-    maxHeight:500,
-    overflow:"scroll"
+  modal: {
+    minHeight: 300,
+    maxHeight: 500
   },
   paper: {
     position: "absolute",
-    width: theme.spacing.unit * 50,
+    width: 700,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -42,36 +41,37 @@ const styles = theme => ({
   listItem: {
     padding: 0
   },
-  button:{
-    textAlign:"center",
-    marginTop:30
+  button: {
+    textAlign: "center",
+    marginTop: 30
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-  },
+    width: "100%"
+  }
 });
 
 class EditProfile extends React.Component {
   state = {
-    keys:[],
-    values:[]
+    keys: [],
+    values: []
   };
-  bufferRecords=this.props.data;
+  bufferRecords = this.props.data;
   componentWillReceiveProps(newProps) {
-    let profileInfo=newProps.data;
+    let profileInfo = newProps.data;
     console.log("Here are the keys");
     console.log(profileInfo);
-    let keys=Object.keys(profileInfo);
-    let values=[];
-    for(let i=0;i<keys.length;i++){
-        let value=profileInfo[keys[i]];
-        values.push(value);
+    let keys = Object.keys(profileInfo);
+    let values = [];
+    for (let i = 0; i < keys.length; i++) {
+      let value = profileInfo[keys[i]];
+      values.push(value);
     }
     console.log(values);
-    this.setState({values:values,keys:keys});
+    this.setState({ values: values, keys: keys });
   }
-  onClickSave=()=>{
+  onClickSave = () => {
     // let saved=[];
     // let bufferChecked=this.state.bufferChecked;
     // for(let i=0;i<this.state.bufferChecked.length;i++){
@@ -79,26 +79,53 @@ class EditProfile extends React.Component {
     //     saved.push(this.bufferRecords[i]);
     //   }
     // }
+  };
+  onChangeText=(event,index)=>{
+    let values=this.state.values;
+    let currentValue=event.target.value;
+    values[index]=currentValue;
+    this.setState({values});
   }
   render() {
     const { classes } = this.props;
-    const {keys,values}=this.state;
-    const list = keys.map((item, index) => (
-      <ListItem divider className={classes.listItem} key={index}>
-        <ListItemText
-          primary={item}
-        />
-        <TextField
-          id="outlined-name"
-          label={item}
-          className={classes.textField}
-          type="text"
-          margin="normal"
-          variant="outlined"
-          value={values[index]}
-        />
-      </ListItem>
-    ));
+    const { keys, values } = this.state;
+    const list = keys.map((item, index) => {
+      console.log(item);
+      if (item!== "description") {
+        return (
+          <ListItem divider className={classes.listItem} key={index}>
+            <TextField
+              id="outlined-name"
+              label={item}
+              className={classes.textField}
+              type="text"
+              margin="normal"
+              variant="outlined"
+              value={values[index]}
+              onChange={(e)=>this.onChangeText(e,index)}
+            />
+          </ListItem>
+        );
+      } else {
+        return (
+          <ListItem divider className={classes.listItem} key={index}>
+            <TextField
+              id="outlined-name"
+              label={item}
+              className={classes.textField}
+              type="text"
+              margin="normal"
+              variant="outlined"
+              value={values[index]}
+              onChange={(e)=>this.onChangeText(e,index)}
+              multiline={true}
+              rows={2}
+              rowsMax={4}
+            />
+          </ListItem>
+        );
+      }
+    });
     return (
       <Modal
         aria-labelledby="simple-modal-title"
@@ -118,7 +145,11 @@ class EditProfile extends React.Component {
           </div>
 
           <div className={classes.button}>
-            <Button variant="contained" color="primary" onClick={this.onClickSave}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.onClickSave}
+            >
               Update Profile
             </Button>
           </div>
@@ -136,4 +167,3 @@ EditProfile.propTypes = {
 const EditProfileModal = withStyles(styles)(EditProfile);
 
 export default EditProfileModal;
-
