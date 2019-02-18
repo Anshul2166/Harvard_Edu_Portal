@@ -16,8 +16,9 @@ const styles = theme => ({
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border:"1px solid wheat",
-    cursor:"pointer"
+    border:"2px solid aquamarine",
+    cursor:"pointer",
+    borderRadius:"20px"
   },
   media: {
     height: 0,
@@ -77,7 +78,7 @@ class DegreeCard extends React.Component {
             {degreeName}
           </Typography>
           <Typography variant="p" component="p" className="heading">
-            Provided by {degreeProvider}
+            {degreeProvider}
           </Typography>
           <div className={classes.stars}>
             <StarRatings

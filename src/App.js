@@ -16,6 +16,7 @@ import GameDev from "./components/LearningPath/GameDev/GameDev";
 import { connect } from "react-redux";
 import { fetchProfile } from "./store/actions/profile";
 import { withRouter } from "react-router-dom";
+import NavHeader from "./components/Common/NavHeader/NavHeader";
 import PractiseQuestions from "./components/PractiseQuestions/PractiseQuestions";
 import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
 
@@ -32,6 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <NavHeader />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />
@@ -44,6 +46,7 @@ class App extends Component {
           <Route path="/course_info" component={CourseInfo} />
           <Route path="/single-post/:id" component={SinglePost} />
           <Route path="/select-domain" component={SelectDomain} />
+          <Route path="/nav_header" component={NavHeader} />
           <Route exact path="/select-questions" component={PractiseQuestions} />
 
           <Route

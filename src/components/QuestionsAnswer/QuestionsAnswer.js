@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import QAActionCard from "./QAActionCard/QAActionCard";
-import Header from "../Common/Header/Header";
 import SingleQuestionCard from "./SingleQuestionCard/SingleQuestionCard";
 
 class QuestionsAnswer extends Component {
   render() {
     return (
-      <div className="QuestionsAnswer">
-        <Header />
+      <div className="QuestionsAnswer">        
         <div className="QuestionsAnswer__header">
           Data structure and algorithm
         </div>
