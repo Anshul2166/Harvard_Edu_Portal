@@ -32,7 +32,6 @@ class Forum extends Component {
     return (
       <ForumContext.Provider value={contextValue}>
         <div className="Forum">
-          <Header />
           <CreateCommunityModal />
           <div className="container">
             <div className="row">

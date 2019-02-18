@@ -14,7 +14,7 @@ const styles = theme => ({
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border: "1px solid wheat",
+    border: "2px solid wheat",
     height: 300,
     cursor: "pointer"
   },

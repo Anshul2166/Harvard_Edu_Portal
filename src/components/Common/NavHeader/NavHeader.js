@@ -181,7 +181,7 @@ class PrimarySearchAppBar extends React.Component {
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Button color="inherit" className={classes.navButton} href="#">
+              <Button color="inherit" className={classes.navButton} href="/sunburst">
                 Sunburst
               </Button>
               <Button color="inherit" className={classes.navButton} href="/dashboard" >
@@ -190,8 +190,11 @@ class PrimarySearchAppBar extends React.Component {
               <Button color="inherit" className={classes.navButton} href="#">
                 Roadmaps
               </Button>
-              <Button color="inherit" className={classes.navButton} href="#">
+              <Button color="inherit" className={classes.navButton} href="/forum">
                 Forums
+              </Button>
+              <Button color="inherit" className={classes.navButton} href="/graph">
+                Graph Path
               </Button>
               <Link to="/profile">
                 <IconButton

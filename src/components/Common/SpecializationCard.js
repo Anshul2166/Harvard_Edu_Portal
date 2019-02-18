@@ -12,17 +12,17 @@ let styles = {
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border: "1px solid antiquewhite",
+    border: "2px solid antiquewhite",
     cursor: "pointer"
   },
   media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
+    height: 250,
+    width:"100%"
   },
   courseLength: {
     color: "goldenrod"
   },
-  stars: { marginLeft: "2.5%",position:"absolute",bottom:"5%" }
+  stars: { marginLeft: "2.5%", position: "absolute", bottom: "5%" }
 };
 
 function onClick(props) {
@@ -42,11 +42,13 @@ function SpecializationCard(props) {
   return (
     <div>
       <Card className={classes.card} onClick={() => onClick(props)}>
-        <CardMedia
-          className={classes.media}
-          image={`${props.courseImage}`}
-          title={courseName}
-        />
+        <CardMedia title={courseName}>
+          <img
+            src={`${props.courseImage}`}
+            alt={courseName}
+            className={classes.media}
+          />
+        </CardMedia>
         <CardContent className={classes.content}>
           <Typography variant="h5" className="heading" gutterBottom>
             {courseName}

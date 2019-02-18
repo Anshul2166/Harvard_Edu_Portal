@@ -31,6 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <NavHeader />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />
@@ -43,11 +44,10 @@ class App extends Component {
           <Route path="/course_info" component={CourseInfo} />
           <Route path="/single-post/:id" component={SinglePost} />
           <Route path="/select-domain" component={SelectDomain} />
-
+          <Route path="/nav_header" component={NavHeader} />
           {/* Learning path routes */}
           <Route path="/learning-path/webdev" component={WebDev} />
           <Route path="/learning-path/gamedev" component={GameDev} />
-          <Route path="/nav_header" component={NavHeader} />
         </Switch>
       </div>
     );
