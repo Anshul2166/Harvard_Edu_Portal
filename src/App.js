@@ -17,6 +17,8 @@ import { connect } from "react-redux";
 import { fetchProfile } from "./store/actions/profile";
 import { withRouter } from "react-router-dom";
 import NavHeader from "./components/Common/NavHeader/NavHeader";
+import PractiseQuestions from "./components/PractiseQuestions/PractiseQuestions";
+import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
 
 class App extends Component {
   componentDidMount = () => {
@@ -45,6 +47,13 @@ class App extends Component {
           <Route path="/single-post/:id" component={SinglePost} />
           <Route path="/select-domain" component={SelectDomain} />
           <Route path="/nav_header" component={NavHeader} />
+          <Route exact path="/select-questions" component={PractiseQuestions} />
+
+          <Route
+            exact
+            path="/questions/data-structure"
+            component={QuestionsAnswer}
+          />
           {/* Learning path routes */}
           <Route path="/learning-path/webdev" component={WebDev} />
           <Route path="/learning-path/gamedev" component={GameDev} />

@@ -1,0 +1,37 @@
+.QAActionCard {
+  background-color: #fff;
+  padding: 10px 15px;
+  font-family: Poppins;
+}
+
+.QAActionCard__header {
+  font-weight: 500;
+  padding: 10px 0px;
+  border-bottom: 2px solid #dedede;
+  margin-bottom: 20px;
+}
+
+.QAActionCard__single-card {
+  color: #2f3239;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: transparent;
+  border: 1px solid $primary-dark-blue;
+  color: $primary-dark-blue;
+  margin-bottom: 10px;
+  padding: 10px !important;
+  border-radius: 5px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s all ease-in-out;
+
+  &:hover {
+    background-color: $primary-dark-blue;
+    color: #fff;
+  }
+}
+
+.QAActionCard__single-card--selected {
+  background-color: $primary-dark-blue;
+  color: #fff;
+}
