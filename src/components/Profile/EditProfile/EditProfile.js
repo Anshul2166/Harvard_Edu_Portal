@@ -72,13 +72,13 @@ class EditProfile extends React.Component {
     this.setState({ values: values, keys: keys });
   }
   onClickSave = () => {
-    // let saved=[];
-    // let bufferChecked=this.state.bufferChecked;
-    // for(let i=0;i<this.state.bufferChecked.length;i++){
-    //   if(bufferChecked[i]){
-    //     saved.push(this.bufferRecords[i]);
-    //   }
-    // }
+    let saved={};
+    let {keys,values}=this.state;
+    for(let i=0;i<keys.length;i++){
+      saved[keys[i]]=values[i];
+    }
+    this.props.onEditProfile(saved);
+    this.props.onClose();
   };
   onChangeText=(event,index)=>{
     let values=this.state.values;

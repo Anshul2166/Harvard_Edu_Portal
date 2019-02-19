@@ -28,7 +28,6 @@ const styles = theme => ({
     maxHeight:700,
     overflow:"scroll",
     minWidth:500,
-    maxWidth:700
   },
   paper: {
     position: "absolute",
@@ -92,6 +91,7 @@ class ProfileModal extends React.Component {
         saved.push(this.bufferRecords[i]);
       }
     }
+    this.props.onSave(saved);
   }
   render() {
     const { classes } = this.props;
