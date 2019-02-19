@@ -92,6 +92,7 @@ class ProfileModal extends React.Component {
       }
     }
     this.props.onSave(saved);
+    this.props.onClose();
   }
   render() {
     const { classes } = this.props;
