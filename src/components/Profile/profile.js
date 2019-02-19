@@ -28,9 +28,10 @@ class Profile extends Component {
     this.setState({editProfileOpen:false});
   }
   render() {
-    const { skills, accomplishments, projects, courses } = this.props.data;
-    let profileInfo={name:"Anshul",description:"",imageUrl:""};
-    console.log("rendering");
+    console.log(this.props.profile);
+    const user=this.props.profile.local;
+    const { skills, accomplishments, projects, courses } = this.props.profile;
+    let profileInfo={name:user.username,description:this.props.profile.description,imageUrl:""};
     return (
       <div className="profile">
         <ProfileInfoModal
@@ -58,19 +59,10 @@ class Profile extends Component {
           <Grid item xs={12} sm={6} md={8} lg={10}>
             <div className="profile-info">
               <Typography variant="h4" component="h3">
-                Anshul
+                {profileInfo.name}
               </Typography>
               <Typography gutterBottom>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+               {profileInfo.description}
               </Typography>
               <Link to="#" className="bottom-div" onClick={this.editProfileOpen}>
                 Edit profile
@@ -118,7 +110,8 @@ class Profile extends Component {
 
 const mapStateToProps = state => {
   return {
-    data: state.profileInfo.info
+    data: state.profileInfo.info,
+    profile:state.profile
   };
 };
 
