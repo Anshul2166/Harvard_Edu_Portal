@@ -21,13 +21,13 @@ const styles = theme => ({
   icon: {
     color: "purple"
   },
-  listItem:{
-    listStyle:"disc",
-    listStylePosition:"inside"
+  listItem: {
+    listStyle: "disc",
+    listStylePosition: "inside"
   },
-  listBox:{
-    margin:0,
-    paddingBottom:"5px!important"
+  listBox: {
+    margin: 0,
+    paddingBottom: "5px!important"
   }
 });
 
@@ -58,10 +58,10 @@ class ListBox extends Component {
           </Typography>
         );
       } else {
-        const values=this.props.data.map((item,index)=>(
+        const values = this.props.data.map((item, index) => (
           <li className={classes.listItem}>{item}</li>
         ));
-        return <ul>{values}</ul>
+        return <ul>{values}</ul>;
       }
     };
     return (
@@ -76,7 +76,7 @@ class ListBox extends Component {
             className={classes.header}
           />
           <CardContent className={classes.listBox}>
-            <Typography gutterBottom paragraph >
+            <Typography gutterBottom paragraph>
               <List />
             </Typography>
           </CardContent>

@@ -3,7 +3,10 @@ import Modal from "react-modal";
 import ForumContext from "../_forumContext";
 import classnames from "classnames";
 import { connect } from "react-redux";
-import { createCommunity } from "../../../store/actions/communities";
+import {
+  createCommunity,
+  fetchCommunities
+} from "../../../store/actions/communities";
 import {
   NotificationContainer,
   NotificationManager
@@ -67,6 +70,7 @@ class CreateCommunityModal extends Component {
           this.state.description
         );
 
+        this.props.fetchCommunities();
         this.setState({ name: "", description: "" });
         NotificationManager.info("Community have been successfully created");
       } catch (error) {
@@ -174,5 +178,5 @@ class CreateCommunityModal extends Component {
 
 export default connect(
   null,
-  { createCommunity }
+  { createCommunity, fetchCommunities }
 )(CreateCommunityModal);

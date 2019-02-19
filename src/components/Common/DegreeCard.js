@@ -7,8 +7,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
 import logo from "../../shared/assets/stanford.jpg";
-import './DegreeCard.css';
-import  { withRouter } from 'react-router-dom';
+import "./DegreeCard.css";
+import { withRouter } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 
 const styles = theme => ({
@@ -16,9 +16,9 @@ const styles = theme => ({
     maxWidth: 400,
     width: 300,
     minHeight: 450,
-    border:"2px solid aquamarine",
-    cursor:"pointer",
-    borderRadius:"20px"
+    border: "2px solid aquamarine",
+    cursor: "pointer",
+    borderRadius: "20px"
   },
   media: {
     height: 0,
@@ -43,8 +43,8 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500]
   },
-  stars:{
-    marginLeft:"2.5%"
+  stars: {
+    marginLeft: "2.5%"
   }
 });
 
@@ -55,21 +55,26 @@ class DegreeCard extends React.Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
-  onClick=()=>{
+  onClick = () => {
     console.log("Here");
-    this.props.history.push({pathname:'/course_info',state: { info:this.props.data }});
+    this.props.history.push({
+      pathname: "/course_info",
+      state: { info: this.props.data }
+    });
   };
 
   render() {
-    const { classes,degreeName,degreeImage,degreeProvider,courseRating } = this.props;
+    const {
+      classes,
+      degreeName,
+      degreeImage,
+      degreeProvider,
+      courseRating
+    } = this.props;
 
     return (
-      <Card className={classes.card} onClick={()=>this.onClick()}>
-        <CardMedia
-          className={classes.media}
-          image={logo}
-          title={degreeName}
-        />
+      <Card className={classes.card} onClick={() => this.onClick()}>
+        <CardMedia className={classes.media} image={logo} title={degreeName} />
         <div className="center-div in-div">
           <img src={degreeImage} alt="Random" width="50" height="50" />
         </div>

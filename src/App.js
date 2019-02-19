@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <NavHeader />
+        <NavHeader />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/dashboard" component={Dashboard} />

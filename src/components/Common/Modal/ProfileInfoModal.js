@@ -43,9 +43,9 @@ const styles = theme => ({
   listItem: {
     padding: 0
   },
-  button:{
-    textAlign:"center",
-    marginTop:30
+  button: {
+    textAlign: "center",
+    marginTop: 30
   }
 });
 
@@ -54,13 +54,13 @@ class ProfileModal extends React.Component {
     bufferText: "",
     bufferChecked: Array(this.props.data.length).fill(true)
   };
-  bufferRecords=this.props.data;
+  bufferRecords = this.props.data;
   componentWillReceiveProps(newProps) {
     this.setState({ bufferChecked: Array(newProps.data.length).fill(true) });
     this.bufferRecords = newProps.data;
   }
   onAlterCheckbox = (event, index) => {
-    let bufferChecked=this.state.bufferChecked.slice();
+    let bufferChecked = this.state.bufferChecked.slice();
     if (event.target.checked) {
       bufferChecked[index] = true;
     } else {
@@ -71,11 +71,11 @@ class ProfileModal extends React.Component {
   onClickAdd = event => {
     console.log(event);
     console.log(event.key);
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       this.bufferRecords.push(this.state.bufferText);
-      let bufferChecked=this.state.bufferChecked.slice();
+      let bufferChecked = this.state.bufferChecked.slice();
       bufferChecked.push(true);
-      this.setState({ bufferChecked: bufferChecked,bufferText:"" });
+      this.setState({ bufferChecked: bufferChecked, bufferText: "" });
     }
   };
   changeBufferText = event => {
@@ -83,17 +83,17 @@ class ProfileModal extends React.Component {
     this.setState({ bufferText: event.target.value });
     console.log(event.target.value);
   };
-  onClickSave=()=>{
-    let saved=[];
-    let bufferChecked=this.state.bufferChecked;
-    for(let i=0;i<this.state.bufferChecked.length;i++){
-      if(bufferChecked[i]){
+  onClickSave = () => {
+    let saved = [];
+    let bufferChecked = this.state.bufferChecked;
+    for (let i = 0; i < this.state.bufferChecked.length; i++) {
+      if (bufferChecked[i]) {
         saved.push(this.bufferRecords[i]);
       }
     }
     this.props.onSave(saved);
     this.props.onClose();
-  }
+  };
   render() {
     const { classes } = this.props;
     const list = this.bufferRecords.map((item, index) => (
@@ -143,7 +143,11 @@ class ProfileModal extends React.Component {
           </div>
 
           <div className={classes.button}>
-            <Button variant="contained" color="primary" onClick={this.onClickSave}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={this.onClickSave}
+            >
               Update List
             </Button>
           </div>

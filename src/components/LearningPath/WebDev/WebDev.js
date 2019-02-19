@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "../../Common/Header/Header";
 import Intro from "./images/intro.png";
 import FrontEnd from "./images/frontend.png";
 import BackEnd from "./images/backend.png";
@@ -8,6 +9,7 @@ class WebDev extends Component {
   render() {
     return (
       <div className="WebDev">
+        <Header />
         <div className="container">
           <h1 className="LearningPath__header">Web Developer roadmap</h1>
           <div className="LearningPath__section-inner">

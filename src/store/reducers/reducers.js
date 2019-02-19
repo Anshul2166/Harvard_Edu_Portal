@@ -11,8 +11,8 @@ export default combineReducers({
   courses: courseReducer,
   communities: communitiesReducer,
   posts: postsReducer,
-  specialization:specializationReducer,
-  degrees:degreeReducer,
+  specialization: specializationReducer,
+  degrees: degreeReducer,
   profile: profileReducer,
-  profileInfo:profileInfoReducer
+  profileInfo: profileInfoReducer
 });

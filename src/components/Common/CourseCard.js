@@ -17,8 +17,8 @@ const styles = theme => ({
     border: "2px solid azure",
     height: 300,
     cursor: "pointer",
-    borderRadius:"20px",
-    borderBottom:"gainsboro"
+    borderRadius: "20px",
+    borderBottom: "gainsboro"
   },
   media: {
     height: 0,

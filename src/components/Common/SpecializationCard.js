@@ -14,19 +14,24 @@ let styles = {
     minHeight: 450,
     border: "2px solid azure",
     cursor: "pointer",
-    borderRadius:"20px",
-    borderBottomColor:"gainsboro"
+    borderRadius: "20px",
+    borderBottomColor: "gainsboro"
   },
   media: {
     height: 250,
-    width:"100%"
+    width: "100%"
   },
   courseLength: {
     color: "goldenrod",
-    marginTop:10,
-    marginBottom:30
+    marginTop: 10,
+    marginBottom: 30
   },
-  stars: { marginTop:10,marginLeft: "2.5%", position: "absolute", bottom: "5%" }
+  stars: {
+    marginTop: 10,
+    marginLeft: "2.5%",
+    position: "absolute",
+    bottom: "5%"
+  }
 };
 
 function onClick(props) {
