@@ -4,7 +4,9 @@ const passport = require("passport");
 const User = require("../models/users");
 const _ = require("lodash");
 const { check, validationResult } = require("express-validator/check");
-
+var cloudinary = require("cloudinary");
+let multer = require("multer");
+let upload = multer();
 //==========================
 //======== /api/user/....
 //==========================
@@ -251,6 +253,41 @@ router.put(
       res.status(500).send(err);
     }
   }
+);
+
+router.post(
+  "/image/",
+  upload.single("userImage"),
+  async (req, res) => {
+    try {
+      console.log("posting");
+      cloudinary.config({
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+      });
+      console.log("Posting body")
+      console.log(req.body);
+      console.log("done posting");
+      // let base64File=await getBase64(req.body.userImage);
+      // console.log(base64File);
+      const result = await cloudinary.uploader.upload(req.body.userImage, {
+        crop: "limit",
+        tags: "samples",
+        width: 3000,
+        height: 2000,
+      });
+      console.log(result);
+      const info = await User.updateOne({
+        "_id": req.user._id,
+      }).set({ imageUrl: req.body.userImage });
+      console.log("Done with all");
+      res.status(200).send(info);
+    } catch (err) {
+      console.log("error");
+      console.log(err);
+    }
+  },
 );
 
 module.exports = router;

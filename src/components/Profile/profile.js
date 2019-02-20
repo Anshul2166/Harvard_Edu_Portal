@@ -36,6 +36,14 @@ class Profile extends Component {
     console.log(updates);
     this.props.profileActions.updateProfile(updates);
   };
+  handleImageClick=()=>{
+    this.refs.fileUploader.click();
+  }
+  selectImageChange=(event)=>{
+    let file=event.target.files[0];
+    console.log(event.target.files);
+    this.props.profileActions.updateImage(file);
+  }
   render() {
     console.log(this.props.profile);
     if (!this.props.profile.fetched) {
@@ -45,11 +53,11 @@ class Profile extends Component {
       const { skills, accomplishments, projects, courses } = this.props.profile;
       let profileInfo = {
         name: user.username,
-        description: this.props.profile.description,
-        imageUrl: ""
+        description: this.props.profile.description
       };
       return (
         <div className="profile">
+        <input type="file" id="file" ref="fileUploader" style={{display: "none"}} onChange={(e)=>this.selectImageChange(e)}/>
           <ProfileInfoModal
             isOpen={this.state.modalOpen}
             onClose={() => this.onClose()}
@@ -67,11 +75,12 @@ class Profile extends Component {
               <CardMedia
                 component="img"
                 alt="Profile Pic"
-                image="/assets/alberto.png"
+                image={this.props.profile.imageUrl}
                 title="Profile Pic"
                 className="image-round"
                 width="200"
                 height="200"
+                onClick={()=>this.handleImageClick()}
               />
             </Grid>
             <Grid item xs={12} sm={6} md={8} lg={10}>

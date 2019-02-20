@@ -18,7 +18,7 @@ var userSchema = mongoose.Schema({
   posts:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
   google: { type: String, sparse: true },
   description:{type:String},
-  url:{type:String},
+  imageUrl:{type:String},
   projects:[{type:String}],
   skills:[{type:String}],
   courses:[{type:String}],
