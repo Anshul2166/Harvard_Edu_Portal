@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ForumActionArea from "./ForumActionArea/ForumActionArea";
-import Header from "../Common/Header/Header";
 import ForumContext from "./_forumContext";
 import CreateCommunityModal from "./CreateCommunityModal/CreateCommunityModal";
 import PostCard from "../Common/PostCard/PostCard";
@@ -32,7 +31,6 @@ class Forum extends Component {
     return (
       <ForumContext.Provider value={contextValue}>
         <div className="Forum">
-          <Header />
           <CreateCommunityModal />
           <div className="container">
             <div className="row">

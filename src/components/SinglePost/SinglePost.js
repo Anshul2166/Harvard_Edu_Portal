@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../Common/Header/Header";
 import PostCommentForm from "./PostCommentForm/PostCommentForm";
 import PostComments from "./PostComments/PostComments";
 import { ClipLoader } from "react-spinners";
@@ -78,7 +77,6 @@ class SinglePost extends Component {
     if (!props.post.fetched) {
       return (
         <div className="SinglePost">
-          <Header />
           <div className="SinglePost__loading" key={0}>
             <ClipLoader
               sizeUnit={"px"}
@@ -92,7 +90,6 @@ class SinglePost extends Component {
     }
     return (
       <div className="SinglePost">
-        <Header />
         <div className="container">
           <div className="row">
             <div className="col-md-8 SinglePost__col">
