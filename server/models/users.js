@@ -16,7 +16,13 @@ var userSchema = mongoose.Schema({
   liked:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
   disliked:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
   posts:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
-  google: { type: String, sparse: true }
+  google: { type: String, sparse: true },
+  description:{type:String},
+  url:{type:String},
+  projects:[{type:String}],
+  skills:[{type:String}],
+  courses:[{type:String}],
+  accomplishments:[{type:String}]
 });
 
 // generating a hash

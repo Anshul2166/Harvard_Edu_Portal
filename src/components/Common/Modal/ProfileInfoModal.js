@@ -17,19 +17,20 @@ function getModalStyle() {
   return {
     top: `${top}%`,
     left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
+    transform: `translate(-${top}%, -${left}%)`,
+    width:"500px!important"
   };
 }
 
 const styles = theme => ({
-  modal: {
-    minHeight: 300,
-    maxHeight: 500,
-    overflow: "scroll"
+  modal:{
+    minHeight:500,
+    maxHeight:700,
+    overflow:"scroll",
+    minWidth:500,
   },
   paper: {
     position: "absolute",
-    width: theme.spacing.unit * 50,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
@@ -90,6 +91,8 @@ class ProfileModal extends React.Component {
         saved.push(this.bufferRecords[i]);
       }
     }
+    this.props.onSave(saved);
+    this.props.onClose();
   };
   render() {
     const { classes } = this.props;

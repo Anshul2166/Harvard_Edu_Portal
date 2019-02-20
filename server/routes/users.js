@@ -228,4 +228,29 @@ router.get(
   }
 );
 
+router.put(
+  "/",
+  isLoggedIn,
+  async (req, res) => {
+    const userId = req.user._id;
+    const data = req.body;
+    try {
+      const updateResponse = await User.findByIdAndUpdate(
+        { _id: userId },
+        data,
+        { upsert: true }
+      );
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "application/json");
+      res.json({
+        success: true,
+        status: "Put successfully created"
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
+  }
+);
+
 module.exports = router;
