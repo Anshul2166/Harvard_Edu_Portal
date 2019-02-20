@@ -1,0 +1,886 @@
+{name:"	Coffee Central",link:"http://codeforces.com/problemset/problem/779/C,difficulty:1,topics:["greedy"]},
+
+{name:"	Tetrahedron",link:"http://codeforces.com/problemset/problem/580/C,difficulty:1,topics:["bit manipulation"]},
+
+{name:"	Xenia and Bit Operations",link:"http://codeforces.com/problemset/problem/455/A,difficulty:1,topics:["dp"]},
+
+{name:"	Queue",link:"http://codeforces.com/problemset/problem/258/A,difficulty:1,topics:["trees"]},
+
+{name:"	Flowers",link:"http://codeforces.com/problemset/problem/285/C,difficulty:1,topics:["greedy"]},
+
+{name:"	Longest Common Subsequence",link:"http://codeforces.com/problemset/problem/550/C,difficulty:1,topics:["graphs"]},
+
+{name:"	Mashmokh and ACM",link:"http://codeforces.com/problemset/problem/479/C,difficulty:1,topics:["graphs"]},
+
+{name:"	Dima and Lisa",link:"http://codeforces.com/problemset/problem/277/A,difficulty:2,topics:["dp"]},
+
+{name:"	Vasya and Chess",link:"http://codeforces.com/problemset/problem/377/A,difficulty:2,topics:["greedy"]},
+
+{name:"	Prizes, Prizes, more Prizes",link:"http://codeforces.com/problemset/problem/515/C,difficulty:2,topics:["graphs"]},
+
+{name:"	Soldier and Number Game",link:"http://codeforces.com/problemset/problem/698/A,difficulty:2,topics:["dp"]},
+
+{name:"	Equivalent Strings",link:"http://codeforces.com/problemset/problem/115/A,difficulty:2,topics:["trees"]},
+
+{name:"	Magic Powder - 2",link:"http://codeforces.com/problemset/problem/489/C,difficulty:2,topics:["data structures"]},
+
+{name:"	String Game",link:"http://codeforces.com/problemset/problem/401/C,difficulty:2,topics:["bit manipulation"]},
+
+{name:"	Alternating Current",link:"http://codeforces.com/problemset/problem/804/A,difficulty:2,topics:["data structures"]},
+
+{name:"	Caesar's Legions",link:"http://codeforces.com/problemset/problem/20/C,difficulty:2,topics:["implementation"]},
+
+{name:"	Magic Powder - 1",link:"http://codeforces.com/problemset/problem/276/C,difficulty:2,topics:["graphs"]},
+
+{name:"	Multiplication Table",link:"http://codeforces.com/problemset/problem/461/A,difficulty:2,topics:["greedy"]},
+
+{name:"	Password",link:"http://codeforces.com/problemset/problem/478/C,difficulty:2,topics:["dp"]},
+
+{name:"	Minimum number of steps",link:"http://codeforces.com/problemset/problem/576/A,difficulty:2,topics:["dp"]},
+
+{name:"	Taxes",link:"http://codeforces.com/problemset/problem/166/E,difficulty:2,topics:["graphs"]},
+
+{name:"	Mike and Feet",link:"http://codeforces.com/problemset/problem/546/C,difficulty:3,topics:["implementation"]},
+
+{name:"	Biridian Forest",link:"http://codeforces.com/problemset/problem/217/A,difficulty:3,topics:["trees"]},
+
+{name:"	Long Path",link:"http://codeforces.com/problemset/problem/573/A,difficulty:3,topics:["dp"]},
+
+{name:"	Choosing Capital for Treeland",link:"http://codeforces.com/problemset/problem/875/A,difficulty:3,topics:["dp"]},
+
+{name:"	Love Rescue",link:"http://codeforces.com/problemset/problem/659/C,difficulty:3,topics:["trees"]},
+
+{name:"	Andrey and Problem",link:"http://codeforces.com/problemset/problem/519/C,difficulty:3,topics:["trees"]},
+
+{name:"	Lakes in Berland",link:"http://codeforces.com/problemset/problem/559/A,difficulty:3,topics:["data structures"]},
+
+{name:"	Mysterious Present",link:"http://codeforces.com/problemset/problem/545/C,difficulty:3,topics:["greedy"]},
+
+{name:"	Bear and Blocks",link:"http://codeforces.com/problemset/problem/4/C,difficulty:3,topics:["trees"]},
+
+{name:"	Good Sequences",link:"http://codeforces.com/problemset/problem/687/A,difficulty:3,topics:["trees"]},
+
+{name:"	Anton and Chess",link:"http://codeforces.com/problemset/problem/431/C,difficulty:3,topics:["implementation"]},
+
+{name:"	Maximum Value",link:"http://codeforces.com/problemset/problem/109/A,difficulty:3,topics:["graphs"]},
+
+{name:"	A and B and Interesting Substrings",link:"http://codeforces.com/problemset/problem/466/C,difficulty:3,topics:["trees"]},
+
+{name:"	Bicycle Race",link:"http://codeforces.com/problemset/problem/482/A,difficulty:3,topics:["graphs"]},
+
+{name:"	Zuma",link:"http://codeforces.com/problemset/problem/732/C,difficulty:3,topics:["dp"]},
+
+{name:"	Pashmak and Parmida's problem",link:"https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1186,difficulty:3,topics:["greedy"]},
+
+{name:"	Good Substrings",link:"http://codeforces.com/problemset/problem/650/A,difficulty:3,topics:["implementation"]},
+
+{name:"	Arpa's weak amphitheater and Mehrdad's valuable Hoses",link:"http://codeforces.com/problemset/problem/701/C,difficulty:3,topics:["dp"]},
+
+{name:"	Cloud of Hashtags",link:"http://codeforces.com/problemset/problem/676/C,difficulty:3,topics:["dp"]},
+
+{name:"	Kostya the Sculptor",link:"http://codeforces.com/problemset/problem/715/A,difficulty:3,topics:["greedy"]},
+
+{name:"	Interesting Array",link:"http://codeforces.com/problemset/problem/371/C,difficulty:3,topics:["bit manipulation"]},
+
+{name:"	Ilya and Escalator",link:"http://codeforces.com/problemset/problem/839/C,difficulty:3,topics:["trees"]},
+
+{name:"	Fix a Tree",link:"http://codeforces.com/problemset/problem/145/A,difficulty:3,topics:["implementation"]},
+
+{name:"	Sorting the Coins",link:"http://codeforces.com/problemset/problem/472/C,difficulty:3,topics:["data structures"]},
+
+{name:"	Kefa and Dishes",link:"http://codeforces.com/problemset/problem/739/A,difficulty:3,topics:["graphs"]},
+
+{name:"	Polyline",link:"http://codeforces.com/problemset/problem/788/A,difficulty:3,topics:["data structures"]},
+
+{name:"	Greenhouse Effect",link:"http://codeforces.com/problemset/problem/765/C,difficulty:3,topics:["dp"]},
+
+{name:"	Make a Permutation!",link:"http://codeforces.com/problemset/problem/446/A,difficulty:3,topics:["dp"]},
+
+{name:"	Colorful Graph",link:"http://codeforces.com/problemset/problem/570/C,difficulty:3,topics:["greedy"]},
+
+{name:"	Vasiliy's Multiset",link:"http://codeforces.com/problemset/problem/707/C,difficulty:3,topics:["graphs"]},
+
+{name:"	Gargari and Permutations",link:"http://codeforces.com/problemset/problem/152/C,difficulty:3,topics:["trees"]},
+
+{name:"	Exams",link:"http://codeforces.com/problemset/problem/603/A,difficulty:3,topics:["implementation"]},
+
+{name:"	Long Jumps",link:"http://codeforces.com/problemset/problem/295/A,difficulty:3,topics:["greedy"]},
+
+{name:"	Green and Black Tea",link:"http://codeforces.com/problemset/problem/437/C,difficulty:3,topics:["greedy"]},
+
+{name:"	Common Divisors",link:"http://codeforces.com/problemset/problem/235/A,difficulty:3,topics:["dp"]},
+
+{name:"	Greg and Graph",link:"http://codeforces.com/problemset/problem/414/A,difficulty:3,topics:["bit manipulation"]},
+
+{name:"	Little Girl and Maximum XOR",link:"http://codeforces.com/problemset/problem/220/A,difficulty:3,topics:["bit manipulation"]},
+
+{name:"	Little Elephant and Array",link:"http://codeforces.com/problemset/problem/555/A,difficulty:3,topics:["greedy"]},
+
+{name:"	Bubble Sort Graph",link:"http://codeforces.com/problemset/problem/356/A,difficulty:3,topics:["graphs"]},
+
+{name:"	"Or" Game",link:"http://codeforces.com/problemset/problem/713/A,difficulty:3,topics:["dp"]},
+
+{name:"	Unbearable Controversy of Being",link:"http://codeforces.com/problemset/problem/840/A,difficulty:3,topics:["data structures"]},
+
+{name:"	Working out",link:"http://codeforces.com/problemset/problem/453/A,difficulty:3,topics:["bit manipulation"]},
+
+{name:"	One-Dimensional Battle Ships",link:"http://codeforces.com/problemset/problem/165/C,difficulty:4,topics:["trees"]},
+
+{name:"	Maximum Submatrix 2",link:"http://codeforces.com/problemset/problem/268/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Office Keys",link:"http://codeforces.com/problemset/problem/429/A,difficulty:4,topics:["trees"]},
+
+{name:"	Quantity of Strings",link:"http://codeforces.com/problemset/problem/348/A,difficulty:4,topics:["trees"]},
+
+{name:"	Red-Green Towers",link:"http://codeforces.com/problemset/problem/706/C,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Appleman and Tree",link:"http://codeforces.com/problemset/problem/363/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Babaei and Birthday Cake",link:"http://codeforces.com/problemset/problem/864/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Zero Tree",link:"http://codeforces.com/problemset/problem/6/C,difficulty:4,topics:["trees"]},
+
+{name:"	Weird Chess",link:"http://codeforces.com/problemset/problem/274/A,difficulty:4,topics:["graphs"]},
+
+{name:"	Fox And Jumping",link:"http://codeforces.com/problemset/problem/601/A,difficulty:4,topics:["dp"]},
+
+{name:"	Bear and Two Paths",link:"http://codeforces.com/problemset/problem/538/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Innokenty and a Football League",link:"http://codeforces.com/problemset/problem/553/A,difficulty:4,topics:["graphs"]},
+
+{name:"	Remainders Game",link:"http://codeforces.com/problemset/problem/468/A,difficulty:4,topics:["dp"]},
+
+{name:"	Two Sets",link:"http://codeforces.com/problemset/problem/131/C,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Count Good Substrings",link:"http://codeforces.com/problemset/problem/486/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Road Map",link:"http://codeforces.com/problemset/problem/870/C,difficulty:4,topics:["dp"]},
+
+{name:"	Sea Battle",link:"http://codeforces.com/problemset/problem/771/B,difficulty:4,topics:["implementation"]},
+
+{name:"	Subway",link:"http://codeforces.com/problemset/problem/427/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Volatile Kite",link:"http://codeforces.com/problemset/problem/919/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Dreamoon and Sets",link:"http://codeforces.com/problemset/problem/567/C,difficulty:4,topics:["trees"]},
+
+{name:"	Vanya and Computer Game",link:"http://codeforces.com/problemset/problem/346/A,difficulty:4,topics:["implementation"]},
+
+{name:"	Polo the Penguin and Houses",link:"http://codeforces.com/problemset/problem/704/A,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Spongebob and Squares",link:"http://codeforces.com/problemset/problem/679/A,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Eternal Victory",link:"http://codeforces.com/problemset/problem/582/A,difficulty:4,topics:["implementation"]},
+
+{name:"	Toy Sum",link:"http://codeforces.com/problemset/problem/639/B,difficulty:4,topics:["dp"]},
+
+{name:"	Tavas and Malekas",link:"http://codeforces.com/problemset/problem/893/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Book of Evil",link:"http://codeforces.com/problemset/problem/510/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Queue",link:"http://codeforces.com/problemset/problem/492/C,difficulty:4,topics:["trees"]},
+
+{name:"	Jzzhu and Cities",link:"http://codeforces.com/problemset/problem/288/A,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Magic Box",link:"http://codeforces.com/problemset/problem/625/C,difficulty:4,topics:["trees"]},
+
+{name:"	Vanya and Triangles",link:"http://codeforces.com/problemset/problem/755/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Directed Roads",link:"http://codeforces.com/problemset/problem/812/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Petya and Divisors",link:"http://codeforces.com/problemset/problem/467/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Little Elephant and Cards",link:"http://codeforces.com/problemset/problem/484/A,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	As Fast As Possible",link:"http://codeforces.com/problemset/problem/264/A,difficulty:4,topics:["data structures"]},
+
+{name:"	Pair of Numbers",link:"http://codeforces.com/problemset/problem/743/C,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Bag of mice",link:"http://codeforces.com/problemset/problem/785/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Three Logos",link:"http://codeforces.com/problemset/problem/763/A,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Travel Card",link:"http://codeforces.com/problemset/problem/498/A,difficulty:4,topics:["implementation"]},
+
+{name:"	Vessels",link:"http://codeforces.com/problemset/problem/9/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Planets",link:"http://codeforces.com/problemset/problem/780/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Chloe and pleasant prizes",link:"http://codeforces.com/problemset/problem/441/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Alarm Clock",link:"http://codeforces.com/problemset/problem/343/A,difficulty:4,topics:["trees"]},
+
+{name:"	My pretty girl Noora",link:"http://codeforces.com/problemset/problem/581/C,difficulty:4,topics:["implementation"]},
+
+{name:"	Colliders",link:"http://codeforces.com/problemset/problem/372/A,difficulty:4,topics:["data structures"]},
+
+{name:"	Tennis Game",link:"http://codeforces.com/problemset/problem/735/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Fish Weight",link:"http://codeforces.com/problemset/problem/388/A,difficulty:4,topics:["implementation"]},
+
+{name:"	Image Preview",link:"http://codeforces.com/problemset/problem/490/C,difficulty:4,topics:["data structures"]},
+
+{name:"	Lazy Student",link:"http://codeforces.com/problemset/problem/670/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Destroying Roads",link:"http://codeforces.com/problemset/problem/251/A,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Psychos in a Line",link:"http://codeforces.com/problemset/problem/607/A,difficulty:4,topics:["dp"]},
+
+{name:"	Tree Construction",link:"http://codeforces.com/problemset/problem/587/A,difficulty:4,topics:["data structures"]},
+
+{name:"	Devu and his Brother",link:"http://codeforces.com/problemset/problem/605/A,difficulty:4,topics:["data structures"]},
+
+{name:"	Design Tutorial: Inverse the Problem",link:"http://codeforces.com/problemset/problem/518/C,difficulty:4,topics:["implementation"]},
+
+{name:"	A Lot of Games",link:"http://codeforces.com/problemset/problem/496/C,difficulty:4,topics:["data structures"]},
+
+{name:"	Dasha and Very Difficult Problem",link:"http://codeforces.com/problemset/problem/237/C,difficulty:4,topics:["data structures"]},
+
+{name:"	Palindrome pairs",link:"http://codeforces.com/problemset/problem/543/A,difficulty:4,topics:["greedy"]},
+
+{name:"	The Door Problem",link:"http://codeforces.com/problemset/problem/843/A,difficulty:4,topics:["trees"]},
+
+{name:"	Prefixes and Suffixes",link:"http://codeforces.com/problemset/problem/508/C,difficulty:4,topics:["graphs"]},
+
+{name:"	DZY Loves Modification",link:"http://codeforces.com/problemset/problem/166/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Tree Requests",link:"http://codeforces.com/problemset/problem/3/C,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Regular Bridge",link:"http://codeforces.com/problemset/problem/617/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Phillip and Trains",link:"http://codeforces.com/problemset/problem/525/C,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	High Load",link:"http://codeforces.com/problemset/problem/333/A,difficulty:4,topics:["graphs"]},
+
+{name:"	Drazil and Tiles",link:"http://codeforces.com/problemset/problem/507/C,difficulty:4,topics:["trees"]},
+
+{name:"	Bad Luck Island",link:"http://codeforces.com/problemset/problem/920/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Puzzles",link:"http://codeforces.com/problemset/problem/402/C,difficulty:4,topics:["trees"]},
+
+{name:"	Robin Hood",link:"http://codeforces.com/problemset/problem/682/C,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	The Child and Zoo",link:"http://codeforces.com/problemset/problem/798/C,difficulty:4,topics:["graphs"]},
+
+{name:"	Roads not only in Berland",link:"http://codeforces.com/problemset/problem/464/A,difficulty:4,topics:["trees"]},
+
+{name:"	MUH and Cube Walls",link:"http://codeforces.com/problemset/problem/350/C,difficulty:4,topics:["trees"]},
+
+{name:"	Little Pony and Harmony Chest",link:"http://codeforces.com/problemset/problem/463/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Case of Fugitive",link:"http://codeforces.com/problemset/problem/585/A,difficulty:4,topics:["implementation"]},
+
+{name:"	Cow Program",link:"http://codeforces.com/problemset/problem/731/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Alyona and a tree",link:"http://codeforces.com/problemset/problem/761/C,difficulty:4,topics:["greedy"]},
+
+{name:"	Multipliers",link:"https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2203,difficulty:4,topics:["bit manipulation"]},
+
+{name:"	Clique Problem",link:"http://codeforces.com/problemset/problem/416/C,difficulty:4,topics:["trees"]},
+
+{name:"	Little Artem and Dance",link:"http://codeforces.com/problemset/problem/901/A,difficulty:4,topics:["implementation"]},
+
+{name:"	Symmetric and Transitive",link:"http://codeforces.com/problemset/problem/494/A,difficulty:5,topics:["graphs"]},
+
+{name:"	Bear and Tower of Cubes",link:"http://codeforces.com/problemset/problem/540/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Police Stations",link:"http://codeforces.com/problemset/problem/317/A,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Renting Bikes",link:"http://codeforces.com/problemset/problem/809/A,difficulty:5,topics:["graphs"]},
+
+{name:"	Lucky Transformation",link:"http://codeforces.com/problemset/problem/777/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	R2D2 and Droid Army",link:"http://codeforces.com/problemset/problem/814/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Lipshitz Sequence",link:"http://codeforces.com/problemset/problem/578/A,difficulty:5,topics:["graphs"]},
+
+{name:"	Winter Is Coming",link:"http://codeforces.com/problemset/problem/385/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Two Paths",link:"http://codeforces.com/problemset/problem/283/A,difficulty:5,topics:["graphs"]},
+
+{name:"	Volleyball",link:"http://codeforces.com/problemset/problem/369/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Field expansion",link:"http://codeforces.com/problemset/problem/505/C,difficulty:5,topics:["dp"]},
+
+{name:"	Petr#",link:"http://codeforces.com/problemset/problem/303/A,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Help General",link:"http://codeforces.com/problemset/problem/641/B,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Kyoya and Permutation",link:"http://codeforces.com/problemset/problem/766/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Complete The Graph",link:"http://codeforces.com/problemset/problem/916/C,difficulty:5,topics:["trees"]},
+
+{name:"	Valid Sets",link:"http://codeforces.com/problemset/problem/527/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Super M",link:"http://codeforces.com/problemset/problem/137/C,difficulty:5,topics:["trees"]},
+
+{name:"	Sereja ans Anagrams",link:"http://codeforces.com/problemset/problem/568/A,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Cartons of milk",link:"http://codeforces.com/problemset/problem/329/A,difficulty:5,topics:["implementation"]},
+
+{name:"	Dima and Bacteria",link:"http://codeforces.com/problemset/problem/681/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Misha and Permutations Summation",link:"http://codeforces.com/problemset/problem/261/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Yaroslav and Time",link:"http://codeforces.com/problemset/problem/584/C,difficulty:5,topics:["dp"]},
+
+{name:"	How many trees?",link:"http://codeforces.com/problemset/problem/747/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Lucky Common Subsequence",link:"http://codeforces.com/problemset/problem/723/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Mishka and Interesting sum",link:"http://codeforces.com/problemset/problem/121/A,difficulty:5,topics:["graphs"]},
+
+{name:"	Block Tower",link:"http://codeforces.com/problemset/problem/150/A,difficulty:5,topics:["implementation"]},
+
+{name:"	Weird journey",link:"http://codeforces.com/problemset/problem/898/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Levko and Array",link:"http://codeforces.com/problemset/problem/514/C,difficulty:5,topics:["trees"]},
+
+{name:"	The Bakery",link:"http://codeforces.com/problemset/problem/493/C,difficulty:5,topics:["dp"]},
+
+{name:"	Jumping on Walls",link:"http://codeforces.com/problemset/problem/407/A,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Dima and Two Sequences",link:"http://codeforces.com/problemset/problem/219/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Ability To Convert",link:"http://codeforces.com/problemset/problem/339/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Counting Rectangles is Fun",link:"http://codeforces.com/problemset/problem/696/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Leaving Auction",link:"http://codeforces.com/problemset/problem/671/A,difficulty:5,topics:["implementation"]},
+
+{name:"	Misha, Grisha and Underground",link:"http://codeforces.com/problemset/problem/75/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Queue",link:"http://codeforces.com/problemset/problem/776/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Kay and Snowflake",link:"http://codeforces.com/problemset/problem/354/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Maximum Xor Secondary",link:"http://codeforces.com/problemset/problem/712/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Increase Sequence",link:"http://codeforces.com/problemset/problem/821/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Chip 'n Dale Rescue Rangers",link:"http://codeforces.com/problemset/problem/383/A,difficulty:5,topics:["dp"]},
+
+{name:"	Gluttony",link:"http://codeforces.com/problemset/problem/282/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Suspects",link:"http://codeforces.com/problemset/problem/748/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Artsem and Saunders",link:"http://codeforces.com/problemset/problem/367/A,difficulty:5,topics:["data structures"]},
+
+{name:"	Petya and His Friends",link:"http://codeforces.com/problemset/problem/734/C,difficulty:5,topics:["dp"]},
+
+{name:"	Ciel and Duel",link:"http://codeforces.com/problemset/problem/501/C,difficulty:5,topics:["dp"]},
+
+{name:"	Theseus and labyrinth",link:"http://codeforces.com/problemset/problem/520/C,difficulty:5,topics:["trees"]},
+
+{name:"	Maxim and Array",link:"http://codeforces.com/problemset/problem/135/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Palindromic characteristics",link:"http://codeforces.com/problemset/problem/225/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Fox and Minimal path",link:"http://codeforces.com/problemset/problem/773/A,difficulty:5,topics:["dp"]},
+
+{name:"	Infinite Maze",link:"http://codeforces.com/problemset/problem/460/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Chocolate",link:"http://codeforces.com/problemset/problem/749/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Least Cost Bracket Sequence",link:"http://codeforces.com/problemset/problem/721/C,difficulty:5,topics:["greedy"]},
+
+{name:"	Handshakes",link:"http://codeforces.com/problemset/problem/833/A,difficulty:5,topics:["dp"]},
+
+{name:"	New Year Contest",link:"http://codeforces.com/problemset/problem/476/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Minimization",link:"http://codeforces.com/problemset/problem/935/C,difficulty:5,topics:["trees"]},
+
+{name:"	Jeff and Furik",link:"http://codeforces.com/problemset/problem/5/C,difficulty:5,topics:["trees"]},
+
+{name:"	Persistent Bookcase",link:"http://codeforces.com/problemset/problem/272/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Chips",link:"http://codeforces.com/problemset/problem/599/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Alyona and Strings",link:"http://codeforces.com/problemset/problem/405/C,difficulty:5,topics:["greedy"]},
+
+{name:"	Restore Cube",link:"http://codeforces.com/problemset/problem/337/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Cycle in Graph",link:"http://codeforces.com/problemset/problem/313/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Palindrome Degree",link:"http://codeforces.com/problemset/problem/643/A,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Timofey and rectangles",link:"http://codeforces.com/problemset/problem/939/C,difficulty:5,topics:["dp"]},
+
+{name:"	Olympiad",link:"http://codeforces.com/problemset/problem/678/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Falling Anvils",link:"http://codeforces.com/problemset/problem/111/A,difficulty:5,topics:["dp"]},
+
+{name:"	Bear and Tree Jumps",link:"http://codeforces.com/problemset/problem/815/A,difficulty:5,topics:["implementation"]},
+
+{name:"	Winter is here",link:"http://codeforces.com/problemset/problem/449/A,difficulty:5,topics:["dp"]},
+
+{name:"	Lucky Number 2",link:"http://codeforces.com/problemset/problem/231/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Vitaly and Cycle",link:"http://codeforces.com/problemset/problem/552/C,difficulty:5,topics:["dp"]},
+
+{name:"	Dima and Hares",link:"http://codeforces.com/problemset/problem/590/A,difficulty:5,topics:["implementation"]},
+
+{name:"	Strip",link:"http://codeforces.com/problemset/problem/382/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Rectangle and Square",link:"http://codeforces.com/problemset/problem/822/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Upgrading Array",link:"http://codeforces.com/problemset/problem/913/C,difficulty:5,topics:["trees"]},
+
+{name:"	A Simple Task",link:"http://codeforces.com/problemset/problem/204/A,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Basketball Team",link:"http://codeforces.com/problemset/problem/18/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Preparing for the Contest",link:"http://codeforces.com/problemset/problem/677/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Obsessive String",link:"http://codeforces.com/problemset/problem/103/B,difficulty:5,topics:["implementation"]},
+
+{name:"	Moodular Arithmetic",link:"http://codeforces.com/problemset/problem/459/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Mahmoud and a Dictionary",link:"http://codeforces.com/problemset/problem/741/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Anton and School - 2",link:"http://codeforces.com/problemset/problem/718/A,difficulty:5,topics:["implementation"]},
+
+{name:"	Friends and Subsequences",link:"http://codeforces.com/problemset/problem/845/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Lawnmower",link:"http://codeforces.com/problemset/problem/835/C,difficulty:5,topics:["graphs"]},
+
+{name:"	Missile Silos",link:"http://codeforces.com/problemset/problem/196/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Xenia and Hamming",link:"http://codeforces.com/problemset/problem/621/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Skills",link:"http://codeforces.com/problemset/problem/534/C,difficulty:5,topics:["data structures"]},
+
+{name:"	Fedor and coupons",link:"http://codeforces.com/problemset/problem/922/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Mahmoud and Ehab and another array construction task",link:"http://codeforces.com/problemset/problem/685/A,difficulty:5,topics:["dp"]},
+
+{name:"	An overnight dance in discotheque",link:"http://codeforces.com/problemset/problem/772/A,difficulty:5,topics:["greedy"]},
+
+{name:"	Jon and Orbs",link:"http://codeforces.com/problemset/problem/448/C,difficulty:5,topics:["implementation"]},
+
+{name:"	Roman and Numbers",link:"http://codeforces.com/problemset/problem/711/C,difficulty:5,topics:["bit manipulation"]},
+
+{name:"	Hydra",link:"http://codeforces.com/problemset/problem/279/C,difficulty:6,topics:["trees"]},
+
+{name:"	Naughty Stone Piles",link:"http://codeforces.com/problemset/problem/744/A,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Apple Tree",link:"http://codeforces.com/problemset/problem/203/C,difficulty:6,topics:["data structures"]},
+
+{name:"	Doctor",link:"http://codeforces.com/problemset/problem/185/A,difficulty:6,topics:["trees"]},
+
+{name:"	Sum",link:"http://codeforces.com/problemset/problem/439/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Sereja and Periods",link:"http://codeforces.com/problemset/problem/558/C,difficulty:6,topics:["implementation"]},
+
+{name:"	Invariance of Tree",link:"http://codeforces.com/problemset/problem/101/A,difficulty:6,topics:["data structures"]},
+
+{name:"	Table",link:"http://codeforces.com/problemset/problem/794/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Yet Another Number Game",link:"http://codeforces.com/problemset/problem/557/C,difficulty:6,topics:["dp"]},
+
+{name:"	Fedor and Essay",link:"http://codeforces.com/problemset/problem/869/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Felicity's Big Secret Revealed",link:"http://codeforces.com/problemset/problem/488/C,difficulty:6,topics:["dp"]},
+
+{name:"	Match & Catch",link:"http://codeforces.com/problemset/problem/269/A,difficulty:6,topics:["data structures"]},
+
+{name:"	Cubes",link:"http://codeforces.com/problemset/problem/12/C,difficulty:6,topics:["trees"]},
+
+{name:"	Non-Secret Cypher",link:"http://codeforces.com/problemset/problem/666/A,difficulty:6,topics:["greedy"]},
+
+{name:"	Graph Coloring",link:"http://codeforces.com/problemset/problem/107/A,difficulty:6,topics:["greedy"]},
+
+{name:"	Dispute",link:"http://codeforces.com/problemset/problem/243/A,difficulty:6,topics:["trees"]},
+
+{name:"	Sereja and Table",link:"http://codeforces.com/problemset/problem/746/C,difficulty:6,topics:["data structures"]},
+
+{name:"	Ant on the Tree",link:"http://codeforces.com/problemset/problem/91/B,difficulty:6,topics:["greedy"]},
+
+{name:"	Vanya and Treasure",link:"http://codeforces.com/problemset/problem/831/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Merge Sort",link:"http://codeforces.com/problemset/problem/631/C,difficulty:6,topics:["implementation"]},
+
+{name:"	Coloring Brackets",link:"http://codeforces.com/problemset/problem/340/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Ilya and Roads",link:"http://codeforces.com/problemset/problem/675/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Playing with Permutations",link:"http://codeforces.com/problemset/problem/35/C,difficulty:6,topics:["dp"]},
+
+{name:"	Santa Claus and a Palindrome",link:"http://codeforces.com/problemset/problem/144/C,difficulty:6,topics:["implementation"]},
+
+{name:"	String",link:"http://codeforces.com/problemset/problem/471/C,difficulty:6,topics:["implementation"]},
+
+{name:"	Mister B and PR Shifts",link:"http://codeforces.com/problemset/problem/255/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Beautiful numbers",link:"http://codeforces.com/problemset/problem/132/A,difficulty:6,topics:["graphs"]},
+
+{name:"	AlgoRace",link:"http://codeforces.com/problemset/problem/613/A,difficulty:6,topics:["dp"]},
+
+{name:"	Two Strings",link:"http://codeforces.com/problemset/problem/729/C,difficulty:6,topics:["implementation"]},
+
+{name:"	Mike and distribution",link:"http://codeforces.com/problemset/problem/87/A,difficulty:6,topics:["graphs"]},
+
+{name:"	Legacy",link:"http://codeforces.com/problemset/problem/444/A,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Ring Road 2",link:"http://codeforces.com/problemset/problem/226/A,difficulty:6,topics:["trees"]},
+
+{name:"	Little Elephant and Elections",link:"http://codeforces.com/problemset/problem/106/C,difficulty:6,topics:["trees"]},
+
+{name:"	Palindromes",link:"http://codeforces.com/problemset/problem/53/C,difficulty:6,topics:["dp"]},
+
+{name:"	Wizards and Huge Prize",link:"http://codeforces.com/problemset/problem/375/A,difficulty:6,topics:["dp"]},
+
+{name:"	Tanya and Password",link:"http://codeforces.com/problemset/problem/180/C,difficulty:6,topics:["implementation"]},
+
+{name:"	Glad to see you!",link:"http://codeforces.com/problemset/problem/435/C,difficulty:6,topics:["dp"]},
+
+{name:"	Random Task",link:"http://codeforces.com/problemset/problem/234/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Minesweeper 1D",link:"http://codeforces.com/problemset/problem/25/C,difficulty:6,topics:["dp"]},
+
+{name:"	GukiZ and Binary Operations",link:"http://codeforces.com/problemset/problem/811/C,difficulty:6,topics:["dp"]},
+
+{name:"	Segments",link:"http://codeforces.com/problemset/problem/34/C,difficulty:6,topics:["implementation"]},
+
+{name:"	Lucky Probability",link:"http://codeforces.com/problemset/problem/451/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Duff in Beach",link:"http://codeforces.com/problemset/problem/160/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Hit Ball",link:"http://codeforces.com/problemset/problem/1/C,difficulty:6,topics:["trees"]},
+
+{name:"	Mushroom Scientists",link:"http://codeforces.com/problemset/problem/592/C,difficulty:6,topics:["graphs"]},
+
+{name:"	Buses",link:"http://codeforces.com/problemset/problem/301/A,difficulty:6,topics:["graphs"]},
+
+{name:"	Searching Rectangles",link:"http://codeforces.com/problemset/problem/400/C,difficulty:6,topics:["greedy"]},
+
+{name:"	Mr. Bender and Square",link:"http://codeforces.com/problemset/problem/242/C,difficulty:6,topics:["graphs"]},
+
+{name:"	Let's Play Osu!",link:"http://codeforces.com/problemset/problem/327/C,difficulty:6,topics:["dp"]},
+
+{name:"	Permutation Sum",link:"http://codeforces.com/problemset/problem/257/C,difficulty:6,topics:["trees"]},
+
+{name:"	Permutations",link:"http://codeforces.com/problemset/problem/149/C,difficulty:6,topics:["greedy"]},
+
+{name:"	World Tour",link:"http://codeforces.com/problemset/problem/198/A,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Vladik and Favorite Game",link:"http://codeforces.com/problemset/problem/535/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Hot Days",link:"http://codeforces.com/problemset/problem/689/C,difficulty:6,topics:["graphs"]},
+
+{name:"	Arthur and Walls",link:"http://codeforces.com/problemset/problem/768/C,difficulty:6,topics:["dp"]},
+
+{name:"	The Maths Lecture",link:"http://codeforces.com/problemset/problem/353/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Gifts by the List",link:"http://codeforces.com/problemset/problem/156/A,difficulty:6,topics:["trees"]},
+
+{name:"	Karen and Test",link:"http://codeforces.com/problemset/problem/610/C,difficulty:6,topics:["trees"]},
+
+{name:"	Maxim and Restaurant",link:"http://codeforces.com/problemset/problem/366/C,difficulty:6,topics:["trees"]},
+
+{name:"	Hongcow's Game",link:"http://codeforces.com/problemset/problem/43/C,difficulty:6,topics:["graphs"]},
+
+{name:"	Physical Education",link:"http://codeforces.com/problemset/problem/733/C,difficulty:6,topics:["data structures"]},
+
+{name:"	Guess That Car!",link:"http://codeforces.com/problemset/problem/128/A,difficulty:6,topics:["implementation"]},
+
+{name:"	Lizards and Basements 2",link:"http://codeforces.com/problemset/problem/425/A,difficulty:6,topics:["dp"]},
+
+{name:"	Messenger",link:"http://codeforces.com/problemset/problem/300/C,difficulty:6,topics:["trees"]},
+
+{name:"	Ants",link:"http://codeforces.com/problemset/problem/321/A,difficulty:6,topics:["dp"]},
+
+{name:"	Dynamic Problem Scoring",link:"http://codeforces.com/problemset/problem/799/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Leha and another game about graph",link:"http://codeforces.com/problemset/problem/474/C,difficulty:6,topics:["graphs"]},
+
+{name:"	Cinema",link:"http://codeforces.com/problemset/problem/868/C,difficulty:6,topics:["dp"]},
+
+{name:"	Animals",link:"http://codeforces.com/problemset/problem/286/A,difficulty:6,topics:["graphs"]},
+
+{name:"	Memory and Scores",link:"http://codeforces.com/problemset/problem/271/C,difficulty:6,topics:["trees"]},
+
+{name:"	Numbers",link:"http://codeforces.com/problemset/problem/758/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	Mr. Kitayuta's Technology",link:"http://codeforces.com/problemset/problem/404/C,difficulty:6,topics:["graphs"]},
+
+{name:"	Rectangle Puzzle II",link:"http://codeforces.com/problemset/problem/311/A,difficulty:6,topics:["dp"]},
+
+{name:"	LCIS",link:"http://codeforces.com/problemset/problem/71/C,difficulty:6,topics:["bit manipulation"]},
+
+{name:"	DZY Loves FFT",link:"http://codeforces.com/problemset/problem/767/C,difficulty:7,topics:["data structures"]},
+
+{name:"	Ant Man",link:"http://codeforces.com/problemset/problem/140/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Points",link:"http://codeforces.com/problemset/problem/229/A,difficulty:7,topics:["trees"]},
+
+{name:"	Treasure Island",link:"http://codeforces.com/problemset/problem/551/C,difficulty:7,topics:["greedy"]},
+
+{name:"	80-th Level Archeology",link:"http://codeforces.com/problemset/problem/351/A,difficulty:7,topics:["implementation"]},
+
+{name:"	Programming Language",link:"http://codeforces.com/problemset/problem/154/A,difficulty:7,topics:["implementation"]},
+
+{name:"	Follow Traffic Rules",link:"http://codeforces.com/problemset/problem/364/A,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Big Maximum Sum",link:"http://codeforces.com/problemset/problem/380/A,difficulty:7,topics:["greedy"]},
+
+{name:"	Special Grid",link:"http://codeforces.com/problemset/problem/827/A,difficulty:7,topics:["dp"]},
+
+{name:"	Table with Letters - 2",link:"http://codeforces.com/problemset/problem/756/A,difficulty:7,topics:["implementation"]},
+
+{name:"	Edges in MST",link:"http://codeforces.com/problemset/problem/424/C,difficulty:7,topics:["trees"]},
+
+{name:"	Parking Lot",link:"http://codeforces.com/problemset/problem/914/C,difficulty:7,topics:["trees"]},
+
+{name:"	Okabe and City",link:"http://codeforces.com/problemset/problem/297/A,difficulty:7,topics:["dp"]},
+
+{name:"	Vika and Segments",link:"http://codeforces.com/problemset/problem/342/C,difficulty:7,topics:["greedy"]},
+
+{name:"	Snake",link:"http://codeforces.com/problemset/problem/27/C,difficulty:7,topics:["greedy"]},
+
+{name:"	Seller Bob",link:"http://codeforces.com/problemset/problem/319/A,difficulty:7,topics:["implementation"]},
+
+{name:"	Inna and Sequence",link:"http://codeforces.com/problemset/problem/117/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Little Victor and Set",link:"http://codeforces.com/problemset/problem/387/C,difficulty:7,topics:["data structures"]},
+
+{name:"	Black and White Tree",link:"http://codeforces.com/problemset/problem/305/C,difficulty:7,topics:["data structures"]},
+
+{name:"	Digits Permutations",link:"http://codeforces.com/problemset/problem/432/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Restoring Numbers",link:"http://codeforces.com/problemset/problem/138/A,difficulty:7,topics:["dp"]},
+
+{name:"	End of Exams",link:"http://codeforces.com/problemset/problem/41/C,difficulty:7,topics:["data structures"]},
+
+{name:"	Nanami's Digital Board",link:"http://codeforces.com/problemset/problem/123/A,difficulty:7,topics:["data structures"]},
+
+{name:"	Blackboard Fibonacci",link:"http://codeforces.com/problemset/problem/201/A,difficulty:7,topics:["trees"]},
+
+{name:"	Knights",link:"http://codeforces.com/problemset/problem/7/C,difficulty:7,topics:["dp"]},
+
+{name:"	Vasily the Bear and Beautiful Strings",link:"http://codeforces.com/problemset/problem/16/C,difficulty:7,topics:["dp"]},
+
+{name:"	Changing a String",link:"http://codeforces.com/problemset/problem/193/A,difficulty:7,topics:["graphs"]},
+
+{name:"	Dima and Trap Graph",link:"http://codeforces.com/problemset/problem/757/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Journey",link:"http://codeforces.com/problemset/problem/873/C,difficulty:7,topics:["graphs"]},
+
+{name:"	Ksenia and Pawns",link:"http://codeforces.com/problemset/problem/786/A,difficulty:7,topics:["graphs"]},
+
+{name:"	Painting The Wall",link:"http://codeforces.com/problemset/problem/246/C,difficulty:7,topics:["data structures"]},
+
+{name:"	Name That Tune",link:"http://codeforces.com/problemset/problem/547/A,difficulty:7,topics:["greedy"]},
+
+{name:"	Valera and Swaps",link:"http://codeforces.com/problemset/problem/762/C,difficulty:7,topics:["implementation"]},
+
+{name:"	Boring Partition",link:"http://codeforces.com/problemset/problem/294/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Russian Roulette",link:"http://codeforces.com/problemset/problem/629/C,difficulty:7,topics:["implementation"]},
+
+{name:"	Guess Your Way Out! II",link:"http://codeforces.com/problemset/problem/314/A,difficulty:7,topics:["trees"]},
+
+{name:"	Something with XOR Queries",link:"http://codeforces.com/problemset/problem/113/A,difficulty:7,topics:["graphs"]},
+
+{name:"	Shifting",link:"http://codeforces.com/problemset/problem/142/A,difficulty:7,topics:["dp"]},
+
+{name:"	Rat Kwesh and Cheese",link:"http://codeforces.com/problemset/problem/232/A,difficulty:7,topics:["implementation"]},
+
+{name:"	Game",link:"http://codeforces.com/problemset/problem/191/A,difficulty:7,topics:["trees"]},
+
+{name:"	Cats Transport",link:"http://codeforces.com/problemset/problem/615/C,difficulty:7,topics:["dp"]},
+
+{name:"	Ball",link:"http://codeforces.com/problemset/problem/190/C,difficulty:7,topics:["graphs"]},
+
+{name:"	Spider's Web",link:"http://codeforces.com/problemset/problem/442/A,difficulty:7,topics:["greedy"]},
+
+{name:"	Analyzing Polyline",link:"http://codeforces.com/problemset/problem/29/C,difficulty:7,topics:["trees"]},
+
+{name:"	Constellation",link:"http://codeforces.com/problemset/problem/360/A,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Free Market",link:"http://codeforces.com/problemset/problem/374/C,difficulty:7,topics:["graphs"]},
+
+{name:"	On Sum of Fractions",link:"http://codeforces.com/problemset/problem/14/C,difficulty:7,topics:["graphs"]},
+
+{name:"	Set of Points",link:"http://codeforces.com/problemset/problem/93/A,difficulty:7,topics:["data structures"]},
+
+{name:"	Population Size",link:"http://codeforces.com/problemset/problem/433/C,difficulty:7,topics:["dp"]},
+
+{name:"	Logging",link:"http://codeforces.com/problemset/problem/141/C,difficulty:7,topics:["dp"]},
+
+{name:"	Xor",link:"http://codeforces.com/problemset/problem/253/C,difficulty:7,topics:["dp"]},
+
+{name:"	Chocolate",link:"http://codeforces.com/problemset/problem/187/A,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Vasya and Types",link:"http://codeforces.com/problemset/problem/238/A,difficulty:7,topics:["dp"]},
+
+{name:"	Fools and Foolproof Roads",link:"http://codeforces.com/problemset/problem/223/A,difficulty:7,topics:["greedy"]},
+
+{name:"	Pawn",link:"http://codeforces.com/problemset/problem/260/C,difficulty:7,topics:["implementation"]},
+
+{name:"	Huge Strings",link:"http://codeforces.com/problemset/problem/359/C,difficulty:7,topics:["dp"]},
+
+{name:"	Squares",link:"http://codeforces.com/problemset/problem/118/C,difficulty:7,topics:["dp"]},
+
+{name:"	Beard Graph",link:"http://codeforces.com/problemset/problem/148/C,difficulty:7,topics:["graphs"]},
+
+{name:"	Happy Tree Party",link:"http://codeforces.com/problemset/problem/509/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Valera and Fools",link:"http://codeforces.com/problemset/problem/167/A,difficulty:7,topics:["graphs"]},
+
+{name:"	Dot",link:"http://codeforces.com/problemset/problem/596/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Demonstration",link:"http://codeforces.com/problemset/problem/336/C,difficulty:7,topics:["bit manipulation"]},
+
+{name:"	Tower of Hanoi",link:"http://codeforces.com/problemset/problem/13/C,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Name",link:"http://codeforces.com/problemset/problem/91/A,difficulty:8,topics:["trees"]},
+
+{name:"	Broken robot",link:"http://codeforces.com/problemset/problem/796/C,difficulty:8,topics:["data structures"]},
+
+{name:"	BerDonalds",link:"http://codeforces.com/problemset/problem/571/A,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Volcanoes",link:"http://codeforces.com/problemset/problem/222/C,difficulty:8,topics:["greedy"]},
+
+{name:"	Password",link:"http://codeforces.com/problemset/problem/77/A,difficulty:8,topics:["dp"]},
+
+{name:"	Vasya the Architect",link:"http://codeforces.com/problemset/problem/358/C,difficulty:8,topics:["trees"]},
+
+{name:"	Inna and Sweet Matrix",link:"http://codeforces.com/problemset/problem/594/A,difficulty:8,topics:["greedy"]},
+
+{name:"	Finals in arithmetic",link:"http://codeforces.com/problemset/problem/59/C,difficulty:8,topics:["greedy"]},
+
+{name:"	Bombing",link:"http://codeforces.com/problemset/problem/89/A,difficulty:8,topics:["implementation"]},
+
+{name:"	Triangles",link:"http://codeforces.com/problemset/problem/31/C,difficulty:8,topics:["dp"]},
+
+{name:"	Labelling Cities",link:"http://codeforces.com/problemset/problem/21/C,difficulty:8,topics:["dp"]},
+
+{name:"	FreeDiv",link:"http://codeforces.com/problemset/problem/362/C,difficulty:8,topics:["trees"]},
+
+{name:"	Take-off Ramps",link:"http://codeforces.com/problemset/problem/63/C,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Painting Square",link:"http://codeforces.com/problemset/problem/370/C,difficulty:8,topics:["graphs"]},
+
+{name:"	Two Friends",link:"http://codeforces.com/problemset/problem/58/C,difficulty:8,topics:["dp"]},
+
+{name:"	The Minimum Number of Variables",link:"http://codeforces.com/problemset/problem/213/A,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Biathlon Track",link:"http://codeforces.com/problemset/problem/30/C,difficulty:8,topics:["graphs"]},
+
+{name:"	Don't fear, DravDe is kind",link:"http://codeforces.com/problemset/problem/15/C,difficulty:8,topics:["dp"]},
+
+{name:"	Notepad",link:"http://codeforces.com/problemset/problem/95/A,difficulty:8,topics:["data structures"]},
+
+{name:"	T-decomposition",link:"http://codeforces.com/problemset/problem/254/C,difficulty:8,topics:["trees"]},
+
+{name:"	Wilbur and Trees",link:"http://codeforces.com/problemset/problem/266/C,difficulty:8,topics:["dp"]},
+
+{name:"	Two Melodies",link:"http://codeforces.com/problemset/problem/57/C,difficulty:8,topics:["trees"]},
+
+{name:"	Widget Library",link:"http://codeforces.com/problemset/problem/46/C,difficulty:8,topics:["trees"]},
+
+{name:"	Sweets for Everyone!",link:"http://codeforces.com/problemset/problem/662/D,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Sereja and Tree",link:"http://codeforces.com/problemset/problem/208/C,difficulty:8,topics:["implementation"]},
+
+{name:"	Xenia and Dominoes",link:"http://codeforces.com/problemset/problem/79/C,difficulty:8,topics:["data structures"]},
+
+{name:"	Tickets",link:"http://codeforces.com/problemset/problem/38/C,difficulty:8,topics:["implementation"]},
+
+{name:"	New Game with a Chess Piece",link:"http://codeforces.com/problemset/problem/33/C,difficulty:8,topics:["dp"]},
+
+{name:"	Max and Bike",link:"http://codeforces.com/problemset/problem/280/A,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Team Arrangement",link:"http://codeforces.com/problemset/problem/703/C,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Broken Monitor",link:"http://codeforces.com/problemset/problem/78/C,difficulty:8,topics:["data structures"]},
+
+{name:"	George and Interesting Graph",link:"http://codeforces.com/problemset/problem/216/C,difficulty:8,topics:["implementation"]},
+
+{name:"	Professor's task",link:"http://codeforces.com/problemset/problem/22/C,difficulty:8,topics:["greedy"]},
+
+{name:"	Olya and Graph",link:"http://codeforces.com/problemset/problem/32/C,difficulty:8,topics:["dp"]},
+
+{name:"	Traveling Graph",link:"http://codeforces.com/problemset/problem/126/A,difficulty:8,topics:["greedy"]},
+
+{name:"	Dividing Island",link:"http://codeforces.com/problemset/problem/8/C,difficulty:8,topics:["bit manipulation"]},
+
+{name:"	Calendar",link:"http://codeforces.com/problemset/problem/195/C,difficulty:8,topics:["implementation"]},
+
+{name:"	Safe",link:"http://codeforces.com/problemset/problem/754/C,difficulty:8,topics:["greedy"]},
+
+{name:"	Piet",link:"http://codeforces.com/problemset/problem/248/C,difficulty:8,topics:["graphs"]},
+
+{name:"	Bear and Floodlight",link:"http://codeforces.com/problemset/problem/54/C,difficulty:8,topics:["implementation"]},
+
+{name:"	King's Problem?",link:"http://codeforces.com/problemset/problem/98/A,difficulty:9,topics:["graphs"]},
+
+{name:"	Shaass and Painter Robot",link:"http://codeforces.com/problemset/problem/74/C,difficulty:9,topics:["graphs"]},
+
+{name:"	Wormhouse",link:"http://codeforces.com/problemset/problem/2/C,difficulty:9,topics:["bit manipulation"]},
+
+{name:"	Geometrical problem",link:"http://codeforces.com/problemset/problem/332/C,difficulty:9,topics:["greedy"]},
+
+{name:"	Game with Strings",link:"http://codeforces.com/problemset/problem/84/C,difficulty:9,topics:["implementation"]},
+
+{name:"	Journey",link:"http://codeforces.com/problemset/problem/51/C,difficulty:9,topics:["bit manipulation"]},
+
+{name:"	Half-decay tree",link:"http://codeforces.com/problemset/problem/392/A,difficulty:9,topics:["graphs"]},
+
+{name:"	String Transformation",link:"http://codeforces.com/problemset/problem/200/C,difficulty:9,topics:["graphs"]},
+
+{name:"	Plane of Tanks: Duel",link:"http://codeforces.com/problemset/problem/24/C,difficulty:9,topics:["bit manipulation"]},
+
+{name:"	Tetragon",link:"http://codeforces.com/problemset/problem/10/C,difficulty:9,topics:["implementation"]},
+
+{name:"	Archer's Shot",link:"http://codeforces.com/problemset/problem/119/C,difficulty:9,topics:["dp"]},
+
+{name:"	Lesson Timetable",link:"http://codeforces.com/problemset/problem/175/C,difficulty:9,topics:["implementation"]},
+
+{name:"	Savior",link:"http://codeforces.com/problemset/problem/73/C,difficulty:9,topics:["trees"]},
+
+{name:"	Solitaire",link:"http://codeforces.com/problemset/problem/56/C,difficulty:9,topics:["trees"]},
+
+{name:"	Strange town",link:"http://codeforces.com/problemset/problem/66/C,difficulty:9,topics:["bit manipulation"]},
+
+{name:"	Writing a Song",link:"http://codeforces.com/problemset/problem/398/A,difficulty:9,topics:["bit manipulation"]},
+
+{name:"	Harry Potter and the Sorting Hat",link:"http://codeforces.com/problemset/problem/37/C,difficulty:9,topics:["trees"]},
+
+{name:"	Not Quick Transformation",link:"http://codeforces.com/problemset/problem/49/C,difficulty:9,topics:["bit manipulation"]},
+
+{name:"	Shoe Store",link:"http://codeforces.com/problemset/problem/263/C,difficulty:9,topics:["data structures"]},
+
+{name:"	Sagheer and Kindergarten",link:"http://codeforces.com/problemset/problem/55/C,difficulty:9,topics:["dp"]},
+
+{name:"	Zigzag",link:"http://codeforces.com/problemset/problem/65/C,difficulty:9,topics:["data structures"]},
+
+{name:"	Theft of Blueprints",link:"http://codeforces.com/problemset/problem/396/A,difficulty:9,topics:["graphs"]},
+
+{name:"	Frames",link:"http://codeforces.com/problemset/problem/17/C,difficulty:9,topics:["implementation"]},
+
+{name:"	Physical Education and Buns",link:"http://codeforces.com/problemset/problem/48/C,difficulty:9,topics:["greedy"]},
+
+{name:"	Map",link:"http://codeforces.com/problemset/problem/70/C,difficulty:9,topics:["trees"]},
+
+{name:"	Hanger",link:"http://codeforces.com/problemset/problem/215/C,difficulty:9,topics:["greedy"]},
+
+{name:"	Rats",link:"http://codeforces.com/problemset/problem/228/C,difficulty:9,topics:["graphs"]},
+
+{name:"	Wall Bars",link:"http://codeforces.com/problemset/problem/394/C,difficulty:9,topics:["graphs"]},
+
+{name:"	Interesting Sequence",link:"http://codeforces.com/problemset/problem/182/C,difficulty:10,topics:["implementation"]},
+
+{name:"	The Overdosing Ubiquity",link:"http://codeforces.com/problemset/problem/26/C,difficulty:10,topics:["data structures"]},
+
+{name:"	Guards In The Storehouse",link:"http://codeforces.com/problemset/problem/47/C,difficulty:10,topics:["dp"]},
+
+{name:"	Entertaining Geodetics",link:"http://codeforces.com/problemset/problem/11/C,difficulty:10,topics:["bit manipulation"]},
+
+{name:"	Number of Binominal Coefficients",link:"http://codeforces.com/problemset/problem/69/C,difficulty:10,topics:["dp"]},
+
+{name:"	Looking for Owls",link:"http://codeforces.com/problemset/problem/19/C,difficulty:10,topics:["data structures"]},
+
+{name:"	Help King",link:"http://codeforces.com/problemset/problem/50/C,difficulty:10,topics:["graphs"]},
+
