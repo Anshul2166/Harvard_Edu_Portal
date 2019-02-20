@@ -264,9 +264,9 @@ const initialState = {
     info: [
       {
         id: "cs101",
-        course_image:
+        imageUrl:
           "https://prod-discovery.edx-cdn.org/media/course/image/da1b2400-322b-459b-97b0-0c557f05d017-869c24929ee1.small.jpg",
-        course_title: "An Introduction to Computer Science",
+        title: "An Introduction to Computer Science",
         offeredBy: "Edx",
         rating: 4.6,
         url:
@@ -291,9 +291,9 @@ const initialState = {
       },
       {
         id: "cs102",
-        course_image:
+        imageUrl:
           "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/6-006f11.jpg",
-        course_title: "An Introduction to Algorithms",
+        title: "An Introduction to Algorithms",
         offeredBy: "MIT Open Course Ware",
         rating: 4.6,
         url:
@@ -310,9 +310,9 @@ const initialState = {
       },
       {
         id: "cs103",
-        course_image:
+        imageUrl:
           "https://nptel.ac.in/newstyles/images/courseimages/106_video.jpg",
-        course_title: "Object Oriented Analysis and Design",
+        title: "Object Oriented Analysis and Design",
         offeredBy: "NPTEL E-learning IIT Khragpur",
         rating: 4.5,
         url:
@@ -332,9 +332,9 @@ const initialState = {
       },
       {
         id: "cs104",
-        course_image:
+        imageUrl:
           "https://nptel.ac.in/newstyles/images/courseimages/106_video.jpg",
-        course_title: "Data Structures",
+        title: "Data Structures",
         offeredBy: "NPTEL E-learning IIT Delhi",
         rating: 4.7,
         url: "https://www.youtube.com/playlist?list=PLBF3763AF2E1C572F",
@@ -369,9 +369,9 @@ const initialState = {
       },
       {
         id: "cs105",
-        course_image:
+        imageUrl:
           "https://nptel.ac.in/newstyles/images/courseimages/106_video.jpg",
-        course_title: "Database Design",
+        title: "Database Design",
         offeredBy: "NPTEL E-learning IIT Madras",
         rating: 4.5,
         url: "https://www.youtube.com/channel/UCpgnQKuPmFsZyksHc1IMceg/videos",
@@ -396,9 +396,9 @@ const initialState = {
       },
       {
         id: "cs106",
-        course_image:
+        imageUrl:
           "https://i.ytimg.com/vi/fWRzpBDxXtk/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAaR6dT55D9F7v1Lc5aXDyKnc3gHQ",
-        course_title: "Competitive Programming In Java",
+        title: "Competitive Programming In Java",
         offeredBy: "Rachit Jain - Youtube Personality",
         rating: 4.8,
         url:
