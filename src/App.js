@@ -49,11 +49,7 @@ class App extends Component {
           <Route path="/nav_header" component={NavHeader} />
           <Route exact path="/select-questions" component={PractiseQuestions} />
 
-          <Route
-            exact
-            path="/questions/data-structure"
-            component={QuestionsAnswer}
-          />
+          <Route exact path="/questions/:topic" component={QuestionsAnswer} />
           {/* Learning path routes */}
           <Route path="/learning-path/webdev" component={WebDev} />
           <Route path="/learning-path/gamedev" component={GameDev} />
