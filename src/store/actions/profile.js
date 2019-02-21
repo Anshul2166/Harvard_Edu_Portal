@@ -68,7 +68,6 @@ export const markQuestionAsUnSolved = questionName => async dispatch => {
     console.log(error);
   }
 };
-}
 
 function getBase64(file) {
   return new Promise((resolve, reject) => {
@@ -79,13 +78,13 @@ function getBase64(file) {
   });
 }
 
-export const updateImage=(userImage)=>async dispatch=>{
-  let baseConverted=await getBase64(userImage);
-  let image={userImage:baseConverted};
+export const updateImage = userImage => async dispatch => {
+  let baseConverted = await getBase64(userImage);
+  let image = { userImage: baseConverted };
   console.log(userImage);
   console.log(image);
   try {
-    const res = await axios.post("/api/users/image",image);
+    const res = await axios.post("/api/users/image", image);
     console.log("Profile have been fetched", res.data);
     dispatch({
       type: UPDATED_PROFILE
@@ -96,4 +95,4 @@ export const updateImage=(userImage)=>async dispatch=>{
       type: UPDATE_PROFILE_LOGGED_OUT
     });
   }
-}
+};
