@@ -18,6 +18,7 @@ var userSchema = mongoose.Schema({
   disliked: [{ type: Schema.Types.ObjectId, ref: "posts" }],
   posts: [{ type: Schema.Types.ObjectId, ref: "posts" }],
   google: { type: String, sparse: true },
+<<<<<<< HEAD
   description: { type: String },
   url: { type: String },
   projects: [{ type: String }],
@@ -25,6 +26,14 @@ var userSchema = mongoose.Schema({
   courses: [{ type: String }],
   solvedQuestions: [{ type: String }],
   accomplishments: [{ type: String }]
+=======
+  description:{type:String},
+  imageUrl:{type:String},
+  projects:[{type:String}],
+  skills:[{type:String}],
+  courses:[{type:String}],
+  accomplishments:[{type:String}]
+>>>>>>> 26b7e3446b9c3e90bd323b69f21bca37331d978e
 });
 
 // generating a hash

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../../Common/Header/Header";
 import Intro from "./images/intro.png";
 import Basics from "./images/basics.png";
 import Client from "./images/client.png";
@@ -9,7 +8,6 @@ class GameDev extends Component {
   render() {
     return (
       <div className="GameDev">
-        <Header />
         <div className="container">
           <h1 className="LearningPath__header">Game Developer roadmap</h1>
           <div className="LearningPath__section-inner">
