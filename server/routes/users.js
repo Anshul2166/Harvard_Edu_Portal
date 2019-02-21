@@ -228,29 +228,60 @@ router.get(
   }
 );
 
-router.put(
-  "/",
-  isLoggedIn,
-  async (req, res) => {
-    const userId = req.user._id;
-    const data = req.body;
-    try {
-      const updateResponse = await User.findByIdAndUpdate(
-        { _id: userId },
-        data,
-        { upsert: true }
-      );
-      res.statusCode = 200;
-      res.setHeader("Content-Type", "application/json");
-      res.json({
-        success: true,
-        status: "Put successfully created"
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).send(err);
-    }
+router.put("/", isLoggedIn, async (req, res) => {
+  const userId = req.user._id;
+  const data = req.body;
+  try {
+    const updateResponse = await User.findByIdAndUpdate({ _id: userId }, data, {
+      upsert: true
+    });
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      success: true,
+      status: "Put successfully created"
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send(err);
   }
-);
+});
 
+router.post("/solved-question", async (req, res) => {
+  try {
+    const question = req.body.question;
+    console.log("Solve question is called", question, req.user._id);
+    const newUser = await User.findOneAndUpdate(
+      { _id: req.user._id },
+      {
+        $push: {
+          solvedQuestions: question
+        }
+      },
+      { new: true }
+    );
+    res.status(200).send(newUser);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.post("/unsolve-question", async (req, res) => {
+  try {
+    const question = req.body.question;
+    console.log("Solve question is called", question, req.user._id);
+    const newUser = await User.findOneAndUpdate(
+      { _id: req.user._id },
+      {
+        $pull: {
+          solvedQuestions: question
+        }
+      },
+      { new: true }
+    );
+    res.status(200).send(newUser);
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;

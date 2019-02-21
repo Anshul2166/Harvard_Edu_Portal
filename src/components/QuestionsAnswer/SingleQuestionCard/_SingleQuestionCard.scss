@@ -27,4 +27,19 @@
   line-height: 22px;
   font-weight: 400;
   font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+}
+
+.SingleQuestionCard__short-description__checkbox {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  .mdc-checkbox__background {
+    border-color: $primary-dark-blue !important;
+
+    &::before {
+      background-color: $primary-dark-blue !important;
+    }
+  }
 }

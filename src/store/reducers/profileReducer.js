@@ -1,8 +1,8 @@
 import {
-    UPDATE_PROFILE_LOGGED_IN,
-    UPDATE_PROFILE_LOGGED_OUT,
-    UPDATED_PROFILE
-} from '../types/profileTypes';
+  UPDATE_PROFILE_LOGGED_IN,
+  UPDATE_PROFILE_LOGGED_OUT,
+  UPDATED_PROFILE
+} from "../types/profileTypes";
 
 const initialState = {
   fetched: false,
@@ -20,9 +20,10 @@ export default (state = initialState, { type, payload }) => {
         authenticated: false
       };
     case UPDATED_PROFILE:
-      return{
-        ...state
-      }
+      return {
+        ...state,
+        ...payload
+      };
     default:
       return state;
   }

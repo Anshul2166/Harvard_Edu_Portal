@@ -1,5 +1,6 @@
 // load the things we need
-var mongoose = require("mongoose"),Schema=mongoose.Schema;
+var mongoose = require("mongoose"),
+  Schema = mongoose.Schema;
 var bcrypt = require("bcrypt-nodejs");
 
 // define the schema for our user model
@@ -9,20 +10,21 @@ var userSchema = mongoose.Schema({
     username: String,
     password: {
       type: String,
-      sparse: true,
+      sparse: true
     },
-    email: String,
+    email: String
   },
-  liked:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
-  disliked:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
-  posts:[{ type: Schema.Types.ObjectId, ref: 'posts' }],
+  liked: [{ type: Schema.Types.ObjectId, ref: "posts" }],
+  disliked: [{ type: Schema.Types.ObjectId, ref: "posts" }],
+  posts: [{ type: Schema.Types.ObjectId, ref: "posts" }],
   google: { type: String, sparse: true },
-  description:{type:String},
-  url:{type:String},
-  projects:[{type:String}],
-  skills:[{type:String}],
-  courses:[{type:String}],
-  accomplishments:[{type:String}]
+  description: { type: String },
+  url: { type: String },
+  projects: [{ type: String }],
+  skills: [{ type: String }],
+  courses: [{ type: String }],
+  solvedQuestions: [{ type: String }],
+  accomplishments: [{ type: String }]
 });
 
 // generating a hash

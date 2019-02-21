@@ -5,6 +5,7 @@ import EasyQuestions from "./questions/cs_easyquestions";
 import MediumQuestions from "./questions/cs_mediumquestions";
 import HardQuestions from "./questions/cs_hardquestions";
 import QAPagination from "./QAPagination/QAPagination";
+import { connect } from "react-redux";
 
 class QuestionsAnswer extends Component {
   state = {
@@ -72,13 +73,22 @@ class QuestionsAnswer extends Component {
                     (currentPage - 1) * limit,
                     (currentPage - 1) * limit + limit
                   )
-                  .map(question => (
-                    <SingleQuestionCard
-                      name={question.name}
-                      link={question.link}
-                      difficulty={question.difficulty}
-                    />
-                  ))}
+                  .map(question => {
+                    const isSolved = this.props.profile.authenticated
+                      ? this.props.profile.solvedQuestions.includes(
+                          question.name
+                        )
+                      : "";
+
+                    return (
+                      <SingleQuestionCard
+                        name={question.name}
+                        link={question.link}
+                        solved={isSolved}
+                        difficulty={question.difficulty}
+                      />
+                    );
+                  })}
             </div>
             <div className="col-md-4">
               <QAActionCard
@@ -109,4 +119,9 @@ export class QuestionsList extends Component {
     return questionNodes;
   }
 }
-export default QuestionsAnswer;
+
+const mapStateToProps = state => ({
+  profile: state.profile
+});
+
+export default connect(mapStateToProps)(QuestionsAnswer);
