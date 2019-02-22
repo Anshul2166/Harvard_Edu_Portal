@@ -87,12 +87,32 @@ export const updateImage = userImage => async dispatch => {
     const res = await axios.post("/api/users/image", image);
     console.log("Profile have been fetched", res.data);
     dispatch({
-      type: UPDATED_PROFILE
+      type: UPDATED_PROFILE,
+      payload: res.data
     });
   } catch (error) {
     console.log(error);
     dispatch({
       type: UPDATE_PROFILE_LOGGED_OUT
     });
+  }
+};
+
+export const signUpUser = (name, email, password) => async dispatch => {
+  try {
+    console.log("Sign up users have been called");
+    const res = await axios.post("/api/users/signup", {
+      name,
+      email,
+      password
+    });
+    dispatch({
+      type: UPDATE_PROFILE_LOGGED_IN,
+      payload: res.data
+    });
+  } catch (error) {
+    console.log(error);
+    if (error.response) console.log(error.response);
+    throw error.response;
   }
 };

@@ -1,0 +1,59 @@
+.SignUp__main-area {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.SignUp__header {
+  font-size: 2.125rem;
+  line-height: 41px;
+  text-align: center;
+  font-weight: 700;
+  font-family: Roboto;
+  color: #2f4f4f;
+  margin-top: 20px;
+}
+
+.SignUp__text-input {
+  width: 100%;
+}
+
+.SignUp {
+  .MuiFormControl-root-144 {
+    width: 100% !important;
+  }
+  .MuiFormGroup-root-142 {
+    width: 100% !important;
+  }
+}
+
+.SignUp__button-wrapper {
+  display: flex;
+  justify-content: center;
+  button {
+    width: 100%;
+  }
+}
+
+.SocialNetworkLogin {
+  width: 100%;
+  button {
+    width: 100%;
+    .mdi-icon {
+      width: auto;
+    }
+  }
+}
+
+.SignUp__divider {
+  margin-top: 10px;
+}
+
+.SignUp__error {
+  font-family: Roboto;
+  font-size: 0.85rem;
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

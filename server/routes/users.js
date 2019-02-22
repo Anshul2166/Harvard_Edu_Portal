@@ -19,7 +19,7 @@ let loginValidations = [
 let signUpValidation = [
   check("email").isEmail(),
   check("password").isLength({ min: 5 }),
-  check("username").isLength({ min: 5, max: 15 })
+  check("name").isLength({ min: 5, max: 15 })
 ];
 
 let changePasswordValidation = [
@@ -122,10 +122,10 @@ router.post("/signup", signUpValidation, async (req, res) => {
   const { name, email, password } = req.body;
   try {
     const user = await User.findOne({ "local.email": email });
-    const errors = {};
+    let errors = {};
     if (user) {
-      errors.email = "Email already exist";
-      return res.status(400).json(errors);
+      errors = [{ param: "email", msg: "Email already exist" }];
+      return res.status(400).json({ errors: errors });
     }
 
     const newUser = await new User({
@@ -144,9 +144,7 @@ router.post("/signup", signUpValidation, async (req, res) => {
       if (err) {
         return res.status(400).send("Oops some error occured");
       }
-      return res
-        .status(200)
-        .send({ message: "The user has successfully signed up" });
+      return res.status(200).send(newUser);
     });
   } catch (error) {
     console.log(error);
@@ -249,7 +247,6 @@ router.put("/", isLoggedIn, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 router.post("/solved-question", async (req, res) => {
   try {
     const question = req.body.question;
@@ -287,41 +284,35 @@ router.post("/unsolve-question", async (req, res) => {
     console.log(error);
   }
 });
-=======
-router.post(
-  "/image/",
-  upload.single("userImage"),
-  async (req, res) => {
-    try {
-      console.log("posting");
-      cloudinary.config({
-        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-        api_key: process.env.CLOUDINARY_API_KEY,
-        api_secret: process.env.CLOUDINARY_API_SECRET,
-      });
-      console.log("Posting body")
-      console.log(req.body);
-      console.log("done posting");
-      // let base64File=await getBase64(req.body.userImage);
-      // console.log(base64File);
-      const result = await cloudinary.uploader.upload(req.body.userImage, {
-        crop: "limit",
-        tags: "samples",
-        width: 3000,
-        height: 2000,
-      });
-      console.log(result);
-      const info = await User.updateOne({
-        "_id": req.user._id,
-      }).set({ imageUrl: req.body.userImage });
-      console.log("Done with all");
-      res.status(200).send(info);
-    } catch (err) {
-      console.log("error");
-      console.log(err);
-    }
-  },
-);
+router.post("/image/", upload.single("userImage"), async (req, res) => {
+  try {
+    console.log("posting");
+    cloudinary.config({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: process.env.CLOUDINARY_API_KEY,
+      api_secret: process.env.CLOUDINARY_API_SECRET
+    });
+    console.log("Posting body");
+    console.log(req.body);
+    console.log("done posting");
+    // let base64File=await getBase64(req.body.userImage);
+    // console.log(base64File);
+    const result = await cloudinary.uploader.upload(req.body.userImage, {
+      crop: "limit",
+      tags: "samples",
+      width: 3000,
+      height: 2000
+    });
+    console.log(result);
+    const info = await User.updateOne({
+      _id: req.user._id
+    }).set({ imageUrl: req.body.userImage });
+    console.log("Done with all");
+    res.status(200).send(info);
+  } catch (err) {
+    console.log("error");
+    console.log(err);
+  }
+});
 
->>>>>>> 26b7e3446b9c3e90bd323b69f21bca37331d978e
 module.exports = router;
