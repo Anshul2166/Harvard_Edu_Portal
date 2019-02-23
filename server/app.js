@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === "production") {
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
   // if not https redirect to https unless logging in using OAuth
-
+  console.log("fallback line is called", path.join(__dirname, "../build"));
   app.use(express.static(path.join(__dirname, "../build")));
   app.get("*", (req, res) => {
     console.log("fall back route is being called");
