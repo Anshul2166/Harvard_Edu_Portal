@@ -2,6 +2,9 @@
   "name": "educational",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.3.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.12",
     "@fortawesome/free-brands-svg-icons": "^5.6.3",
@@ -77,10 +80,13 @@
   },
   "scripts": {
     "start-dev": "concurrently \"react-scripts start\" \"nodemon server/app\"",
-    "start": "react-scripts start",
+    "start": "node server/app.js",
+    "react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"{server,src}/**/*.+(js|scss|md|json)\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
