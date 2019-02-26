@@ -5,11 +5,11 @@ import Button from "@material-ui/core/Button";
 import { FormGroup, FormControl } from "@material-ui/core";
 import FacebookIcon from "mdi-react/FacebookIcon";
 import GoogleIcon from "mdi-react/GoogleIcon";
-import Typography from "@material-ui/core/Typography";
-import CheckIcon from "@material-ui/icons/Check";
 import { connect } from "react-redux";
 import { signUpUser } from "../../store/actions/profile";
 import { withRouter } from "react-router-dom";
+import {Link} from 'react-router-dom';
+import '../User/User.css';
 
 const styles = theme => ({
   container: {
@@ -19,9 +19,7 @@ const styles = theme => ({
   textField: {
     width: "100%"
   },
-  dense: {
-    marginTop: 19
-  },
+  
   menu: {
     width: 650
   },
@@ -90,17 +88,18 @@ class SignUp extends Component {
     const { classes } = this.props;
     return (
       <div className="SignUp">
-        <div className="SignUp__header">Join in to the Learn It</div>
+        
         <div className="SignUp__main-area">
+        <div className="SignUp__header">Join in to the Learn It</div>
           <form className={classes.container} noValidate autoComplete="off">
-            <FormGroup>
+            <FormGroup className="form">
               <FormControl>
                 <TextField
                   required
                   id="standard-required"
-                  label="Username"
+                  label="Enter username"
                   placeholder="Hello World"
-                  margin="normal"
+                  margin="small"
                   value={this.state.username}
                   onChange={this.onChangeUsername}
                 />
@@ -112,9 +111,9 @@ class SignUp extends Component {
                 <TextField
                   required
                   id="standard-required"
-                  label="Email"
+                  label="Enter email"
                   placeholder="Hello World"
-                  margin="normal"
+                  margin="small"
                   value={this.state.email}
                   onChange={this.onChangeEmail}
                 />
@@ -126,7 +125,7 @@ class SignUp extends Component {
                 <TextField
                   required
                   id="standard-password-input"
-                  label="Password"
+                  label="Enter password"
                   type="password"
                   margin="small"
                   value={this.state.password}
@@ -148,9 +147,11 @@ class SignUp extends Component {
               Sign Up with username
             </Button>
           </div>
-
           <Divider />
-          <SocialNetworkLogIn classes={classes} />
+          <SocialNetworkLogIn classes={classes}/>
+          <div className="center-text login-text">
+            <Link to="/">Click here to login</Link>
+          </div>
         </div>
       </div>
     );
