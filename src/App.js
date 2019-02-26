@@ -20,6 +20,7 @@ import NavHeader from "./components/Common/NavHeader/NavHeader";
 import PractiseQuestions from "./components/PractiseQuestions/PractiseQuestions";
 import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
 import SignUp from "./components/SignUp/SignUp";
+import PrivateRoute from "./shared/privateRoute";
 
 class App extends Component {
   componentDidMount = () => {
@@ -34,26 +35,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavHeader />
+      <PrivateRoute path='/' component={NavHeader} />
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/forum" component={Forum} />
-          <Route path="/user" component={User} />
-          <Route path="/graph" component={Graph} />
-          <Route path="/sunburst" component={SunburstGraph} />
-          <Route path="/create-post" component={CreatePost} />
-          <Route path="/course_info" component={CourseInfo} />
-          <Route path="/single-post/:id" component={SinglePost} />
-          <Route path="/select-domain" component={SelectDomain} />
-          <Route path="/nav_header" component={NavHeader} />
-          <Route exact path="/select-questions" component={PractiseQuestions} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/questions/:topic" component={QuestionsAnswer} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/profile" component={Profile} />
+          <PrivateRoute path="/forum" component={Forum} />
+          <PrivateRoute path="/user" component={User} />
+          <PrivateRoute path="/graph" component={Graph} />
+          <PrivateRoute path="/sunburst" component={SunburstGraph} />
+          <PrivateRoute path="/create-post" component={CreatePost} />
+          <PrivateRoute path="/course_info" component={CourseInfo} />
+          <PrivateRoute path="/single-post/:id" component={SinglePost} />
+          <PrivateRoute path="/select-domain" component={SelectDomain} />
+          <PrivateRoute path="/nav_header" component={NavHeader} />
+          <PrivateRoute exact path="/select-questions" component={PractiseQuestions} />
+          <PrivateRoute exact path="/signup" component={SignUp} />
+          <PrivateRoute exact path="/questions/:topic" component={QuestionsAnswer} />
           {/* Learning path routes */}
-          <Route path="/learning-path/webdev" component={WebDev} />
-          <Route path="/learning-path/gamedev" component={GameDev} />
+          <PrivateRoute path="/learning-path/webdev" component={WebDev} />
+          <PrivateRoute path="/learning-path/gamedev" component={GameDev} />
         </Switch>
       </div>
     );
