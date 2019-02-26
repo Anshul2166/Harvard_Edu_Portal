@@ -163,6 +163,7 @@ const SocialNetworkLogIn = props => (
       variant="contained"
       color="primary"
       className={props.classes.button}
+      onClick={()=>alert("Please use google login for now.")}
     >
       <FacebookIcon />
       Sign up with facebook
