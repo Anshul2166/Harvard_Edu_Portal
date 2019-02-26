@@ -50,7 +50,7 @@ class App extends Component {
           <PrivateRoute path="/select-domain" component={SelectDomain} />
           <PrivateRoute path="/nav_header" component={NavHeader} />
           <PrivateRoute exact path="/select-questions" component={PractiseQuestions} />
-          <PrivateRoute exact path="/signup" component={SignUp} />
+          <Route exact path="/signup" component={SignUp} />
           <PrivateRoute exact path="/questions/:topic" component={QuestionsAnswer} />
           {/* Learning path routes */}
           <PrivateRoute path="/learning-path/webdev" component={WebDev} />

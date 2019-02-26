@@ -187,7 +187,7 @@ class PrimarySearchAppBar extends React.Component {
               <Button color="inherit" className={classes.navButton} href="/dashboard" >
                 Dashboard
               </Button>
-              <Button color="inherit" className={classes.navButton} href="#">
+              <Button color="inherit" className={classes.navButton} href="/select-domain">
                 Roadmaps
               </Button>
               <Button color="inherit" className={classes.navButton} href="/forum">
