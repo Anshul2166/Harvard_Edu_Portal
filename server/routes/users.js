@@ -224,7 +224,7 @@ router.get(
   passport.authenticate("google"),
   (req, res) => {
     console.log("Google callback route is called");
-    res.redirect("http://localhost:3000/dashboard");
+    res.redirect("/dashboard");
   }
 );
 
