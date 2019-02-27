@@ -12,7 +12,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import Button from "@material-ui/core/Button";
-import {Link} from "react-router-dom";
+import {Redirect,Link,withRouter} from "react-router-dom";
+import axios from "axios";
 
 const styles = theme => ({
   root: {
@@ -89,6 +90,9 @@ const styles = theme => ({
   },
   accountCircle:{
       color:"white"
+  },
+  links:{
+    textDecoration:"none"
   }
 });
 
@@ -115,12 +119,19 @@ class PrimarySearchAppBar extends React.Component {
     this.setState({ mobileMoreAnchorEl: null });
   };
 
+  clickLogout=async ()=>{
+    const response=await axios.get("/api/users/logout");
+    this.setState({redirect:true});
+  }
+
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
+    if(this.state.redirect){
+      return <Redirect to="/" />
+    }
     const renderMenu = (
       <Menu
         anchorEl={anchorEl}
@@ -129,8 +140,8 @@ class PrimarySearchAppBar extends React.Component {
         open={isMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-        <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
+        <Link className={classes.links} to="/profile"><MenuItem onClick={this.handleMenuClose}>Profile</MenuItem></Link>
+        <span onClick={this.clickLogout}><MenuItem onClick={this.handleMenuClose}>Logout</MenuItem></span>
       </Menu>
     );
 
@@ -199,7 +210,7 @@ class PrimarySearchAppBar extends React.Component {
               <Button color="inherit" className={classes.navButton} href="/graph">
                 Graph Path
               </Button>
-              <Link to="/profile">
+              {/* <Link to="/profile"> */}
                 <IconButton
                   aria-owns={isMenuOpen ? "material-appbar" : undefined}
                   aria-haspopup="true"
@@ -208,7 +219,7 @@ class PrimarySearchAppBar extends React.Component {
                 >
                   <AccountCircle />
                 </IconButton>
-              </Link>
+              {/* </Link> */}
             </div>
             <div className={classes.sectionMobile}>
               <IconButton
@@ -232,4 +243,4 @@ PrimarySearchAppBar.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(PrimarySearchAppBar);
+export default withRouter(withStyles(styles)(PrimarySearchAppBar));
