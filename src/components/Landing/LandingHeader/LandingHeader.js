@@ -87,9 +87,19 @@ class LandingHeader extends Component {
                 >
                   Join
                 </Link>
+                <Link
+                className="LandingHeader__nav-item"
+                activeClass="LandingHeader__nav-item--selected"
+                to="User"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
                 <div className="LandingHeader__nav-item">
                   <div className="LandingHeader__action-btn">Get Started</div>
                 </div>
+                </Link>
               </div>
             </div>
           </div>
