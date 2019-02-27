@@ -193,6 +193,9 @@ class PrimarySearchAppBar extends React.Component {
               <Button color="inherit" className={classes.navButton} href="/forum">
                 Forums
               </Button>
+              <Button color="inherit" className={classes.navButton} href="/select-questions">
+                Practise sets
+              </Button>
               <Button color="inherit" className={classes.navButton} href="/graph">
                 Graph Path
               </Button>
