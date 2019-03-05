@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: .
+    image: "hackharvard-educational-run"
+    container_name: "hackharvard-educational"
+    command: npm run docker
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    environment:
+      MONGO_URL: "mongo"
+      MONGO_DB_NAME: "educational"
+      NODE_ENV: "production"
+      PORT: 8080
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"

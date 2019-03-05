@@ -86,7 +86,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"{server,src}/**/*.+(js|scss|md|json)\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install  && npm run build",
+    "docker":"NPM_CONFIG_PRODUCTION=false npm install  && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
