@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Learn it
 Project made for hack harvard hackathon
 
+**Note**: Check out the report folder in repository for detailed info on project.
+
 ### Abstract
 
 Technology is growing by leaps and bounds throughout the world, and with the advent of new
@@ -28,10 +30,33 @@ face the dynamic and complex sounding job market .
 * Profile page for each user, which acts as their study resume for people to see, listing their skills, accomplishments, courses and projects
 * Best practice question links picked from each category for the user to practice
 
+### How to install
+
+1) Make sure [Git](https://git-scm.com/downloads) and [NodeJS](https://nodejs.org/en/) are installed
+
+2) Open command line and clone the repo using
+
+```
+    git clone https://github.com/Anshul2166/Harvard_Edu_Portal.git
+```
+
+3) Then, execute the following command to install the dependencies
+
+```
+    npm install
+```
+
+4) To start the project, execute the following command
+
+```
+    npm start
+```
+
+5) Go to localhost:3000 to view
+
 ### List of contributors
 
 - [Anshul](https://github.com/Anshul2166) (Team lead)
 - [Samrat](https://github.com/SamratLuintel)
 - [Himanshu](https://github.com/him1411)
 
-**Note**: Check out the report folder in repository for detailed info on project.
