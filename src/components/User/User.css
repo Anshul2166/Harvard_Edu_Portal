@@ -1,3 +1,6 @@
+.User{
+  overflow: hidden;
+}
 .center-div-user {
   width: 240px;
   margin-left: auto;

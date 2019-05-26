@@ -282,8 +282,8 @@ const initialState = {
           "Your code won’t work and you will get frustrated (especially because half of the course is in C), but frustration is good. Frustration conquered is learning."
         ],
         screenshots: [
-          "https://imgur.com/a/k8u7OgV",
-          "https://imgur.com/a/cPvesQI"
+          "https://i.imgur.com/a/k8u7OgV.png",
+          "https://i.imgur.com/a/cPvesQI.png"
         ],
         topics_covered: [
           "abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, web development"
@@ -323,8 +323,8 @@ const initialState = {
           " Hence the analysis and design of software require well-organized and structured approaches to manage the challenges of complexity. "
         ],
         screenshots: [
-          "https://imgur.com/a/luMoSHw",
-          "https://imgur.com/a/jjpcLxm"
+          "https://i.imgur.com/W90Wk4W.png",
+          "https://i.imgur.com/qQTytT7.png"
         ],
         topics_covered: [
           "Object-Oriented Programming Paradigm, State and Behavior, Fields and Methods, Data Encapsulation,  ,Inheritance and Interfaces, Polymorphism"
@@ -348,8 +348,8 @@ const initialState = {
           " Dijkstra’s algorithm for shortest paths, shortest path tree. Directed acyclic graphs: topological sort and longest path."
         ],
         screenshots: [
-          "https://imgur.com/c3pQ6BZ",
-          "https://imgur.com/a/nhOODQo"
+          "https://i.imgur.com/c3pQ6BZ.png",
+          "https://i.imgur.com/qfOoNEs.png"
         ],
         topics_covered: [
           "Stacks",
@@ -386,8 +386,8 @@ const initialState = {
           " Design of simple multi-tier client/server architectures based and Web-based database applications will also be introduced."
         ],
         screenshots: [
-          "https://imgur.com/a/sF6vqGn",
-          "https://imgur.com/a/JKuAp2k"
+          "https://i.imgur.com/0hbnuNR.png",
+          "https://i.imgur.com/cCO8ziy.png"
         ],
         topics_covered: [
           "Introduction to RDBMS, Structured Query Language (SQL), Relational Algebra, Entity-Relationship Model ",

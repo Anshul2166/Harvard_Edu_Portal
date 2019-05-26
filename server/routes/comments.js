@@ -8,7 +8,6 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   } else {
-    console.log("You are not logged in!");
     res.statusCode = 401;
     res.setHeader("Content-Type", "application/json");
     res.json({ success: false, status: "You are not logged in!" });
@@ -28,7 +27,6 @@ router.get("/:commentId", async (req, res, next) => {
   const commentId = req.params.commentId;
   try {
     const results = await Comments.findById(commentId);
-    console.log(results);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({
@@ -57,7 +55,6 @@ router.put(
     }
     try {
       const updateResponse = await Comments.findByIdAndUpdate(commentId);
-      console.log(updateResponse);
       updateResponse.content = content;
       await updateResponse.save();
       res.statusCode = 200;
@@ -77,7 +74,6 @@ router.delete("/:commentId", isLoggedIn, async (req, res) => {
   const commentId = req.params.commentId;
   try {
     const deleteResponse = await Comments.findByIdAndRemove(commentId);
-    console.log(deleteResponse);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({
@@ -94,7 +90,6 @@ router.put("/:commentId/like", isLoggedIn, async (req, res) => {
   const commentId = req.params.commentId;
   try {
     const likeComment = await Comments.findByIdAndUpdate(commentId);
-    console.log(likeComment);
     let isPresent = likeComment.liked
       .map(ids => ids.toString())
       .includes(req.user._id.toString());
@@ -132,7 +127,6 @@ router.put("/:commentId/dislike", isLoggedIn, async (req, res) => {
   const commentId = req.params.commentId;
   try {
     const dislikeComment = await Comments.findByIdAndUpdate(commentId);
-    console.log(dislikeComment);
     let isPresent = dislikeComment.disliked
       .map(ids => ids.toString())
       .includes(req.user._id.toString());

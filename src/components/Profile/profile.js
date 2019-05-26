@@ -13,27 +13,19 @@ import "./profile.css";
 
 class Profile extends Component {
   state = { modalOpen: false, data: [],section:"" };
-  // async componentWillMount() {
-  //   await this.props.profile.updateProfile();
-  // }
   onEditOption = (data,section) => {
-    console.log("On edit clicked");
-    console.log(data);
     this.setState({ data: data, modalOpen: true,section:section });
   };
   onClose = () => {
-    console.log("Closing");
     this.setState({ modalOpen: false });
   };
   editProfileOpen = () => {
-    console.log("Opening edit profile");
     this.setState({ editProfileOpen: true });
   };
   onCloseEditProfile = () => {
     this.setState({ editProfileOpen: false });
   };
   onEditProfile = updates => {
-    console.log(updates);
     this.props.profileActions.updateProfile(updates);
   };
   handleImageClick=()=>{
@@ -41,11 +33,9 @@ class Profile extends Component {
   }
   selectImageChange=(event)=>{
     let file=event.target.files[0];
-    console.log(event.target.files);
     this.props.profileActions.updateImage(file);
   }
   render() {
-    console.log(this.props.profile);
     if (!this.props.profile.fetched) {
       return <div />
     } else {
