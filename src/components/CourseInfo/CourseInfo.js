@@ -8,8 +8,7 @@ import './CourseInfo.css';
 class CourseInfo extends Component {
 	render() {
 		let data = this.props.location.state.info;
-		console.log(data);
-		const Overview = data.overview.map(paragraph => <p>{paragraph}</p>);
+		const Overview = data.overview.map(paragraph => <li>{paragraph}</li>);
 		const Screenshots = data.screenshots.map(screenshot => (
 			<Grid item md={12} lg={6}>
 				<img src={screenshot} className="screenshots" alt="screenshot" />
@@ -51,9 +50,14 @@ class CourseInfo extends Component {
 					</Grid>
 				</Grid>
 				<h1>Overview</h1>
+				<ul className="list-item-overview">
 				{Overview}
-				<h1>Screenshots</h1>
+				</ul>
+				<br />
+				<h1 className="course-info-title">Screenshots</h1>
+				<Grid container spacing={24}>
 				{Screenshots}
+				</Grid>
 				<Grid container spacing={24}>
 					<Grid item xs={12} sm={12} md={10} lg={11}>
 						<ListBox title="Topics covered in the course" data={data.topics_covered} edit_option={false} />
