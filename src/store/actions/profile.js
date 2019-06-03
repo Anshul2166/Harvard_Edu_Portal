@@ -18,11 +18,14 @@ export const fetchProfile = () => async dispatch => {
 
 export const updateProfile = updates => async dispatch => {
 	try {
+		console.log(updates);
 		const res = await axios.put('/api/users/', updates);
+		console.log(res.data);
 		dispatch({
 			type: UPDATED_PROFILE,
 			payload: res.data,
 		});
+		window.location.reload();
 	} catch (error) {
 		console.log(error);
 		dispatch({

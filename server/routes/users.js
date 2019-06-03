@@ -235,6 +235,7 @@ router.put("/", isLoggedIn, async (req, res) => {
     const updateResponse = await User.findByIdAndUpdate({ _id: userId }, data, {
       upsert: true
     });
+    console.log(updateResponse);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({

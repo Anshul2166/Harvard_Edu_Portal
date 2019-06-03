@@ -120,18 +120,19 @@ class PrimarySearchAppBar extends React.Component {
   };
 
   clickLogout=async ()=>{
+    try{
     const response=await axios.get("/api/users/logout");
-    this.setState({redirect:true});
+    window.location.href="/";
+    }catch(err){
+      console.log(err);
+    }
   }
 
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-    if(this.state.redirect){
-      return <Redirect to="/" />
-    }
+    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);    
     const renderMenu = (
       <Menu
         anchorEl={anchorEl}

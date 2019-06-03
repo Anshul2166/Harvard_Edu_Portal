@@ -26,6 +26,7 @@ class Profile extends Component {
     this.setState({ editProfileOpen: false });
   };
   onEditProfile = updates => {
+    console.log(updates);
     this.props.profileActions.updateProfile(updates);
   };
   handleImageClick=()=>{
@@ -42,7 +43,7 @@ class Profile extends Component {
       const user = this.props.profile.local;
       const { skills, accomplishments, projects, courses } = this.props.profile;
       let profileInfo = {
-        name: user.username,
+        name: this.props.profile.name,
         description: this.props.profile.description
       };
       return (

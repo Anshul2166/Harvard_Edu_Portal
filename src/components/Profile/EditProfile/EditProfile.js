@@ -74,6 +74,7 @@ class EditProfile extends React.Component {
 		for (let i = 0; i < keys.length; i++) {
 			saved[keys[i]] = values[i];
 		}
+		console.log(saved);
 		this.props.onEditProfile(saved);
 		this.props.onClose();
   };
