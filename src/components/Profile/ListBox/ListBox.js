@@ -21,10 +21,10 @@ const styles = theme => ({
 	icon: {
 		color: 'purple',
 	},
-	listItem: {
-		listStyle: 'disc',
-		listStylePosition: 'inside',
-	},
+	// listItem: {
+	// 	listStyle: 'disc',
+	// 	listStylePosition: 'inside',
+	// },
 	listBox: {
 		margin: 0,
 		paddingBottom: '5px!important',
@@ -33,14 +33,15 @@ const styles = theme => ({
 
 class ListBox extends Component {
 	render() {
-		const { classes, type, data, title, onClickEdit } = this.props;
+		const { classes, type, data, title, onClickEdit,edit_option } = this.props;
 
 		function EditButton(props) {
-			if (props.edit_option && props.edit_option === false) {
+			console.log(props);
+			if (props.edit_option === false) {
 				return <div />;
 			} else {
 				return (
-					<IconButton className={classes.icon} onClick={props.edit_option}>
+					<IconButton className={classes.icon} onClick={props.onClickEdit}>
 						<Edit />
 					</IconButton>
 				);
@@ -69,7 +70,7 @@ class ListBox extends Component {
 						classes={{
 							title: classes.title,
 						}}
-						action={<EditButton edit_option={onClickEdit} />}
+						action={<EditButton edit_option={edit_option} onClickEdit={onClickEdit} />}
 						className={classes.header}
 					/>
 					<CardContent className={classes.listBox}>

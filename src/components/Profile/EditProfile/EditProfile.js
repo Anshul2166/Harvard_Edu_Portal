@@ -121,6 +121,7 @@ class EditProfile extends React.Component {
 							multiline={true}
 							rows={2}
 							rowsMax={4}
+							style={{marginBottom:"5px"}}
 						/>
 					</ListItem>
 				);

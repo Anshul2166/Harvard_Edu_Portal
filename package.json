@@ -80,8 +80,8 @@
   },
   "scripts": {
     "start-dev": "concurrently \"react-scripts start\" \"nodemon server/app\"",
-    "start": "node server/app.js",
-    "react": "react-scripts start",
+    "server": "node server/app.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
