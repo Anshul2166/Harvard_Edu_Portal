@@ -72,6 +72,10 @@ class SinglePost extends Component {
       this.checkIfAlreadyUpvotedOrDownvoted();
     }
   };
+  communityNameClicked=()=>{
+    let {community}=this.props.post;
+    console.log(community);
+  }
   render() {
     const { props } = this;
     if (!props.post.fetched) {
@@ -125,7 +129,7 @@ class SinglePost extends Component {
                   <div className="SinglePost__main-area__post-info-wrapper">
                     <div className="SinglePost__main-area__post-info">
                       <div className="SinglePost__community-wrapper">
-                        <div className="SinglePost__community-name">
+                        <div className="SinglePost__community-name" onClick={this.communityNameClicked}>
                           r/{props.post.community.name}
                         </div>
                         <div className="SinglePost__author-name">
