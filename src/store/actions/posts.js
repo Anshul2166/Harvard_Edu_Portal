@@ -22,6 +22,7 @@ export const createPost = (community, title, description) => async dispatch => {
       type: PUT_SINGLE_POST_TO_TOP,
       payload: res.data
     });
+    return res.data;
   } catch (error) {
     console.log(error);
     throw error;

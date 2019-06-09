@@ -65,13 +65,16 @@ class CreatePost extends Component {
         contentErr: "Please write some content"
       });
     try {
-      await this.props.createPost(
+      const res=await this.props.createPost(
         this.state.selectedCommunity,
         this.state.title,
         this.state.content
       );
       this.setState({ title: "", content: "", selectedCommunity: null });
       NotificationManager.info("Post have been successfully created");
+      console.log(res);
+      let id=res._id;
+      this.props.history.push("/single-post/"+id);
     } catch (error) {
       console.log(error);
     }

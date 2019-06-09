@@ -40,7 +40,6 @@ class Profile extends Component {
     if (!this.props.profile.fetched) {
       return <div />
     } else {
-      const user = this.props.profile.local;
       const { skills, accomplishments, projects, courses } = this.props.profile;
       let profileInfo = {
         name: this.props.profile.name,
