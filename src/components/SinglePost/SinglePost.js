@@ -90,13 +90,14 @@ class SinglePost extends Component {
 		this.setState({ isModalOpen: false });
 	};
 	confirmEditPost = () => {
-    this.closeModal();
+		this.closeModal();
 	};
 	changeTitle = event => {
 		this.setState({ editTitle: event.target.value });
 	};
-	changeDescription = event => {
-		this.setState({ editDescription: event.target.value });
+	changeDescription = evt => {
+		let value=evt.editor.getData()
+		this.setState({ editDescription: value });
 	};
 	render() {
 		const { props } = this;
@@ -117,7 +118,7 @@ class SinglePost extends Component {
 					closeModal={this.closeModal}
 					onConfirmEdit={this.confirmEditPost}
 					changeTitle={this.changeTitle}
-					changeDescription={this.changeDescription}
+					onDescriptionChange={this.changeDescription}
 					title={editTitle}
 					description={editDescription}
 				/>
@@ -166,9 +167,10 @@ class SinglePost extends Component {
 												</div>
 											</div>
 											<div className="SinglePost__post-title">{props.post.title}</div>
-											<div className="SinglePost__post-description">
-												{JSON.parse(props.post.description)}
-											</div>
+											<div
+												className="SinglePost__post-description"
+												dangerouslySetInnerHTML={{__html:props.post.description}}
+											/>
 										</div>
 
 										<div className="SinglePost__post-additional-info">

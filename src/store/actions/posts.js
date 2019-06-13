@@ -15,7 +15,7 @@ export const createPost = (community, title, description) => async dispatch => {
     const res = await axios.post("/api/posts/create-post", {
       title,
       community,
-      description: JSON.stringify(description)
+      description: description.toString()
     });
     console.log("Post have been successfully created", res.data);
     dispatch({

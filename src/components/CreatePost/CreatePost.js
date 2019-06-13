@@ -32,6 +32,7 @@ class CreatePost extends Component {
 
   onContentChange = evt => {
     var newContent = evt.editor.getData();
+    console.log(newContent);
     if (this.state.contentErr !== "") this.setState({ contentErr: "" });
     this.setState({
       content: newContent
@@ -65,6 +66,7 @@ class CreatePost extends Component {
         contentErr: "Please write some content"
       });
     try {
+      console.log(this.state.content);
       const res=await this.props.createPost(
         this.state.selectedCommunity,
         this.state.title,

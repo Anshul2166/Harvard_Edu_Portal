@@ -4,6 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
+import CKEditor from 'react-ckeditor-component';
+import classnames from 'classnames';
 
 function getModalStyle() {
 	const top = 50;
@@ -64,8 +66,11 @@ class EditModal extends React.Component {
 	};
 
 	render() {
-		const { classes, isModalOpen, closeModal, changeTitle, changeDescription, title, description } = this.props;
-
+		const { classes, isModalOpen, closeModal, changeTitle, onDescriptionChange, title } = this.props;
+		let description = this.props.description;
+		description = description.replace(/^"(.*)"$/, '$1');
+		// description=description.substring(1, description.length - 1);
+		console.log(description);
 		return (
 			<Modal
 				aria-labelledby="simple-modal-title"
@@ -85,7 +90,15 @@ class EditModal extends React.Component {
 						</div>
 						<div className="edit-description">
 							<label>Description</label>
-							<input type="text" value={description} onChange={changeDescription} />
+							<div>
+								<CKEditor
+									content={description}
+									events={{
+										change: onDescriptionChange,
+									}}
+									activeClass="p10"
+								/>
+							</div>
 						</div>
 					</div>
 
