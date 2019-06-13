@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
-import CKEditor from 'react-ckeditor-component';
 
 function getModalStyle() {
 	const top = 50;
@@ -41,31 +40,14 @@ const styles = theme => ({
 	},
 	button: {
 		textAlign: 'center',
-		marginTop: 30,
+        // marginTop: 30,
+        margin:20
 	},
 });
 
-class EditModal extends React.Component {
-	onClickEdit = event => {
-		this.props.onConfirmEdit();
-	};
-	checkIfValidInput = text => {
-		text = text.trim();
-		if (text) {
-			return true;
-		}
-		return false;
-	};
-	isButtonDisabled = () => {
-		const { title, description } = this.props;
-		if (this.checkIfValidInput(title) && this.checkIfValidInput(description)) {
-			return false;
-		}
-		return true;
-	};
-
+class ConfirmModal extends React.Component {
 	render() {
-		const { classes, isModalOpen, closeModal, changeTitle, onDescriptionChange, title, description } = this.props;
+        const { classes, isModalOpen, closeModal, onClose, onConfirm } = this.props;
 		return (
 			<Modal
 				aria-labelledby="simple-modal-title"
@@ -76,36 +58,12 @@ class EditModal extends React.Component {
 			>
 				<div style={getModalStyle()} className={classes.paper}>
 					<Typography variant="h6" className={classes.title}>
-						Edit Post
+						Confirm Modal
 					</Typography>
 					<div className={classes.demo}>
-						<div className="edit-title">
-							<label>Title</label>
-							<input type="text" value={title} onChange={changeTitle} />
-						</div>
-						<div className="edit-description">
-							<label>Description</label>
-							<div>
-								<CKEditor
-									content={description}
-									events={{
-										change: onDescriptionChange,
-									}}
-									activeClass="p10"
-								/>
-							</div>
-						</div>
-					</div>
-
-					<div className={classes.button}>
-						<Button
-							variant="contained"
-							color="primary"
-							onClick={this.onClickEdit}
-							disabled={this.isButtonDisabled()}
-						>
-							Update post
-						</Button>
+						<div className="description">Are you sure you want to delete this modal?</div>
+						<Button variant="contained" type="primary" className={classes.button} onClick={onConfirm}>Confirm</Button>
+						<Button variant="contained" type="warning" className={classes.button} onClick={onClose}>Cancel</Button>
 					</div>
 				</div>
 			</Modal>
@@ -113,11 +71,11 @@ class EditModal extends React.Component {
 	}
 }
 
-EditModal.propTypes = {
+ConfirmModal.propTypes = {
 	classes: PropTypes.object.isRequired,
 };
 
 // We need an intermediary variable for handling the recursive nesting.
-const EditPostModal = withStyles(styles)(EditModal);
+const ConfirmWrapModal = withStyles(styles)(ConfirmModal);
 
-export default EditPostModal;
+export default withStyles(styles)(ConfirmWrapModal);

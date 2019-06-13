@@ -12,6 +12,8 @@ import {
 } from '../../store/actions/posts';
 import classnames from 'classnames';
 import EditPostModal from './EditPostModal/editPostModal';
+import ConfirmWrapModal from '../Common/Modal/ConfirmModal';
+import ConfirmModal from '../Common/Modal/ConfirmModal';
 
 class SinglePost extends Component {
 	state = {
@@ -96,9 +98,24 @@ class SinglePost extends Component {
 		this.setState({ editTitle: event.target.value });
 	};
 	changeDescription = evt => {
-		let value=evt.editor.getData()
+		let value = evt.editor.getData();
 		this.setState({ editDescription: value });
 	};
+
+	openConfirmModal=()=>{
+		this.setState({isConfirmModalOpen:true});
+	}
+
+	onCloseConfirmModal=()=>{
+		this.setState({isConfirmModalOpen:false});
+	}
+
+	onConfirmDelete=()=>{
+		console.log("Confirm delete called");
+		console.log(this.props.post);
+		this.setState({isConfirmModalOpen:false});
+	}
+
 	render() {
 		const { props } = this;
 		const { editTitle, editDescription } = this.state;
@@ -121,6 +138,11 @@ class SinglePost extends Component {
 					onDescriptionChange={this.changeDescription}
 					title={editTitle}
 					description={editDescription}
+				/>
+				<ConfirmWrapModal
+					onConfirm={this.onConfirmDelete}
+					onClose={this.onCloseConfirmModal}
+					isModalOpen={this.state.isConfirmModalOpen}
 				/>
 				<div className="container">
 					<div className="row">
@@ -169,7 +191,7 @@ class SinglePost extends Component {
 											<div className="SinglePost__post-title">{props.post.title}</div>
 											<div
 												className="SinglePost__post-description"
-												dangerouslySetInnerHTML={{__html:props.post.description}}
+												dangerouslySetInnerHTML={{ __html: props.post.description }}
 											/>
 										</div>
 
@@ -183,7 +205,7 @@ class SinglePost extends Component {
 											<span className="SinglePost__actions" onClick={this.editPost}>
 												Edit
 											</span>
-											<span className="SinglePost__actions" onClick={this.deletePost}>
+											<span className="SinglePost__actions" onClick={this.openConfirmModal}>
 												Delete
 											</span>
 										</div>
