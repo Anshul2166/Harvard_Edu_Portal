@@ -22,6 +22,7 @@ router.get("/list", async (req, res) => {
     res.status(400).send(error);
   }
 });
+
 router.post("/create", isLoggedIn, async (req, res) => {
   const { name, description } = req.body;
   try {

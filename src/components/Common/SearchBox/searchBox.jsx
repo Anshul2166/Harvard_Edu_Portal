@@ -1,62 +1,52 @@
 import React from 'react';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withStyles } from '@material-ui/core/styles';
+import chroma from 'chroma-js';
+import { colourOptions } from '../docs/data';
+import Select from 'react-select';
 
-const styles = theme => ({
-	search: {
-		position: 'relative',
-		borderRadius: theme.shape.borderRadius,
-		backgroundColor: fade(theme.palette.common.white, 0.15),
-		'&:hover': {
-			backgroundColor: fade(theme.palette.common.white, 0.25),
-		},
-		marginRight: theme.spacing(2),
-		marginLeft: 0,
-		width: '100%',
-		[theme.breakpoints.up('sm')]: {
-			marginLeft: theme.spacing(3),
-			width: 'auto',
-		},
-	},
-	searchIcon: {
-		width: theme.spacing(7),
-		height: '100%',
-		position: 'absolute',
-		pointerEvents: 'none',
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	inputRoot: {
-		color: 'inherit',
-	},
-	inputInput: {
-		padding: theme.spacing(1, 1, 1, 7),
-		transition: theme.transitions.create('width'),
-		width: '100%',
-		[theme.breakpoints.up('md')]: {
-			width: 200,
-		},
+const dot = (color = '#ccc') => ({
+	alignItems: 'center',
+	display: 'flex',
+
+	':before': {
+		backgroundColor: color,
+		borderRadius: 10,
+		content: '" "',
+		display: 'block',
+		marginRight: 8,
+		height: 10,
+		width: 10,
 	},
 });
 
-const SearchBox = ({ classes, searchTerm, onChangeSearch }) => (
-	<div className={classes.search}>
-		<div className={classes.searchIcon}>
-			<SearchIcon />
-		</div>
-		<InputBase
-			placeholder="Search here"
-			value={searchTerm}
-			onChange={onChangeSearch}
-			classes={{
-				root: classes.inputRoot,
-				input: classes.inputInput,
-			}}
-		/>
-	</div>
+const colourStyles = {
+	control: styles => ({ ...styles, backgroundColor: 'white' }),
+	option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+		const color = chroma(data.color);
+		return {
+			...styles,
+			backgroundColor: isDisabled ? null : isSelected ? data.color : isFocused ? color.alpha(0.1).css() : null,
+			color: isDisabled
+				? '#ccc'
+				: isSelected
+				? chroma.contrast(color, 'white') > 2
+					? 'white'
+					: 'black'
+				: data.color,
+			cursor: isDisabled ? 'not-allowed' : 'default',
+
+			':active': {
+				...styles[':active'],
+				backgroundColor: !isDisabled && (isSelected ? data.color : color.alpha(0.3).css()),
+			},
+		};
+	},
+	input: styles => ({ ...styles, ...dot() }),
+	placeholder: styles => ({ ...styles, ...dot() }),
+	singleValue: (styles, { data }) => ({ ...styles, ...dot(data.color) }),
+};
+
+const SearchBox = props => (
+	<Select defaultValue={colourOptions[2]} label="Single select" options={colourOptions} styles={colourStyles} />
 );
 
-export default withStyles(styles)(SearchBox);
+export default SearchBox;

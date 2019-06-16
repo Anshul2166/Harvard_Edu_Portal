@@ -1,15 +1,19 @@
-@import "styles/styles";
-@import "components/components";
-@import "~storm-react-diagrams/src/sass/main";
+@import 'styles/styles';
+@import 'components/components';
+@import '~storm-react-diagrams/src/sass/main';
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 *:focus {
-  outline: none;
+	outline: none;
 }
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
+.css-1wy0on6 {
+	display: none !important;
+}
+
