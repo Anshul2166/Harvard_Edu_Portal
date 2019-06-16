@@ -6,6 +6,7 @@ import PostCard from "../Common/PostCard/PostCard";
 import { connect } from "react-redux";
 import { fetchCommunities } from "../../store/actions/communities";
 import InfinitePost from "./InfinitePost/InfinitePost";
+import SearchBox from "../Common/SearchBox/searchBox";
 
 class Forum extends Component {
   state = {
@@ -38,6 +39,7 @@ class Forum extends Component {
                 <InfinitePost />
               </div>
               <div className="col-md-4">
+                <SearchBox searchTerm={""} onChangeSearch={()=>{}}/>
                 <ForumActionArea />
               </div>
             </div>
