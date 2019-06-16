@@ -189,7 +189,7 @@ class PostCard extends Component {
               <div
                 className="PostCard__post-description"
                 dangerouslySetInnerHTML={{
-                  __html: JSON.parse(props.description)
+                  __html: props.description
                 }}
               />
             </div>

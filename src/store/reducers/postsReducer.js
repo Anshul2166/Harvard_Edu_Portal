@@ -6,7 +6,8 @@ import {
   HIDE_POST,
   RESET_POSTS,
   FETCH_SINGLE_POST,
-  UPDATE_SINGLE_POST_COMMENT
+  UPDATE_SINGLE_POST_COMMENT,
+  DELETE_POST
 } from "../types/postsTypes";
 import update from "immutability-helper";
 
@@ -68,6 +69,10 @@ export default (state = initialState, { type, payload }) => {
         ...state,
         list: [payload, ...state.list]
       };
+    case DELETE_POST:
+      return{
+        ...state
+      }
     default:
       return state;
   }

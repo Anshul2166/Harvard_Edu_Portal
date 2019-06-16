@@ -8,6 +8,8 @@ import {
 	UPDATE_SINGLE_POST_COMMENT,
 	DELETE_POST,
 	DELETE_POST_ERROR,
+	EDIT_POST,
+	EDIT_POST_ERROR,
 } from '../types/postsTypes';
 import { UPDATE_PROFILE_LOGGED_IN } from '../types/profileTypes';
 
@@ -212,7 +214,7 @@ export const dislikePostComment = (id, index) => async dispatch => {
 export const deletePost = post => async dispatch => {
 	try {
 		let id = post._id;
-		const resp = await axios.delete(`/api/comments/${id}`);
+		const resp = await axios.delete(`/api/posts/${id}`);
 		dispatch({
 			type: DELETE_POST,
 			payload: resp.data,
@@ -221,6 +223,23 @@ export const deletePost = post => async dispatch => {
 	} catch (err) {
 		dispatch({
 			type: DELETE_POST_ERROR,
+			payload: err,
+		});
+	}
+};
+
+export const editPost = (post,title,description) => async dispatch => {
+	try {
+		let id = post._id;
+		const resp = await axios.put(`/api/posts/${id}`, { title,description });
+		dispatch({
+			type: EDIT_POST,
+			payload: resp.data,
+		});
+	} catch (err) {
+		console.log(err);
+		dispatch({
+			type: EDIT_POST_ERROR,
 			payload: err,
 		});
 	}

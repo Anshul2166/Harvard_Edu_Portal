@@ -9,11 +9,12 @@ import {
 	removeSinglePostUpvote,
 	downvoteSinglePost,
 	removeSinglePostDownvote,
+	deletePost,
+	editPost
 } from '../../store/actions/posts';
 import classnames from 'classnames';
 import EditPostModal from './EditPostModal/editPostModal';
 import ConfirmWrapModal from '../Common/Modal/ConfirmModal';
-import ConfirmModal from '../Common/Modal/ConfirmModal';
 
 class SinglePost extends Component {
 	state = {
@@ -91,8 +92,16 @@ class SinglePost extends Component {
 	closeModal = () => {
 		this.setState({ isModalOpen: false });
 	};
-	confirmEditPost = () => {
-		this.closeModal();
+	confirmEditPost = async () => {
+		let { editTitle, editDescription } = this.state;
+		try {
+			await this.props.editPost(this.props.post, editTitle, editDescription);
+			window.location.reload();
+		} catch (err) {
+			console.log(err);
+		} finally {
+			this.closeModal();
+		}
 	};
 	changeTitle = event => {
 		this.setState({ editTitle: event.target.value });
@@ -102,19 +111,27 @@ class SinglePost extends Component {
 		this.setState({ editDescription: value });
 	};
 
-	openConfirmModal=()=>{
-		this.setState({isConfirmModalOpen:true});
-	}
+	openConfirmModal = () => {
+		this.setState({ isConfirmModalOpen: true });
+	};
 
-	onCloseConfirmModal=()=>{
-		this.setState({isConfirmModalOpen:false});
-	}
+	onCloseConfirmModal = () => {
+		this.setState({ isConfirmModalOpen: false });
+	};
 
-	onConfirmDelete=()=>{
-		console.log("Confirm delete called");
+	onConfirmDelete = async () => {
+		console.log('Confirm delete called');
 		console.log(this.props.post);
-		this.setState({isConfirmModalOpen:false});
-	}
+		try {
+			await this.props.deletePost(this.props.post);
+			this.props.history.push('/forum');
+		} catch (err) {
+			console.log('Error occured');
+			console.log(err);
+		} finally {
+			this.setState({ isConfirmModalOpen: false });
+		}
+	};
 
 	render() {
 		const { props } = this;
@@ -234,5 +251,7 @@ export default connect(
 		downvoteSinglePost,
 		removeSinglePostUpvote,
 		removeSinglePostDownvote,
+		deletePost,
+		editPost
 	}
 )(SinglePost);
