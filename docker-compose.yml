@@ -1,20 +1,20 @@
 version: '2'
 services:
-  web:
-    build: .
-    image: "hackharvard-educational-run"
-    container_name: "hackharvard-educational"
-    command: npm run docker
+  mongodb:
+    image: "mongo"
+    ports:
+     - "27017:27017"
+  backend:
+    build: ./server
+    env_file:
+      - ./server/docker.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+  frontend:
+    build: ./
     ports:
       - "3000:3000"
-    links:
-      - mongo
-    environment:
-      MONGO_URL: "mongo"
-      MONGO_DB_NAME: "educational"
-      NODE_ENV: "production"
-      PORT: 8080
-  mongo:
-    image: mongo
-    ports:
-    - "27017:27017"
+    depends_on:
+      - backend
