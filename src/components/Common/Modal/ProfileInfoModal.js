@@ -69,8 +69,6 @@ class ProfileModal extends React.Component {
     this.setState({ bufferChecked: bufferChecked });
   };
   onClickAdd = event => {
-    console.log(event);
-    console.log(event.key);
     if (event.key === "Enter") {
       this.bufferRecords.push(this.state.bufferText);
       let bufferChecked = this.state.bufferChecked.slice();

@@ -8,6 +8,7 @@ import GoogleIcon from "mdi-react/GoogleIcon";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import CheckIcon from "@material-ui/icons/Check";
+import { Link } from "react-router-dom";
 import "./User.css";
 
 const styles = theme => ({
@@ -125,6 +126,9 @@ class User extends Component {
                 </Button>
                 <Divider />
                 <SocialNetworkLogIn classes={classes} />
+                <div className="center-text">
+                  <Link to="/signup">Click here to sign up</Link>
+                </div>
               </div>
             </div>
           </Grid>
@@ -140,11 +144,12 @@ const SocialNetworkLogIn = props => (
       variant="contained"
       color="primary"
       className={props.classes.button}
+      onClick={()=>alert("Please use google login for now")}
     >
       <FacebookIcon />
       Login with facebook
     </Button>
-    <a href="http://localhost:8080/api/users/auth/google">
+    <a href="/api/users/auth/google">
       <Button
         variant="contained"
         color="primary"

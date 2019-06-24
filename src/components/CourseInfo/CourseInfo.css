@@ -17,11 +17,11 @@
 }
 .screenshots {
   margin-top: 1%;
-  margin-bottom: 1%;
-  margin-left: 5%;
+  margin-bottom: 2%;
   width: 80%;
   height: 450px;
   border: 1px solid deeppink;
+
 }
 .top-row-course-info {
   margin-bottom: 2.5% !important;
@@ -34,4 +34,11 @@
 }
 .course-info h2 {
   margin-bottom: 1%;
+}
+.list-item-overview{
+  list-style: disc;
+	list-style-position: inside;
+}
+.course-info-title{
+  margin-bottom: 0.75%;
 }

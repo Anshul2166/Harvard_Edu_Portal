@@ -1,44 +1,62 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Learn it
+Project made for hack harvard hackathon
 
-In the project directory, you can run:
+**Note**: Check out the report folder in repository for detailed info on project.
 
-### `npm start`
+### Abstract
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Technology is growing by leaps and bounds throughout the world, and with the advent of new
+technologies almost every moment and the simultaneous outdating and updating of the existing
+technologies, many working professionals and students find it difficult in keeping themselves
+continuously relevant in the ever-changing and demanding job market, which also leads to increased
+unemployment and job dropouts. This also presents a peculiar problem since even with high
+unemployment reported, there are also reports of several vacancies going unfilled, and now in the
+digital age, with online learning gaining foothold and acceptance everywhere, some may find it hard to
+acknowledge the simultaneous existence of both. Our project tries to solve this particular problem by
+trying to bridge the gap between both paradoxical situations and present an adaptive,
+community-driven, skill-based approach to empower the students and working professionals alike to
+face the dynamic and complex sounding job market .
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Features
 
-### `npm test`
+* Community driven with heavy focus on skills for employment
+* Curated roadmaps to follow for serveral objectives like web development, game development etc.
+* Data visualization tools to aid you in learning process like flowcharts and trees
+* Comprehensive ciriculum and subjects for each discipline
+* Quality resources links to learn from (available online free of cost)
+* Exclusive forums for doubt clearances, project feedback and reviews
+* Profile page for each user, which acts as their study resume for people to see, listing their skills, accomplishments, courses and projects
+* Best practice question links picked from each category for the user to practice
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### How to install
 
-### `npm run build`
+1) Make sure [Git](https://git-scm.com/downloads) and [NodeJS](https://nodejs.org/en/) are installed
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2) Open command line and clone the repo using
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+    git clone https://github.com/Anshul2166/Harvard_Edu_Portal.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3) Then, execute the following command to install the dependencies
 
-### `npm run eject`
+```
+    npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4) To start the project, execute the following command
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+    npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5) Go to localhost:3000 to view
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### List of contributors
 
-## Learn More
+- [Anshul](https://github.com/Anshul2166) (Team lead)
+- [Samrat](https://github.com/SamratLuintel)
+- [Himanshu](https://github.com/him1411)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

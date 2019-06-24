@@ -224,7 +224,7 @@ router.get(
   passport.authenticate("google"),
   (req, res) => {
     console.log("Google callback route is called");
-    res.redirect("http://localhost:3000/dashboard");
+    res.redirect("/dashboard");
   }
 );
 
@@ -235,6 +235,7 @@ router.put("/", isLoggedIn, async (req, res) => {
     const updateResponse = await User.findByIdAndUpdate({ _id: userId }, data, {
       upsert: true
     });
+    console.log(updateResponse);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({

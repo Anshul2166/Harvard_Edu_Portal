@@ -24,6 +24,12 @@
   line-height: 20px;
   font-weight: 500;
   margin-top: 20px;
+  cursor:pointer;
+  transition:.3s all ease-in-out;
+
+  &:hover{
+    color:$primary-light-green;
+  }
 }
 
 .DomainCard__description {

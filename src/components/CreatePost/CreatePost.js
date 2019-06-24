@@ -32,6 +32,7 @@ class CreatePost extends Component {
 
   onContentChange = evt => {
     var newContent = evt.editor.getData();
+    console.log(newContent);
     if (this.state.contentErr !== "") this.setState({ contentErr: "" });
     this.setState({
       content: newContent
@@ -65,13 +66,17 @@ class CreatePost extends Component {
         contentErr: "Please write some content"
       });
     try {
-      await this.props.createPost(
+      console.log(this.state.content);
+      const res=await this.props.createPost(
         this.state.selectedCommunity,
         this.state.title,
         this.state.content
       );
       this.setState({ title: "", content: "", selectedCommunity: null });
       NotificationManager.info("Post have been successfully created");
+      console.log(res);
+      let id=res._id;
+      this.props.history.push("/single-post/"+id);
     } catch (error) {
       console.log(error);
     }

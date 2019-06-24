@@ -79,7 +79,7 @@ class DegreeCard extends React.Component {
           <img src={degreeImage} alt="Random" width="50" height="50" />
         </div>
         <CardContent>
-          <Typography variant="h5" component="h5" className="heading">
+          <Typography variant="h5" component="h5" className="heading" style={{paddingTop:"0"}}>
             {degreeName}
           </Typography>
           <Typography variant="p" component="p" className="heading">
