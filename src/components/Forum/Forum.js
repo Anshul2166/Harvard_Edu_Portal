@@ -18,9 +18,9 @@ class Forum extends Component {
 	openCommunityModal = () => this.setState({ communityModalOpen: true });
 
 	componentDidMount = () => {
-		if (!this.props.communities.fetched) {
+		// if (!this.props.communities.fetched) {
 			this.props.fetchCommunities();
-		}
+		// }
 	};
 
 	onChangeSearch = event => {
@@ -28,8 +28,12 @@ class Forum extends Component {
 		this.setState({ searchTerm });
 	};
 
+	selectOption = () => {
+		// this.props.getParticularCommuntiy();
+	};
+
 	render() {
-    let options = [];
+		let options = [];
 		if (this.props.communities.fetched) {
 			console.log(this.props.communities);
 			this.props.communities.list.map(community =>
@@ -52,7 +56,7 @@ class Forum extends Component {
 								<InfinitePost />
 							</div>
 							<div className="col-md-4">
-								<SearchBox options={options} />
+								<SearchBox options={options} selectOption={this.selectOption} />
 								<ForumActionArea />
 							</div>
 						</div>

@@ -1,1 +1,2 @@
 export const UPDATE_COMMUNITIES_LIST = "update_communities_list";
+export const UPDATE_COMMUNITIES_LIST_LOADING="UPDATE_COMMUNITIES_LIST_LOADING";
