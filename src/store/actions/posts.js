@@ -197,7 +197,7 @@ export const likePostComment = (id, index) => async dispatch => {
 export const dislikePostComment = (id, index) => async dispatch => {
 	try {
 		const res = await axios.put(`/api/comments/${id}/dislike`);
-		console.log('Like post comment', res.data);
+		console.log('Unlike post comment', res.data);
 		dispatch({
 			type: UPDATE_SINGLE_POST_COMMENT,
 			payload: {
