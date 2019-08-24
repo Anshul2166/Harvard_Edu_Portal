@@ -21,7 +21,7 @@ import PractiseQuestions from "./components/PractiseQuestions/PractiseQuestions"
 import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
 import SignUp from "./components/SignUp/SignUp";
 import PrivateRoute from "./shared/privateRoute";
-import { Editorial } from "./components/Editorial/editorial";
+import Editorial from "./components/Editorial/editorial";
 
 class App extends Component {
   componentDidMount = () => {
