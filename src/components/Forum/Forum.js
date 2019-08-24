@@ -3,7 +3,7 @@ import ForumActionArea from './ForumActionArea/ForumActionArea';
 import ForumContext from './_forumContext';
 import CreateCommunityModal from './CreateCommunityModal/CreateCommunityModal';
 import { connect } from 'react-redux';
-import { fetchCommunities } from '../../store/actions/communities';
+import { fetchCommunities,getParticularCommuntiy } from '../../store/actions/communities';
 import InfinitePost from './InfinitePost/InfinitePost';
 import SearchBox from '../Common/SearchBox/searchBox';
 
@@ -28,8 +28,9 @@ class Forum extends Component {
 		this.setState({ searchTerm });
 	};
 
-	selectOption = () => {
-		// this.props.getParticularCommuntiy();
+	selectOption = (option) => {
+		console.log(option.value);
+		this.props.getParticularCommuntiy(option.value);
 	};
 
 	render() {
@@ -74,5 +75,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{ fetchCommunities }
+	{ fetchCommunities,getParticularCommuntiy }
 )(Forum);

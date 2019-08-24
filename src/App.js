@@ -21,6 +21,7 @@ import PractiseQuestions from "./components/PractiseQuestions/PractiseQuestions"
 import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
 import SignUp from "./components/SignUp/SignUp";
 import PrivateRoute from "./shared/privateRoute";
+import { Editorial } from "./components/Editorial/editorial";
 
 class App extends Component {
   componentDidMount = () => {
@@ -35,7 +36,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <PrivateRoute path='/' component={NavHeader} />
+        <Editorial />
+      {/* <PrivateRoute path='/' component={NavHeader} />
         <Switch>
           <Route exact path="/" component={Landing} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
@@ -52,10 +54,9 @@ class App extends Component {
           <PrivateRoute exact path="/select-questions" component={PractiseQuestions} />
           <Route exact path="/signup" component={SignUp} />
           <PrivateRoute exact path="/questions/:topic" component={QuestionsAnswer} />
-          {/* Learning path routes */}
           <PrivateRoute path="/learning-path/webdev" component={WebDev} />
           <PrivateRoute path="/learning-path/gamedev" component={GameDev} />
-        </Switch>
+        </Switch> */}
       </div>
     );
   }

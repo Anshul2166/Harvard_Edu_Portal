@@ -27,4 +27,15 @@ export const fetchCommunities = () => async dispatch => {
 	}
 };
 
-
+export const getParticularCommuntiy=(communityName)=>async dispatch=>{
+	try {
+		const res = await axios.get('/api/communities/list/'+communityName);
+		console.log('Communties have been fetched', res.data);
+		dispatch({
+			type: UPDATE_COMMUNITIES_LIST,
+			payload: res.data,
+		});
+	} catch (error) {
+		console.log(error);
+	}
+}

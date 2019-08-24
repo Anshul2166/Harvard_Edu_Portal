@@ -84,19 +84,15 @@ router.delete('/:commentId', isLoggedIn, async (req, res) => {
 router.put('/:commentId/like', isLoggedIn, async (req, res) => {
 	const commentId = req.params.commentId;
 	try {
-		const likeComment = await Comments.findByIdAndUpdate(commentId);
-		// let isPresent = likeComment.liked
-		//   .map(ids => ids.toString())
-		//   .includes(req.user._id.toString());
-		// let isDisliked = likeComment.disliked
-		//   .map(ids => ids.toString())
-		//   .includes(req.user._id.toString());
+    const likeComment = await Comments.findByIdAndUpdate(commentId);
+    
 		let isPresent = likeComment.liked.some(function(userId) {
 			return userId.equals(req.user._id);
     });
     let isDisliked = likeComment.disliked.some(function(userId) {
 			return userId.equals(req.user._id);
-		});
+    });
+    
 		if (isPresent) {
       //user has already liked it
       //re-clicking on like means unliking
@@ -137,11 +133,9 @@ router.put('/:commentId/dislike', isLoggedIn, async (req, res) => {
     let isPresent = dislikeComment.disliked.some(function(userId) {
 			return userId.equals(req.user._id);
     });
-    console.log(isPresent);
     let isLiked = dislikeComment.liked.some(function(userId) {
 			return userId.equals(req.user._id);
     });
-    console.log(isLiked);
 
 		if (isPresent) {
       //user has already disliked the post

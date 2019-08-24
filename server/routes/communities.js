@@ -23,11 +23,11 @@ router.get('/list', async (req, res) => {
 	}
 });
 
-//Send the list of all created communities
-router.get('/:name', async (req, res) => {
-	let community_name = req.params.name;
+//Send the list of selected communities
+router.get('/list/:name', async (req, res) => {
+	let name = req.params.name;
 	try {
-		const communities = await Communities.find({ name: community_name });		
+		const communities = await Communities.find({ name: name });
 		res.status(200).send(communities);
 	} catch (error) {
 		console.log(error);
