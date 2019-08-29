@@ -7,6 +7,7 @@ import degreeReducer from "./degreeReducer";
 import profileReducer from "./profileReducer";
 import profileInfoReducer from "./profileInfoReducer";
 import editorialReducer from "./editorialReducer";
+import projectReducer from "./projectReducer";
 
 export default combineReducers({
   courses: courseReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
   degrees: degreeReducer,
   profile: profileReducer,
   profileInfo: profileInfoReducer,
-  editorial:editorialReducer
+  editorial:editorialReducer,
+  project:projectReducer
 });

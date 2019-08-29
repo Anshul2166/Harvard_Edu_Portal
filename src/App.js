@@ -22,6 +22,7 @@ import QuestionsAnswer from "./components/QuestionsAnswer/QuestionsAnswer";
 import SignUp from "./components/SignUp/SignUp";
 import PrivateRoute from "./shared/privateRoute";
 import Editorial from "./components/Editorial/editorial";
+import ProjectPage from "./components/ProjectDisplay/projectPage";
 
 class App extends Component {
   componentDidMount = () => {
@@ -36,7 +37,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Editorial />
+        {/* <Editorial /> */}
+        <ProjectPage />
       {/* <PrivateRoute path='/' component={NavHeader} />
         <Switch>
           <Route exact path="/" component={Landing} />
