@@ -23,6 +23,7 @@ import SignUp from "./components/SignUp/SignUp";
 import PrivateRoute from "./shared/privateRoute";
 import Editorial from "./components/Editorial/editorial";
 import ProjectPage from "./components/ProjectDisplay/projectPage";
+import VoyageView from "./components/VoyageView/voyageView";
 
 class App extends Component {
   componentDidMount = () => {
@@ -38,7 +39,8 @@ class App extends Component {
     return (
       <div className="App">
         {/* <Editorial /> */}
-        <ProjectPage />
+        {/* <ProjectPage /> */}
+        <VoyageView />
       {/* <PrivateRoute path='/' component={NavHeader} />
         <Switch>
           <Route exact path="/" component={Landing} />

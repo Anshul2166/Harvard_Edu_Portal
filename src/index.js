@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import "react-notifications/lib/notifications.css";
 import 'bootstrap/dist/css/bootstrap.css';
+import 'react-dropdown/style.css';
 
 ReactDOM.render(
   <Provider store={store}>
