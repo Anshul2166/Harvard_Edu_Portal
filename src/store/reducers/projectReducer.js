@@ -8,6 +8,24 @@ const projectReducer = (state = {}, action) => {
         ...state,
         info: action.payload
       };
+    
+    case ACTIONS.GET_SINGLE_PROJECT_LOADING:
+      return{
+        ...state,
+        projectFeteched:false
+      }
+    case ACTIONS.GET_SINGLE_PROJECT:
+      return{
+        ...state,
+        projectFeteched:true,
+        project:action.payload
+      }
+    case ACTIONS.GET_SINGLE_PROJECT_ERROR:
+      return{
+        ...state,
+        projectFeteched:true,
+        projectErrorInFetching:true
+      }
     default:
       return state;
   }

@@ -4,6 +4,7 @@ const Project = require('../models/project');
 
 router.get('/all', async (req, res) => {
 	try {
+		console.log("Hitting");
 		const resp = await Project.find({});
 		if (resp) {
 			return res.status(200).send(resp);

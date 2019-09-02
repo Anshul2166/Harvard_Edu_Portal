@@ -5,8 +5,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import DataCard from '../DataCard/dataCard';
-// import { bindActionCreators } from 'redux';
-// import * as voyageActions from '../../actions/voyageActions';
+import { bindActionCreators } from 'redux';
+import * as projectActions from '../../store/actions/projects';
 import Loading from '../Common/Loading/loading';
 import {
 	ERROR_MESSAGE_VOYAGE_FETCHING,
@@ -14,7 +14,7 @@ import {
 	ORDER,
 	DEFAULT_ORDER_VALUE,
 	DEFAULT_CATEGORY_VALUE,
-} from '../../store/types/projectTypes';
+} from '../../constants';
 import { sortArrayOfObject } from '../../utils/sort';
 
 const styles = theme => ({
@@ -65,7 +65,7 @@ class VoyageView extends Component {
 	};
 
 	async componentWillMount() {
-		// await this.props.voyageActions.getVoyages();
+		await this.props.projectActions.getAllProjects();
 		let { projects } = this.props;
 		this.setState({ projects: projects }, () => {
 			this.sortCategory();
@@ -113,14 +113,14 @@ class VoyageView extends Component {
 
 	render() {
 		const { classes } = this.props;
-		// const { errorFetching, fetched } = this.props;
+		const { errorFetching, fetched } = this.props;
 		const { categoryValue, orderValue, searchTerm, projects } = this.state;
 
-		// if (!fetched) {
-		// 	return <Loading />;
-		// } else if (errorFetching) {
-		// 	return <div className="text-center">{ERROR_MESSAGE_VOYAGE_FETCHING}</div>;
-		// }
+		if (!fetched) {
+			return <Loading />;
+		} else if (errorFetching) {
+			return <div className="text-center">{ERROR_MESSAGE_VOYAGE_FETCHING}</div>;
+		}
 		let cards = projects.map((project, index) => {
 			return (
 				<Grid key={project._id} item sm={10} md={4}>
@@ -164,13 +164,13 @@ const mapStateToProps = state => {
 	};
 };
 
-// const mapActionsToProps = dispatch => {
-// 	return {
-// 		voyageActions: bindActionCreators(voyageActions, dispatch),
-// 	};
-// };
+const mapActionsToProps = dispatch => {
+	return {
+		projectActions: bindActionCreators(projectActions, dispatch),
+	};
+};
 
 export default connect(
-	mapStateToProps
-	// mapActionsToProps
+	mapStateToProps,
+	mapActionsToProps
 )(withStyles(styles)(VoyageView));

@@ -26,7 +26,7 @@ const projectSchema = mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'voyage',
 	},
-	imageUrl: {
+	image_location: {
 		type: String,
 		default: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/Project-Scope-Management-Cover.jpg',
 	},

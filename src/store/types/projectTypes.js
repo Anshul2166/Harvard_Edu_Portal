@@ -1,7 +1,14 @@
 export const SHOW_PROJECTS = "SHOW_PROJECTS";
 export const SHOW_ALL_PROJECTS = "SHOW_ALL_PROJECTS";
-export const ERROR_MESSAGE_VOYAGE_FETCHING="Error occured while fetching data. Please try again later";
-export const OPTIONS = [{ value: 'title', label: 'Title' }, { value: 'description', label: 'Description' }];
-export const ORDER = [{ value: 'ascending', label: 'Ascending' }, { value: 'descending', label: 'Descending' }];
-export const DEFAULT_CATEGORY_VALUE={ value: 'title', label: 'Title' };
-export const DEFAULT_ORDER_VALUE={ value: 'ascending', label: 'Ascending' };
+
+export const GET_PROJECTS = 'GET_PROJECTS';
+export const GET_PROJECTS_ERROR = 'GET_PROJECTS_ERROR';
+export const GET_PROJECTS_LOADING = 'GET_PROJECTS_LOADING';
+
+export const GET_SINGLE_PROJECT = 'GET_SINGLE_PROJECT';
+export const GET_SINGLE_PROJECT_ERROR = 'GET_SINGLE_PROJECT_ERROR';
+export const GET_SINGLE_PROJECT_LOADING = 'GET_SINGLE_PROJECT_LOADING';
+
+export const UPDATE_PROJECT = 'UPDATE_PROJECT';
+export const UPDATE_PROJECT_ERROR = 'UPDATE_PROJECT_ERROR';
+export const UPDATE_PROJECT_LOADING = 'UPDATE_PROJECT_LOADING';
