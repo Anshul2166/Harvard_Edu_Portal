@@ -60,14 +60,14 @@ class VoyageView extends Component {
 		categoryValue: DEFAULT_CATEGORY_VALUE,
 		orderValue: DEFAULT_ORDER_VALUE,
 		searchTerm: '',
-		voyages: [],
-		allVoyages: [],
+		projects: [],
+		allProjects: [],
 	};
 
 	async componentWillMount() {
 		// await this.props.voyageActions.getVoyages();
-		let { voyages } = this.props;
-		this.setState({ voyages: voyages, allVoyages: voyages }, () => {
+		let { projects } = this.props;
+		this.setState({ projects: projects }, () => {
 			this.sortCategory();
 		});
 	}
@@ -85,51 +85,51 @@ class VoyageView extends Component {
 	};
 
 	sortCategory = () => {
-		let { voyages, categoryValue, orderValue } = this.state;
-		let data = sortArrayOfObject(voyages, categoryValue.value, orderValue.value);
-		this.setState({ voyages: data });
+		let { projects, categoryValue, orderValue } = this.state;
+		let data = sortArrayOfObject(projects, categoryValue.value, orderValue.value);
+		this.setState({ projects: data });
 	};
 
-	searchVoyages = event => {
+	searchProjects = event => {
 		let searchTerm = event.target.value;
-		let { allVoyages } = this.state;
+		let { allProjects } = this.state;
 
-		let voyages = [];
+		let projects = [];
 		console.log(searchTerm);
-		allVoyages.map((voyage, index) => {
-			if (voyage.title.includes(searchTerm)) {
-				voyages.push(voyage);
-			} else if (voyage.description.includes(searchTerm)) {
-				voyages.push(voyage);
+		allProjects.map((project, index) => {
+			if (project.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+				projects.push(project);
+			} else if (project.description.toLowerCase().includes(searchTerm.toLowerCase())) {
+				projects.push(project);
 			}
 		});
-		console.log(voyages);
-		this.setState({ voyages: voyages, searchTerm });
+		console.log(projects);
+		this.setState({ projects: projects, searchTerm });
 	};
 
 	openVoyage = id => {
-		this.props.history.push('/voyages/' + id);
+		this.props.history.push('/projects-view/' + id);
 	};
 
 	render() {
 		const { classes } = this.props;
 		// const { errorFetching, fetched } = this.props;
-		const { categoryValue, orderValue, searchTerm, voyages } = this.state;
+		const { categoryValue, orderValue, searchTerm, projects } = this.state;
 
 		// if (!fetched) {
 		// 	return <Loading />;
 		// } else if (errorFetching) {
 		// 	return <div className="text-center">{ERROR_MESSAGE_VOYAGE_FETCHING}</div>;
 		// }
-		let cards = voyages.map((voyage, index) => {
+		let cards = projects.map((project, index) => {
 			return (
-				<Grid key={voyage._id} item sm={10} md={4}>
+				<Grid key={project._id} item sm={10} md={4}>
 					<DataCard
-						title={voyage.title}
-						description={voyage.description}
-						image_location={voyage.image_location}
-						openVoyage={this.openVoyage}
-						id={voyage._id}
+						title={project.title}
+						description={project.description}
+						image_location={project.image_location}
+						openProject={this.openProject}
+						id={project._id}
 					/>
 				</Grid>
 			);
@@ -146,7 +146,7 @@ class VoyageView extends Component {
 					orderValue={orderValue}
 					changeOrder={this.changeOrder}
 					searchTerm={searchTerm}
-					onChangeSearch={this.searchVoyages}
+					onChangeSearch={this.searchProjects}
 				/>
 				<Grid container spacing={10}>
 					{cards}
@@ -158,9 +158,9 @@ class VoyageView extends Component {
 
 const mapStateToProps = state => {
 	return {
-		voyages: state.voyage.voyageList,
-		errorFetching: state.voyage.errorFetching,
-		fetched: state.voyage.fetched,
+		projects: state.projectsList.projectList,
+		errorFetching: state.projectsList.errorFetching,
+		fetched: state.projectsList.fetched,
 	};
 };
 

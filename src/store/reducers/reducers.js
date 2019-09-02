@@ -8,7 +8,7 @@ import profileReducer from "./profileReducer";
 import profileInfoReducer from "./profileInfoReducer";
 import editorialReducer from "./editorialReducer";
 import projectReducer from "./projectReducer";
-import voyageReducer from "./voyageReducer";
+import projectsListReducer from "./projectsListReducer";
 
 export default combineReducers({
   courses: courseReducer,
@@ -20,5 +20,5 @@ export default combineReducers({
   profileInfo: profileInfoReducer,
   editorial:editorialReducer,
   project:projectReducer,
-  voyage:voyageReducer
+  projectsList:projectsListReducer
 });

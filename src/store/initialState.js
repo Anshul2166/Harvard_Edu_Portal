@@ -410,8 +410,8 @@ const initialState = {
 			info:"MERN stack developer"
 		}]
 	},
-	voyage: {
-		voyageList: [
+	projectsList: {
+		projectList: [
 			{
 				title: 'Voyage-1',
 				description:
