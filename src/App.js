@@ -40,10 +40,11 @@ class App extends Component {
       <div className="App">
         {/* <Editorial /> */}
         {/* <ProjectPage /> */}
-        <ProjectListView />
-      {/* <PrivateRoute path='/' component={NavHeader} />
+      {/* <PrivateRoute path='/' component={NavHeader} />*/}
         <Switch>
-          <Route exact path="/" component={Landing} />
+        <Route exact path="/" component={ProjectListView} />
+        <Route exact path="/projects/:id" component={ProjectPage} />
+          {/* <Route exact path="/" component={Landing} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/forum" component={Forum} />
@@ -59,8 +60,8 @@ class App extends Component {
           <Route exact path="/signup" component={SignUp} />
           <PrivateRoute exact path="/questions/:topic" component={QuestionsAnswer} />
           <PrivateRoute path="/learning-path/webdev" component={WebDev} />
-          <PrivateRoute path="/learning-path/gamedev" component={GameDev} />
-        </Switch> */}
+          <PrivateRoute path="/learning-path/gamedev" component={GameDev} /> */}
+        </Switch> 
       </div>
     );
   }

@@ -7,7 +7,12 @@ import Heading from '../Common/Heading/heading';
 import Comments from './Comments/comments';
 import './projectPage.scss';
 import Loading from '../Common/Loading/loading';
-// import { ERROR_MESSAGE_VOYAGE_FETCHING } from '../../constants/constant';
+import { bindActionCreators } from 'redux';
+import * as projectActions from '../../store/actions/projects';
+import Typography from '@material-ui/core/Typography';
+import ImageContainer from '../Common/ImageContainer/imageContainer';
+import { ERROR_MESSAGE_VOYAGE_FETCHING } from '../../constants';
+import Button from '@material-ui/core/Button';
 
 const TeamMembers = ({ members }) => {
 	const allMembers = members.map((member, index) => (
@@ -23,42 +28,39 @@ const TeamMembers = ({ members }) => {
 };
 
 class ProjectPage extends Component {
-	state = {
-		isAddSprintModal: false,
-		isEditSprintModal: false,
-		isAddTicketModalOpen: false,
-	};
 	componentWillMount() {
-		// let id = this.props.match.params.id;
-		// this.props.projectActions.getSingleProject(id);
+		let id = this.props.match.params.id;
+		this.props.projectActions.getSingleProject(id);
 	}
-
-	addTicket = async ticket => {
-		console.log(ticket);
-		this.setState({ submitted: true });
-		await this.props.ticketActions.addTicket(ticket);
-		setTimeout(() => {
-			this.setState({ submitted: false });
-			this.closeAddTicketModal();
-		}, 2000);
-	};
+	applyForProject=()=>{
+		let id = this.props.match.params.id;
+		this.props.projectActions.applyForProject(id);
+	}
 
 	render() {
 		const { projectFetched, projectErrorInFetching } = this.props;
 		if (!projectFetched) {
 			return <Loading />;
 		} else if (projectErrorInFetching) {
-			return <div className="text-center">Error</div>;
+			return <div className="text-center">{ERROR_MESSAGE_VOYAGE_FETCHING}</div>;
 		}
 		const { members, project } = this.props;
 		console.log(project);
 		return (
 			<div className="project-page">
+				<ImageContainer img_src={project.image_location} />
+				<Button variant="contained" color="primary" onClick={this.applyForProject}>
+					Apply
+				</Button>
+				<Heading title={project.title} />
+				<Typography variant="subtitle1" gutterBottom>
+					{project.description}
+				</Typography>
 				<Heading title="Project contributors" />
 				<TeamMembers members={members} />
 				<Heading title="Review info about the project" />
-				<AdditionalInfo project={project} />>
-				<Heading title="Comments on your projects" />
+				<AdditionalInfo project={project} />
+				<Heading title="Comments on projects" />
 				<Comments />
 			</div>
 		);
@@ -74,4 +76,13 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps)(ProjectPage);
+const mapActionsToProps = dispatch => {
+	return {
+		projectActions: bindActionCreators(projectActions, dispatch),
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	mapActionsToProps
+)(ProjectPage);

@@ -31,7 +31,7 @@ router.get('/single-project/:id', async (req, res) => {
 router.post('/add-project', async (req, res) => {
 	try {
 		const newProject = new Project({
-			name: req.body.name,
+			title: req.body.title,
 			description: req.body.description,
 			deploymentUrl: req.body.deploymentUrl,
 			githubUrl: req.body.githubUrl,
@@ -92,6 +92,26 @@ router.post('/:id/add-comment', async (req, res) => {
 	} catch (err) {
 		return res.status(400).send(err);
 	}
+});
+
+router.put('/apply/:id', async (req, res) => {
+	try {
+		let id = req.params.id;
+		const question = req.body.question;
+		console.log("Solve question is called", question, req.user._id);
+		const newUser = await Project.findOneAndUpdate(
+		  { _id: id },
+		  {
+			$push: {
+				appliedBy: req.user._id
+			}
+		  },
+		  { new: true }
+		);
+		res.status(200).send(newUser);
+	  } catch (error) {
+		console.log(error);
+	  }
 });
 
 module.exports = router;

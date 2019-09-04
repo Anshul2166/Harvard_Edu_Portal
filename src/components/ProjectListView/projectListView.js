@@ -107,9 +107,14 @@ class VoyageView extends Component {
 		this.setState({ projects: projects, searchTerm });
 	};
 
-	openVoyage = id => {
-		this.props.history.push('/projects-view/' + id);
-	};
+	applyForProject=(id)=>{
+		this.props.projectActions.applyForProject(id);
+	}
+
+	openProjectPage=(id)=>{
+		this.props.history.push("/projects/"+id);
+	}
+
 
 	render() {
 		const { classes } = this.props;
@@ -130,6 +135,8 @@ class VoyageView extends Component {
 						image_location={project.image_location}
 						openProject={this.openProject}
 						id={project._id}
+						applyForProject={this.applyForProject}
+						openProjectPage={this.openProjectPage}
 					/>
 				</Grid>
 			);

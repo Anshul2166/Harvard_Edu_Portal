@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'),Schema = mongoose.Schema;
 
 const commentSchema=new mongoose.Schema({
 	title:String,
@@ -39,7 +39,8 @@ const projectSchema = mongoose.Schema({
 		},
 	],
 	comments:[commentSchema],
-	keywords:[{type:String}]
+	keywords:[{type:String}],
+	appliedBy:[{type: Schema.Types.ObjectId, ref: 'users'}]
 });
 
 module.exports = mongoose.model('projects', projectSchema);

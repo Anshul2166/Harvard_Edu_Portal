@@ -27,8 +27,8 @@ export const getSingleProject = projectId => async dispatch => {
 		dispatch({
 			type: ACTIONS.GET_SINGLE_PROJECT_LOADING,
 		});
-		const resp = await axios.get(API_URL + '/projects/single-project/' + projectId);
-		console.log('Here');
+		console.log(projectId);
+		const resp = await axios.get('/api/projects/single-project/' + projectId);
 		console.log(resp);
 		dispatch({
 			type: ACTIONS.GET_SINGLE_PROJECT,
@@ -50,7 +50,7 @@ export const updateProject = (projectId, data) => async dispatch => {
 		dispatch({
 			type: ACTIONS.UPDATE_PROJECT_LOADING,
 		});
-		const resp = axios.put(API_URL + '/projects/' + projectId, data);
+		const resp = axios.put('/api/projects/' + projectId, data);
 		console.log(resp);
 		dispatch({
 			type: ACTIONS.UPDATE_PROJECT,
@@ -60,6 +60,27 @@ export const updateProject = (projectId, data) => async dispatch => {
 		console.log(err);
 		dispatch({
 			type: ACTIONS.UPDATE_PROJECT_ERROR,
+			payload: err,
+		});
+	}
+};
+
+export const applyForProject = (projectId) => async dispatch => {
+	console.log(projectId);
+	try {
+		dispatch({
+			type: ACTIONS.APPLY_FOR_PROJECT_LOADING,
+		});
+		const resp = axios.put('/api/projects/apply/' + projectId);
+		console.log(resp);
+		dispatch({
+			type: ACTIONS.APPLY_FOR_PROJECT,
+			payload: resp.data,
+		});
+	} catch (err) {
+		console.log(err);
+		dispatch({
+			type: ACTIONS.APPLY_FOR_PROJECT_ERROR,
 			payload: err,
 		});
 	}
