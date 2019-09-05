@@ -30,6 +30,7 @@ router.get('/single-project/:id', async (req, res) => {
 
 router.post('/add-project', async (req, res) => {
 	try {
+		console.log(req.body);
 		const newProject = new Project({
 			title: req.body.title,
 			description: req.body.description,

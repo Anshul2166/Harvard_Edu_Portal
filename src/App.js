@@ -24,6 +24,7 @@ import PrivateRoute from "./shared/privateRoute";
 // import Editorial from "./components/Editorial/editorial";
 import ProjectPage from "./components/ProjectDisplay/projectPage";
 import ProjectListView from "./components/ProjectListView/projectListView";
+import AddProject from './components/AddProject/addProject';
 
 class App extends Component {
   componentDidMount = () => {
@@ -44,6 +45,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/" component={ProjectListView} />
         <Route exact path="/projects/:id" component={ProjectPage} />
+        <Route exact path="/add-project" component={AddProject} />
           {/* <Route exact path="/" component={Landing} />
           <PrivateRoute path="/dashboard" component={Dashboard} />
           <PrivateRoute path="/profile" component={Profile} />

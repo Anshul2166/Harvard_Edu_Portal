@@ -86,3 +86,24 @@ export const applyForProject = (projectId) => async dispatch => {
 	}
 };
 
+export const submitProject = (data) => async dispatch => {
+	try {
+		console.log(data);
+		dispatch({
+			type: ACTIONS.SUBMIT_PROJECT_LOADING,
+		});
+		const resp = await axios.post('/api/projects/add-project',data);
+		console.log(resp);
+		dispatch({
+			type: ACTIONS.SUBMIT_PROJECT,
+			payload: resp.data,
+		});
+	} catch (err) {
+		console.log(err);
+		dispatch({
+			type: ACTIONS.SUBMIT_PROJECT_ERROR,
+			payload: err,
+		});
+	}
+};
+
