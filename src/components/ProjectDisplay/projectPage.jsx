@@ -12,6 +12,7 @@ import * as projectActions from '../../store/actions/projects';
 import Typography from '@material-ui/core/Typography';
 import ImageContainer from '../Common/ImageContainer/imageContainer';
 import { ERROR_MESSAGE_VOYAGE_FETCHING } from '../../constants';
+import InfoBox from './InfoBox/infoBox';
 import Button from '@material-ui/core/Button';
 
 const TeamMembers = ({ members }) => {
@@ -32,10 +33,10 @@ class ProjectPage extends Component {
 		let id = this.props.match.params.id;
 		this.props.projectActions.getSingleProject(id);
 	}
-	applyForProject=()=>{
+	applyForProject = () => {
 		let id = this.props.match.params.id;
 		this.props.projectActions.applyForProject(id);
-	}
+	};
 
 	render() {
 		const { projectFetched, projectErrorInFetching } = this.props;
@@ -45,13 +46,27 @@ class ProjectPage extends Component {
 			return <div className="text-center">{ERROR_MESSAGE_VOYAGE_FETCHING}</div>;
 		}
 		const { members, project } = this.props;
-		console.log(project);
-		return (
-			<div className="project-page">
-				<ImageContainer img_src={project.image_location} />
+		const userId = this.props.profile._id;
+		const applyButton =
+			userId !== project.createdBy ? (
 				<Button variant="contained" color="primary" onClick={this.applyForProject}>
 					Apply
 				</Button>
+			) : (
+				<Button variant="contained" color="disabled" disabled>
+					Project owner
+				</Button>
+			);
+		return (
+			<div className="project-page">
+				<ImageContainer img_src={project.image_location} />
+				<div className="text-center mt-5 row">
+					<InfoBox title="Commits" value="42" />
+					<InfoBox title="Commits" value="42" />
+					<InfoBox title="Commits" value="42" />
+					<InfoBox title="Commits" value="42" />
+					<span className="info-box">{applyButton}</span>
+				</div>
 				<Heading title={project.title} />
 				<Typography variant="subtitle1" gutterBottom>
 					{project.description}
@@ -73,6 +88,7 @@ const mapStateToProps = state => {
 		projectFetched: state.project.projectFetched,
 		projectErrorInFetching: state.project.projectErrorInFetching,
 		members: state.project.members,
+		profile: state.profile,
 	};
 };
 

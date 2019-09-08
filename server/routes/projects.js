@@ -30,13 +30,14 @@ router.get('/single-project/:id', async (req, res) => {
 
 router.post('/add-project', async (req, res) => {
 	try {
-		console.log(req.body);
+		console.log(req.user._id);
 		const newProject = new Project({
 			title: req.body.title,
 			description: req.body.description,
 			deploymentUrl: req.body.deploymentUrl,
 			githubUrl: req.body.githubUrl,
-			keywords:req.body.keywords
+			keywords:req.body.keywords,
+			createdBy:req.user._id
 		});
 		console.log(newProject);
 		try {

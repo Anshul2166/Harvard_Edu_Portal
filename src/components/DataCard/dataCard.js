@@ -25,6 +25,7 @@ const useStyles = makeStyles({
 export default function DataCard(props) {
 	const classes = useStyles();
 	const { title, description, image_location, id, applyForProject, openProjectPage } = props;
+	console.log(description);
 	let description_shortened = description.length < 40 ? description : description.substring(0, 150);
 	console.log(description);
 
