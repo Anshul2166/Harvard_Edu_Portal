@@ -443,6 +443,13 @@ const initialState = {
 		],
 		single_voyage_fetched: false,
 		fetched: false,
+	},
+	ticket:{
+		tickets:[{
+			title:"Lizard",
+			description:"Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+			onHold:false
+		}]
 	}
 };
 

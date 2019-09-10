@@ -14,6 +14,7 @@ import ImageContainer from '../Common/ImageContainer/imageContainer';
 import { ERROR_MESSAGE_VOYAGE_FETCHING } from '../../constants';
 import InfoBox from './InfoBox/infoBox';
 import Button from '@material-ui/core/Button';
+import DoneIcon from '@material-ui/icons/Done';
 
 const TeamMembers = ({ members }) => {
 	const allMembers = members.map((member, index) => (
@@ -51,6 +52,11 @@ class ProjectPage extends Component {
 			userId !== project.createdBy ? (
 				<Button variant="contained" color="primary" onClick={this.applyForProject}>
 					Apply
+				</Button>
+			) : project.appliedBy.includes(userId) ? (
+				<Button variant="contained" color="secondary" disabled>
+					<DoneIcon />
+					Applied
 				</Button>
 			) : (
 				<Button variant="contained" color="disabled" disabled>

@@ -9,6 +9,7 @@ import profileInfoReducer from "./profileInfoReducer";
 import editorialReducer from "./editorialReducer";
 import projectReducer from "./projectReducer";
 import projectsListReducer from "./projectsListReducer";
+import ticketReducer from "./ticketReducer";
 
 export default combineReducers({
   courses: courseReducer,
@@ -20,5 +21,6 @@ export default combineReducers({
   profileInfo: profileInfoReducer,
   editorial:editorialReducer,
   project:projectReducer,
-  projectsList:projectsListReducer
+  projectsList:projectsListReducer,
+  ticket:ticketReducer
 });
