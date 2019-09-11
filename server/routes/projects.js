@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const Project = require('../models/project');
+const Ticket = require('../models/tickets');
+const User = require('../models/users');
 
 router.get('/all', async (req, res) => {
 	try {
@@ -98,19 +100,37 @@ router.post('/:id/add-comment', async (req, res) => {
 
 router.put('/apply/:id', async (req, res) => {
 	try {
-		let id = req.params.id;
-		const question = req.body.question;
-		console.log("Solve question is called", question, req.user._id);
-		const newUser = await Project.findOneAndUpdate(
-		  { _id: id },
+		let projectId = req.params.id;
+		let userId=req.user._id;
+		const newTicket=new Ticket({
+			title: req.body.title,
+			message: req.body.message,
+			emailInfo:req.bodsy.emailInfo,
+			githubLink:req.body.githubLink,
+			userInfo:req.user._id,
+			projectId:projectId
+		});
+		const newProject=await User.findOneAndUpdate(
+			{ _id: userId },
+			{
+			  $push: {
+				  appliedTo: projectId				  
+			  }
+			},
+			{ new: true }
+		  );
+		await newProject.save();
+		const ticket = await Project.findOneAndUpdate(
+		  { _id: projectId },
 		  {
 			$push: {
-				appliedBy: req.user._id
+				tickets:newTicket
 			}
 		  },
 		  { new: true }
 		);
-		res.status(200).send(newUser);
+		await ticket.save();
+		res.status(200).send(ticket);
 	  } catch (error) {
 		console.log(error);
 	  }

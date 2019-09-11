@@ -41,7 +41,8 @@ const projectSchema = mongoose.Schema({
 	comments:[commentSchema],
 	keywords:[{type:String}],
 	appliedBy:[{type: Schema.Types.ObjectId, ref: 'users'}],
-	createdBy:{type: Schema.Types.ObjectId, ref: 'users'}
+	createdBy:{type: Schema.Types.ObjectId, ref: 'users'},
+	tickets:[{type: Schema.Types.ObjectId, ref: 'tickets'}]
 });
 
 module.exports = mongoose.model('projects', projectSchema);
