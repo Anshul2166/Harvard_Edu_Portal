@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
 const Project = require('../models/project');
-const Ticket = require('../models/tickets');
-const User = require('../models/users');
 
 router.get('/all', async (req, res) => {
 	try {
-		console.log("Hitting");
+		console.log('Hitting');
 		const resp = await Project.find({});
 		if (resp) {
 			return res.status(200).send(resp);
@@ -18,9 +16,9 @@ router.get('/all', async (req, res) => {
 });
 
 router.get('/single-project/:id', async (req, res) => {
-	let id=req.params.id;
+	let id = req.params.id;
 	try {
-		const resp = await Project.findOne({_id:id});
+		const resp = await Project.findOne({ _id: id });
 		if (resp) {
 			return res.status(200).send(resp);
 		}
@@ -32,14 +30,15 @@ router.get('/single-project/:id', async (req, res) => {
 
 router.post('/add-project', async (req, res) => {
 	try {
-		console.log(req.user._id);
+		// let userId="5d750d3848e845208da09944";
+		let userId=req.user._id;
 		const newProject = new Project({
 			title: req.body.title,
 			description: req.body.description,
 			deploymentUrl: req.body.deploymentUrl,
 			githubUrl: req.body.githubUrl,
-			keywords:req.body.keywords,
-			createdBy:req.user._id
+			keywords: req.body.keywords,
+			createdBy: userId,
 		});
 		console.log(newProject);
 		try {
@@ -72,12 +71,12 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
 	try {
 		let id = req.params.id;
-		await Project.remove({_id:id}, function(err) {
+		await Project.remove({ _id: id }, function(err) {
 			if (err) {
-                console.log(err);
+				console.log(err);
 				return res.status(400).send(err);
 			}
-			res.status(200).send({msg:"Successfully delete"});
+			res.status(200).send({ msg: 'Successfully delete' });
 		});
 	} catch (err) {
 		console.log(err);
@@ -101,39 +100,47 @@ router.post('/:id/add-comment', async (req, res) => {
 router.put('/apply/:id', async (req, res) => {
 	try {
 		let projectId = req.params.id;
-		let userId=req.user._id;
-		const newTicket=new Ticket({
+		let userId = req.user._id;
+		// let userId="5d750d3848e845208da09946";
+		const newTicket = {
 			title: req.body.title,
 			message: req.body.message,
-			emailInfo:req.bodsy.emailInfo,
-			githubLink:req.body.githubLink,
-			userInfo:req.user._id,
-			projectId:projectId
-		});
-		const newProject=await User.findOneAndUpdate(
-			{ _id: userId },
+			emailInfo: req.body.emailInfo,
+			githubLink: req.body.githubLink,
+			userId: userId,
+		};
+		const updatedProject = await Project.findOneAndUpdate(
+			{ _id: projectId },
 			{
-			  $push: {
-				  appliedTo: projectId				  
-			  }
+				$push: {
+					tickets: newTicket,
+				},
 			},
 			{ new: true }
-		  );
-		await newProject.save();
-		const ticket = await Project.findOneAndUpdate(
-		  { _id: projectId },
-		  {
-			$push: {
-				tickets:newTicket
-			}
-		  },
-		  { new: true }
 		);
-		await ticket.save();
-		res.status(200).send(ticket);
-	  } catch (error) {
+		await updatedProject.save();
+		res.status(200).send(updatedProject);
+	} catch (error) {
 		console.log(error);
-	  }
+	}
+});
+
+router.put('/remove-apply/:id', async (req, res) => {
+	try {
+		let projectId = req.params.id;
+		let userId = req.user._id;
+		// let userId="5d750d3848e845208da09946";
+		await Project.findOneAndUpdate({ _id: projectId }, { $pull: { tickets: { userId: userId } } }, function(err) {
+			if (err) {
+				console.log(err);
+				return res.status(400).send(err);
+			}
+			res.status(200).send({ msg: 'Successfully delete' });
+		});
+	} catch (err) {
+		console.log(err);
+		return res.status(400).send(err);
+	}
 });
 
 module.exports = router;

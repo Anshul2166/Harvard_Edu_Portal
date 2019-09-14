@@ -1,11 +1,12 @@
-const mongoose = require('mongoose'),Schema = mongoose.Schema;
+const mongoose = require('mongoose'),
+	Schema = mongoose.Schema;
 
-const commentSchema=new mongoose.Schema({
-	title:String,
-	description:String,
-	createdAt:String,
-	updatedAt:String,
-	createdBy:{type:mongoose.Schema.Types.ObjectId,ref:'users'}
+const commentSchema = new mongoose.Schema({
+	title: String,
+	description: String,
+	createdAt: String,
+	updatedAt: String,
+	createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
 });
 
 const projectSchema = mongoose.Schema({
@@ -38,11 +39,18 @@ const projectSchema = mongoose.Schema({
 			endDate: String,
 		},
 	],
-	comments:[commentSchema],
-	keywords:[{type:String}],
-	appliedBy:[{type: Schema.Types.ObjectId, ref: 'users'}],
-	createdBy:{type: Schema.Types.ObjectId, ref: 'users'},
-	tickets:[{type: Schema.Types.ObjectId, ref: 'tickets'}]
+	comments: [commentSchema],
+	keywords: [{ type: String }],
+	createdBy: { type: Schema.Types.ObjectId, ref: 'users' },
+	tickets: [
+		{
+			title: String,
+			message: String,
+			emailInfo: String,
+			githubLink: String,
+			userId: { type: Schema.Types.ObjectId, ref: 'users' },
+		},
+	],
 });
 
 module.exports = mongoose.model('projects', projectSchema);
