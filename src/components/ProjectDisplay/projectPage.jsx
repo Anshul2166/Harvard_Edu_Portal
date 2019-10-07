@@ -15,6 +15,7 @@ import { ERROR_MESSAGE_VOYAGE_FETCHING } from '../../constants';
 import InfoBox from './InfoBox/infoBox';
 import Button from '@material-ui/core/Button';
 import DoneIcon from '@material-ui/icons/Done';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const TeamMembers = ({ members }) => {
 	const allMembers = members.map((member, index) => (
@@ -34,34 +35,61 @@ class ProjectPage extends Component {
 		let id = this.props.match.params.id;
 		this.props.projectActions.getSingleProject(id);
 	}
+
+	openApplyForProjectModal = () => {};
+
 	applyForProject = () => {
 		let id = this.props.match.params.id;
 		this.props.projectActions.applyForProject(id);
 	};
 
+	removeFromProject=()=>{
+		let id = this.props.match.params.id;
+		this.props.projectActions.removeFromProject(id);
+	}
+
+	deleteProject=()=>{
+		let id = this.props.match.params.id;
+		this.props.projectActions.deleteProject(id);
+	}
+
 	render() {
-		const { projectFetched, projectErrorInFetching } = this.props;
-		if (!projectFetched) {
+		const { singleProjectFetched, singleProjectErrorInFetching } = this.props;
+		if (!singleProjectFetched) {
 			return <Loading />;
-		} else if (projectErrorInFetching) {
+		} else if (singleProjectErrorInFetching) {
 			return <div className="text-center">{ERROR_MESSAGE_VOYAGE_FETCHING}</div>;
 		}
 		const { members, project } = this.props;
 		const userId = this.props.profile._id;
+		console.log(userId);
+		console.log(project);
+		console.log('Here are the tickets');
+		console.log(project.tickets);
+		const hasApplied = project.tickets.find(item => {
+			console.log(item);
+			return item.userId === userId;
+		});
+		console.log(hasApplied);
 		const applyButton =
-			userId !== project.createdBy ? (
-				<Button variant="contained" color="primary" onClick={this.applyForProject}>
-					Apply
-				</Button>
-			) : project.appliedBy.includes(userId) ? (
-				<Button variant="contained" color="secondary" disabled>
+			userId === project.createdBy ? (
+				<span className="info-box">
+					<Button variant="contained" color="secondary" onClick={this.deleteProject}>
+						<DeleteIcon />
+						Delete Project
+					</Button>
+				</span>
+			) : hasApplied ? (
+				<Button variant="contained" color="secondary" onClick={this.removeFromProject}>
 					<DoneIcon />
 					Applied
 				</Button>
 			) : (
-				<Button variant="contained" color="disabled" disabled>
-					Project owner
-				</Button>
+				<span className="info-box">
+					<Button variant="contained" color="primary" onClick={this.applyForProject}>
+						Apply
+					</Button>
+				</span>
 			);
 		return (
 			<div className="project-page">
@@ -71,7 +99,8 @@ class ProjectPage extends Component {
 					<InfoBox title="Commits" value="42" />
 					<InfoBox title="Commits" value="42" />
 					<InfoBox title="Commits" value="42" />
-					<span className="info-box">{applyButton}</span>
+					{applyButton}
+					{/* {deleteProjectButton} */}
 				</div>
 				<Heading title={project.title} />
 				<Typography variant="subtitle1" gutterBottom>
@@ -91,10 +120,12 @@ class ProjectPage extends Component {
 const mapStateToProps = state => {
 	return {
 		project: state.project.project,
-		projectFetched: state.project.projectFetched,
-		projectErrorInFetching: state.project.projectErrorInFetching,
+		singleProjectFetched: state.project.singleProjectFetched,
+		singleProjectErrorInFetching: state.project.singleProjectErrorInFetching,
 		members: state.project.members,
 		profile: state.profile,
+		projectDeletedError:state.project.projectDeletedError,
+		projectDeleted:state.project.projectDeleted,
 	};
 };
 

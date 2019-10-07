@@ -1,6 +1,7 @@
 import axios from 'axios';
 import * as ACTIONS from '../types/projectTypes';
 import { API_URL } from '../../constants';
+import { toast } from 'react-toastify';
 
 export const getAllProjects = () => async dispatch => {
 	try {
@@ -52,6 +53,7 @@ export const updateProject = (projectId, data) => async dispatch => {
 		});
 		const resp = axios.put('/api/projects/' + projectId, data);
 		console.log(resp);
+		window.location.reload();
 		dispatch({
 			type: ACTIONS.UPDATE_PROJECT,
 			payload: resp.data,
@@ -73,12 +75,14 @@ export const applyForProject = (projectId) => async dispatch => {
 		});
 		const resp = axios.put('/api/projects/apply/' + projectId);
 		console.log(resp);
+		window.location.reload();
 		dispatch({
 			type: ACTIONS.APPLY_FOR_PROJECT,
 			payload: resp.data,
 		});
 	} catch (err) {
 		console.log(err);
+		toast.error('Error while applying. Please try again later', { autoClose: 2000 });
 		dispatch({
 			type: ACTIONS.APPLY_FOR_PROJECT_ERROR,
 			payload: err,
@@ -100,6 +104,7 @@ export const submitProject = (data) => async dispatch => {
 		});
 	} catch (err) {
 		console.log(err);
+		toast.error('Error while submitting. Please try again later', { autoClose: 2000 });
 		dispatch({
 			type: ACTIONS.SUBMIT_PROJECT_ERROR,
 			payload: err,
@@ -107,3 +112,50 @@ export const submitProject = (data) => async dispatch => {
 	}
 };
 
+
+
+export const removeFromProject = (projectId) => async dispatch => {
+	console.log(projectId);
+	try {
+		dispatch({
+			type: ACTIONS.REMOVE_FROM_PROJECT_LOADING,
+		});
+		const resp = axios.put('/api/projects/remove-apply/' + projectId);
+		console.log(resp);
+		window.location.reload();
+		dispatch({
+			type: ACTIONS.REMOVE_FROM_PROJECT,
+			payload: resp.data,
+		});
+	} catch (err) {
+		console.log(err);
+		toast.error('Error while removing. Please try again later', { autoClose: 2000 });
+		dispatch({
+			type: ACTIONS.REMOVE_FROM_PROJECT_ERROR,
+			payload: err,
+		});
+	}
+};
+
+export const deleteProject = (projectId) => async dispatch => {
+	console.log(projectId);
+	try {
+		dispatch({
+			type: ACTIONS.DELETE_PROJECT_LOADING,
+		});
+		const resp = axios.delete('/api/projects/' + projectId);
+		console.log(resp);
+		dispatch({
+			type: ACTIONS.DELETE_PROJECT,
+			payload: resp.data,
+		});
+		window.location.href='/projects-view';
+	} catch (err) {
+		console.log(err);
+		toast.error('Error while removing. Please try again later', { autoClose: 2000 });
+		dispatch({
+			type: ACTIONS.DELETE_PROJECT_ERROR,
+			payload: err,
+		});
+	}
+};

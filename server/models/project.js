@@ -51,6 +51,7 @@ const projectSchema = mongoose.Schema({
 			userId: { type: Schema.Types.ObjectId, ref: 'users' },
 		},
 	],
+	appliedBy:[{type: Schema.Types.ObjectId}]
 });
 
 module.exports = mongoose.model('projects', projectSchema);

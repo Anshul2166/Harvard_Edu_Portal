@@ -27,6 +27,7 @@ import ProjectListView from './components/ProjectListView/projectListView';
 import AddProject from './components/AddProject/addProject';
 import MyProjects from './components/MyProjects/myProjects';
 import AppliedUsers from './components/AppliedUsers/appliedUsers';
+import { ToastContainer } from "react-toastify";
 
 class App extends Component {
 	componentDidMount = () => {
@@ -44,6 +45,7 @@ class App extends Component {
 				{/* <Editorial /> */}
 				{/* <ProjectPage /> */}
 				{/* <PrivateRoute path='/' component={NavHeader} />*/}
+				<ToastContainer autoClose={2000} />
 				<Switch>
 					<Route exact path="/" component={Landing} />
 					<PrivateRoute path="/dashboard" component={Dashboard} />
@@ -62,7 +64,7 @@ class App extends Component {
 					<PrivateRoute exact path="/questions/:topic" component={QuestionsAnswer} />
 					<PrivateRoute path="/learning-path/webdev" component={WebDev} />
 					<PrivateRoute path="/learning-path/gamedev" component={GameDev} />
-          <PrivateRoute exact path="/projects-view" component={ProjectListView} />
+          			<PrivateRoute exact path="/projects-view" component={ProjectListView} />
 					<PrivateRoute exact path="/projects/:id" component={ProjectPage} />
 					<PrivateRoute exact path="/add-project" component={AddProject} />
 					<PrivateRoute exact path="/applied-users" component={AppliedUsers} />

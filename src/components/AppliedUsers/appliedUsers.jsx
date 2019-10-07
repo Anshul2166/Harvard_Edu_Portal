@@ -111,15 +111,14 @@ class AppliedUsers extends Component {
 	};
 
 	componentWillMount() {
-		// if (!this.props.ticketFeteched) {
-		// 	this.props.ticketActions.getTickets();
-		// }
+		if (!this.props.projectFetched) {
+			this.props.projectActions.getAllProjects();
+		}
 	}
 
 	componentWillReceiveProps(newProps) {
 		// const { tickets, ticketFeteched, ticketErrorInFetching, ticketActionErrorInFetching } = newProps;
 		// let prev_ticketFectched = this.props.ticketFeteched;
-
 		// if (
 		// 	prev_ticketFectched !== ticketFeteched &&
 		// 	ticketFeteched &&
@@ -206,9 +205,9 @@ class AppliedUsers extends Component {
 
 	render() {
 		const { classes } = this.props;
-		const { ticketFeteched, ticketErrorInFetching, ticketActionErrorInFetching } = this.props;
-        const { categoryValue, orderValue, searchTerm } = this.state;
-        const {tickets}=this.props;
+		const { projects, errorFetching, projectFetched } = this.props;
+		const { categoryValue, orderValue, searchTerm } = this.state;
+		const { tickets } = projects;
 		// if (!ticketFeteched) {
 		// 	return <Loading />;
 		// } else if (ticketErrorInFetching || ticketActionErrorInFetching) {
@@ -282,16 +281,9 @@ class AppliedUsers extends Component {
 
 const mapStateToProps = state => {
 	return {
-		tickets: state.ticket.tickets,
-		ticketFeteched: state.ticket.ticketFeteched,
-		ticketErrorInFetching: state.ticket.ticketErrorInFetching,
-		ticketActionErrorInFetching: state.ticket.ticketActionErrorInFetching,
-	};
-};
-
-const mapActionsToProps = dispatch => {
-	return {
-		ticketActions: bindActionCreators(ticketActions, dispatch),
+		projects: state.projectsList.projectList,
+		errorFetching: state.projectsList.errorFetching,
+		projectFetched: state.projectsList.fetched,
 	};
 };
 

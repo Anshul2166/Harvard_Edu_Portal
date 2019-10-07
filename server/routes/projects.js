@@ -31,7 +31,7 @@ router.get('/single-project/:id', async (req, res) => {
 router.post('/add-project', async (req, res) => {
 	try {
 		// let userId="5d750d3848e845208da09944";
-		let userId=req.user._id;
+		let userId = req.user._id;
 		const newProject = new Project({
 			title: req.body.title,
 			description: req.body.description,
@@ -129,7 +129,6 @@ router.put('/remove-apply/:id', async (req, res) => {
 	try {
 		let projectId = req.params.id;
 		let userId = req.user._id;
-		// let userId="5d750d3848e845208da09946";
 		await Project.findOneAndUpdate({ _id: projectId }, { $pull: { tickets: { userId: userId } } }, function(err) {
 			if (err) {
 				console.log(err);
