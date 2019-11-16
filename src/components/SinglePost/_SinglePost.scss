@@ -143,3 +143,17 @@
     background-color: rgba(26, 26, 27, 0.1);
   }
 }
+
+.SinglePost__actions{
+  margin-bottom: 4px;
+  font-family: "Noto Sans";
+  font-size: 0.75rem;
+  color:blue($color: #000000);
+  line-height: 18px;
+  margin-right: 12px;
+  margin:0 8px;
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}

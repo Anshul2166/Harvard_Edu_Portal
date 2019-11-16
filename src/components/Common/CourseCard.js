@@ -13,12 +13,13 @@ const styles = theme => ({
   card: {
     maxWidth: 400,
     width: 300,
-    minHeight: 450,
+    minHeight: 400,
     border: "2px solid azure",
     height: 300,
     cursor: "pointer",
     borderRadius: "20px",
-    borderBottom: "gainsboro"
+    borderBottom: "gainsboro",
+    marginBottom:"1px"
   },
   media: {
     height: 0,
@@ -28,8 +29,8 @@ const styles = theme => ({
     display: "flex"
   },
   content: {
-    position: "absolute",
-    bottom: "15%"
+    // position: "absolute",
+    // bottom: "15%"
   },
   expand: {
     transform: "rotate(0deg)",
@@ -47,7 +48,7 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500]
   },
-  stars: { marginLeft: "2.5%", position: "absolute", bottom: "5%" }
+  stars: { marginLeft: "2.5%"}
 });
 
 class CourseCard extends React.Component {

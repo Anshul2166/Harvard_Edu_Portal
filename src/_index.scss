@@ -1,15 +1,40 @@
-@import "styles/styles";
-@import "components/components";
-@import "~storm-react-diagrams/src/sass/main";
+@import 'styles/styles';
+@import 'components/components';
+@import '~storm-react-diagrams/src/sass/main';
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 *:focus {
-  outline: none;
+	outline: none;
 }
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
+}
+.css-1wy0on6 {
+	display: none !important;
+}
+.text-bold{
+	font-weight: 500;
+}
+.card-view-wrapper{
+	margin:5%;
+}
+.image-container{
+	width:100%;
+	img{
+		height:30vh;
+		width:100%;
+	}
+}
+.center-div{
+	margin-left:auto!important;
+	margin-right: auto!important;
+}
+.wrapper-card{
+	border:1px solid gray;
+	border-radius:10px;
+	padding:20px 30px 30px 30px;
 }

@@ -73,6 +73,7 @@ class CreateCommunityModal extends Component {
         this.props.fetchCommunities();
         this.setState({ name: "", description: "" });
         NotificationManager.info("Community have been successfully created");
+        window.location.reload();
       } catch (error) {
         //Error check from server
         console.log("From submit form", error);

@@ -6,6 +6,10 @@ import specializationReducer from "./specializationReducer";
 import degreeReducer from "./degreeReducer";
 import profileReducer from "./profileReducer";
 import profileInfoReducer from "./profileInfoReducer";
+import editorialReducer from "./editorialReducer";
+import projectReducer from "./projectReducer";
+import projectsListReducer from "./projectsListReducer";
+import ticketReducer from "./ticketReducer";
 
 export default combineReducers({
   courses: courseReducer,
@@ -14,5 +18,9 @@ export default combineReducers({
   specialization: specializationReducer,
   degrees: degreeReducer,
   profile: profileReducer,
-  profileInfo: profileInfoReducer
+  profileInfo: profileInfoReducer,
+  editorial:editorialReducer,
+  project:projectReducer,
+  projectsList:projectsListReducer,
+  ticket:ticketReducer
 });

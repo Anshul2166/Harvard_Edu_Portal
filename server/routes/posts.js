@@ -57,6 +57,11 @@ let postCreationValidations = [
     .isEmpty()
 ];
 
+let updateCreationValidation=[
+  check("title").isLength({ min: 1 }),
+  check("description").isLength({ min: 1 })
+]
+
 router.get("/find-all/:skip/:limit", async (req, res) => {
   try {
     const skipNumber = parseInt(req.params.skip);
@@ -108,7 +113,7 @@ router.post(
 router.put(
   "/:postId",
   isLoggedIn,
-  postCreationValidations,
+  updateCreationValidation,
   async (req, res) => {
     const postId = req.params.postId;
     const data = req.body;

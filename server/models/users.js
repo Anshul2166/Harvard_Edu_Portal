@@ -24,7 +24,8 @@ var userSchema = mongoose.Schema({
   skills: [{ type: String }],
   courses: [{ type: String }],
   solvedQuestions: [{ type: String }],
-  accomplishments: [{ type: String }]
+  accomplishments: [{ type: String }],
+  appliedTo:[{ type: Schema.Types.ObjectId, ref: "project" }]
 });
 
 // generating a hash
